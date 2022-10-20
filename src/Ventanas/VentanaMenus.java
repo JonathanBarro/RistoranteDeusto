@@ -95,6 +95,8 @@ public class VentanaMenus extends JFrame {
 		setLocationRelativeTo(null);
 		setVisible(true);
 		
+		
+		
 	}
 
 }
