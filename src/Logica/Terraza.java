@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Terraza {
 	
 	
-	int numMesasExterior;
-	ArrayList<Mesa> mLExterior = new ArrayList<>();
+	private int numMesasExterior;
+	private ArrayList<Mesa> mLExterior = new ArrayList<>();
 	
 	
 	
@@ -37,7 +37,7 @@ public class Terraza {
 
 
 	public void setmL(ArrayList<Mesa> mL) {
-		this.mLExterior = mLExterior;
+		this.mLExterior = mL;
 	}
 
 

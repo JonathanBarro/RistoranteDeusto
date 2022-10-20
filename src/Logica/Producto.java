@@ -2,12 +2,12 @@ package Logica;
 
 public class Producto {
 	
-	String nombre;
-	double precio;
-	String id;
+	private String nombre;
+	private double precio;
+	private int id;
 	
 	
-	public Producto(String nombre, double precio, String id) {
+	public Producto(String nombre, double precio, int id) {
 		super();
 		this.nombre = nombre;
 		this.precio = precio;
@@ -35,21 +35,15 @@ public class Producto {
 	}
 
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
 
-	@Override
-	public String toString() {
-		return "Producto [nombre=" + nombre + ", precio=" + precio + ", id=" + id + "]";
-	}
-
-	
 	
 }

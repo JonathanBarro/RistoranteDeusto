@@ -2,10 +2,10 @@ package Logica;
 
 import java.util.ArrayList;
 
-public class Menu_Infantil extends Menu {
-	
+public class Menu_Degustacion extends Menu{
 
-	public Menu_Infantil(String id, ArrayList<Producto> aProducto, int numProductos) {
+	
+	public Menu_Degustacion(String id, ArrayList<Producto> aProducto, int numProductos) {
 		super(id, aProducto, numProductos);
 		// TODO Auto-generated constructor stub
 	}
@@ -15,5 +15,6 @@ public class Menu_Infantil extends Menu {
 		return "Menu_Degustacion [Id=" + getId() + ", productos=" + getpL() + ", numProductos="
 				+ getNumProductos() + "]";
 	}
-
+	
+	
 }

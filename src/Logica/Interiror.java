@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Interiror {
 	
-	int numMesasInteriror;
-	ArrayList<Mesa> mLInterior = new ArrayList<>();
+	private int numMesasInteriror;
+	private ArrayList<Mesa> mLInterior = new ArrayList<>();
 	
 	
 	
@@ -36,7 +36,7 @@ public class Interiror {
 
 
 	public void setmL(ArrayList<Mesa> mL) {
-		this.mLInterior = mLInterior;
+		this.mLInterior = mL;
 	}
 	
 	

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Menu {
 	
-	String id;
-	ArrayList<Producto> pL = new ArrayList<>();
-	int numProductos;
+	private String id;
+	private ArrayList<Producto> aProducto = new ArrayList<>();
+	private int numProductos;
 	
 	
 	public Menu(){
@@ -14,10 +14,10 @@ public class Menu {
 	}
 	
 	
-	public Menu(String id, ArrayList<Producto> pL, int numProductos) {
+	public Menu(String id, ArrayList<Producto> aProducto, int numProductos) {
 		super();
 		this.id = id;
-		this.pL = pL;
+		this.aProducto = aProducto;
 		this.numProductos = numProductos;
 	}
 
@@ -33,12 +33,12 @@ public class Menu {
 
 
 	public ArrayList<Producto> getpL() {
-		return pL;
+		return aProducto;
 	}
 
 
-	public void setpL(ArrayList<Producto> pL) {
-		this.pL = pL;
+	public void setpL(ArrayList<Producto> aProducto) {
+		this.aProducto = aProducto;
 	}
 
 
@@ -51,13 +51,6 @@ public class Menu {
 		this.numProductos = numProductos;
 	}
 
-
-	@Override
-	public String toString() {
-		return "Menu [id=" + id + ", pL=" + pL + ", numProductos=" + numProductos + "]";
-	}
-	
-	
 	
 	
 }
