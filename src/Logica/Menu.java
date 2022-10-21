@@ -35,7 +35,7 @@ public class Menu {
 	public ArrayList<Producto> getpL() {
 		return aProducto;
 	}
-
+	
 
 	public void setpL(ArrayList<Producto> aProducto) {
 		this.aProducto = aProducto;
@@ -51,6 +51,12 @@ public class Menu {
 		this.numProductos = numProductos;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Menu : id = " + id + "," + aProducto + ", numProductos" + numProductos ;
+	}
+	
 	
 	
 }
