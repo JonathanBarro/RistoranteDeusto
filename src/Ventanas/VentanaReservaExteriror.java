@@ -1,42 +1,24 @@
 package Ventanas;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import com.toedter.calendar.JCalendar;
-
-import Logica.Cliente;
-
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import java.awt.BorderLayout;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
 import javax.swing.JMenu;
 
-import java.awt.Font;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.awt.event.ActionEvent;
-import javax.swing.BoxLayout;
-import javax.swing.JComboBox;
-import java.awt.Color;
-import javax.swing.JMenuBar;
-
-public class VentanaReservaInteriror extends JFrame {
+public class VentanaReservaExteriror extends JFrame {
 
 	private JPanel contentPane;
-	private JCalendar calen; 
-
-
 
 	/**
 	 * Launch the application.
@@ -45,7 +27,7 @@ public class VentanaReservaInteriror extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VentanaReservaInteriror frame = new VentanaReservaInteriror();
+					VentanaReservaExteriror frame = new VentanaReservaExteriror();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -57,7 +39,7 @@ public class VentanaReservaInteriror extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VentanaReservaInteriror() {
+	public VentanaReservaExteriror() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -96,15 +78,11 @@ public class VentanaReservaInteriror extends JFrame {
 		panel_ComboCent.setBackground(new Color(231, 237, 236));
 		panel_Cent.add(panel_ComboCent, BorderLayout.NORTH);
 		
-		JLabel jLNumeroPersonas = new JLabel("Seleccion el numero de personas:");
-		panel_ComboCent.add(jLNumeroPersonas);
+		JLabel jLNumeroPer = new JLabel("Seleccion el numero de personas:");
+		panel_ComboCent.add(jLNumeroPer);
 		
 		JComboBox<String> comboBox_NPersonas = new JComboBox();
 		panel_ComboCent.add(comboBox_NPersonas);
-		int i;
-		for(i=0;i>12;i++) {
-			comboBox_NPersonas.addItem("1");
-		}
 		comboBox_NPersonas.addItem("1");
 		comboBox_NPersonas.addItem("2");
 		comboBox_NPersonas.addItem("3");
@@ -120,14 +98,12 @@ public class VentanaReservaInteriror extends JFrame {
 		
 		
 		JPanel panel_JCalendar = new JPanel();
-		panel_JCalendar.setBackground(new Color(128, 128, 255));
+		panel_JCalendar.setBackground(new Color(255, 0, 128));
 		panel_Cent.add(panel_JCalendar, BorderLayout.CENTER);
 		
 		JMenu JMenuDias = new JMenu("Escoja el dia y hora");
 		panel_JCalendar.add(JMenuDias);
 		JMenuDias.add("Lunes");
-		
-		
 		
 		JButton btnConfirm = new JButton("Confirmar");
 		btnConfirm.setFont(new Font("MV Boli", Font.PLAIN, 11));
@@ -139,7 +115,7 @@ public class VentanaReservaInteriror extends JFrame {
 		
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(128, 128, 255));
+		panel.setBackground(new Color(255, 0, 128));
 		panel_Cent.add(panel, BorderLayout.WEST);
 	}
 
