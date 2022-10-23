@@ -12,8 +12,8 @@ public class Menu_Infantil extends Menu {
 
 	@Override
 	public String toString() {
-		return "Menu_Degustacion [Id=" + getId() + ", productos=" + getpL() + ", numProductos="
-				+ getNumProductos() + "]";
+		return getId() + " : " + "	Platos :  " + getpL() + "  Número de platos : "
+				+ getNumProductos() ;
 	}
 
 }

@@ -54,9 +54,7 @@ public class Menu {
 
 	@Override
 	public String toString() {
-		return "Menu : id = " + id + "," + aProducto + ", numProductos" + numProductos ;
+		return "Menu [id=" + id + ", aProducto=" + aProducto + ", numProductos=" + numProductos + "]";
 	}
-	
-	
 	
 }

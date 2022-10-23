@@ -9,7 +9,7 @@ public class Bebida extends Producto{
 
 	@Override
 	public String toString() {
-		return "Bebida [nombre=" + getNombre() + ", precio=" + getPrecio() + ", Id=" + getId() + "]";
+		return  getNombre() + " " + getPrecio() + "€" ;
 	}
 	
 }

@@ -9,7 +9,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Logica.Comida;
 import Logica.Menu;
+import Logica.Menu_Degustacion;
+import Logica.Menu_EntreSemana;
+import Logica.Menu_Infantil;
 import Logica.Producto;
 
 import javax.swing.JTabbedPane;
@@ -30,11 +34,16 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.JLabel;
 import javax.swing.JList;
 
 public class VentanaMenus extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JList<Menu> aMenus;
 	private DefaultListModel <Menu> modeloCarrito;
 	private JScrollPane menusPane;
@@ -56,67 +65,93 @@ public class VentanaMenus extends JFrame {
 	public VentanaMenus() {
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setSize(600, 400);
+		setSize(800, 400);
 
 		aMenus = new JList<>();
 		modeloCarrito = new DefaultListModel<>();
 		
 		JComboBox <Menu> cbMenu = new JComboBox<>();
-		cbMenu.setSelectedItem(null);
-		cbMenu.setPreferredSize(new Dimension(200, 20));
+		cbMenu.setPreferredSize(new Dimension(120, 20));
 		
 		
-		ArrayList<Producto> aProductos = new ArrayList<>();
-		Producto p1 = new Producto("Pato1", 10.1,01);
-		Producto p2 = new Producto("Pato2", 10.1,02);
-		Producto p3 = new Producto("Pato3", 10.1,03);
+		ArrayList<Producto> aComida = new ArrayList<>();
+		Comida p1 = new Comida("Plato1", 10.1,01);
+		Comida p2 = new Comida("Plato2", 10.1,02);
+		Comida p3 = new Comida("Plato3", 10.1,03);
 		
-		aProductos.add(p1);
-		aProductos.add(p2);
-		aProductos.add(p3);
+		aComida.add(p1);
+		aComida.add(p2);
+		aComida.add(p3);
 		
-		Menu m1 = new Menu("Burger", aProductos, aProductos.size());
-		Menu m2 = new Menu("Pizza", null, 5);
-		Menu m3 = new Menu();
+		Menu_Degustacion m1 = new Menu_Degustacion("Menu_Degustacion", aComida, aComida.size());
+		Menu_EntreSemana m2 = new Menu_EntreSemana("Menu_EntreSemana", aComida, aComida.size());
+		Menu_Infantil m3 = new Menu_Infantil("Menu_Infantil", aComida, aComida.size());
+		Menu_Infantil m4 = new Menu_Infantil("Menu_FinDeSemana", aComida, aComida.size());
 		cbMenu.addItem(m1);
 		cbMenu.addItem(m2);
-		
-		JLabel lblCB = new JLabel("Seleccione el menú :");
+		cbMenu.addItem(m3);
+		cbMenu.addItem(m4);
 		
 		JPanel pcbx = new JPanel(new FlowLayout());
-		JPanel pMedio2 = new JPanel();
+		JPanel pMedio2 = new JPanel(new FlowLayout());
 		JPanel pNorth = new JPanel(new GridLayout(2, 1));
 		
-		JPanel pBtnsAE = new JPanel(new FlowLayout());
+		JPanel pBtnsVerM = new JPanel(new FlowLayout());
+		JPanel pBtnsAnadir = new JPanel(new FlowLayout());
 		JPanel pMedio = new JPanel(new FlowLayout());
 		JPanel pBtnJL = new JPanel(new GridLayout(3,1));
 		
 		JPanel pTicket = new JPanel();
 		
+		
 		menusPane = new JScrollPane(aMenus);
 		menusPane.setBorder(BorderFactory.createTitledBorder("Menus"));
-		JButton btnAnadir = new JButton("Añadir");
+		JButton btnAnadir = new JButton("+1");
 		JButton btnEliminar = new JButton("Eliminar");
 		JButton btnVaciar = new JButton("Vaciar");
 		JButton btnTicket = new JButton("Ticket"); 
+		JLabel lblCB = new JLabel("Seleccione el menú :");
+		JButton btnVerMenus = new JButton("Ver Menus");
 		
 		pcbx.add(lblCB);
 		pcbx.add(cbMenu);
+		pMedio.add(btnVerMenus);
 		
 		pNorth.add(pMedio2);
 		pNorth.add(pcbx);
 		
-		pBtnsAE.add(btnAnadir);
-		pBtnsAE.add(btnEliminar);
-		pBtnsAE.add(btnVaciar);
+		pBtnsAnadir.add(btnAnadir);
+		pBtnsAnadir.add(btnEliminar);
+		pBtnsAnadir.add(btnVaciar);
+
 		
 		pBtnJL.add(pMedio);
-		pBtnJL.add(pBtnsAE);
+		pBtnJL.add(pBtnsAnadir);
 		pBtnJL.add(menusPane);
 		
 		pTicket.add(btnTicket);
 		
+		btnVerMenus.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				new VentanaVerMenus();
+			}
+		});
 		
+		cbMenu.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Object ob = cbMenu.getSelectedItem();
+				Menu menu = (Menu) ob;
+				modeloCarrito.addElement(menu);
+				aMenus.setModel(modeloCarrito);
+			}
+		});
+
 		btnAnadir.addActionListener(new ActionListener() {
 			
 			@Override

@@ -9,6 +9,6 @@ public class Comida extends Producto{
 
 	@Override
 	public String toString() {
-		return "Comida [nombre=" + getNombre() + ", precio=" + getPrecio() + ", Id=" + getId() + "]";
+		return  getNombre() + " " + getPrecio() + "€" ;
 	}
 }
