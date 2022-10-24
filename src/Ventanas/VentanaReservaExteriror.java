@@ -81,20 +81,11 @@ public class VentanaReservaExteriror extends JFrame {
 		JLabel jLNumeroPer = new JLabel("Seleccion el numero de personas:");
 		panel_ComboCent.add(jLNumeroPer);
 		
-		JComboBox<String> comboBox_NPersonas = new JComboBox();
+		JComboBox<Integer> comboBox_NPersonas = new JComboBox();
 		panel_ComboCent.add(comboBox_NPersonas);
-		comboBox_NPersonas.addItem("1");
-		comboBox_NPersonas.addItem("2");
-		comboBox_NPersonas.addItem("3");
-		comboBox_NPersonas.addItem("4");
-		comboBox_NPersonas.addItem("5");
-		comboBox_NPersonas.addItem("6");
-		comboBox_NPersonas.addItem("7");
-		comboBox_NPersonas.addItem("8");
-		comboBox_NPersonas.addItem("9");
-		comboBox_NPersonas.addItem("10");
-		comboBox_NPersonas.addItem("11");
-		comboBox_NPersonas.addItem("12");
+		for(int i=0;i<=12;i++) {
+			comboBox_NPersonas.addItem(i);
+		}
 		
 		
 		JPanel panel_JCalendar = new JPanel();
