@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JCalendar;
+import com.toedter.calendar.JDateChooser;
 
 import Logica.Cliente;
 
@@ -29,12 +30,14 @@ import java.awt.event.ActionEvent;
 import javax.swing.BoxLayout;
 import javax.swing.JComboBox;
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.JMenuBar;
 
 public class VentanaReservaInteriror extends JFrame {
 
 	private JPanel contentPane;
-	private JCalendar calen; 
+	private JDateChooser calen; 
 
 
 
@@ -110,9 +113,12 @@ public class VentanaReservaInteriror extends JFrame {
 		panel_JCalendar.setBackground(new Color(128, 128, 255));
 		panel_Cent.add(panel_JCalendar, BorderLayout.CENTER);
 		
-		JMenu JMenuDias = new JMenu("Escoja el dia y hora");
-		panel_JCalendar.add(JMenuDias);
-		JMenuDias.add("Lunes");
+		calen = new JDateChooser();
+		panel_JCalendar.add(calen);
+		calen.setPreferredSize(new Dimension(100,25));
+		calen.setDateFormatString("dd-MMMM");
+	
+		
 		
 		
 		
