@@ -1,8 +1,12 @@
 package Ventanas;
+import Logica.Comida;
+import Logica.Producto;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,11 +15,13 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 
 public class VentanaStock extends JFrame{
 	private JPanel contentPane;
 	private JFrame frame;
-
+	private ArrayList<Producto> listaProductos= new ArrayList<>(); 
+	private JButton Añadir;
 	/**
 	 * Launch the application.
 	 */
@@ -56,6 +62,10 @@ public class VentanaStock extends JFrame{
 		lblStock.setFont(new Font("Freestyle Script", Font.BOLD, 28));
 		panelNorte.add(lblStock);
 		
+		Comida macarrones= new Comida("macarrones", 5, 111);
+		listaProductos.add(macarrones);
+		
+		
 		
 		JPanel panelSur = new JPanel();
 		contentPane.add(panelSur, BorderLayout.SOUTH);
@@ -65,11 +75,18 @@ public class VentanaStock extends JFrame{
 		
 		JPanel panelCentro = new JPanel();
 		contentPane.add(panelCentro, BorderLayout.CENTER);
-		JTextField txtfieldStock= new JTextField();
-		txtfieldStock.setFont(new Font("Times New Roman" , Font.BOLD, 28));
-		txtfieldStock.setBounds(10, 10, 200, 30);
+		JLabel txtAreaStock= new JLabel();
+		txtAreaStock.setFont(new Font("Times New Roman" , Font.BOLD, 28));
+		txtAreaStock.setBounds(10, 10, 200, 30);
 		
-		panelCentro.add(txtfieldStock);
+		JButton AñadirStock= new JButton("Añadir");
+		panelSur.add(AñadirStock);
+		for (Producto p : listaProductos) {
+			
+			
+		}
+		
+		panelCentro.add(txtAreaStock);
 		
 	}
 
