@@ -75,9 +75,9 @@ public class VentanaMenus extends JFrame {
 		
 		
 		ArrayList<Producto> aComida = new ArrayList<>();
-		Comida p1 = new Comida("Plato1", 10.1,01);
-		Comida p2 = new Comida("Plato2", 10.1,02);
-		Comida p3 = new Comida("Plato3", 10.1,03);
+		Comida p1 = new Comida("Plato1", 10.1,01,1);
+		Comida p2 = new Comida("Plato2", 10.1,02,1);
+		Comida p3 = new Comida("Plato3", 10.1,03,1);
 		
 		aComida.add(p1);
 		aComida.add(p2);

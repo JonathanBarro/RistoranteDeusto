@@ -62,7 +62,7 @@ public class VentanaStock extends JFrame{
 		lblStock.setFont(new Font("Freestyle Script", Font.BOLD, 28));
 		panelNorte.add(lblStock);
 		
-		Comida macarrones= new Comida("macarrones", 5, 111);
+		Comida macarrones= new Comida("macarrones", 5, 111,1);
 		listaProductos.add(macarrones);
 		
 		
