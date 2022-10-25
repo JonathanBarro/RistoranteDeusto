@@ -5,15 +5,15 @@ public class Producto {
 	private String nombre;
 	private double precio;
 	private int id;
-	private int cantidad;
+	private int stock;
 	
 	
-	public Producto(String nombre, double precio, int id, int cantidad) {
+	public Producto(String nombre, double precio, int id, int stock) {
 		super();
 		this.nombre = nombre;
 		this.precio = precio;
 		this.id = id;
-		this.cantidad = cantidad;
+		this.stock = stock;
 	}
 
 
@@ -48,12 +48,12 @@ public class Producto {
 
 
 	public int getCantidad() {
-		return cantidad;
+		return stock;
 	}
 
 
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
+	public void setCantidad(int stock) {
+		this.stock = stock;
 	}
 
 

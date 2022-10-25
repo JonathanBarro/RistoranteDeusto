@@ -2,9 +2,9 @@ package Logica;
 
 public class Comida extends Producto{
 
-
-	public Comida(String nombre, double precio, int id, int cantidad) {
-		super(nombre, precio, id, cantidad);
+	
+	public Comida(String nombre, double precio, int id, int stock) {
+		super(nombre, precio, id, stock);
 		// TODO Auto-generated constructor stub
 	}
 
