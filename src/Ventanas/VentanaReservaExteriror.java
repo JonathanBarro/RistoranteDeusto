@@ -2,6 +2,7 @@ package Ventanas;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -14,11 +15,15 @@ import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.toedter.calendar.JDateChooser;
+
 import javax.swing.JMenu;
 
 public class VentanaReservaExteriror extends JFrame {
 
 	private JPanel contentPane;
+	private JDateChooser calen;
 
 	/**
 	 * Launch the application.
@@ -92,9 +97,10 @@ public class VentanaReservaExteriror extends JFrame {
 		panel_JCalendar.setBackground(new Color(255, 0, 128));
 		panel_Cent.add(panel_JCalendar, BorderLayout.CENTER);
 		
-		JMenu JMenuDias = new JMenu("Escoja el dia y hora");
-		panel_JCalendar.add(JMenuDias);
-		JMenuDias.add("Lunes");
+		calen = new JDateChooser();
+		panel_JCalendar.add(calen);
+		calen.setPreferredSize(new Dimension(100,25));
+		calen.setDateFormatString("dd-MMMM");
 		
 		JButton btnConfirm = new JButton("Confirmar");
 		btnConfirm.setFont(new Font("MV Boli", Font.PLAIN, 11));
