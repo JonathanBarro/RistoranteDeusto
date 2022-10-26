@@ -9,11 +9,6 @@ public class Menu {
 	private int numProductos;
 	
 	
-	public Menu(){
-		
-	}
-	
-	
 	public Menu(String id, ArrayList<Producto> aProducto, int numProductos) {
 		super();
 		this.id = id;
@@ -51,10 +46,5 @@ public class Menu {
 		this.numProductos = numProductos;
 	}
 
-
-	@Override
-	public String toString() {
-		return "Menu [id=" + id + ", aProducto=" + aProducto + ", numProductos=" + numProductos + "]";
-	}
 	
 }

@@ -13,6 +13,7 @@ import Logica.Comida;
 import Logica.Menu;
 import Logica.Menu_Degustacion;
 import Logica.Menu_EntreSemana;
+import Logica.Menu_FinDeSemana;
 import Logica.Menu_Infantil;
 import Logica.Producto;
 
@@ -84,9 +85,9 @@ public class VentanaMenus extends JFrame {
 		aComida.add(p3);
 		
 		Menu_Degustacion m1 = new Menu_Degustacion("Menu_Degustacion", aComida, aComida.size());
-		Menu_EntreSemana m2 = new Menu_EntreSemana("Menu_EntreSemana", aComida, aComida.size());
+		Menu_EntreSemana m2 = new Menu_EntreSemana("Menu_EntreSemana", aComida, aComida.size(), false);
 		Menu_Infantil m3 = new Menu_Infantil("Menu_Infantil", aComida, aComida.size());
-		Menu_Infantil m4 = new Menu_Infantil("Menu_FinDeSemana", aComida, aComida.size());
+		Menu_FinDeSemana m4 = new Menu_FinDeSemana("Menu_FinDeSemana", aComida, aComida.size(), 8);
 		cbMenu.addItem(m1);
 		cbMenu.addItem(m2);
 		cbMenu.addItem(m3);
