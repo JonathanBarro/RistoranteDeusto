@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Logica.Menu;
+import Logica.Menu_FinDeSemana;
 import Logica.Producto;
 
 public class JTestMenuMenuFinDE {
@@ -17,11 +18,14 @@ public class JTestMenuMenuFinDE {
 	private String idMen="1A";
 	private ArrayList<Producto> pL = new ArrayList<>();
 	private int numProd=4;
+	private int numPersonas=6;
+	Menu_FinDeSemana menDdS;
 	
 
 	@Before
 	public void setUp() throws Exception {
 		men = new Menu(idMen, pL, numProd);
+		menDdS = new Menu_FinDeSemana(idMen, pL, numProd, numPersonas);
 	}
 
 	@After
@@ -30,22 +34,24 @@ public class JTestMenuMenuFinDE {
 	
 	@Test
 	public void testMenu_FinDeSemana() {
-		fail("Not yet implemented");
+		assertNotNull(menDdS);
 	}
 
 	@Test
 	public void testGetNumPersonas() {
-		fail("Not yet implemented");
+		assertEquals(numPersonas, menDdS.getNumPersonas());
 	}
 
 	@Test
 	public void testSetNumPersonas() {
-		fail("Not yet implemented");
+		menDdS.setNumPersonas(4);
+		assertEquals(numPersonas-2, menDdS.getNumPersonas());
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		assertEquals(idMen + " : " + "	Platos :  " + pL + "  Número de platos : "
+				+ numProd, menDdS.toString());
 	}
 
 	@Test
@@ -55,7 +61,7 @@ public class JTestMenuMenuFinDE {
 
 	@Test
 	public void testMenuStringArrayListOfProductoInt() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
