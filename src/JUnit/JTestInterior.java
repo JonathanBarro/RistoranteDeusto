@@ -2,14 +2,26 @@ package JUnit;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import Logica.Interiror;
+import Logica.Mesa;
+
 public class JTestInterior {
+	
+	private Interiror interiror;
+	private int numMes=3;
+	private ArrayList<Mesa> ms = new ArrayList<>();
+	private Mesa m1;
+	
 
 	@Before
 	public void setUp() throws Exception {
+		interiror = new Interiror(numMes,ms);
 	}
 
 	@After
@@ -18,27 +30,36 @@ public class JTestInterior {
 	
 	@Test
 	public void testInteriror() {
-		fail("Not yet implemented");
+		assertNotNull(interiror);
+		
 	}
 
 	@Test
 	public void testGetNumMesas() {
-		fail("Not yet implemented");
+		assertEquals(numMes, interiror.getNumMesas());
+		
 	}
 
 	@Test
 	public void testSetNumMesas() {
-		fail("Not yet implemented");
+		interiror.setNumMesas(4);
+		assertEquals(numMes+1, interiror.getNumMesas());
+		
+		
 	}
 
 	@Test
 	public void testGetmL() {
-		fail("Not yet implemented");
+		assertEquals(ms, interiror.getmL());
+		
 	}
 
 	@Test
 	public void testSetmL() {
-		fail("Not yet implemented");
+	interiror.setmL(ms);
+	assertEquals(ms,interiror.getmL());
+		
+		
 	}
 
 }

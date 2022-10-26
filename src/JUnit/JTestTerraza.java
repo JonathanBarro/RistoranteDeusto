@@ -2,14 +2,23 @@ package JUnit;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import Logica.Mesa;
+import Logica.Terraza;
+
 public class JTestTerraza {
+	Terraza tr;
+	int nMe=3;
+	ArrayList<Mesa> ms = new ArrayList<>();
 
 	@Before
 	public void setUp() throws Exception {
+		tr = new Terraza(nMe, ms);
 	}
 
 	@After
@@ -18,32 +27,35 @@ public class JTestTerraza {
 	
 	@Test
 	public void testTerraza() {
-		fail("Not yet implemented");
+		assertNotNull(tr);
 	}
 
 	@Test
 	public void testGetNumMesas() {
-		fail("Not yet implemented");
+		assertEquals(nMe,tr.getNumMesas());
 	}
 
 	@Test
 	public void testSetNumMesas() {
-		fail("Not yet implemented");
+		tr.setNumMesas(4);
+		assertEquals(nMe+1, tr.getNumMesas());
 	}
 
 	@Test
 	public void testGetmL() {
-		fail("Not yet implemented");
+		assertEquals(ms, tr.getmL());
 	}
 
 	@Test
 	public void testSetmL() {
-		fail("Not yet implemented");
+		tr.setmL(ms);
+		assertEquals(ms, tr.getmL());
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		assertEquals("Terraza [numMesasExterior=" + nMe + ", mLExterior=" + ms + "]", tr.toString());
+
 	}
 
 }
