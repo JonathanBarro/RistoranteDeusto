@@ -20,7 +20,7 @@ public class Cliente extends Usuario{
 	@Override
 	public String toString() {
 		return "Cliente [numTlfn=" + numTlfn + ", nombre=" + getNombre() + ", apellido=" + getApellido()
-				+ ", contrasenia=" + getContrasenia() + "]";
+				+ ", contrasenia=" + getContrasenia() + "]"; 
 	}
 
 
