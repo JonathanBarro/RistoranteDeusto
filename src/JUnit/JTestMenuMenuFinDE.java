@@ -2,14 +2,26 @@ package JUnit;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import Logica.Menu;
+import Logica.Producto;
+
 public class JTestMenuMenuFinDE {
+	
+	Menu men;
+	private String idMen="1A";
+	private ArrayList<Producto> pL = new ArrayList<>();
+	private int numProd=4;
+	
 
 	@Before
 	public void setUp() throws Exception {
+		men = new Menu(idMen, pL, numProd);
 	}
 
 	@After
@@ -38,7 +50,7 @@ public class JTestMenuMenuFinDE {
 
 	@Test
 	public void testMenu() {
-		fail("Not yet implemented");
+		assertNotNull(men);
 	}
 
 	@Test
@@ -48,32 +60,38 @@ public class JTestMenuMenuFinDE {
 
 	@Test
 	public void testGetId() {
-		fail("Not yet implemented");
+		assertEquals(idMen, men.getId());
 	}
 
 	@Test
 	public void testSetId() {
-		fail("Not yet implemented");
+		men.setId(idMen);
+		assertEquals(idMen, men.getId());
+		
+		
 	}
 
 	@Test
 	public void testGetpL() {
-		fail("Not yet implemented");
+		assertEquals(pL, men.getpL());
 	}
 
 	@Test
 	public void testSetpL() {
-		fail("Not yet implemented");
+		men.setpL(pL);
+		assertEquals(pL, men.getpL());
 	}
 
 	@Test
 	public void testGetNumProductos() {
-		fail("Not yet implemented");
+		assertEquals(numProd, men.getNumProductos());
 	}
 
 	@Test
 	public void testSetNumProductos() {
-		fail("Not yet implemented");
+		men.setNumProductos(5);
+		assertEquals(numProd+1, men.getNumProductos());
+		
 	}
 
 }

@@ -24,7 +24,10 @@ import javax.swing.JMenu;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.awt.event.ActionEvent;
 import javax.swing.BoxLayout;
@@ -109,18 +112,32 @@ public class VentanaReservaInteriror extends JFrame {
 			comboBox_NPersonas.addItem(i);
 		}
 		
+		
+		
+		
 		JPanel panel_JCalendar = new JPanel();
-		panel_JCalendar.setBackground(new Color(128, 128, 255));
+		panel_JCalendar.setBackground(new Color(255, 0, 128));
 		panel_Cent.add(panel_JCalendar, BorderLayout.CENTER);
 		
+		Date fechaActual = new Date(System.currentTimeMillis());
+		SimpleDateFormat sdfAnio = new SimpleDateFormat("yyyy");
+		String anio = sdfAnio.format(fechaActual);
+		String sultimaFecha = "31-12-"+anio;
+		SimpleDateFormat sdfFecha = new SimpleDateFormat("dd-MM-yyyy");
+		Date ultimaFecha;
+		try {
+			ultimaFecha = sdfFecha.parse(sultimaFecha);
+		} catch (ParseException e1) {
+			ultimaFecha = fechaActual;
+		}
+
 		calen = new JDateChooser();
+		calen.setMinSelectableDate(fechaActual);
+		calen.setMaxSelectableDate(ultimaFecha);
 		panel_JCalendar.add(calen);
 		calen.setPreferredSize(new Dimension(100,25));
 		calen.setDateFormatString("dd-MMMM");
 	
-		
-		
-		
 		
 		JButton btnConfirm = new JButton("Confirmar");
 		btnConfirm.setFont(new Font("MV Boli", Font.PLAIN, 11));
