@@ -1,23 +1,17 @@
+
 package Ventanas;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import java.awt.BorderLayout;
 import javax.swing.JButton;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import javax.swing.BoxLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Font;
 import java.awt.Color;
-import java.awt.Toolkit;
 
-public class VentanaAdminCliente {
+public class VentanaInicio {
 
 	private JFrame frame;
 
@@ -28,7 +22,7 @@ public class VentanaAdminCliente {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VentanaAdminCliente window = new VentanaAdminCliente();
+					VentanaInicio window = new VentanaInicio();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +34,7 @@ public class VentanaAdminCliente {
 	/**
 	 * Create the application.
 	 */
-	public VentanaAdminCliente() {
+	public VentanaInicio() {
 		initialize();
 	}
 
@@ -49,7 +43,7 @@ public class VentanaAdminCliente {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaAdminCliente.class.getResource("/junit/runner/smalllogo.gif")));
+		frame.getContentPane().setFont(new Font("Tahoma", Font.BOLD, 10));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -59,27 +53,29 @@ public class VentanaAdminCliente {
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		frame.getContentPane().setLayout(gridBagLayout);
 		
+		//Botones 
 		
-		//Botones
+		JButton btnInicioSesion = new JButton("Inicio Sesion");
+		btnInicioSesion.setBackground(Color.GREEN);
+		btnInicioSesion.setFont(new Font("Tahoma", Font.BOLD, 10));
+		GridBagConstraints gbc_btnInicioSesion = new GridBagConstraints();
+		gbc_btnInicioSesion.insets = new Insets(0, 0, 5, 0);
+		gbc_btnInicioSesion.gridx = 5;
+		gbc_btnInicioSesion.gridy = 2;
+		frame.getContentPane().add(btnInicioSesion, gbc_btnInicioSesion);
 		
-		JButton btnAdmin = new JButton("Administrador");
-		btnAdmin.setBackground(Color.ORANGE);
-		btnAdmin.setFont(new Font("Tahoma", Font.BOLD, 10));
-		GridBagConstraints gbc_btnAdmin = new GridBagConstraints();
-		gbc_btnAdmin.insets = new Insets(0, 0, 5, 0);
-		gbc_btnAdmin.gridx = 5;
-		gbc_btnAdmin.gridy = 2;
-		frame.getContentPane().add(btnAdmin, gbc_btnAdmin);
-		
-		JButton btnCliente = new JButton("Cliente");
-		btnCliente.setBackground(Color.CYAN);
-		btnCliente.setFont(new Font("Tahoma", Font.BOLD, 10));
-		GridBagConstraints gbc_btnCliente = new GridBagConstraints();
-		gbc_btnCliente.gridx = 5;
-		gbc_btnCliente.gridy = 6;
-		frame.getContentPane().add(btnCliente, gbc_btnCliente);
+		JButton btnRegistro = new JButton("Registro");
+		btnRegistro.setBackground(Color.GREEN);
+		btnRegistro.setFont(new Font("Tahoma", Font.BOLD, 10));
+		GridBagConstraints gbc_btnRegistro = new GridBagConstraints();
+		gbc_btnRegistro.gridx = 5;
+		gbc_btnRegistro.gridy = 6;
+		frame.getContentPane().add(btnRegistro, gbc_btnRegistro);
 	}
 
 }
+
+
+
 
 
