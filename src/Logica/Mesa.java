@@ -13,6 +13,7 @@ public class Mesa {
 		this.idMesa = idMesa;
 		this.lugar = lugar;
 		this.ocupada = ocupada;
+		
 	}
 
 

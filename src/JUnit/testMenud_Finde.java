@@ -49,7 +49,7 @@ public class testMenud_Finde {
 	@Test
 	public void testToString() {
 		assertEquals(idMen + " : " + "	Platos :  " + pL + "  Número de platos : "
-				+ numProd, menDdS.toString());
+				+ numProd + " precio del menu: " +precioTot, menDdS.toString());
 	}
 
 }

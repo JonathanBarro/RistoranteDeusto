@@ -42,7 +42,7 @@ public class testMesa {
 	@Test
 	public void testSetIdMesa() {
 		mesa.setIdMesa("2");
-		assertEquals(idMesa, mesa.getIdMesa());
+		assertEquals("2", mesa.getIdMesa());
 	}
 
 	@Test
@@ -53,7 +53,7 @@ public class testMesa {
 	@Test
 	public void testSetLugar() {
 		mesa.setLugar(2);
-		assertEquals(lugar+1, mesa.getLugar());
+		assertEquals(lugar-1, mesa.getLugar());
 	}
 
 	@Test
@@ -69,7 +69,7 @@ public class testMesa {
 
 	@Test
 	public void testToString() {
-		assertEquals("Mesa [idMesa=" + idMesa + ", lugar=" + lugar + ", ocupada=" + ocupada ,mesa.toString());
+		assertEquals("Mesa [idMesa=" + idMesa + ", lugar=" + lugar + ", ocupada=" + ocupada + ", sitios por mesa="+ mesa.getSitiosmesa() + "]",mesa.toString());
 	}
 
 }
