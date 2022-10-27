@@ -11,7 +11,7 @@ import org.junit.Test;
 import Logica.Interiror;
 import Logica.Mesa;
 
-public class JTestInterior {
+public class testInterior {
 	
 	private Interiror interiror;
 	private int numMes=3;

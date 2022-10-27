@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class JTestReserva {
+public class testMesa {
 
 	@Before
 	public void setUp() throws Exception {
@@ -17,67 +17,42 @@ public class JTestReserva {
 	}
 	
 	@Test
-	public void testReserva() {
+	public void testMesa() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetFecha() {
+	public void testGetSitiosmesa() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testSetFecha() {
+	public void testGetIdMesa() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetNumPersonas() {
+	public void testSetIdMesa() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testSetNumPersonas() {
+	public void testGetLugar() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetIdReserva() {
+	public void testSetLugar() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testSetIdReserva() {
+	public void testIsOcupada() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetaMesa() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetaMesa() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetaMenu() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetaMenu() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetCliente() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetCliente() {
+	public void testSetOcupada() {
 		fail("Not yet implemented");
 	}
 

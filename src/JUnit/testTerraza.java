@@ -11,7 +11,8 @@ import org.junit.Test;
 import Logica.Mesa;
 import Logica.Terraza;
 
-public class JTestTerraza {
+public class testTerraza {
+	
 	Terraza tr;
 	int nMe=3;
 	ArrayList<Mesa> ms = new ArrayList<>();

@@ -1,19 +1,20 @@
 package Logica;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 
 public class Reserva {
 	
-	private Date fecha;
+	private String fecha;
 	private int numPersonas;
 	private int idReserva;
 	private ArrayList<Mesa> aMesa;
 	private ArrayList<Menu> aMenu;
 	private Cliente cliente;
 	
-	public Reserva(Date fecha, int numPersonas, int idReserva, ArrayList<Mesa> aMesa, ArrayList<Menu> aMenu,
+	public Reserva(String fecha, int numPersonas, int idReserva, ArrayList<Mesa> aMesa, ArrayList<Menu> aMenu,
 			Cliente cliente) {
 		super();
 		this.fecha = fecha;
@@ -24,11 +25,11 @@ public class Reserva {
 		this.cliente = cliente;
 	}
 
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 

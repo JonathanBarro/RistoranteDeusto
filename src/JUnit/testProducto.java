@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class JTestMesa {
+public class testProducto {
 
 	@Before
 	public void setUp() throws Exception {
@@ -17,47 +17,47 @@ public class JTestMesa {
 	}
 	
 	@Test
-	public void testMesa() {
+	public void testProducto() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetSitiosmesa() {
+	public void testGetNombre() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetIdMesa() {
+	public void testSetNombre() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testSetIdMesa() {
+	public void testGetPrecio() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testGetLugar() {
+	public void testSetPrecio() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testSetLugar() {
+	public void testGetId() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testIsOcupada() {
+	public void testSetId() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testSetOcupada() {
+	public void testGetCantidad() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testToString() {
+	public void testSetCantidad() {
 		fail("Not yet implemented");
 	}
 

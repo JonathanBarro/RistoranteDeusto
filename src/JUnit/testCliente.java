@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import Logica.Cliente;
 
-public class JTestCliente {
+public class testCliente {
 	
 	private Cliente cliente;
 	private String nombre = "Iker"; 

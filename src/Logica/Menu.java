@@ -7,13 +7,15 @@ public class Menu {
 	private String id;
 	private ArrayList<Producto> aProducto = new ArrayList<>();
 	private int numProductos;
+	private double precioTotal;
 	
-	
-	public Menu(String id, ArrayList<Producto> aProducto, int numProductos) {
+
+	public Menu(String id, ArrayList<Producto> aProducto, int numProductos, double precioTotal) {
 		super();
 		this.id = id;
 		this.aProducto = aProducto;
 		this.numProductos = numProductos;
+		this.precioTotal = precioTotal;
 	}
 
 
@@ -46,5 +48,32 @@ public class Menu {
 		this.numProductos = numProductos;
 	}
 
+
+	public ArrayList<Producto> getaProducto() {
+		return aProducto;
+	}
+
+
+	public void setaProducto(ArrayList<Producto> aProducto) {
+		this.aProducto = aProducto;
+	}
+
+
+	public double getPrecioTotal() {
+		return precioTotal;
+	}
+
+
+	public void setPrecioTotal(double precioTotal) {
+		this.precioTotal = precioTotal;
+	}
+	
+	public double obtenerPreciototal(ArrayList<Producto> aProducto) {
+		double sumaTotal = 0;
+		for (Producto producto : aProducto) {
+			sumaTotal += producto.getPrecio();
+		}
+		return sumaTotal;
+	}
 	
 }

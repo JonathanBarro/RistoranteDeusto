@@ -73,10 +73,18 @@ public class VentanaVerMenus extends JFrame {
 		aComida.add(p2);
 		aComida.add(p3);
 		
-		Menu_Degustacion m1 = new Menu_Degustacion("Menu_Degustacion", aComida, aComida.size());
-		Menu_EntreSemana m2 = new Menu_EntreSemana("Menu_EntreSemana", aComida, aComida.size(),false);
-		Menu_Infantil m3 = new Menu_Infantil("Menu_Infantil", aComida, aComida.size());
-		Menu_FinDeSemana m4 = new Menu_FinDeSemana("Menu_FinDeSemana", aComida, aComida.size(), 8);
+double precioTot=0;
+		
+		
+		Menu_Degustacion m1 = new Menu_Degustacion("Menu_Degustacion", aComida, aComida.size(),precioTot);
+		Menu_EntreSemana m2 = new Menu_EntreSemana("Menu_EntreSemana", aComida, aComida.size(), precioTot,false);
+		Menu_Infantil m3 = new Menu_Infantil("Menu_Infantil", aComida, aComida.size(),precioTot);
+		Menu_FinDeSemana m4 = new Menu_FinDeSemana("Menu_FinDeSemana", aComida, aComida.size(), precioTot,8);
+		
+		m1.setPrecioTotal(m1.obtenerPreciototal(aComida));
+		m2.setPrecioTotal(m2.obtenerPreciototal(aComida));
+		m3.setPrecioTotal(m3.obtenerPreciototal(aComida));
+		m4.setPrecioTotal(m4.obtenerPreciototal(aComida));
 		
 		JLabel lblDegus = new JLabel(m1.toString());
 		JLabel lblEntre = new JLabel(m2.toString());
