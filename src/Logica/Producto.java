@@ -47,12 +47,12 @@ public class Producto {
 	}
 
 
-	public int getCantidad() {
+	public int getStock() {
 		return stock;
 	}
 
 
-	public void setCantidad(int stock) {
+	public void setStock(int stock) {
 		this.stock = stock;
 	}
 

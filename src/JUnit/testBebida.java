@@ -6,10 +6,20 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import Logica.Bebida;
+
 public class testBebida {
+	
+	private String nombre = "name";
+	private double precio = 0;
+	private int id = 11;
+	private int stock = 12;
+	private boolean frio = true;
+	private Bebida bebida;
 	
 	@Before
 	public void setUp() throws Exception {
+		bebida = new Bebida(nombre, precio, id, stock, frio);
 	}
 
 	@After
@@ -17,22 +27,27 @@ public class testBebida {
 	}
 	@Test
 	public void testBebida() {
-		fail("Not yet implemented");
+		assertNotNull(bebida);
 	}
 
 	@Test
 	public void testIsFrio() {
-		fail("Not yet implemented");
+		assertEquals(true, bebida.isFrio());
 	}
 
 	@Test
 	public void testSetFrio() {
-		fail("Not yet implemented");
+		bebida.setFrio(false);
+		assertEquals(false, bebida.isFrio());
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		//toString si es FRIA
+		assertEquals(bebida.getNombre() + " " + bebida.getPrecio() + "€ fria", bebida.toString());
+		//toString si es DEL TIEMPO
+		bebida.setFrio(false);
+		assertEquals(bebida.getNombre() + " " + bebida.getPrecio() + "€ del tiempo", bebida.toString());
 	}
 
 }

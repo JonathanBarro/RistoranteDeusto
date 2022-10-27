@@ -6,10 +6,19 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import Logica.Producto;
+
 public class testProducto {
 
+	private String nombre = "name";
+	private double precio = 0;
+	private int id = 11;
+	private int stock = 12;
+	Producto producto;
+	
 	@Before
 	public void setUp() throws Exception {
+		producto = new Producto(nombre, precio, id, stock);
 	}
 
 	@After
@@ -18,47 +27,51 @@ public class testProducto {
 	
 	@Test
 	public void testProducto() {
-		fail("Not yet implemented");
+		assertNotNull(producto);
 	}
 
 	@Test
 	public void testGetNombre() {
-		fail("Not yet implemented");
+		assertEquals(nombre, producto.getNombre());
 	}
 
 	@Test
 	public void testSetNombre() {
-		fail("Not yet implemented");
+		producto.setNombre("Alvaro");
+		assertEquals("Alvaro", producto.getNombre());
 	}
 
 	@Test
 	public void testGetPrecio() {
-		fail("Not yet implemented");
+		assertEquals(precio, producto.getPrecio(),0);
 	}
 
 	@Test
 	public void testSetPrecio() {
-		fail("Not yet implemented");
+		producto.setPrecio(20.5);
+		assertEquals(20.5, producto.getPrecio(),0);
 	}
 
 	@Test
 	public void testGetId() {
-		fail("Not yet implemented");
+		assertEquals(id, producto.getId());
 	}
 
 	@Test
 	public void testSetId() {
-		fail("Not yet implemented");
+		producto.setId(22);
+		assertEquals(22, producto.getId());
 	}
 
 	@Test
-	public void testGetCantidad() {
-		fail("Not yet implemented");
+	public void testGetStock() {
+		assertEquals(stock, producto.getStock());
 	}
 
 	@Test
-	public void testSetCantidad() {
-		fail("Not yet implemented");
+	public void testSetStock() {
+		producto.setStock(0);
+		assertEquals(0, producto.getStock());
 	}
 
 }
