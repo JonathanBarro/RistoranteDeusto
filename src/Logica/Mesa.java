@@ -6,6 +6,7 @@ public class Mesa {
 	private String idMesa;
 	private int lugar;//para saber si se ubica dentro a fuera: 0 Dentro / 1 Fuera
 	private boolean ocupada;
+	
 
 	public Mesa(String idMesa, int lugar, boolean ocupada) {
 		super();

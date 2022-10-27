@@ -6,10 +6,18 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class testMesa {
+import Logica.Mesa;
 
+public class testMesa {
+	
+	private String idMesa="1";
+	private int lugar=3;
+	private boolean ocupada=false;
+	Mesa mesa;
+	
 	@Before
 	public void setUp() throws Exception {
+		mesa= new Mesa(idMesa, lugar, ocupada);
 	}
 
 	@After
@@ -18,47 +26,50 @@ public class testMesa {
 	
 	@Test
 	public void testMesa() {
-		fail("Not yet implemented");
+		assertNotNull(mesa);
 	}
 
 	@Test
 	public void testGetSitiosmesa() {
-		fail("Not yet implemented");
+		assertEquals(4, mesa.getSitiosmesa());
 	}
 
 	@Test
 	public void testGetIdMesa() {
-		fail("Not yet implemented");
+		assertEquals(idMesa, mesa.getIdMesa());
 	}
 
 	@Test
 	public void testSetIdMesa() {
-		fail("Not yet implemented");
+		mesa.setIdMesa("2");
+		assertEquals(idMesa, mesa.getIdMesa());
 	}
 
 	@Test
 	public void testGetLugar() {
-		fail("Not yet implemented");
+		assertEquals(lugar, mesa.getLugar());
 	}
 
 	@Test
 	public void testSetLugar() {
-		fail("Not yet implemented");
+		mesa.setLugar(2);
+		assertEquals(lugar+1, mesa.getLugar());
 	}
 
 	@Test
 	public void testIsOcupada() {
-		fail("Not yet implemented");
+		assertEquals(ocupada, mesa.isOcupada());
 	}
 
 	@Test
 	public void testSetOcupada() {
-		fail("Not yet implemented");
+		mesa.setOcupada(true);
+		assertEquals(ocupada=true, mesa.isOcupada());
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		assertEquals("Mesa [idMesa=" + idMesa + ", lugar=" + lugar + ", ocupada=" + ocupada ,mesa.toString());
 	}
 
 }

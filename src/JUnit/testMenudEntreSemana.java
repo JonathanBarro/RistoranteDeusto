@@ -2,15 +2,28 @@ package JUnit;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import Logica.Menu_EntreSemana;
+import Logica.Menu_FinDeSemana;
+import Logica.Producto;
+
 public class testMenudEntreSemana {
 	
+	private String idMen="1B";
+	private ArrayList<Producto> pL = new ArrayList<>();
+	private int numProd=6;
+	private boolean estudiante=false;
+	private double precioTot = 15;
+	Menu_EntreSemana menFin;
 
 	@Before
 	public void setUp() throws Exception {
+		menFin = new Menu_EntreSemana(idMen, pL, numProd, precioTot, estudiante);
 	}
 
 	@After
@@ -19,22 +32,24 @@ public class testMenudEntreSemana {
 	
 	@Test
 	public void testMenu_EntreSemana() {
-		fail("Not yet implemented");
+		assertNotNull(menFin);
 	}
 
 	@Test
 	public void testIsDescuentoEstudiantes() {
-		fail("Not yet implemented");
+		assertEquals(estudiante, menFin.isDescuentoEstudiantes());
 	}
 
 	@Test
 	public void testSetDescuentoEstudiantes() {
-		fail("Not yet implemented");
+		menFin.setDescuentoEstudiantes(true);
+		assertEquals(estudiante=true, menFin.isDescuentoEstudiantes());
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		assertEquals( idMen + " : " + "	Platos :  " + pL + "  Número de platos : "
+				+ numProd + " precio del menu: " + precioTot, menFin.toString());
 	}
 
 }
