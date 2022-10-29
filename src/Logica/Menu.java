@@ -10,6 +10,10 @@ public class Menu {
 	private double precioTotal;
 	
 
+	public Menu() {
+
+	}
+	
 	public Menu(String id, ArrayList<Producto> aProducto, int numProductos, double precioTotal) {
 		super();
 		this.id = id;

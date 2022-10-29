@@ -7,6 +7,10 @@ public class Menu_FinDeSemana extends Menu{
 	private int numPersonas;//Si hay más de X numero de perosnas se le aplica un 10% descuento.
 
 
+	
+	public Menu_FinDeSemana() {
+
+	}
 
 	public Menu_FinDeSemana(String id, ArrayList<Producto> aProducto, int numProductos, double precioTotal,
 			int numPersonas) {

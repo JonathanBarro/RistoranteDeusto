@@ -3,6 +3,11 @@ package Logica;
 public class Bebida extends Producto{
 
 	private boolean frio;
+	
+	
+	public Bebida() {
+
+	}
 
 	public Bebida(String nombre, double precio, int id, int stock, boolean frio) {
 		super(nombre, precio, id, stock);

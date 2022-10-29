@@ -8,6 +8,12 @@ public class Producto {
 	private int stock;
 	
 	
+	
+	public Producto() {
+
+	}
+	
+	
 	public Producto(String nombre, double precio, int id, int stock) {
 		super();
 		this.nombre = nombre;

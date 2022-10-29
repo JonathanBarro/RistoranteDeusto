@@ -14,6 +14,11 @@ public class Reserva {
 	private ArrayList<Menu> aMenu;
 	private Cliente cliente;
 	
+	
+	public Reserva() {
+
+	}
+	
 	public Reserva(String fecha, int numPersonas, int idReserva, ArrayList<Mesa> aMesa, ArrayList<Menu> aMenu,
 			Cliente cliente) {
 		super();

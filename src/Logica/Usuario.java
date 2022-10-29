@@ -6,6 +6,11 @@ public class Usuario {
 	private String apellido;
 	private String contrasenia;
 	
+	
+	public Usuario() {
+
+	}
+	
 	public Usuario(String nombre, String apellido, String contrasenia) {
 		super();
 		this.nombre = nombre;

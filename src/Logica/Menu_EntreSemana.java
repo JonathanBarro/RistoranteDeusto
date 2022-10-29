@@ -6,6 +6,10 @@ public class Menu_EntreSemana extends Menu{
 	
 	private boolean descuentoEstudiantes;//Si es estudiantes se le aplica un 15% de descuento
 	
+	
+	public Menu_EntreSemana() {
+
+	}
 
 	public Menu_EntreSemana(String id, ArrayList<Producto> aProducto, int numProductos, double precioTotal,
 			boolean descuentoEstudiantes) {

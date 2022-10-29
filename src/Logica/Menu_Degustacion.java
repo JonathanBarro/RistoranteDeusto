@@ -3,6 +3,11 @@ package Logica;
 import java.util.ArrayList;
 
 public class Menu_Degustacion extends Menu{
+	
+	
+	public Menu_Degustacion() {
+	
+	}
 
 
 	public Menu_Degustacion(String id, ArrayList<Producto> aProducto, int numProductos, double precioTotal) {

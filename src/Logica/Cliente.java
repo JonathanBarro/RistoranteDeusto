@@ -3,6 +3,11 @@ package Logica;
 public class Cliente extends Usuario{
 
 	private int numTlfn;
+	
+	public Cliente() {
+		
+	}
+	
 
 	public Cliente(String nombre, String apellido, String contrasenia, int numTlfn) {
 		super(nombre, apellido, contrasenia);

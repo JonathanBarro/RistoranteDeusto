@@ -5,6 +5,13 @@ public class Admin extends Usuario{
 	private int idAdmin;
 	private double sueldo;
 	
+	
+	
+	public Admin() {
+
+	}
+	
+	
 	public Admin(String nombre, String apellido, String contrasenia, int idAdmin, double sueldo) {
 		super(nombre, apellido, contrasenia);
 		this.idAdmin = idAdmin;
