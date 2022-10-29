@@ -31,6 +31,40 @@ public class testAdmin {
 		assertNotNull("admin");
 	}
 
+
+	@Test
+	public void testGetNombre() {
+		assertEquals(nombre, admin.getNombre());
+	}
+
+	@Test
+	public void testSetNombre() {
+		admin.setNombre("Juanjo");
+		assertEquals("Juanjo", admin.getNombre());
+	}
+
+	@Test
+	public void testGetApellido() {
+		assertEquals(apellido, admin.getApellido());
+	}
+
+	@Test
+	public void testSetApellido() {
+		admin.setApellido("Perez");
+		assertEquals("Perez", admin.getApellido());
+	}
+
+	@Test
+	public void testGetContrasenia() {
+		assertEquals(contrasenia, admin.getContrasenia());
+	}
+
+	@Test
+	public void testSetContrasenia() {
+		admin.setContrasenia("1a2b3c4d");
+		assertEquals("1a2b3c4d" ,admin.getContrasenia());
+	}
+
 	@Test
 	public void testGetIdAdmin() {
 		assertEquals(idAdmin, admin.getIdAdmin());
