@@ -15,7 +15,7 @@ public class testAdmin {
 	private String contrasenia = "contrasenia12345";
 	private int idAdmin = 111;
 	private double sueldo = 1500;
-	private String toString = "admin [idAdmin = 111, sueldo = 1500]";
+	private String toString = "Admin [idAdmin=111, sueldo=1500.0, nombre=Juanjo, apellido=Perez, contrasenia=contrasenia12345]";
 	
 	@Before
 	public void setUp() throws Exception {
@@ -78,13 +78,13 @@ public class testAdmin {
 
 	@Test
 	public void testGetSueldo() {
-		assertEquals(sueldo, admin.getSueldo());
+		assertEquals(sueldo, admin.getSueldo(),0);
 	}
 
 	@Test
 	public void testSetSueldo() {
 		admin.setSueldo(sueldo-1);
-		assertEquals(sueldo-1, admin.getSueldo());
+		assertEquals(sueldo-1, admin.getSueldo(),0);
 	}
 
 	@Test
