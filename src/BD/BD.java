@@ -269,7 +269,8 @@ public class BD {
 		}
 		
 		
-		
+		//Cambiar precio
+		//Cambiar ocupacion
 		
 	
 	
