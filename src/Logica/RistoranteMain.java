@@ -30,6 +30,11 @@ public class RistoranteMain {
 		bd.insertarDatos(clientes, admins, bebidas, comidas, menuDegustacion, menuEntreSemanas, menuFinDeSemanas, menuInfantiles, mesas, reservas);
 		clientes = bd.obtenerDatos();
 		printClientes(clientes);
+		bebidas = bd.obtenerDatosBebidas();
+		printBebidas(bebidas);
+		bd.cambiarPrecio(bebidas.get(0), 4);
+		bebidas = bd.obtenerDatosBebidas();
+		printBebidas(bebidas);
 		
 		bd.borrarBBDD();
 	

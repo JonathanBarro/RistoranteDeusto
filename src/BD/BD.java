@@ -125,26 +125,26 @@ public class BD {
 				String sql = "INSERT INTO Cliente (nombre, apellido, contrasena, numTlf) VALUES ('%s', '%s', '%s',%d);";
 				System.out.println("- Insertando clientes...");
 				
-				String sql1 = "INSERT INTO Admin (nombre, apellido, contrasena, idAdmin, sueldo) VALUES ('%s', '%s', '%s', '%d', '%f');";
+				String sql1 = "INSERT INTO Admin (nombre, apellido, contrasena, idAdmin, sueldo) VALUES ('%s', '%s', '%s', %d, '%f');";
 				System.out.println("- Insertando admministradores...");
 				
-				String sql2 = "INSERT INTO Bebida (nombre, precio, id, stock, frio) VALUES ('%s', '%f', '%d', '%d', '%s');";
+				String sql2 = "INSERT INTO Bebida (nombre, precio, id, stock, frio) VALUES ('%s', '%f', %d, %d, '%s');";
 				System.out.println("- Insertando bebida...");
 				
-				String sql3 = "INSERT INTO Comida (nombre, precio, id, stock) VALUES ('%s', '%f', '%d', '%d');";
+				String sql3 = "INSERT INTO Comida (nombre, precio, id, stock) VALUES ('%s', '%f', %d, %d);";
 				System.out.println("- Insertando comida...");
 				
-				String sql4 = "INSERT INTO Menu_Degustacion(id , numProductos) VALUES ('%s', '%d');";
-				String sql5 = "INSERT INTO Menu_EntreSemana(id , numProductos , descuentoEstudiante) VALUES ('%s', '%d', '%s');";
-				String sql6 = "INSERT INTO Menu_FinDeSemana(id, numProductos, numPersonas) VALUES ('%s', '%d', '%d');";
-				String sql7 = "INSERT INTO Menu_Infantil(id, numProductos) VALUES ('%s', '%d');";
+				String sql4 = "INSERT INTO Menu_Degustacion(id , numProductos) VALUES ('%s', %d);";
+				String sql5 = "INSERT INTO Menu_EntreSemana(id , numProductos , descuentoEstudiante) VALUES ('%s', %d, '%s');";
+				String sql6 = "INSERT INTO Menu_FinDeSemana(id, numProductos, numPersonas) VALUES ('%s', %d, %d);";
+				String sql7 = "INSERT INTO Menu_Infantil(id, numProductos) VALUES ('%s', %d);";
 				System.out.println("- Insertando menus...");
 				
 
-				String sql8 = "INSERT INTO Mesa(idMesa, lugar, ocupada) VALUES ('%s', '%d', '%s');";
+				String sql8 = "INSERT INTO Mesa(idMesa, lugar, ocupada) VALUES ('%s', %d, '%s');";
 				System.out.println("- Insertando mesas...");
 				
-				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', '%d', '%s');";
+				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, '%s');";
 				
 				System.out.println("- Insertando reservas...");
 				
@@ -266,6 +266,65 @@ public class BD {
 			}		
 			
 			return clientes;
+		}
+		
+		
+		public List<Bebida> obtenerDatosBebidas() {
+			List<Bebida> bebidas = new ArrayList<>();
+			
+			//Se abre la conexi�n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				String sql = "SELECT * FROM BEBIDA WHERE id >= 0";
+				
+				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
+				ResultSet rs = stmt.executeQuery(sql);			
+				Bebida bebida;
+				
+				//Se recorre el ResultSet y se crean objetos Cliente
+				while (rs.next()) {
+					bebida = new Bebida();
+					
+					bebida.setNombre(rs.getString("nombre"));
+					bebida.setId(rs.getInt("id"));
+					bebida.setPrecio(rs.getInt("precio"));
+					bebida.setStock(rs.getInt("stock"));
+					bebida.setFrio(rs.getBoolean("frio"));
+					
+					
+					//Se inserta cada nuevo cliente en la lista de clientes
+					bebidas.add(bebida);
+				}
+				
+				//Se cierra el ResultSet
+				rs.close();
+				
+				System.out.println(String.format("- Se han recuperado %d bebida...", bebidas.size()));			
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}		
+			
+			return bebidas;
+		}
+		
+		
+		
+		
+		public void cambiarPrecio(Bebida bebida, Integer nuevoprecio) {
+			//Se abre la conexi�n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				//Se ejecuta la sentencia de borrado de datos
+				String sql = "UPDATE BEBIDA SET precio = %d WHERE ID = %d;";
+				
+				int result = stmt.executeUpdate(String.format(sql, nuevoprecio, bebida.getId()));
+				
+				System.out.println(String.format("- Se ha actulizado %d bebida", result));
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}		
 		}
 		
 		
