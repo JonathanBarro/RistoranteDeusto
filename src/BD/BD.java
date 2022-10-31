@@ -1,5 +1,6 @@
 package BD;
 
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Connection;
@@ -45,7 +46,7 @@ public class BD {
 	public void crearBBDD() {
 		//Se abre la conexi�n y se obtiene el Statement
 		//Al abrir la conexi�n, si no exist�a el fichero, se crea la base de datos
-		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+		try (Connection con = DriverManager.getConnection("jdbc:sqlite:" + "db/database.db");
 		     Statement st = con.createStatement()) {
 			String sql = "CREATE TABLE IF NOT EXISTS Cliente (nombre String, apellido String, contrasena String, numTlf Integer)";
 			st.executeUpdate(sql);
@@ -65,7 +66,7 @@ public class BD {
 			st.executeUpdate(sql7);
 			String sql8 = "CREATE TABLE IF NOT EXISTS Mesa(idMesa String, lugar Integer, ocupada String)";
 			st.executeUpdate(sql8);
-			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha String, numeroPersonas Integer, idReserva String)";
+			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha String, numeroPersonas Integer, idReserva Integer)";
 			st.executeUpdate(sql9);
 	        	        
 	        if (!st.execute(sql)) {
@@ -125,13 +126,13 @@ public class BD {
 				String sql = "INSERT INTO Cliente (nombre, apellido, contrasena, numTlf) VALUES ('%s', '%s', '%s',%d);";
 				System.out.println("- Insertando clientes...");
 				
-				String sql1 = "INSERT INTO Admin (nombre, apellido, contrasena, idAdmin, sueldo) VALUES ('%s', '%s', '%s', %d, '%f');";
+				String sql1 = "INSERT INTO Admin (nombre, apellido, contrasena, idAdmin, sueldo) VALUES ('%s', '%s', '%s', %d, '%.2f');";
 				System.out.println("- Insertando admministradores...");
 				
 				String sql2 = "INSERT INTO Bebida (nombre, precio, id, stock, frio) VALUES ('%s', '%f', %d, %d, '%s');";
 				System.out.println("- Insertando bebida...");
 				
-				String sql3 = "INSERT INTO Comida (nombre, precio, id, stock) VALUES ('%s', '%f', %d, %d);";
+				String sql3 = "INSERT INTO Comida (nombre, precio, id, stock) VALUES ('%s', '%.2f', %d, %d);";
 				System.out.println("- Insertando comida...");
 				
 				String sql4 = "INSERT INTO Menu_Degustacion(id , numProductos) VALUES ('%s', %d);";
@@ -144,7 +145,7 @@ public class BD {
 				String sql8 = "INSERT INTO Mesa(idMesa, lugar, ocupada) VALUES ('%s', %d, '%s');";
 				System.out.println("- Insertando mesas...");
 				
-				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, '%s');";
+				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, '%d');";
 				
 				System.out.println("- Insertando reservas...");
 				
@@ -230,7 +231,7 @@ public class BD {
 		
 		
 		
-		public List<Cliente> obtenerDatos() {
+		public List<Cliente> obtenerDatosClientes() {
 			List<Cliente> clientes = new ArrayList<>();
 			
 			//Se abre la conexi�n y se obtiene el Statement
@@ -269,6 +270,46 @@ public class BD {
 		}
 		
 		
+		public List<Admin> obtenerDatosAdmins() {
+			List<Admin> admins = new ArrayList<>();
+			
+			//Se abre la conexi�n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				String sql = "SELECT * FROM Admin WHERE idAdmin >= 0";
+				
+				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
+				ResultSet rs = stmt.executeQuery(sql);			
+				Admin admin;
+				
+				//Se recorre el ResultSet y se crean objetos Cliente
+				while (rs.next()) {
+					admin = new Admin();
+					
+					admin.setNombre(rs.getString("nombre"));
+					admin.setIdAdmin(rs.getInt("idAdmin"));
+					admin.setApellido(rs.getString("apellido"));
+					admin.setContrasenia(rs.getString("contrasena"));
+					admin.setSueldo(rs.getDouble("sueldo"));
+					
+					
+					//Se inserta cada nuevo cliente en la lista de clientes
+					admins.add(admin);
+				}
+				
+				//Se cierra el ResultSet
+				rs.close();
+				
+				System.out.println(String.format("- Se han recuperado %d admins...", admins.size()));			
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}		
+			
+			return admins;
+		}
+		
+		
 		public List<Bebida> obtenerDatosBebidas() {
 			List<Bebida> bebidas = new ArrayList<>();
 			
@@ -299,7 +340,7 @@ public class BD {
 				//Se cierra el ResultSet
 				rs.close();
 				
-				System.out.println(String.format("- Se han recuperado %d bebida...", bebidas.size()));			
+				System.out.println(String.format("- Se han recuperado %d bebidas...", bebidas.size()));			
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
 				ex.printStackTrace();						
@@ -308,7 +349,263 @@ public class BD {
 			return bebidas;
 		}
 		
+		public List<Comida> obtenerDatosComidas() {
+			List<Comida> comidas = new ArrayList<>();
+			
+			//Se abre la conexi�n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				String sql = "SELECT * FROM Comida WHERE id >= 0";
+				
+				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
+				ResultSet rs = stmt.executeQuery(sql);			
+				Comida comida;
+				
+				//Se recorre el ResultSet y se crean objetos Cliente
+				while (rs.next()) {
+					comida = new Comida();
+					
+					comida.setNombre(rs.getString("nombre"));
+					comida.setId(rs.getInt("id"));
+					comida.setPrecio(rs.getInt("precio"));
+					comida.setStock(rs.getInt("stock"));
+					
+					
+					//Se inserta cada nuevo cliente en la lista de clientes
+					comidas.add(comida);
+				}
+				
+				//Se cierra el ResultSet
+				rs.close();
+				
+				System.out.println(String.format("- Se han recuperado %d comidas...", comidas.size()));			
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}		
+			
+			return comidas;
+		}
 		
+		public List<Mesa> obtenerDatosMesas() {
+			List<Mesa> mesas = new ArrayList<>();
+			
+			//Se abre la conexi�n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				String sql = "SELECT * FROM Mesa";
+				
+				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
+				ResultSet rs = stmt.executeQuery(sql);			
+				Mesa mesa;
+				
+				//Se recorre el ResultSet y se crean objetos Cliente
+				while (rs.next()) {
+					mesa = new Mesa();
+					
+					mesa.setIdMesa(rs.getString("idMesa"));
+					mesa.setLugar(rs.getInt("lugar"));
+					mesa.setOcupada(rs.getBoolean("ocupada"));
+					
+					
+					//Se inserta cada nuevo cliente en la lista de clientes
+					mesas.add(mesa);
+				}
+				
+				//Se cierra el ResultSet
+				rs.close();
+				
+				System.out.println(String.format("- Se han recuperado %d mesas...", mesas.size()));			
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}		
+			
+			return mesas;
+		}
+		
+		public List<Reserva> obtenerDatosReservas() {
+			List<Reserva> reservas = new ArrayList<>();
+			
+			//Se abre la conexi�n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				String sql = "SELECT * FROM Reserva";
+				
+				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
+				ResultSet rs = stmt.executeQuery(sql);			
+				Reserva reserva;
+				
+				//Se recorre el ResultSet y se crean objetos Cliente
+				while (rs.next()) {
+					reserva = new Reserva();
+					
+					reserva.setFecha(rs.getString("fecha"));
+					reserva.setNumPersonas(rs.getInt("numeroPersonas"));
+					reserva.setIdReserva(rs.getInt("idReserva"));
+					
+					
+					//Se inserta cada nuevo cliente en la lista de clientes
+					reservas.add(reserva);
+				}
+				
+				//Se cierra el ResultSet
+				rs.close();
+				
+				System.out.println(String.format("- Se han recuperado %d reservas...", reservas.size()));			
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}		
+			
+			return reservas;
+		}
+		
+		public List<Menu_EntreSemana> obtenerDatosMenu_EntreSemana() {
+			List<Menu_EntreSemana> menusEntreSemana = new ArrayList<>();
+			
+			//Se abre la conexi�n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				String sql = "SELECT * FROM Menu_EntreSemana";
+				
+				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
+				ResultSet rs = stmt.executeQuery(sql);			
+				Menu_EntreSemana menuEntreSemana;
+				
+				//Se recorre el ResultSet y se crean objetos Cliente
+				while (rs.next()) {
+					menuEntreSemana = new Menu_EntreSemana();
+					
+					menuEntreSemana.setId(rs.getString("id"));
+					menuEntreSemana.setNumProductos(rs.getInt("numProductos"));
+					menuEntreSemana.setDescuentoEstudiantes(rs.getBoolean("descuentoEstudiante"));
+					
+					
+					//Se inserta cada nuevo cliente en la lista de clientes
+					menusEntreSemana.add(menuEntreSemana);
+				}
+				
+				//Se cierra el ResultSet
+				rs.close();
+				
+				System.out.println(String.format("- Se han recuperado %d Menu_EntreSemana...", menusEntreSemana.size()));			
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}		
+			
+			return menusEntreSemana;
+		}
+		
+		public List<Menu_FinDeSemana> obtenerDatosMenu_FinDeSemana() {
+			List<Menu_FinDeSemana> menusFinDeSemana = new ArrayList<>();
+			
+			//Se abre la conexi�n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				String sql = "SELECT * FROM Menu_FinDeSemana";
+				
+				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
+				ResultSet rs = stmt.executeQuery(sql);			
+				Menu_FinDeSemana menuFinDeSemana;
+				
+				//Se recorre el ResultSet y se crean objetos Cliente
+				while (rs.next()) {
+					menuFinDeSemana = new Menu_FinDeSemana();
+					
+					menuFinDeSemana.setId(rs.getString("id"));
+					menuFinDeSemana.setNumProductos(rs.getInt("numProductos"));
+					menuFinDeSemana.setNumPersonas(rs.getInt("numPersonas"));
+					
+					
+					//Se inserta cada nuevo cliente en la lista de clientes
+					menusFinDeSemana.add(menuFinDeSemana);
+				}
+				
+				//Se cierra el ResultSet
+				rs.close();
+				
+				System.out.println(String.format("- Se han recuperado %d Menu_FinDeSemana...", menusFinDeSemana.size()));			
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}		
+			
+			return menusFinDeSemana;
+		}
+		
+		public List<Menu_Degustacion> obtenerDatosMenu_Degustacion() {
+			List<Menu_Degustacion> menusDegustacion = new ArrayList<>();
+			
+			//Se abre la conexi�n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				String sql = "SELECT * FROM Menu_Degustacion";
+				
+				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
+				ResultSet rs = stmt.executeQuery(sql);			
+				Menu_Degustacion menuDegustacion;
+				
+				//Se recorre el ResultSet y se crean objetos Cliente
+				while (rs.next()) {
+					menuDegustacion = new Menu_Degustacion();
+					
+					menuDegustacion.setId(rs.getString("id"));
+					menuDegustacion.setNumProductos(rs.getInt("numProductos"));
+					
+					
+					//Se inserta cada nuevo cliente en la lista de clientes
+					menusDegustacion.add(menuDegustacion);
+				}
+				
+				//Se cierra el ResultSet
+				rs.close();
+				
+				System.out.println(String.format("- Se han recuperado %d Menu_Degustacion...", menusDegustacion.size()));			
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}		
+			
+			return menusDegustacion;
+		}
+		
+		public List<Menu_Infantil> obtenerDatosMenu_Infantil() {
+			List<Menu_Infantil> menusInfantil = new ArrayList<>();
+			
+			//Se abre la conexi�n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				String sql = "SELECT * FROM Menu_Infantil";
+				
+				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
+				ResultSet rs = stmt.executeQuery(sql);			
+				Menu_Infantil menuInfantil;
+				
+				//Se recorre el ResultSet y se crean objetos Cliente
+				while (rs.next()) {
+					menuInfantil = new Menu_Infantil();
+					
+					menuInfantil.setId(rs.getString("id"));
+					menuInfantil.setNumProductos(rs.getInt("numProductos"));
+					
+					
+					//Se inserta cada nuevo cliente en la lista de clientes
+					menusInfantil.add(menuInfantil);
+				}
+				
+				//Se cierra el ResultSet
+				rs.close();
+				
+				System.out.println(String.format("- Se han recuperado %d Menu_Infantil...", menusInfantil.size()));			
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}		
+			
+			return menusInfantil;
+		}
 		
 		
 		public void cambiarPrecio(Bebida bebida, Integer nuevoprecio) {

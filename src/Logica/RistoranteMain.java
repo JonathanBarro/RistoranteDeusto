@@ -1,5 +1,6 @@
 package Logica;
 
+import java.io.File;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,13 +11,51 @@ public class RistoranteMain {
 	
 	public static void main(String[] args) {
 		
-		
 		BD bd = new BD();		
 		
 		//CREATE DATABASE: Se crea la BBDD
-		bd.crearBBDD();
+		//bd.crearBBDD();
 		
 		//INSERT: Insertar datos en la BBDD		
+		//cargarBD(bd);
+		
+		List<Cliente> clientes = bd.obtenerDatosClientes();
+		printClientes(clientes);
+		List<Bebida> bebidas = bd.obtenerDatosBebidas();
+		printBebidas(bebidas);
+		bd.cambiarPrecio(bebidas.get(0), 4);
+		bebidas = bd.obtenerDatosBebidas();
+		printBebidas(bebidas);
+		
+		List<Admin> admins = bd.obtenerDatosAdmins();
+		printAdmin(admins);
+		
+		List<Comida> comidas = bd.obtenerDatosComidas();
+		printComida(comidas);
+		
+		List<Mesa> mesas = bd.obtenerDatosMesas();
+		printMesa(mesas);
+		
+		List<Reserva> reservas = bd.obtenerDatosReservas();
+		printReserva(reservas);
+		
+		List<Menu_Degustacion> menuDegustacion = bd.obtenerDatosMenu_Degustacion();
+		printMenu_Degustacion(menuDegustacion);
+		
+		List<Menu_EntreSemana>menuEntreSemanas = bd.obtenerDatosMenu_EntreSemana();
+		printMenu_EntreSemana(menuEntreSemanas);
+		
+		List<Menu_FinDeSemana> menuFinDeSemanas = bd.obtenerDatosMenu_FinDeSemana();
+		printMenu_FinDeSemana(menuFinDeSemanas);
+		
+		List<Menu_Infantil> menuInfantiles = bd.obtenerDatosMenu_Infantil();
+		printMenu_Infantil(menuInfantiles);
+		
+		
+		//bd.borrarBBDD();
+	
+	}
+	private static void cargarBD(BD bd) {
 		List<Cliente> clientes = initClientes();
 		List<Admin> admins = initAdmin();
 		List<Bebida> bebidas = initBebidas();
@@ -28,18 +67,7 @@ public class RistoranteMain {
 		List<Mesa> mesas = initMesa();
 		List<Reserva> reservas = initReservas();
 		bd.insertarDatos(clientes, admins, bebidas, comidas, menuDegustacion, menuEntreSemanas, menuFinDeSemanas, menuInfantiles, mesas, reservas);
-		clientes = bd.obtenerDatos();
-		printClientes(clientes);
-		bebidas = bd.obtenerDatosBebidas();
-		printBebidas(bebidas);
-		bd.cambiarPrecio(bebidas.get(0), 4);
-		bebidas = bd.obtenerDatosBebidas();
-		printBebidas(bebidas);
-		
-		bd.borrarBBDD();
-	
 	}
-	
 	
 	private static void printClientes(List<Cliente> clientes) {
 		if (!clientes.isEmpty()) {		
