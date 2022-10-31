@@ -11,14 +11,28 @@ public class RistoranteMain {
 	public static void main(String[] args) {
 		
 		
-//		GestorBD gestorBD = new GestorBD();		
-//		
-//		//CREATE DATABASE: Se crea la BBDD
-//		gestorBD.crearBBDD();
-//		
-//		//INSERT: Insertar datos en la BBDD		
-//		List<Cliente> clientes = initClientes();
-//		gestorBD.insertarDatos(clientes.toArray(new Cliente[clientes.size()]));
+		BD bd = new BD();		
+		
+		//CREATE DATABASE: Se crea la BBDD
+		bd.crearBBDD();
+		
+		//INSERT: Insertar datos en la BBDD		
+		List<Cliente> clientes = initClientes();
+		List<Admin> admins = initAdmin();
+		List<Bebida> bebidas = initBebidas();
+		List<Comida> comidas = initComidas();
+		List<Menu_Degustacion> menuDegustacion = initMenu_Degustacion();
+		List<Menu_EntreSemana> menuEntreSemanas = initMenu_EntreSemana();
+		List<Menu_FinDeSemana> menuFinDeSemanas = initMenu_FinDeSemana();
+		List<Menu_Infantil> menuInfantiles = initMenu_Infantil();
+		List<Mesa> mesas = initMesa();
+		List<Reserva> reservas = initReservas();
+		bd.insertarDatos(clientes, admins, bebidas, comidas, menuDegustacion, menuEntreSemanas, menuFinDeSemanas, menuInfantiles, mesas, reservas);
+		clientes = bd.obtenerDatos();
+		printClientes(clientes);
+		
+		bd.borrarBBDD();
+	
 	}
 	
 	
@@ -37,6 +51,7 @@ public class RistoranteMain {
 		cliente.setNombre("Bruce Banner");
 		cliente.setApellido("hulk@gmail.com");
 		cliente.setContrasenia("NUcRn8h85RZZTjg6UBwa");
+		cliente.setNumTlfn(1);
 		clientes.add(cliente);
 		
 		return clientes;
@@ -57,9 +72,9 @@ public class RistoranteMain {
 		
 		Admin admin = new Admin();
 		admin.setNombre("NomA1");
-		admin.setApellido(null);
-		admin.setIdAdmin(0);
-		admin.setSueldo(0);
+		admin.setApellido("ApeA1");
+		admin.setIdAdmin(12);
+		admin.setSueldo(2234);
 		admins.add(admin);
 		
 		return admins;
@@ -77,10 +92,10 @@ public class RistoranteMain {
 		List<Bebida> bebidas = new ArrayList<>();
 		
 		Bebida bebida = new Bebida();
-		bebida.setNombre("Bruce Banner");
-		bebida.setPrecio(0);
-		bebida.setId(0);
-		bebida.setStock(0);
+		bebida.setNombre("Cocacola");
+		bebida.setPrecio(2);
+		bebida.setId(123);
+		bebida.setStock(3);
 		bebida.setFrio(false);
 		bebidas.add(bebida);
 		
@@ -100,10 +115,10 @@ public class RistoranteMain {
 		List<Comida> comidas = new ArrayList<>();
 		
 		Comida comida = new Comida();
-		comida.setNombre("Bruce Banner");
-		comida.setPrecio(0);
-		comida.getId();
-		comida.setStock(0);
+		comida.setNombre("Spagueti");
+		comida.setPrecio(6);
+		comida.setId(3);
+		comida.setStock(6);
 		comidas.add(comida);
 		
 		return comidas;
@@ -122,8 +137,8 @@ public class RistoranteMain {
 		List<Menu_Degustacion> menuDegustaciones = new ArrayList<>();
 		
 		Menu_Degustacion menuDegustacion = new Menu_Degustacion();
-		menuDegustacion.setId(null);
-		menuDegustacion.setNumProductos(0);
+		menuDegustacion.setId("1A");
+		menuDegustacion.setNumProductos(3);
 		menuDegustaciones.add(menuDegustacion);
 		
 		return menuDegustaciones;
@@ -142,9 +157,9 @@ public class RistoranteMain {
 		List<Menu_EntreSemana> menuEntreSemanas = new ArrayList<>();
 		
 		Menu_EntreSemana mES = new Menu_EntreSemana();
-		mES.setId(null);
+		mES.setId("1B");
 		mES.setDescuentoEstudiantes(false);
-		mES.setNumProductos(0);
+		mES.setNumProductos(4);
 		menuEntreSemanas.add(mES);
 		
 		return menuEntreSemanas;
@@ -163,8 +178,8 @@ public class RistoranteMain {
 		List<Menu_Infantil> menuInfantiles = new ArrayList<>();
 		
 		Menu_Infantil mI = new Menu_Infantil();
-		mI.setId(null);
-		mI.setNumProductos(0);
+		mI.setId("3D");
+		mI.setNumProductos(3);
 		menuInfantiles.add(mI);
 		
 		return menuInfantiles;
@@ -183,9 +198,9 @@ public class RistoranteMain {
 		List<Menu_FinDeSemana> menuFinDeSemanas = new ArrayList<>();
 		
 		Menu_FinDeSemana mFS = new Menu_FinDeSemana();
-		mFS.setId(null);
-		mFS.setNumProductos(0);
-		mFS.setNumPersonas(0);
+		mFS.setId("3A");
+		mFS.setNumProductos(3);
+		mFS.setNumPersonas(6);
 		menuFinDeSemanas.add(mFS);
 		
 		return menuFinDeSemanas;
@@ -204,7 +219,7 @@ public class RistoranteMain {
 		List<Mesa> mesas = new ArrayList<>();
 		
 		Mesa mesa = new Mesa();
-		mesa.setIdMesa(null);
+		mesa.setIdMesa("1z");
 		mesa.setLugar(0);
 		mesa.setOcupada(false);
 		mesas.add(mesa);
@@ -224,9 +239,9 @@ public class RistoranteMain {
 		List<Reserva> reservas = new ArrayList<>();
 		
 		Reserva reserva = new Reserva();
-		reserva.setFecha(null);
-		reserva.setIdReserva(0);
-		reserva.setNumPersonas(0);
+		reserva.setFecha("20-03-22");
+		reserva.setIdReserva(2);
+		reserva.setNumPersonas(3);
 		reservas.add(reserva);
 		
 		return reservas;

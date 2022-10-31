@@ -4,9 +4,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import Logica.Admin;
 import Logica.Bebida;
@@ -43,31 +45,38 @@ public class BD {
 	public void crearBBDD() {
 		//Se abre la conexi�n y se obtiene el Statement
 		//Al abrir la conexi�n, si no exist�a el fichero, se crea la base de datos
-		String sql = "CREATE TABLE IF NOT EXISTS Cliente (nombre String, apellido String, contrasena String)";
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement st = con.createStatement()) {
-			
-			sql = "CREATE TABLE IF NOT EXISTS Admin(nombre String, apellido String, contrasena String, idAdmin Integer, sueldo Real)";
+			String sql = "CREATE TABLE IF NOT EXISTS Cliente (nombre String, apellido String, contrasena String, numTlf Integer)";
 			st.executeUpdate(sql);
-			sql = "CREATE TABLE IF NOT EXISTS Bebida(nombre String, precio Real, id Integer, stock Integer, frio String)";
-			st.executeUpdate(sql);
-			sql = "CREATE TABLE IF NOT EXISTS Comida(nombre String, precio Real, id Integer, stock Integer)";
-			st.executeUpdate(sql);
-			sql = "CREATE TABLE IF NOT EXISTS Menu_Degustacion(id String, numProductos Integer)";
-			st.executeUpdate(sql);
-			sql = "CREATE TABLE IF NOT EXISTS Menu_EntreSemana(id String, numProductos Integer, descuentoEstudiante String)";
-			st.executeUpdate(sql);
-			sql = "CREATE TABLE IF NOT EXISTS Menu_FinDeSemana(id String, numProductos Integer, numPersonas Integer)";
-			st.executeUpdate(sql);
-			sql = "CREATE TABLE IF NOT EXISTS Menu_Infantil(id String, numProductos Integer)";
-			st.executeUpdate(sql);
-			sql = "CREATE TABLE IF NOT EXISTS Mesa(idMesa String, lugar Integer, ocupada String)";
-			st.executeUpdate(sql);
-			sql = "CREATE TABLE IF NOT EXISTS Reserva(fecha String, numeroPersonas Integer, idReserva String)";
-			st.executeUpdate(sql);
+			String sql1 = "CREATE TABLE IF NOT EXISTS Admin(nombre String, apellido String, contrasena String, idAdmin Integer, sueldo Real)";
+			st.executeUpdate(sql1);
+			String sql2 = "CREATE TABLE IF NOT EXISTS Bebida(nombre String, precio Real, id Integer, stock Integer, frio String)";
+			st.executeUpdate(sql2);
+			String sql3 = "CREATE TABLE IF NOT EXISTS Comida(nombre String, precio Real, id Integer, stock Integer)";
+			st.executeUpdate(sql3);
+			String sql4 = "CREATE TABLE IF NOT EXISTS Menu_Degustacion(id String, numProductos Integer)";
+			st.executeUpdate(sql4);
+			String sql5 = "CREATE TABLE IF NOT EXISTS Menu_EntreSemana(id String, numProductos Integer, descuentoEstudiante String)";
+			st.executeUpdate(sql5);
+			String sql6 = "CREATE TABLE IF NOT EXISTS Menu_FinDeSemana(id String, numProductos Integer, numPersonas Integer)";
+			st.executeUpdate(sql6);
+			String sql7 = "CREATE TABLE IF NOT EXISTS Menu_Infantil(id String, numProductos Integer)";
+			st.executeUpdate(sql7);
+			String sql8 = "CREATE TABLE IF NOT EXISTS Mesa(idMesa String, lugar Integer, ocupada String)";
+			st.executeUpdate(sql8);
+			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha String, numeroPersonas Integer, idReserva String)";
+			st.executeUpdate(sql9);
 	        	        
 	        if (!st.execute(sql)) {
 	        	System.out.println("- Se ha creado la tabla Cliente");
+	        	System.out.println("- Se ha creado la tabla Admin");
+	        	System.out.println("- Se ha creado la tabla Bebida");
+	        	System.out.println("- Se ha creado la tabla Comida");
+	        	System.out.println("- Se ha creado las tabla de Menus");
+	        	System.out.println("- Se ha creado la tabla de Rervas");
+	        	System.out.println("- Se ha creado la tabla Mesas");
+	     
 	        }
 		} catch (Exception ex) {
 			System.err.println(String.format("* Error al crear la BBDD: %s", ex.getMessage()));
@@ -80,7 +89,7 @@ public class BD {
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 			
-	        String sql = "DROP TABLE IF EXISTS CLIENTE";
+	        String sql = "DROP TABLE IF EXISTS Cliente";
 			
 	        //Se ejecuta la sentencia de creaci�n de la tabla Estudiantes
 	        if (!stmt.execute(sql)) {
@@ -103,26 +112,17 @@ public class BD {
 	
 		
 		
-		public void insertarDatos(ArrayList<Cliente> clientes, ArrayList<Admin> admins,
-				ArrayList<Bebida> bebidas, ArrayList<Comida> comidas, ArrayList<Menu_Degustacion> menus_degustacion,
-				ArrayList<Menu_EntreSemana> menus_entreSemana, ArrayList<Menu_FinDeSemana> menus_finDeSemanas,
-				ArrayList<Menu_Infantil> menus_infantiles, ArrayList<Mesa> mesas, ArrayList<Reserva> reservas) {
-			clientes = new ArrayList();
-			admins = new ArrayList();
-			bebidas = new ArrayList();
-			comidas = new ArrayList();
-			menus_degustacion = new ArrayList();
-			menus_entreSemana = new ArrayList();
-			menus_finDeSemanas = new ArrayList();
-			menus_infantiles = new ArrayList();
-			mesas = new ArrayList();
-			reservas = new ArrayList();
+		public void insertarDatos(List<Cliente> clientes, List<Admin> admins,
+				List<Bebida> bebidas, List<Comida> comidas, List<Menu_Degustacion> menus_degustacion,
+				List<Menu_EntreSemana> menus_entreSemana, List<Menu_FinDeSemana> menus_finDeSemanas,
+				List<Menu_Infantil> menus_infantiles, List<Mesa> mesas, List<Reserva> reservas) {
+		
 			
 			//Se abre la conexi�n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				//Se define la plantilla de la sentencia SQL
-				String sql = "INSERT INTO CLIENTE (nombre, apellido, contrasena) VALUES ('%s', '%s', '%s');";
+				String sql = "INSERT INTO Cliente (nombre, apellido, contrasena, numTlf) VALUES ('%s', '%s', '%s',%d);";
 				System.out.println("- Insertando clientes...");
 				
 				String sql1 = "INSERT INTO Admin (nombre, apellido, contrasena, idAdmin, sueldo) VALUES ('%s', '%s', '%s', '%d', '%f');";
@@ -150,12 +150,15 @@ public class BD {
 				
 				//Se recorren los clientes y se insertan uno a uno
 				for (Cliente c : clientes) {
-					if (1 == stmt.executeUpdate(String.format(sql, c.getNombre(), c.getApellido(), c.getContrasenia()))) {					
+					
+					if (1 == stmt.executeUpdate(String.format(sql, c.getNombre(), c.getApellido(), c.getContrasenia(), c.getNumTlfn()))) {					
 						System.out.println(String.format(" - Cliente insertado: %s", c.toString()));
 					} else {
 						System.out.println(String.format(" - No se ha insertado el cliente: %s", c.toString()));
 					}
 				}
+				
+				//Se recorren los admins y se insertan uno a uno
 				for (Admin a : admins) {
 					if (1 == stmt.executeUpdate(String.format(sql1, a.getNombre(),a.getApellido(),a.getContrasenia(), a.getIdAdmin(), a.getSueldo()))) {					
 						System.out.println(String.format(" - Admin insertado: %s", a.toString()));
@@ -185,7 +188,7 @@ public class BD {
 					}
 				}
 				for (Menu_Infantil mI : menus_infantiles) {
-					if (1 == stmt.executeUpdate(String.format(sql5, mI.getId(), mI.getNumProductos()))) {					
+					if (1 == stmt.executeUpdate(String.format(sql7, mI.getId(), mI.getNumProductos()))) {					
 						System.out.println(String.format(" - Menu infantil insertado: %s", mI.toString()));
 					} else {
 						System.out.println(String.format(" - No se ha insertado el menu infantil: %s", mI.toString()));
@@ -199,7 +202,7 @@ public class BD {
 					}
 				}
 				for (Menu_EntreSemana mES : menus_entreSemana) {
-					if (1 == stmt.executeUpdate(String.format(sql7, mES.getId(),mES.getNumProductos(), mES.isDescuentoEstudiantes()))) {					
+					if (1 == stmt.executeUpdate(String.format(sql5, mES.getId(),mES.getNumProductos(), mES.isDescuentoEstudiantes()))) {					
 						System.out.println(String.format(" - Menu entre semana insertado: %s", mES.toString()));
 					} else {
 						System.out.println(String.format(" - No se ha insertado el menu entre semana: %s", mES.toString()));
@@ -225,6 +228,45 @@ public class BD {
 			}				
 		}
 		
+		
+		
+		public List<Cliente> obtenerDatos() {
+			List<Cliente> clientes = new ArrayList<>();
+			
+			//Se abre la conexi�n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				String sql = "SELECT * FROM CLIENTE WHERE numTlf >= 0";
+				
+				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
+				ResultSet rs = stmt.executeQuery(sql);			
+				Cliente cliente;
+				
+				//Se recorre el ResultSet y se crean objetos Cliente
+				while (rs.next()) {
+					cliente = new Cliente();
+					
+					cliente.setNombre(rs.getString("nombre"));
+					cliente.setApellido(rs.getString("apellido"));
+					cliente.setContrasenia(rs.getString("contrasena"));
+					cliente.setNumTlfn(rs.getInt("numTlf"));
+					
+					
+					//Se inserta cada nuevo cliente en la lista de clientes
+					clientes.add(cliente);
+				}
+				
+				//Se cierra el ResultSet
+				rs.close();
+				
+				System.out.println(String.format("- Se han recuperado %d clientes...", clientes.size()));			
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}		
+			
+			return clientes;
+		}
 		
 		
 		
