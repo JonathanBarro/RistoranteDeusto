@@ -51,6 +51,7 @@ public class RistoranteMain {
 		List<Menu_Infantil> menuInfantiles = bd.obtenerDatosMenu_Infantil();
 		printMenu_Infantil(menuInfantiles);
 		
+		//bd.borrarDatos();
 		
 		//bd.borrarBBDD();
 	

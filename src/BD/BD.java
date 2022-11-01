@@ -89,12 +89,20 @@ public class BD {
 		//Se abre la conexi�n y se obtiene el Statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
-			
 	        String sql = "DROP TABLE IF EXISTS Cliente";
+	         sql = "DROP TABLE IF EXISTS Admin";
+	         sql = "DROP TABLE IF EXISTS Comida";
+	         sql = "DROP TABLE IF EXISTS Bebida";
+	         sql = "DROP TABLE IF EXISTS Menu_Degustacion";
+	         sql = "DROP TABLE IF EXISTS Menu_EntreSemana";
+	         sql = "DROP TABLE IF EXISTS Menu_FinDeSemana";
+	         sql = "DROP TABLE IF EXISTS Menu_Infantil";
+	         sql = "DROP TABLE IF EXISTS Mesa";
+	         sql = "DROP TABLE IF EXISTS Reserva";
 			
 	        //Se ejecuta la sentencia de creaci�n de la tabla Estudiantes
 	        if (!stmt.execute(sql)) {
-	        	System.out.println("- Se ha borrado la tabla Cliente");
+	        	System.out.println("- Se ha borrado las tablas");
 	        }
 		} catch (Exception ex) {
 			System.err.println(String.format("* Error al borrar la BBDD: %s", ex.getMessage()));
@@ -625,7 +633,50 @@ public class BD {
 		}
 		
 		
-		//Cambiar precio
+		public void borrarDatos() {
+			//Se abre la conexi�n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				//Se ejecuta la sentencia de borrado de datos
+				String sql = "DELETE FROM CLIENTE;";			
+				int result = stmt.executeUpdate(sql);
+				String sql1 = "DELETE FROM Admin;";			
+				int result1 = stmt.executeUpdate(sql1);
+				String sql2 = "DELETE FROM Bebida;";			
+				int result2 = stmt.executeUpdate(sql2);
+				String sql3 = "DELETE FROM Comida;";			
+				int result3 = stmt.executeUpdate(sql3);
+				String sql4 = "DELETE FROM Menu_Degustacion;";			
+				int result4 = stmt.executeUpdate(sql4);
+				String sql5 = "DELETE FROM Menu_FinDeSemana;";			
+				int result5 = stmt.executeUpdate(sql5);
+				String sql6 = "DELETE FROM Menu_EntreSemana;";			
+				int result6 = stmt.executeUpdate(sql6);
+				String sql7= "DELETE FROM Menu_Infantil;";			
+				int result7 = stmt.executeUpdate(sql7);
+				String sql8 = "DELETE FROM Reserva;";			
+				int result8 = stmt.executeUpdate(sql8);
+				String sql9 = "DELETE FROM Mesa;";			
+				int result9 = stmt.executeUpdate(sql9);
+				
+				System.out.println(String.format("- Se han borrado %d clientes", result));
+				System.out.println(String.format("- Se han borrado %d admins", result1));
+				System.out.println(String.format("- Se han borrado %d bebidas", result2));
+				System.out.println(String.format("- Se han borrado %d comidas", result3));
+				System.out.println(String.format("- Se han borrado %d menus de degustacion", result4));
+				System.out.println(String.format("- Se han borrado %d menus de fin de semana", result5));
+				System.out.println(String.format("- Se han borrado %d menus de entre semana", result6));
+				System.out.println(String.format("- Se han borrado %d menu infantil", result7));
+				System.out.println(String.format("- Se han borrado %d reservas", result8));
+				System.out.println(String.format("- Se han borrado %d mesas", result9));
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al borrar datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}		
+		}	
+		
+		
+		
 		//Cambiar ocupacion
 		
 	

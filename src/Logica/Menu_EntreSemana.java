@@ -31,7 +31,6 @@ public class Menu_EntreSemana extends Menu{
 
 	@Override
 	public String toString() {
-		return getId() + " : " + "	Platos :  " + getpL() + "  Número de platos : "
-				+ getNumProductos() + " precio del menu: " + getPrecioTotal();
+		return getId() + " : " + "	Platos :  " + getpL()  + " precio del menu: " + getPrecioTotal();
 	}
 }
