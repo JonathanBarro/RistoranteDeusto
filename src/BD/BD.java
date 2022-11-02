@@ -633,6 +633,22 @@ public class BD {
 		}
 		
 		
+		public void borrarCliente(int numTlfn) {
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+				     Statement stmt = con.createStatement()) {
+					//Se ejecuta la sentencia de borrado de datos
+					String sql = "DELETE FROM Cliente WHERE numTlf=%d";
+					
+					int result = stmt.executeUpdate(String.format(sql, numTlfn));
+					
+					System.out.println(String.format("- Se ha borrad %d Cliente", result));
+				} catch (Exception ex) {
+					System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+					ex.printStackTrace();						
+				}		
+		}
+		
+		
 		public void borrarDatos() {
 			//Se abre la conexi�n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);

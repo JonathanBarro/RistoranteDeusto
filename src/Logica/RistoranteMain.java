@@ -14,10 +14,10 @@ public class RistoranteMain {
 		BD bd = new BD();		
 		
 		//CREATE DATABASE: Se crea la BBDD
-		bd.crearBBDD();
+		//bd.crearBBDD();
 		
 		//INSERT: Insertar datos en la BBDD		
-		cargarBD(bd);
+		//cargarBD(bd);
 		
 		List<Cliente> clientes = bd.obtenerDatosClientes();
 		printClientes(clientes);
@@ -51,9 +51,13 @@ public class RistoranteMain {
 		List<Menu_Infantil> menuInfantiles = bd.obtenerDatosMenu_Infantil();
 		printMenu_Infantil(menuInfantiles);
 		
-		bd.borrarDatos();
+		bd.borrarCliente(1);
+		List<Cliente> clientes2 = bd.obtenerDatosClientes();
+		printClientes(clientes2);
 		
-		bd.borrarBBDD();
+		//bd.borrarDatos();
+		
+		//bd.borrarBBDD();
 	
 	}
 	private static void cargarBD(BD bd) {
