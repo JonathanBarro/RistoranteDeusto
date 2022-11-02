@@ -33,6 +33,6 @@ public class Menu_FinDeSemana extends Menu{
 
 	@Override
 	public String toString() {
-		return getId() + " : " + "	Platos :  " + getpL() + " precio del menu: " + getPrecioTotal();
+		return getId() + " : " + "numero de platos: " + getNumProductos();
 	}
 }

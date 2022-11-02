@@ -80,10 +80,12 @@ public class Reserva {
 
 	@Override
 	public String toString() {
+		return "Reserva [fecha=" + fecha + ", numPersonas=" + numPersonas + ", idReserva=" + idReserva + "]";
+	}
+	
+	public String toString1() {
 		return "Reserva [fecha=" + fecha + ", numPersonas=" + numPersonas + ", idReserva=" + idReserva + ", aMesa="
 				+ aMesa + ", aMenu=" + aMenu + ", cliente=" + cliente + "]";
 	}
-	
-	
 	
 }

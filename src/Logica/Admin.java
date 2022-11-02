@@ -34,6 +34,12 @@ public class Admin extends Usuario{
 	@Override
 	public String toString() {
 		return "Admin [idAdmin=" + idAdmin + ", sueldo=" + sueldo + ", nombre=" + getNombre() + ", apellido="
+				+ getApellido() +  "]";
+	}
+	
+	
+	public String toString1() {
+		return "Admin [idAdmin=" + idAdmin + ", sueldo=" + sueldo + ", nombre=" + getNombre() + ", apellido="
 				+ getApellido() + ", contrasenia=" + getContrasenia() + "]";
 	}
 	

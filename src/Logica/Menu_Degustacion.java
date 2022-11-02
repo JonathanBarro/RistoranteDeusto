@@ -15,9 +15,8 @@ public class Menu_Degustacion extends Menu{
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public String toString() {
-		return getId() + " : " + "	Platos :  " + getpL()  + " precio del menu: " + getPrecioTotal();
+		return getId() + " : " + "numero de platos: " + getNumProductos();
 	}
 	
 }
