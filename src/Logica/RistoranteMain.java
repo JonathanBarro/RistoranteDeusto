@@ -17,7 +17,7 @@ public class RistoranteMain {
 		//bd.crearBBDD();
 		
 		//INSERT: Insertar datos en la BBDD		
-		//cargarBD(bd);
+		cargarBD(bd);
 		
 		List<Cliente> clientes = bd.obtenerDatosClientes();
 		printClientes(clientes);
@@ -55,16 +55,16 @@ public class RistoranteMain {
 		List<Cliente> clientes2 = bd.obtenerDatosClientes();
 		printClientes(clientes2);
 		
-		bd.borrarComida(1);
+		bd.borrarComida(3);
 		List<Comida> comida2 = bd.obtenerDatosComidas();
 		printComida(comida2);
 		
-		bd.borrarBebida(1);
+		bd.borrarBebida(123);
 		List<Bebida> bebida2 = bd.obtenerDatosBebidas();
 		printBebidas(bebida2);
 		
 		
-		bd.borrarReserva(1);
+		bd.borrarReserva(2);
 		List<Reserva> reserva2 = bd.obtenerDatosReservas();
 		printReserva(reserva2);
 		
