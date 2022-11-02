@@ -51,7 +51,7 @@ public class RistoranteMain {
 		List<Menu_Infantil> menuInfantiles = bd.obtenerDatosMenu_Infantil();
 		printMenu_Infantil(menuInfantiles);
 		
-		bd.borrarCliente(1);
+		//bd.borrarCliente(1);
 		List<Cliente> clientes2 = bd.obtenerDatosClientes();
 		printClientes(clientes2);
 		
