@@ -55,6 +55,19 @@ public class RistoranteMain {
 		List<Cliente> clientes2 = bd.obtenerDatosClientes();
 		printClientes(clientes2);
 		
+		bd.borrarComida(1);
+		List<Comida> comida2 = bd.obtenerDatosComidas();
+		printComida(comida2);
+		
+		bd.borrarBebida(1);
+		List<Bebida> bebida2 = bd.obtenerDatosBebidas();
+		printBebidas(bebida2);
+		
+		
+		bd.borrarReserva(1);
+		List<Reserva> reserva2 = bd.obtenerDatosReservas();
+		printReserva(reserva2);
+		
 		//bd.borrarDatos();
 		
 		//bd.borrarBBDD();

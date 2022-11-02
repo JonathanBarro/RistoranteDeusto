@@ -631,7 +631,7 @@ public class BD {
 				ex.printStackTrace();						
 			}		
 		}
-		
+//Borrar para el admin
 		
 		public void borrarCliente(int numTlfn) {
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -641,12 +641,60 @@ public class BD {
 					
 					int result = stmt.executeUpdate(String.format(sql, numTlfn));
 					
-					System.out.println(String.format("- Se ha borrad %d Cliente", result));
+					System.out.println(String.format("- Se ha borrado %d Cliente", result));
 				} catch (Exception ex) {
 					System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
 					ex.printStackTrace();						
 				}		
 		}
+		
+		public void borrarReserva(int id) {
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+				     Statement stmt = con.createStatement()) {
+					//Se ejecuta la sentencia de borrado de datos
+					String sql = "DELETE FROM Reserva WHERE idReserva=%d";
+					
+					int result = stmt.executeUpdate(String.format(sql, id));
+					
+					System.out.println(String.format("- Se ha borrado %d reserva", result));
+				} catch (Exception ex) {
+					System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+					ex.printStackTrace();						
+				}		
+		}
+		
+		public void borrarBebida(int id) {
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+				     Statement stmt = con.createStatement()) {
+					//Se ejecuta la sentencia de borrado de datos
+					String sql = "DELETE FROM Bebida WHERE id=%d";
+					
+					int result = stmt.executeUpdate(String.format(sql, id));
+					
+					System.out.println(String.format("- Se ha borrado %d bebida", result));
+				} catch (Exception ex) {
+					System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+					ex.printStackTrace();						
+				}		
+		}
+		
+		
+		public void borrarComida(int id) {
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+				     Statement stmt = con.createStatement()) {
+					//Se ejecuta la sentencia de borrado de datos
+					String sql = "DELETE FROM Comida WHERE id=%d";
+					
+					int result = stmt.executeUpdate(String.format(sql, id));
+					
+					System.out.println(String.format("- Se ha borrado %d comida", result));
+				} catch (Exception ex) {
+					System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+					ex.printStackTrace();						
+				}		
+		}
+		
+//Se acaba para borrar en la parte del admin
 		
 		
 		public void borrarDatos() {
