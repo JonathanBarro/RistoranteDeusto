@@ -1,5 +1,6 @@
 package Ventanas;
 import Logica.Comida;
+
 import Logica.Producto;
 
 import java.awt.EventQueue;
@@ -10,23 +11,19 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+
 import javax.swing.border.EmptyBorder;
 
 import java.awt.BorderLayout;
-import java.awt.Component;
+
 
 public class VentanaStock extends JFrame{
-	private JPanel contentPane;
-	private JFrame frame;
-	private ArrayList<Producto> listaProductos= new ArrayList<>(); 
-	private JButton Añadir;
 	/**
-	 * Launch the application.
+	 * 
 	 */
-	
-
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private ArrayList<Producto> listaProductos= new ArrayList<>(); 
 	/**
 	 * Create the application.
 	 */
@@ -81,10 +78,10 @@ public class VentanaStock extends JFrame{
 		
 		JButton AñadirStock= new JButton("Añadir");
 		panelSur.add(AñadirStock);
-		for (Producto p : listaProductos) {
-			
-			
-		}
+//		for (Producto p : listaProductos) {
+//			
+//			
+//		}
 		
 		panelCentro.add(txtAreaStock);
 		

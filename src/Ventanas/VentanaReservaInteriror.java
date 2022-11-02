@@ -3,42 +3,43 @@ package Ventanas;
 import java.awt.EventQueue;
 
 
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 
-import Logica.Cliente;
 
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
+
+
 import java.awt.BorderLayout;
-import javax.swing.JTextField;
+
 import javax.swing.JLabel;
-import javax.swing.JMenu;
+
 
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+
 import java.util.Date;
-import java.util.Iterator;
+
 import java.awt.event.ActionEvent;
-import javax.swing.BoxLayout;
+
 import javax.swing.JComboBox;
 import java.awt.Color;
 import java.awt.Dimension;
 
-import javax.swing.JMenuBar;
+
 
 public class VentanaReservaInteriror extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JDateChooser calen; 
 
@@ -105,7 +106,7 @@ public class VentanaReservaInteriror extends JFrame {
 		JLabel jLNumeroPersonas = new JLabel("Seleccion el numero de personas:");
 		panel_ComboCent.add(jLNumeroPersonas);
 		
-		JComboBox<Integer> comboBox_NPersonas = new JComboBox();
+		JComboBox<Integer> comboBox_NPersonas = new JComboBox<Integer>();
 		panel_ComboCent.add(comboBox_NPersonas);
 		
 		for(int i=0;i<=12;i++) {

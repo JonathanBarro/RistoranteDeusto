@@ -1,6 +1,7 @@
 package Ventanas;
 
 import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -9,23 +10,27 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+
 import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenuBar;
+
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JDateChooser;
 
-import javax.swing.JMenu;
+
 
 public class VentanaReservaExteriror extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JDateChooser calen;
 
@@ -90,7 +95,7 @@ public class VentanaReservaExteriror extends JFrame {
 		JLabel jLNumeroPer = new JLabel("Seleccion el numero de personas:");
 		panel_ComboCent.add(jLNumeroPer);
 		
-		JComboBox<Integer> comboBox_NPersonas = new JComboBox();
+		JComboBox<Integer> comboBox_NPersonas = new JComboBox<Integer>();
 		panel_ComboCent.add(comboBox_NPersonas);
 		for(int i=0;i<=12;i++) {
 			comboBox_NPersonas.addItem(i);

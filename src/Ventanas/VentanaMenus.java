@@ -3,11 +3,11 @@ package Ventanas;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.Rectangle;
+
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+
 
 import Logica.Comida;
 import Logica.Menu;
@@ -17,10 +17,10 @@ import Logica.Menu_FinDeSemana;
 import Logica.Menu_Infantil;
 import Logica.Producto;
 
-import javax.swing.JTabbedPane;
+
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
-import java.awt.Component;
+
 import java.awt.Dimension;
 
 import javax.swing.JComboBox;
@@ -28,14 +28,10 @@ import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
+
 import javax.swing.JLabel;
 import javax.swing.JList;
 
@@ -106,7 +102,7 @@ public class VentanaMenus extends JFrame {
 		JPanel pMedio2 = new JPanel(new FlowLayout());
 		JPanel pNorth = new JPanel(new GridLayout(2, 1));
 		
-		JPanel pBtnsVerM = new JPanel(new FlowLayout());
+		
 		JPanel pBtnsAnadir = new JPanel(new FlowLayout());
 		JPanel pMedio = new JPanel(new FlowLayout());
 		JPanel pBtnJL = new JPanel(new GridLayout(3,1));

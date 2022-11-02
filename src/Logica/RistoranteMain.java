@@ -1,7 +1,6 @@
 package Logica;
 
-import java.io.File;
-import java.sql.Connection;
+
 import java.util.ArrayList;
 import java.util.List;
 
