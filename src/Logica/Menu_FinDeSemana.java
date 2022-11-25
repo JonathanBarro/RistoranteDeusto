@@ -1,6 +1,8 @@
 package Logica;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Menu_FinDeSemana extends Menu{
 
@@ -12,12 +14,11 @@ public class Menu_FinDeSemana extends Menu{
 
 	}
 
-	public Menu_FinDeSemana(String id, ArrayList<Producto> aProducto, int numProductos, double precioTotal,
-			int numPersonas) {
-		super(id, aProducto, numProductos, precioTotal);
+	public Menu_FinDeSemana(String id, HashMap<String, List<Producto>> hmProds, int numProductos, double precioTotal, int numPersonas) {
+		super(id, hmProds, numProductos, precioTotal);
+		// TODO Auto-generated constructor stub
 		this.numPersonas = numPersonas;
 	}
-
 
 
 	public int getNumPersonas() {
@@ -30,9 +31,13 @@ public class Menu_FinDeSemana extends Menu{
 		this.numPersonas = numPersonas;
 	}
 
-
 	@Override
 	public String toString() {
-		return getId() + " : " + "numero de platos: " + getNumProductos();
+		return "Menu_FinDeSemana [numPersonas=" + numPersonas + ", getId()=" + getId() + ", getpL()=" + getpL()
+				+ ", getNumProductos()=" + getNumProductos() + ", getPrecioTotal()=" + getPrecioTotal()
+				+ "]";
 	}
+
+
+
 }

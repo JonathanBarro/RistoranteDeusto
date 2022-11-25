@@ -3,11 +3,15 @@ package JUnit;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import BD.BD;
+import Logica.Bebida;
 import Logica.Comida;
 import Logica.Menu;
 import Logica.Menu_FinDeSemana;
@@ -15,25 +19,35 @@ import Logica.Producto;
 
 public class testMenu {
 	
+	BD bd = new BD();
 	private Menu men;
 	private String idMen="1A";
-	private ArrayList<Producto> pL = new ArrayList<>();
+	private HashMap<String, List<Producto>> hmPods = new HashMap<>();
+	private ArrayList<Producto> comida = new ArrayList<>();
+	private ArrayList<Producto> Bebida = new ArrayList<>();
 	private int numProd=4;
 	private double precioTot = 10;
 	private Comida producto;
 	private Comida producto1;
 	private Comida producto2;
+	private Bebida producto3;
 	
 	
 	@Before
 	public void setUp() throws Exception {
-		men = new Menu(idMen, pL, numProd, precioTot);
 		producto = new Comida(idMen, 25, 1, 1);
 		producto1 =  new Comida(idMen, 25, 1, 1);
 		producto2 = new Comida(idMen, 25, 1, 1);
-		pL.add(producto);
-		pL.add(producto1);
-		pL.add(producto2);
+		producto3 = new Bebida(idMen, precioTot, numProd, 10, false);
+		comida.add(producto);
+		comida.add(producto1);
+		comida.add(producto2);
+		Bebida.add(producto3);
+//		hmPods = bd.obtenerProductos();
+		hmPods.putIfAbsent("Comida", comida);
+		hmPods.putIfAbsent("Bebida", Bebida);
+		men = new Menu(idMen, hmPods, numProd, precioTot);
+		
 	}
 
 	@After
@@ -58,13 +72,13 @@ public class testMenu {
 
 	@Test
 	public void testGetpL() {
-		assertEquals(pL, men.getpL());
+		assertEquals(hmPods, men.getpL());
 	}
 
 	@Test
 	public void testSetpL() {
-		men.setpL(pL);
-		assertEquals(pL, men.getpL());
+		men.setpL(hmPods);
+		assertEquals(hmPods, men.getpL());
 	}
 
 	@Test
@@ -81,13 +95,13 @@ public class testMenu {
 
 	@Test
 	public void testGetaProducto() {
-		assertEquals(pL, men.getpL());
+		assertEquals(hmPods, men.getpL());
 	}
 
 	@Test
 	public void testSetaProducto() {
-		men.setpL(pL);
-		assertEquals(pL, men.getpL());
+		men.setpL(hmPods);
+		assertEquals(hmPods, men.getpL());
 	}
 
 	@Test
@@ -103,7 +117,7 @@ public class testMenu {
 
 	@Test
 	public void testObtenerPreciototal() {
-		assertEquals(75, men.obtenerPreciototal(pL),0);
+		assertEquals(85, men.obtenerPreciototal(hmPods),0);
 	}
 
 }

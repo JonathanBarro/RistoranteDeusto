@@ -71,9 +71,9 @@ public class RistoranteMain {
 		
 		//ACABAPARTE DEL ADMIN
 		
-		bd.borrarDatos();
-		
-		bd.borrarBBDD();
+//		bd.borrarDatos();
+//		
+//		bd.borrarBBDD();
 	
 	}
 	private static void cargarBD(BD bd) {

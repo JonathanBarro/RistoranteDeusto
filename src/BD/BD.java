@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import Logica.Admin;
@@ -392,6 +393,15 @@ public class BD {
 			}		
 			
 			return producto;
+		}
+		
+		public HashMap<String, List<Producto>> obtenerProductos(){
+			HashMap<String, List<Producto>> hmProds = new HashMap<>();
+			List<Producto> comida = obtenerDatosComidas();
+			List<Producto> bebida = obtenerDatosBebidas();
+			hmProds.putIfAbsent("Comida", comida);
+			hmProds.putIfAbsent("Bebida", bebida);
+			return hmProds;
 		}
 		
 		public List<Mesa> obtenerDatosMesas() {

@@ -3,6 +3,8 @@ package JUnit;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
@@ -15,15 +17,15 @@ import Logica.Producto;
 public class testMenud_Finde {
 	
 	private String idMen="1A";
-	private ArrayList<Producto> pL = new ArrayList<>();
+	private HashMap<String, List<Producto>> hmPods = new HashMap<>();
 	private int numProd=4;
 	private int numPersonas=6;
 	private double precioTot = 10;
-	Menu_FinDeSemana menDdS;
+	private Menu_FinDeSemana menDdS;
 
 	@Before
 	public void setUp() throws Exception {
-		menDdS = new Menu_FinDeSemana(idMen, pL, numProd, precioTot,numPersonas);
+		menDdS = new Menu_FinDeSemana(idMen, hmPods, numProd, precioTot,numPersonas);
 	}
 
 	@After
@@ -48,8 +50,9 @@ public class testMenud_Finde {
 
 	@Test
 	public void testToString() {
-		assertEquals(idMen + " : " + "	Platos :  " + pL + "  Número de platos : "
-				+ numProd + " precio del menu: " +precioTot, menDdS.toString());
+		assertEquals("Menu_FinDeSemana [numPersonas=" + numPersonas + ", getId()=" +  menDdS.getId() + ", getpL()=" +  menDdS.getpL()
+		+ ", getNumProductos()=" +  menDdS.getNumProductos() + ", getPrecioTotal()=" +  menDdS.getPrecioTotal()
+		+ "]", menDdS.toString());
 	}
 
 }

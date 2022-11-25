@@ -8,7 +8,7 @@ import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-
+import Logica.Bebida;
 import Logica.Comida;
 import Logica.Menu;
 import Logica.Menu_Degustacion;
@@ -28,8 +28,11 @@ import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JLabel;
@@ -72,26 +75,36 @@ public class VentanaMenus extends JFrame {
 		
 		
 		ArrayList<Producto> aComida = new ArrayList<>();
+		ArrayList<Producto> aBebdia = new ArrayList<>();
 		Comida p1 = new Comida("Plato1", 10.1,01,1);
 		Comida p2 = new Comida("Plato2", 10.1,02,1);
 		Comida p3 = new Comida("Plato3", 10.1,03,1);
+		Bebida b1 = new Bebida("Bebida1", 10.1,3,1,true);
+		Bebida b2 = new Bebida("Bebida2", 10.1,3,1,true);
 		
 		aComida.add(p1);
 		aComida.add(p2);
 		aComida.add(p3);
 		
+		aBebdia.add(b1);
+		
+		HashMap<String, List<Producto>> hmProds = new HashMap<>();
+		
+		hmProds.putIfAbsent("Bebida", aBebdia);
+		hmProds.putIfAbsent("Comida", aComida);
+		
 		double precioTot=0;
 		
 		
-		Menu_Degustacion m1 = new Menu_Degustacion("Menu_Degustacion", aComida, aComida.size(),precioTot);
-		Menu_EntreSemana m2 = new Menu_EntreSemana("Menu_EntreSemana", aComida, aComida.size(), precioTot,false);
-		Menu_Infantil m3 = new Menu_Infantil("Menu_Infantil", aComida, aComida.size(),precioTot);
-		Menu_FinDeSemana m4 = new Menu_FinDeSemana("Menu_FinDeSemana", aComida, aComida.size(), precioTot,8);
+		Menu_Degustacion m1 = new Menu_Degustacion("Menu_Degustacion", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot);
+		Menu_EntreSemana m2 = new Menu_EntreSemana("Menu_EntreSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(), precioTot,false);
+		Menu_Infantil m3 = new Menu_Infantil("Menu_Infantil", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot);
+		Menu_FinDeSemana m4 = new Menu_FinDeSemana("Menu_FinDeSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(), precioTot,8);
 		
-		m1.setPrecioTotal(m1.obtenerPreciototal(aComida));
-		m2.setPrecioTotal(m2.obtenerPreciototal(aComida));
-		m3.setPrecioTotal(m3.obtenerPreciototal(aComida));
-		m4.setPrecioTotal(m4.obtenerPreciototal(aComida));
+		m1.setPrecioTotal(m1.obtenerPreciototal(hmProds));
+		m2.setPrecioTotal(m2.obtenerPreciototal(hmProds));
+		m3.setPrecioTotal(m3.obtenerPreciototal(hmProds));
+		m4.setPrecioTotal(m4.obtenerPreciototal(hmProds));
 		
 		cbMenu.addItem(m1);
 		cbMenu.addItem(m2);
@@ -107,7 +120,7 @@ public class VentanaMenus extends JFrame {
 		JPanel pMedio = new JPanel(new FlowLayout());
 		JPanel pBtnJL = new JPanel(new GridLayout(3,1));
 		
-		JPanel pTicket = new JPanel();
+		JPanel pTicket = new JPanel(new GridLayout(1,2));
 		
 		
 		menusPane = new JScrollPane(aMenus);
@@ -116,6 +129,7 @@ public class VentanaMenus extends JFrame {
 		JButton btnEliminar = new JButton("Eliminar");
 		JButton btnVaciar = new JButton("Vaciar");
 		JButton btnTicket = new JButton("Ticket"); 
+		JButton btnBebida = new JButton("Bebida"); 
 		JLabel lblCB = new JLabel("Seleccione el menú :");
 		JButton btnVerMenus = new JButton("Ver Menus");
 		
@@ -136,6 +150,17 @@ public class VentanaMenus extends JFrame {
 		pBtnJL.add(menusPane);
 		
 		pTicket.add(btnTicket);
+		pTicket.add(btnBebida);
+		
+		btnBebida.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				VentanaBebidas v = new VentanaBebidas();
+				v.setVisible(true);
+			}
+		});
 		
 		btnVerMenus.addActionListener(new ActionListener() {
 			

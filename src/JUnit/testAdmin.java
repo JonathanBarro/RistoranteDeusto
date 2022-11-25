@@ -15,7 +15,6 @@ public class testAdmin {
 	private String contrasenia = "contrasenia12345";
 	private int idAdmin = 111;
 	private double sueldo = 1500;
-	private String toString = "Admin [idAdmin=111, sueldo=1500.0, nombre=Juanjo, apellido=Perez, contrasenia=contrasenia12345]";
 	
 	@Before
 	public void setUp() throws Exception {
@@ -89,7 +88,8 @@ public class testAdmin {
 
 	@Test
 	public void testToString() {
-		assertEquals(toString, admin.toString());
+		assertEquals("Admin [idAdmin=" + idAdmin + ", sueldo=" + sueldo + ", nombre=" + admin.getNombre() + ", apellido="
+				+ admin.getApellido() +  "]", admin.toString());
 	}
 
 }

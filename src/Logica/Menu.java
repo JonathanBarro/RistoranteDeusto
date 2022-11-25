@@ -1,11 +1,13 @@
 package Logica;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Menu {
 	
 	private String id;
-	private ArrayList<Producto> aProducto = new ArrayList<>();
+	private HashMap<String, List<Producto>> hmProds;
 	private int numProductos;
 	private double precioTotal;
 	
@@ -14,10 +16,10 @@ public class Menu {
 
 	}
 	
-	public Menu(String id, ArrayList<Producto> aProducto, int numProductos, double precioTotal) {
+	public Menu(String id, HashMap<String, List<Producto>> hmProds, int numProductos, double precioTotal) {
 		super();
 		this.id = id;
-		this.aProducto = aProducto;
+		this.hmProds = hmProds;
 		this.numProductos = numProductos;
 		this.precioTotal = precioTotal;
 	}
@@ -33,13 +35,13 @@ public class Menu {
 	}
 
 
-	public ArrayList<Producto> getpL() {
-		return aProducto;
+	public HashMap<String, List<Producto>> getpL() {
+		return hmProds;
 	}
 	
 
-	public void setpL(ArrayList<Producto> aProducto) {
-		this.aProducto = aProducto;
+	public void setpL(HashMap<String, List<Producto>> hmProds) {
+		this.hmProds = hmProds;
 	}
 
 
@@ -53,16 +55,6 @@ public class Menu {
 	}
 
 
-	public ArrayList<Producto> getaProducto() {
-		return aProducto;
-	}
-
-
-	public void setaProducto(ArrayList<Producto> aProducto) {
-		this.aProducto = aProducto;
-	}
-
-
 	public double getPrecioTotal() {
 		return precioTotal;
 	}
@@ -72,9 +64,12 @@ public class Menu {
 		this.precioTotal = precioTotal;
 	}
 	
-	public double obtenerPreciototal(ArrayList<Producto> aProducto) {
+	public double obtenerPreciototal(HashMap<String, List<Producto>> hmProds) {
 		double sumaTotal = 0;
-		for (Producto producto : aProducto) {
+		for (Producto producto : hmProds.get("Comida")) {
+			sumaTotal += producto.getPrecio();
+		}
+		for (Producto producto : hmProds.get("Bebida")) {
 			sumaTotal += producto.getPrecio();
 		}
 		return sumaTotal;

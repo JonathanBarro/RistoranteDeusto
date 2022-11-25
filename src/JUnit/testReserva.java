@@ -6,6 +6,8 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
@@ -26,7 +28,7 @@ public class testReserva {
 	private ArrayList<Mesa> aMesa2 = new ArrayList<>();
 	private ArrayList<Menu> aMenu = new ArrayList<>();
 	private ArrayList<Menu> aMenu2 = new ArrayList<>();
-	private ArrayList<Producto> aProductos = new ArrayList<>();
+	private HashMap<String, List<Producto>> hmPods = new HashMap<>();
 	private Cliente cliente;
 	private Cliente cliente2;
 	private Reserva reserva;
@@ -44,9 +46,9 @@ public class testReserva {
 		aMesa.add(mesa);
 		mesa2 = new Mesa("M2", 1, true);
 		aMesa2.add(mesa2);
-		menu = new Menu("menu1", aProductos, 4, 10.5);
+		menu = new Menu("menu1", hmPods, 4, 10.5);
 		aMenu.add(menu);
-		menu2 = new Menu("menu2", aProductos, 3, 12.5);
+		menu2 = new Menu("menu2", hmPods, 3, 12.5);
 		aMenu2.add(menu2);
 		reserva = new Reserva(fecha, numPersonas, idReserva, aMesa, aMenu, cliente);
 	}
@@ -128,8 +130,7 @@ public class testReserva {
 
 	@Test
 	public void testToString() {
-		assertEquals("Reserva [fecha=" + fecha + ", numPersonas=" + numPersonas + ", idReserva=" + idReserva + ", aMesa="
-				+ aMesa + ", aMenu=" + aMenu + ", cliente=" + cliente + "]", reserva.toString());
+		assertEquals("Reserva [fecha=" + fecha + ", numPersonas=" + numPersonas + ", idReserva=" + idReserva + "]", reserva.toString());
 	}
 
 }

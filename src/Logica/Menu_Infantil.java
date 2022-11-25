@@ -1,6 +1,8 @@
 package Logica;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Menu_Infantil extends Menu {
 	
@@ -9,10 +11,8 @@ public class Menu_Infantil extends Menu {
 
 	}
 
-	
-
-	public Menu_Infantil(String id, ArrayList<Producto> aProducto, int numProductos, double precioTotal) {
-		super(id, aProducto, numProductos, precioTotal);
+	public Menu_Infantil(String id, HashMap<String, List<Producto>> hmProds, int numProductos, double precioTotal) {
+		super(id, hmProds, numProductos, precioTotal);
 		// TODO Auto-generated constructor stub
 	}
 
