@@ -13,14 +13,14 @@ public class RistoranteMain {
 		BD bd = new BD();		
 		
 		//CREATE DATABASE: Se crea la BBDD
-		//bd.crearBBDD();
+		bd.crearBBDD();
 		
 		//INSERT: Insertar datos en la BBDD		
 		cargarBD(bd);
 		
 		List<Cliente> clientes = bd.obtenerDatosClientes();
 		printClientes(clientes);
-		List<Bebida> bebidas = bd.obtenerDatosBebidas();
+		List<Producto> bebidas = bd.obtenerDatosBebidas();
 		printBebidas(bebidas);
 		bd.cambiarPrecio(bebidas.get(0), 4);
 		bebidas = bd.obtenerDatosBebidas();
@@ -29,7 +29,7 @@ public class RistoranteMain {
 		List<Admin> admins = bd.obtenerDatosAdmins();
 		printAdmin(admins);
 		
-		List<Comida> comidas = bd.obtenerDatosComidas();
+		List<Producto> comidas = bd.obtenerDatosComidas();
 		printComida(comidas);
 		
 		List<Mesa> mesas = bd.obtenerDatosMesas();
@@ -50,26 +50,30 @@ public class RistoranteMain {
 		List<Menu_Infantil> menuInfantiles = bd.obtenerDatosMenu_Infantil();
 		printMenu_Infantil(menuInfantiles);
 		
-		bd.borrarCliente(1);
-		List<Cliente> clientes2 = bd.obtenerDatosClientes();
-		printClientes(clientes2);
+		//PARA LA PARTE DEL ADMIN
 		
-		bd.borrarComida(3);
-		List<Comida> comida2 = bd.obtenerDatosComidas();
-		printComida(comida2);
+//		bd.borrarCliente(1);
+//		List<Cliente> clientes2 = bd.obtenerDatosClientes();
+//		printClientes(clientes2);
+//		
+//		bd.borrarComida(3);
+//		List<Comida> comida2 = bd.obtenerDatosComidas();
+//		printComida(comida2);
+//		
+//		bd.borrarBebida(123);
+//		List<Bebida> bebida2 = bd.obtenerDatosBebidas();
+//		printBebidas(bebida2);
+//		
+//		
+//		bd.borrarReserva(2);
+//		List<Reserva> reserva2 = bd.obtenerDatosReservas();
+//		printReserva(reserva2);
 		
-		bd.borrarBebida(123);
-		List<Bebida> bebida2 = bd.obtenerDatosBebidas();
-		printBebidas(bebida2);
+		//ACABAPARTE DEL ADMIN
 		
+		bd.borrarDatos();
 		
-		bd.borrarReserva(2);
-		List<Reserva> reserva2 = bd.obtenerDatosReservas();
-		printReserva(reserva2);
-		
-		//bd.borrarDatos();
-		
-		//bd.borrarBBDD();
+		bd.borrarBBDD();
 	
 	}
 	private static void cargarBD(BD bd) {
@@ -130,9 +134,9 @@ public class RistoranteMain {
 		return admins;
 	}
 	
-	private static void printBebidas(List<Bebida> bebidas) {
+	private static void printBebidas(List<Producto> bebidas) {
 		if (!bebidas.isEmpty()) {		
-			for(Bebida bebida : bebidas) {
+			for(Producto bebida : bebidas) {
 				System.out.println(String.format(" - %s", bebida.toString()));
 			}
 		}		
@@ -153,9 +157,9 @@ public class RistoranteMain {
 	}
 	
 	
-	private static void printComida(List<Comida> comidas) {
+	private static void printComida(List<Producto> comidas) {
 		if (!comidas.isEmpty()) {		
-			for(Comida comida : comidas) {
+			for(Producto comida : comidas) {
 				System.out.println(String.format(" - %s", comida.toString()));
 			}
 		}		

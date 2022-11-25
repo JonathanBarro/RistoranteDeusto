@@ -18,6 +18,7 @@ import Logica.Menu_EntreSemana;
 import Logica.Menu_FinDeSemana;
 import Logica.Menu_Infantil;
 import Logica.Mesa;
+import Logica.Producto;
 import Logica.Reserva;
 
 public class BD {
@@ -316,8 +317,8 @@ public class BD {
 		}
 		
 		
-		public List<Bebida> obtenerDatosBebidas() {
-			List<Bebida> bebidas = new ArrayList<>();
+		public List<Producto> obtenerDatosBebidas() {
+			List<Producto> productos = new ArrayList<>();
 			
 			//Se abre la conexi�n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -340,24 +341,24 @@ public class BD {
 					
 					
 					//Se inserta cada nuevo cliente en la lista de clientes
-					bebidas.add(bebida);
+					productos.add(bebida);
 				}
 				
 				//Se cierra el ResultSet
 				rs.close();
 				
-				System.out.println(String.format("- Se han recuperado %d bebidas...", bebidas.size()));			
+				System.out.println(String.format("- Se han recuperado %d bebidas...", productos.size()));			
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
 				ex.printStackTrace();						
 			}		
 			
-			return bebidas;
+			return productos;
 		}
 		
-		public List<Comida> obtenerDatosComidas() {
-			List<Comida> comidas = new ArrayList<>();
+		public List<Producto> obtenerDatosComidas() {
 			
+			List<Producto> producto = new ArrayList<>();
 			//Se abre la conexi�n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
@@ -378,19 +379,19 @@ public class BD {
 					
 					
 					//Se inserta cada nuevo cliente en la lista de clientes
-					comidas.add(comida);
+					producto.add(comida);
 				}
 				
 				//Se cierra el ResultSet
 				rs.close();
 				
-				System.out.println(String.format("- Se han recuperado %d comidas...", comidas.size()));			
+				System.out.println(String.format("- Se han recuperado %d comidas...", producto.size()));			
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
 				ex.printStackTrace();						
 			}		
 			
-			return comidas;
+			return producto;
 		}
 		
 		public List<Mesa> obtenerDatosMesas() {
@@ -580,6 +581,7 @@ public class BD {
 		public List<Menu_Infantil> obtenerDatosMenu_Infantil() {
 			List<Menu_Infantil> menusInfantil = new ArrayList<>();
 			
+			
 			//Se abre la conexi�n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
@@ -614,7 +616,7 @@ public class BD {
 		}
 		
 		
-		public void cambiarPrecio(Bebida bebida, Integer nuevoprecio) {
+		public void cambiarPrecio(Producto bebida, Integer nuevoprecio) {
 			//Se abre la conexi�n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
