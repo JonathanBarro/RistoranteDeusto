@@ -1,0 +1,3 @@
+Factura de la compra del dia: 27-11-2022 18.43.59
+	Menu_EntreSemana
+TOTAL: 64.4 $
