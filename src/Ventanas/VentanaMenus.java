@@ -49,19 +49,6 @@ public class VentanaMenus extends JFrame {
 	private JList<Menu> aMenus;
 	private DefaultListModel <Menu> modeloCarrito;
 	private JScrollPane menusPane;
-	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaMenus frame = new VentanaMenus();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	public VentanaMenus() {
 		
