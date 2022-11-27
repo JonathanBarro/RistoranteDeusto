@@ -44,10 +44,10 @@ public class testBebida {
 	@Test
 	public void testToString() {
 		//toString si es FRIA
-		assertEquals(bebida.getNombre() + " " + bebida.getPrecio() + "€ fria", bebida.toString());
+		assertEquals(bebida.getNombre() + " " + bebida.getPrecio() + " € fria", bebida.toString());
 		//toString si es DEL TIEMPO
 		bebida.setFrio(false);
-		assertEquals(bebida.getNombre() + " " + bebida.getPrecio() + "€ del tiempo", bebida.toString());
+		assertEquals(bebida.getNombre() + " " + bebida.getPrecio() + " € del tiempo", bebida.toString());
 	}
 
 }

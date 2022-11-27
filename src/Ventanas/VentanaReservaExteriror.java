@@ -141,18 +141,17 @@ public class VentanaReservaExteriror extends JFrame {
 				List<Reserva> reservas = new ArrayList <Reserva>();
 				res.toString();
 				
-				for(int i = 0;i<reservas.size();i++) {
-				res.setIdReserva(i);
+				res.setIdReserva(1);
 				res.setNumPersonas(comboBox_NPersonas.getSelectedIndex());
 				 String año = Integer.toString(calen.getCalendar().get(java.util.Calendar.YEAR));
 				 String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
 				 String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
 				 res.setFecha(dia+"-"+mes);
-				 res.toString();
+				 System.out.println("---------------");
+				 System.out.println(res.toString());
 				 reservas.add(res);
 				 
-				}
-				//bd.insertarDatosReserva(reservas);
+				bd.insertarDatosReserva(reservas);
 				
 				
 			}

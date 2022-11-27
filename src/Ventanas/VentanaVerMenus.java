@@ -1,6 +1,7 @@
 package Ventanas;
 
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
@@ -53,7 +54,7 @@ public class VentanaVerMenus extends JFrame {
 	public VentanaVerMenus() {
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setSize(800, 600);
+		setSize(800, 150);
 		
 //		List<Comida> aComid2 = bd.obtenerDatosComidas();
 		ArrayList<Producto> aComida = new ArrayList<>();
@@ -69,6 +70,7 @@ public class VentanaVerMenus extends JFrame {
 		aComida.add(p3);
 		
 		aBebdia.add(b1);
+		aBebdia.add(b2);
 		
 		HashMap<String, List<Producto>> hmProds = new HashMap<>();
 		
@@ -89,10 +91,10 @@ public class VentanaVerMenus extends JFrame {
 		m4.setPrecioTotal(m4.obtenerPreciototal(hmProds));
 		
 		JLabel lblDegus = new JLabel(m1.toStringCarta());
-		JLabel lblEntre = new JLabel(m2.toString());
-		JLabel lblFinDe = new JLabel(m4.toString());
-		JLabel lblInfant = new JLabel(m3.toString());
-		JPanel panel = new JPanel(new GridLayout(4,1));
+		JLabel lblEntre = new JLabel(m2.toStringCarta());
+		JLabel lblFinDe = new JLabel(m4.toStringCarta());
+		JLabel lblInfant = new JLabel(m3.toStringCarta());
+		JPanel panel = new JPanel(new FlowLayout());
 		
 		
 		panel.add(lblDegus);

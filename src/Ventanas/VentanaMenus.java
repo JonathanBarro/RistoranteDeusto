@@ -28,6 +28,8 @@ import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -61,7 +63,6 @@ public class VentanaMenus extends JFrame {
 		});
 	}
 
-
 	public VentanaMenus() {
 		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -71,8 +72,9 @@ public class VentanaMenus extends JFrame {
 		modeloCarrito = new DefaultListModel<>();
 		
 		JComboBox <Menu> cbMenu = new JComboBox<>();
-		cbMenu.setPreferredSize(new Dimension(120, 20));
-		
+		JComboBox <Bebida> cbBebida = new JComboBox<>();
+		cbMenu.setPreferredSize(new Dimension(140, 20));
+		cbBebida.setPreferredSize(new Dimension(140, 20));
 		
 		ArrayList<Producto> aComida = new ArrayList<>();
 		ArrayList<Producto> aBebdia = new ArrayList<>();
@@ -80,13 +82,14 @@ public class VentanaMenus extends JFrame {
 		Comida p2 = new Comida("Plato2", 10.1,02,1);
 		Comida p3 = new Comida("Plato3", 10.1,03,1);
 		Bebida b1 = new Bebida("Bebida1", 10.1,3,1,true);
-		Bebida b2 = new Bebida("Bebida2", 10.1,3,1,true);
+		Bebida b2 = new Bebida("Bebida2", 12,3,1,false);
 		
 		aComida.add(p1);
 		aComida.add(p2);
 		aComida.add(p3);
 		
 		aBebdia.add(b1);
+		aBebdia.add(b2);
 		
 		HashMap<String, List<Producto>> hmProds = new HashMap<>();
 		
@@ -94,7 +97,6 @@ public class VentanaMenus extends JFrame {
 		hmProds.putIfAbsent("Comida", aComida);
 		
 		double precioTot=0;
-		
 		
 		Menu_Degustacion m1 = new Menu_Degustacion("Menu_Degustacion", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot);
 		Menu_EntreSemana m2 = new Menu_EntreSemana("Menu_EntreSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(), precioTot,false);
@@ -110,18 +112,18 @@ public class VentanaMenus extends JFrame {
 		cbMenu.addItem(m2);
 		cbMenu.addItem(m3);
 		cbMenu.addItem(m4);
+		cbBebida.addItem(b1);
+		cbBebida.addItem(b2);
 		
 		JPanel pcbx = new JPanel(new FlowLayout());
 		JPanel pMedio2 = new JPanel(new FlowLayout());
 		JPanel pNorth = new JPanel(new GridLayout(2, 1));
 		
-		
 		JPanel pBtnsAnadir = new JPanel(new FlowLayout());
 		JPanel pMedio = new JPanel(new FlowLayout());
 		JPanel pBtnJL = new JPanel(new GridLayout(3,1));
 		
-		JPanel pTicket = new JPanel(new GridLayout(1,2));
-		
+		JPanel pTicket = new JPanel(new FlowLayout());
 		
 		menusPane = new JScrollPane(aMenus);
 		menusPane.setBorder(BorderFactory.createTitledBorder("Menus"));
@@ -129,12 +131,14 @@ public class VentanaMenus extends JFrame {
 		JButton btnEliminar = new JButton("Eliminar");
 		JButton btnVaciar = new JButton("Vaciar");
 		JButton btnTicket = new JButton("Ticket"); 
-		JButton btnBebida = new JButton("Bebida"); 
 		JLabel lblCB = new JLabel("Seleccione el menú :");
+		JLabel lblCBB = new JLabel("Seleccione bebida :");
 		JButton btnVerMenus = new JButton("Ver Menus");
 		
 		pcbx.add(lblCB);
 		pcbx.add(cbMenu);
+		pcbx.add(lblCBB);
+		pcbx.add(cbBebida);
 		pMedio.add(btnVerMenus);
 		
 		pNorth.add(pMedio2);
@@ -150,17 +154,6 @@ public class VentanaMenus extends JFrame {
 		pBtnJL.add(menusPane);
 		
 		pTicket.add(btnTicket);
-		pTicket.add(btnBebida);
-		
-		btnBebida.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				VentanaBebidas v = new VentanaBebidas();
-				v.setVisible(true);
-			}
-		});
 		
 		btnVerMenus.addActionListener(new ActionListener() {
 			
@@ -180,6 +173,20 @@ public class VentanaMenus extends JFrame {
 				Menu menu = (Menu) ob;
 				modeloCarrito.addElement(menu);
 				aMenus.setModel(modeloCarrito);
+			}
+
+		});
+		
+		cbBebida.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				Object ob = cbBebida.getSelectedItem();
+				Bebida bebida = (Bebida) ob;
+				Menu menu = modeloCarrito.get(modeloCarrito.size()-1);
+				menu.getpL().get("Bebida").add(bebida);
+				System.out.println(menu.getpL().get("Bebida").get(menu.getpL().get("Bebida").size()-1).toString());
 			}
 		});
 
@@ -218,8 +225,6 @@ public class VentanaMenus extends JFrame {
 		
 		setLocationRelativeTo(null);
 		setVisible(true);
-		
-		
 		
 	}
 

@@ -50,9 +50,7 @@ public class testMenud_Finde {
 
 	@Test
 	public void testToString() {
-		assertEquals("Menu_FinDeSemana [numPersonas=" + numPersonas + ", getId()=" +  menDdS.getId() + ", getpL()=" +  menDdS.getpL()
-		+ ", getNumProductos()=" +  menDdS.getNumProductos() + ", getPrecioTotal()=" +  menDdS.getPrecioTotal()
-		+ "]", menDdS.toString());
+		assertEquals(menDdS.getId(), menDdS.toString());
 	}
 
 }

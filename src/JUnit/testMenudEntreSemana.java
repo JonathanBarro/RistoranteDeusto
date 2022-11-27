@@ -50,9 +50,7 @@ public class testMenudEntreSemana {
 
 	@Test
 	public void testToString() {
-		assertEquals( "Menu_EntreSemana [descuentoEstudiantes=" + menFin.descuentoEstudiantes + ", isDescuentoEstudiantes()="
-				+ menFin.isDescuentoEstudiantes() + ", getId()=" + menFin.getId() + ", getpL()=" + menFin.getpL() + ", getNumProductos()="
-				+ menFin.getNumProductos() + ", getPrecioTotal()=" + menFin.getPrecioTotal() + "]", menFin.toString());
+		assertEquals(menFin.getId(), menFin.toString());
 	}
 
 }

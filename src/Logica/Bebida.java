@@ -27,9 +27,9 @@ public class Bebida extends Producto{
 	@Override
 	public String toString() {
 		if( this.isFrio() == false) {
-		return  getNombre() + " " + getPrecio() + "€ del tiempo"  ;
+		return  getNombre() + " " + getPrecio() + " € del tiempo"  ;
 		}else {
-			return  getNombre() + " " + getPrecio() + "€ fria"  ;
+			return  getNombre() + " " + getPrecio() + " € fria"  ;
 		}
 	}
 	

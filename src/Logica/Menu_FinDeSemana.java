@@ -30,14 +30,23 @@ public class Menu_FinDeSemana extends Menu{
 	public void setNumPersonas(int numPersonas) {
 		this.numPersonas = numPersonas;
 	}
-
-	@Override
 	public String toString() {
-		return "Menu_FinDeSemana [numPersonas=" + numPersonas + ", getId()=" + getId() + ", getpL()=" + getpL()
-				+ ", getNumProductos()=" + getNumProductos() + ", getPrecioTotal()=" + getPrecioTotal()
-				+ "]";
+		return getId();
 	}
-
+	public String toStringTot() {
+		return "Menu_Degustacion [getId()=" + getId() + ", getpL()=" + getpL() + ", getNumProductos()="
+				+ getNumProductos() + ", getPrecioTotal()=" + getPrecioTotal() + "]";
+	}
+	public String toStringCarta() {
+		String aBebida = "";
+		for (int i = 0; i < getpL().get("Bebida").size(); i++) {
+			aBebida.concat(getpL().get("Bebida").get(i).getNombre());
+			aBebida.concat("  ");
+			
+		}
+		return getId() + " : " + " numero de platos: " + getNumProductos() + "   Primer plato: " + getpL().get("Comida").get(0).getNombre() + "   Segundo plato: " + getpL().get("Comida").get(1).getNombre() 
+				+ "   Postre: " + getpL().get("Comida").get(2).getNombre() + "   Bebida: " + aBebida;   
+	}
 
 
 }
