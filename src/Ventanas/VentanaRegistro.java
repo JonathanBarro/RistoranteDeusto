@@ -13,14 +13,16 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
 
 public class VentanaRegistro {
 
 	private JFrame frame;
-	private JTextField textNombre;
-	private JTextField textApellido;
-	private JTextField textEdad;
-	private JTextField textTelefono;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
 
 	/**
 	 * Launch the application.
@@ -52,118 +54,78 @@ public class VentanaRegistro {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		frame.getContentPane().setLayout(gridBagLayout);
+		frame.getContentPane().setLayout(new BorderLayout(0, 0));
 		
-		//Labels
-		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 10));
-		GridBagConstraints gbc_lblNombre = new GridBagConstraints();
-		gbc_lblNombre.anchor = GridBagConstraints.WEST;
-		gbc_lblNombre.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNombre.gridx = 4;
-		gbc_lblNombre.gridy = 1;
-		frame.getContentPane().add(lblNombre, gbc_lblNombre);
+		JPanel panelIzq = new JPanel();
+		panelIzq.setBackground(new Color(255, 128, 64));
+		frame.getContentPane().add(panelIzq, BorderLayout.WEST);
 		
-		//TextFields
-		textNombre = new JTextField();
-		GridBagConstraints gbc_textNombre = new GridBagConstraints();
-		gbc_textNombre.insets = new Insets(0, 0, 5, 5);
-		gbc_textNombre.anchor = GridBagConstraints.WEST;
-		gbc_textNombre.gridx = 4;
-		gbc_textNombre.gridy = 2;
-		frame.getContentPane().add(textNombre, gbc_textNombre);
-		textNombre.setColumns(10);
+		JPanel panelNorth = new JPanel();
+		panelNorth.setBackground(new Color(255, 128, 64));
+		frame.getContentPane().add(panelNorth, BorderLayout.NORTH);
 		
+		JLabel lblRegis = new JLabel("Registro");
+		lblRegis.setFont(new Font("Freestyle Script", Font.BOLD, 28));
+		panelNorth.add(lblRegis);
 		
-		JLabel lblApellido = new JLabel("Apellido");
-		lblApellido.setFont(new Font("Tahoma", Font.BOLD, 10));
-		GridBagConstraints gbc_lblApellido = new GridBagConstraints();
-		gbc_lblApellido.anchor = GridBagConstraints.WEST;
-		gbc_lblApellido.insets = new Insets(0, 0, 5, 5);
-		gbc_lblApellido.gridx = 4;
-		gbc_lblApellido.gridy = 3;
-		frame.getContentPane().add(lblApellido, gbc_lblApellido);
+		JPanel panelDer = new JPanel();
+		panelDer.setBackground(new Color(255, 128, 64));
+		frame.getContentPane().add(panelDer, BorderLayout.EAST);
 		
+		JPanel panelSur = new JPanel();
+		panelSur.setBackground(new Color(255, 128, 64));
+		frame.getContentPane().add(panelSur, BorderLayout.SOUTH);
 		
-		textApellido = new JTextField();
-		GridBagConstraints gbc_textApellido = new GridBagConstraints();
-		gbc_textApellido.anchor = GridBagConstraints.WEST;
-		gbc_textApellido.insets = new Insets(0, 0, 5, 5);
-		gbc_textApellido.gridx = 4;
-		gbc_textApellido.gridy = 4;
-		frame.getContentPane().add(textApellido, gbc_textApellido);
-		textApellido.setColumns(10);
+		JPanel panelCent = new JPanel();
+		panelCent.setBackground(new Color(255, 255, 128));
+		frame.getContentPane().add(panelCent, BorderLayout.CENTER);
+		panelCent.setLayout(null);
 		
+		JLabel lblNombre = new JLabel("Nombre:");
+		lblNombre.setBounds(106, 22, 99, 14);
+		panelCent.add(lblNombre);
 		
-		JLabel lblEdad = new JLabel("Edad");
-		lblEdad.setFont(new Font("Tahoma", Font.BOLD, 10));
-		GridBagConstraints gbc_lblEdad = new GridBagConstraints();
-		gbc_lblEdad.anchor = GridBagConstraints.WEST;
-		gbc_lblEdad.insets = new Insets(0, 0, 5, 5);
-		gbc_lblEdad.gridx = 4;
-		gbc_lblEdad.gridy = 5;
-		frame.getContentPane().add(lblEdad, gbc_lblEdad);
+		JLabel lblApellido = new JLabel("Apellido:");
+		lblApellido.setBounds(106, 56, 129, 14);
+		panelCent.add(lblApellido);
 		
+		JLabel lblContrasenia = new JLabel("Contrasenya");
+		lblContrasenia.setBounds(106, 92, 129, 14);
+		panelCent.add(lblContrasenia);
 		
-		textEdad = new JTextField();
-		GridBagConstraints gbc_textEdad = new GridBagConstraints();
-		gbc_textEdad.anchor = GridBagConstraints.WEST;
-		gbc_textEdad.insets = new Insets(0, 0, 5, 5);
-		gbc_textEdad.gridx = 4;
-		gbc_textEdad.gridy = 6;
-		frame.getContentPane().add(textEdad, gbc_textEdad);
-		textEdad.setColumns(10);
+		JLabel lblNewLabel_3 = new JLabel("Numero de telefono");
+		lblNewLabel_3.setBounds(106, 131, 136, 14);
+		panelCent.add(lblNewLabel_3);
 		
+		textField = new JTextField();
+		textField.setBounds(231, 19, 96, 20);
+		panelCent.add(textField);
+		textField.setColumns(10);
 		
-		JLabel lblTelefono = new JLabel("Teléfono");
-		lblTelefono.setFont(new Font("Tahoma", Font.BOLD, 10));
-		GridBagConstraints gbc_lblTelefono = new GridBagConstraints();
-		gbc_lblTelefono.anchor = GridBagConstraints.WEST;
-		gbc_lblTelefono.insets = new Insets(0, 0, 5, 5);
-		gbc_lblTelefono.gridx = 4;
-		gbc_lblTelefono.gridy = 7;
-		frame.getContentPane().add(lblTelefono, gbc_lblTelefono);
+		textField_1 = new JTextField();
+		textField_1.setBounds(231, 53, 96, 20);
+		panelCent.add(textField_1);
+		textField_1.setColumns(10);
 		
+		textField_2 = new JTextField();
+		textField_2.setBounds(231, 92, 96, 20);
+		panelCent.add(textField_2);
+		textField_2.setColumns(10);
 		
-		textTelefono = new JTextField();
-		GridBagConstraints gbc_textTelefono = new GridBagConstraints();
-		gbc_textTelefono.anchor = GridBagConstraints.WEST;
-		gbc_textTelefono.gridwidth = 2;
-		gbc_textTelefono.insets = new Insets(0, 0, 5, 5);
-		gbc_textTelefono.gridx = 4;
-		gbc_textTelefono.gridy = 8;
-		frame.getContentPane().add(textTelefono, gbc_textTelefono);
-		textTelefono.setColumns(10);
+		textField_3 = new JTextField();
+		textField_3.setBounds(231, 128, 96, 20);
+		panelCent.add(textField_3);
+		textField_3.setColumns(10);
 		
-		//Botones
+		JButton btnRegis = new JButton("Regristrarse");
+		btnRegis.setBackground(new Color(255, 128, 64));
+		btnRegis.setBounds(226, 175, 129, 23);
+		panelCent.add(btnRegis);
 		
-		JButton btnVolverInicioSesion = new JButton("Inicio");
-		btnVolverInicioSesion.setFont(new Font("Tahoma", Font.BOLD, 10));
-		btnVolverInicioSesion.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnVolverInicioSesion.setBackground(Color.RED);
-		GridBagConstraints gbc_btnVolverInicioSesion = new GridBagConstraints();
-		gbc_btnVolverInicioSesion.insets = new Insets(0, 0, 0, 5);
-		gbc_btnVolverInicioSesion.gridx = 2;
-		gbc_btnVolverInicioSesion.gridy = 10;
-		frame.getContentPane().add(btnVolverInicioSesion, gbc_btnVolverInicioSesion);
-		
-		JButton btnConfirmarRegistro = new JButton("Registro");
-		btnConfirmarRegistro.setFont(new Font("Tahoma", Font.BOLD, 10));
-		btnConfirmarRegistro.setBackground(Color.GREEN);
-		GridBagConstraints gbc_btnConfirmarRegistro = new GridBagConstraints();
-		gbc_btnConfirmarRegistro.anchor = GridBagConstraints.WEST;
-		gbc_btnConfirmarRegistro.insets = new Insets(0, 0, 0, 5);
-		gbc_btnConfirmarRegistro.gridx = 6;
-		gbc_btnConfirmarRegistro.gridy = 10;
-		frame.getContentPane().add(btnConfirmarRegistro, gbc_btnConfirmarRegistro);
+		JButton btnVolver = new JButton("<-");
+		btnVolver.setForeground(new Color(0, 128, 255));
+		btnVolver.setBounds(37, 175, 89, 23);
+		panelCent.add(btnVolver);
 	}
 
 }

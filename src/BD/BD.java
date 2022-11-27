@@ -238,6 +238,27 @@ public class BD {
 		}
 		
 		
+		public void insertarDatosReserva(List<Reserva> reservas) {
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+				     Statement stmt = con.createStatement()) {
+				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, '%d');";
+				System.out.println("- Insertando reservas...");	
+				for (Reserva r : reservas) {
+					if (1 == stmt.executeUpdate(String.format(sql9, r.getFecha(), r.getNumPersonas(),r.getIdReserva()))) {					
+						System.out.println(String.format(" - Reservas insertadas: %s", r.toString()));
+					} else {
+						System.out.println(String.format(" - No se ha insertado las reservas: %s", r.toString()));
+					}
+				}
+			}catch (Exception ex) {
+				System.err.println(String.format("* Error al insertar datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}
+			
+			
+		}
+		
+		
 		
 		public List<Cliente> obtenerDatosClientes() {
 			List<Cliente> clientes = new ArrayList<>();

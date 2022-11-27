@@ -28,6 +28,12 @@ public class Reserva {
 		this.aMenu = aMenu;
 		this.cliente = cliente;
 	}
+	public Reserva(String fecha, int numPersonas, int idReserva) {
+		super();
+		this.fecha = fecha;
+		this.numPersonas = numPersonas;
+		this.idReserva = idReserva;
+	}
 
 	public String getFecha() {
 		return fecha;

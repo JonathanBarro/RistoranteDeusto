@@ -10,8 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -23,6 +24,9 @@ import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JDateChooser;
 
+import BD.BD;
+import Logica.Reserva;
+
 
 
 public class VentanaReservaExteriror extends JFrame {
@@ -33,6 +37,8 @@ public class VentanaReservaExteriror extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JDateChooser calen;
+	private BD bd;
+	
 
 	/**
 	 * Launch the application.
@@ -128,6 +134,27 @@ public class VentanaReservaExteriror extends JFrame {
 		btnConfirm.setFont(new Font("MV Boli", Font.PLAIN, 11));
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				int id=0;
+				String fecha="11";
+				int numPer=0;
+				Reserva  res = new Reserva(fecha,numPer,id);
+				List<Reserva> reservas = new ArrayList <Reserva>();
+				res.toString();
+				
+				for(int i = 0;i<reservas.size();i++) {
+				res.setIdReserva(i);
+				res.setNumPersonas(comboBox_NPersonas.getSelectedIndex());
+				 String año = Integer.toString(calen.getCalendar().get(java.util.Calendar.YEAR));
+				 String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
+				 String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
+				 res.setFecha(dia+"-"+mes);
+				 res.toString();
+				 reservas.add(res);
+				 
+				}
+				//bd.insertarDatosReserva(reservas);
+				
+				
 			}
 		});
 		panel_Sur.add(btnConfirm);

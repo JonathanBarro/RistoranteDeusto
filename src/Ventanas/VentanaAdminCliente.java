@@ -10,6 +10,10 @@ import java.awt.Insets;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Toolkit;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.SwingConstants;
+import javax.swing.JLabel;
 
 public class VentanaAdminCliente {
 
@@ -46,32 +50,40 @@ public class VentanaAdminCliente {
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaAdminCliente.class.getResource("/junit/runner/smalllogo.gif")));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		frame.getContentPane().setLayout(gridBagLayout);
 		
+		JPanel panelIzq = new JPanel();
+		panelIzq.setBackground(new Color(255, 128, 64));
+		frame.getContentPane().add(panelIzq, BorderLayout.WEST);
 		
-		//Botones
+		JPanel panelDercha = new JPanel();
+		panelDercha.setBackground(new Color(255, 128, 64));
+		frame.getContentPane().add(panelDercha, BorderLayout.EAST);
 		
-		JButton btnAdmin = new JButton("Administrador");
-		btnAdmin.setBackground(Color.ORANGE);
-		btnAdmin.setFont(new Font("Tahoma", Font.BOLD, 10));
-		GridBagConstraints gbc_btnAdmin = new GridBagConstraints();
-		gbc_btnAdmin.insets = new Insets(0, 0, 5, 0);
-		gbc_btnAdmin.gridx = 5;
-		gbc_btnAdmin.gridy = 2;
-		frame.getContentPane().add(btnAdmin, gbc_btnAdmin);
+		JPanel panelBajo = new JPanel();
+		panelBajo.setBackground(new Color(255, 128, 64));
+		frame.getContentPane().add(panelBajo, BorderLayout.SOUTH);
 		
-		JButton btnCliente = new JButton("Cliente");
-		btnCliente.setBackground(Color.CYAN);
-		btnCliente.setFont(new Font("Tahoma", Font.BOLD, 10));
-		GridBagConstraints gbc_btnCliente = new GridBagConstraints();
-		gbc_btnCliente.gridx = 5;
-		gbc_btnCliente.gridy = 6;
-		frame.getContentPane().add(btnCliente, gbc_btnCliente);
+		JPanel panelNoth = new JPanel();
+		panelNoth.setBackground(new Color(255, 128, 64));
+		frame.getContentPane().add(panelNoth, BorderLayout.NORTH);
+		
+		JLabel lblRis = new JLabel("Ristorante");
+		lblRis.setFont(new Font("Freestyle Script", Font.BOLD, 28));
+		panelNoth.add(lblRis);
+		
+		JPanel panelCent = new JPanel();
+		panelCent.setBackground(new Color(255, 255, 128));
+		frame.getContentPane().add(panelCent, BorderLayout.CENTER);
+		
+		JButton btnAmin = new JButton("Administrador");
+		btnAmin.setBackground(new Color(255, 128, 64));
+		panelCent.add(btnAmin);
+		
+		JButton btnNewButton_1 = new JButton("Cliente");
+		btnNewButton_1.setBackground(new Color(255, 128, 64));
+		btnNewButton_1.setVerticalAlignment(SwingConstants.CENTER);
+		btnNewButton_1.setHorizontalAlignment(SwingConstants.CENTER);
+		panelCent.add(btnNewButton_1);
 	}
 
 }
