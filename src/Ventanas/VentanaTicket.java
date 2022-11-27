@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
+import java.util.List;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
@@ -18,7 +19,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import BD.BD;
 import Logica.Menu;
+import Logica.Reserva;
 
 public class VentanaTicket extends JFrame {
 	
@@ -30,6 +33,7 @@ public class VentanaTicket extends JFrame {
 	private JTextArea taResumen;
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy kk.mm.ss");
 	private VentanaMenus vM;
+	private BD bd = new BD();
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -106,11 +110,14 @@ public class VentanaTicket extends JFrame {
 		String texto = ""
 				+ "Factura de la compra del dia: " + sdf.format(d) + "\n";
 		double total = 0;
+		List<Reserva> aReserva = bd.obtenerDatosReservas();
 		ArrayList<Menu> aMenu = vM.obtenerCarrito();
+		aReserva.get(aReserva.size()-1).setaMenu(aMenu);
 		for(Menu m: aMenu) {
 			texto = texto + "	" + m.toString().replace("\n", "") + "\n";
 			total = m.obtenerPreciototal(m.getpL());
 		}
+		texto = texto + "	" + aReserva.get(aReserva.size()-1).toString().replace("\n", "") + "\n";
 		texto = texto + "TOTAL: "+total+" €";
 		taResumen.setText(texto);
 	}
