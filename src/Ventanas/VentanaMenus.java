@@ -28,10 +28,6 @@ import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -218,6 +214,16 @@ public class VentanaMenus extends JFrame {
 				modeloCarrito.clear();
 			}
 		});
+		VentanaMenus vM = this;
+		btnTicket.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				VentanaTicket vt = new VentanaTicket(vM);
+				vt.setVisible(true);
+			}
+		});
 		
 		getContentPane().add(pNorth, BorderLayout.NORTH);
 		getContentPane().add(pBtnJL, BorderLayout.CENTER);
@@ -227,5 +233,17 @@ public class VentanaMenus extends JFrame {
 		setVisible(true);
 		
 	}
-
+	public ArrayList<Menu> obtenerCarrito() {
+	ArrayList<Menu> aMenu = new ArrayList<>();
+	if(modeloCarrito.getSize() > 0) {
+		for (int i = 0; i < modeloCarrito.getSize(); i++) {
+		aMenu.add(modeloCarrito.get(i));
+		}
+		System.out.println(aMenu);
+	}
+	return aMenu;
+	}
+	public void vaciarCarrito() {
+		modeloCarrito.removeAllElements();
+	}
 }
