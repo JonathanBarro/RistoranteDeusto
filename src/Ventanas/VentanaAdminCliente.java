@@ -1,43 +1,33 @@
 package Ventanas;
 
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+
 import javax.swing.JButton;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.SwingConstants;
+
+
 import javax.swing.JLabel;
 
-public class VentanaAdminCliente {
+public class VentanaAdminCliente extends JFrame {
 
-	private JFrame frame;
+	
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaAdminCliente window = new VentanaAdminCliente();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
-	 * Create the application.
+	 * 
 	 */
+	private static final long serialVersionUID = 1L;
+
 	public VentanaAdminCliente() {
 		initialize();
 	}
@@ -46,26 +36,26 @@ public class VentanaAdminCliente {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaAdminCliente.class.getResource("/junit/runner/smalllogo.gif")));
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaAdminCliente.class.getResource("/junit/runner/smalllogo.gif")));
+		setBounds(100, 100, 450, 300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panelIzq = new JPanel();
 		panelIzq.setBackground(new Color(255, 128, 64));
-		frame.getContentPane().add(panelIzq, BorderLayout.WEST);
+		getContentPane().add(panelIzq, BorderLayout.WEST);
 		
 		JPanel panelDercha = new JPanel();
 		panelDercha.setBackground(new Color(255, 128, 64));
-		frame.getContentPane().add(panelDercha, BorderLayout.EAST);
+		getContentPane().add(panelDercha, BorderLayout.EAST);
 		
 		JPanel panelBajo = new JPanel();
 		panelBajo.setBackground(new Color(255, 128, 64));
-		frame.getContentPane().add(panelBajo, BorderLayout.SOUTH);
+		getContentPane().add(panelBajo, BorderLayout.SOUTH);
 		
 		JPanel panelNoth = new JPanel();
 		panelNoth.setBackground(new Color(255, 128, 64));
-		frame.getContentPane().add(panelNoth, BorderLayout.NORTH);
+		getContentPane().add(panelNoth, BorderLayout.NORTH);
 		
 		JLabel lblRis = new JLabel("Ristorante");
 		lblRis.setFont(new Font("Freestyle Script", Font.BOLD, 28));
@@ -73,17 +63,34 @@ public class VentanaAdminCliente {
 		
 		JPanel panelCent = new JPanel();
 		panelCent.setBackground(new Color(255, 255, 128));
-		frame.getContentPane().add(panelCent, BorderLayout.CENTER);
+		getContentPane().add(panelCent, BorderLayout.CENTER);
 		
 		JButton btnAmin = new JButton("Administrador");
 		btnAmin.setBackground(new Color(255, 128, 64));
 		panelCent.add(btnAmin);
 		
-		JButton btnNewButton_1 = new JButton("Cliente");
-		btnNewButton_1.setBackground(new Color(255, 128, 64));
-		btnNewButton_1.setVerticalAlignment(SwingConstants.CENTER);
-		btnNewButton_1.setHorizontalAlignment(SwingConstants.CENTER);
-		panelCent.add(btnNewButton_1);
+		btnAmin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaInicioAdmin window = new VentanaInicioAdmin();
+				window.setVisible(true);
+				
+			}
+		});
+		
+		JButton btnCliente = new JButton("Cliente");
+		btnCliente.setBackground(new Color(255, 128, 64));
+		btnCliente.setVerticalAlignment(SwingConstants.CENTER);
+		btnCliente.setHorizontalAlignment(SwingConstants.CENTER);
+		panelCent.add(btnCliente);
+		btnCliente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {	
+				VentanaInicio window = new VentanaInicio();
+				window.setVisible(true);
+				
+			}
+		});
+		
+		
 	}
 
 }

@@ -1,7 +1,5 @@
 package Ventanas;
 
-import java.awt.EventQueue;
-
 
 
 import javax.swing.JFrame;
@@ -10,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.toedter.calendar.JDateChooser;
 
+import BD.BD;
 import Logica.Reserva;
 
 import java.awt.BorderLayout;
@@ -41,24 +40,13 @@ public class VentanaReservaInteriror extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JDateChooser calen; 
+	public static BD bd;
 
 
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaReservaInteriror frame = new VentanaReservaInteriror();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -116,7 +104,7 @@ public class VentanaReservaInteriror extends JFrame {
 		
 		
 		JPanel panel_JCalendar = new JPanel();
-		panel_JCalendar.setBackground(new Color(255, 0, 128));
+		panel_JCalendar.setBackground(new Color(128, 255, 128));
 		panel_Cent.add(panel_JCalendar, BorderLayout.CENTER);
 		
 		Date fechaActual = new Date(System.currentTimeMillis());
@@ -143,25 +131,27 @@ public class VentanaReservaInteriror extends JFrame {
 		btnConfirm.setFont(new Font("MV Boli", Font.PLAIN, 11));
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int id=0;
-				String fecha="11";
-				int numPer=0;
-				Reserva  res = new Reserva(fecha,numPer,id);
-				List<Reserva> reservas = new ArrayList <Reserva>();
-				res.toString();
+					
+					Reserva  res = new Reserva();
+					List<Reserva> reservas = new ArrayList <Reserva>();
+					reservas = bd.obtenerDatosReservas();
 				
-				for(int i = 0;i<reservas.size();i++) {
-				res.setIdReserva(i);
-				res.setNumPersonas(comboBox_NPersonas.getSelectedIndex());
-				 String año = Integer.toString(calen.getCalendar().get(java.util.Calendar.YEAR));
-				 String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
-				 String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
-				 res.setFecha(dia+"-"+mes);
-				 res.toString();
-				 reservas.add(res);
-				 
-				}
-				//bd.insertarDatosReserva(reservas);
+					
+					for(int i = 0;i<reservas.size();i++) {
+					res.setIdReserva(i+1);
+					res.setNumPersonas(comboBox_NPersonas.getSelectedIndex());
+					 //String año = Integer.toString(calen.getCalendar().get(java.util.Calendar.YEAR));
+					String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
+					String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
+					res.setFecha(dia+"-"+mes);
+					System.out.println( res.toString());
+					 
+					}
+					reservas.add(res);
+					bd.insertarDatosReserva(reservas);
+					VentanaMenus window = new VentanaMenus();
+					window.setVisible(true);
+					dispose();
 				
 				
 			}
@@ -170,7 +160,7 @@ public class VentanaReservaInteriror extends JFrame {
 		
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(128, 128, 255));
+		panel.setBackground(new Color(128, 255, 128));
 		panel_Cent.add(panel, BorderLayout.WEST);
 	}
 

@@ -1,20 +1,19 @@
-
 package Ventanas;
 
-import javax.swing.JFrame;
-import javax.swing.JButton;
-
-import java.awt.Font;
 import java.awt.Color;
 
-import javax.swing.JPanel;
-import javax.swing.JLabel;
+import java.awt.Font;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class VentanaInicio extends JFrame{
+
+public class VentanaInicioAdmin extends JFrame{
 
 	
 	/**
@@ -24,11 +23,16 @@ public class VentanaInicio extends JFrame{
 	private JTextField textField;
 	private JTextField textFieldContrasena;
 
+	/**
+	 * Launch the application.
+	 */
+
 
 	/**
 	 * Create the application.
+	 * @wbp.parser.entryPoint
 	 */
-	public VentanaInicio() {
+	public VentanaInicioAdmin() {
 		initialize();
 	}
 
@@ -88,30 +92,14 @@ public class VentanaInicio extends JFrame{
 		panelCent.add(textFieldContrasena);
 		textFieldContrasena.setColumns(10);
 		
-		JLabel lblNewLabelRegis = new JLabel("Si no tiene una cuenta creada pulse aqui");
-		lblNewLabelRegis.setBounds(33, 170, 236, 14);
-		panelCent.add(lblNewLabelRegis);
-		
-		JButton btnRegis = new JButton("Registrarse");
-		btnRegis.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				VentanaRegistro window = new VentanaRegistro();
-				window.setVisible(true);
-				
-			}
-		});
-		btnRegis.setForeground(new Color(0, 128, 255));
-		btnRegis.setBounds(271, 166, 104, 23);
-		panelCent.add(btnRegis);
-		
-		
+
 		JButton btnNewButton = new JButton("Iniciar Sesion");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				EleccionInteriorExterior window = new EleccionInteriorExterior();
+				VentanaStock window = new VentanaStock();
 				window.setVisible(true);
 				dispose();
+				
 			}
 		});
 		btnNewButton.setBackground(new Color(255, 128, 64));
@@ -121,8 +109,3 @@ public class VentanaInicio extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
-
-
-
-
-

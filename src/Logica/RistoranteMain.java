@@ -5,50 +5,53 @@ import java.util.ArrayList;
 import java.util.List;
 
 import BD.BD;
+import Ventanas.VentanaAdminCliente;
 
 public class RistoranteMain {
 	
 	public static void main(String[] args) {
 		
 		BD bd = new BD();		
+		VentanaAdminCliente window = new VentanaAdminCliente();
+		window.setVisible(true);
 		
 		//CREATE DATABASE: Se crea la BBDD
 		bd.crearBBDD();
 		
 		//INSERT: Insertar datos en la BBDD		
-		cargarBD(bd);
+//		cargarBD(bd);
 		
-		List<Cliente> clientes = bd.obtenerDatosClientes();
-		printClientes(clientes);
-		List<Producto> bebidas = bd.obtenerDatosBebidas();
-		printBebidas(bebidas);
-		bd.cambiarPrecio(bebidas.get(0), 4);
-		bebidas = bd.obtenerDatosBebidas();
-		printBebidas(bebidas);
-		
-		List<Admin> admins = bd.obtenerDatosAdmins();
-		printAdmin(admins);
-		
-		List<Producto> comidas = bd.obtenerDatosComidas();
-		printComida(comidas);
-		
-		List<Mesa> mesas = bd.obtenerDatosMesas();
-		printMesa(mesas);
-		
-		List<Reserva> reservas = bd.obtenerDatosReservas();
-		printReserva(reservas);
-		
-		List<Menu_Degustacion> menuDegustacion = bd.obtenerDatosMenu_Degustacion();
-		printMenu_Degustacion(menuDegustacion);
-		
-		List<Menu_EntreSemana>menuEntreSemanas = bd.obtenerDatosMenu_EntreSemana();
-		printMenu_EntreSemana(menuEntreSemanas);
-		
-		List<Menu_FinDeSemana> menuFinDeSemanas = bd.obtenerDatosMenu_FinDeSemana();
-		printMenu_FinDeSemana(menuFinDeSemanas);
-		
-		List<Menu_Infantil> menuInfantiles = bd.obtenerDatosMenu_Infantil();
-		printMenu_Infantil(menuInfantiles);
+//		List<Cliente> clientes = bd.obtenerDatosClientes();
+//		printClientes(clientes);
+//		List<Producto> bebidas = bd.obtenerDatosBebidas();
+//		printBebidas(bebidas);
+//		bd.cambiarPrecio(bebidas.get(0), 4);
+//		bebidas = bd.obtenerDatosBebidas();
+//		printBebidas(bebidas);
+//		
+//		List<Admin> admins = bd.obtenerDatosAdmins();
+//		printAdmin(admins);
+//		
+//		List<Producto> comidas = bd.obtenerDatosComidas();
+//		printComida(comidas);
+//		
+//		List<Mesa> mesas = bd.obtenerDatosMesas();
+//		printMesa(mesas);
+//		
+//		List<Reserva> reservas = bd.obtenerDatosReservas();
+//		printReserva(reservas);
+//		
+//		List<Menu_Degustacion> menuDegustacion = bd.obtenerDatosMenu_Degustacion();
+//		printMenu_Degustacion(menuDegustacion);
+//		
+//		List<Menu_EntreSemana>menuEntreSemanas = bd.obtenerDatosMenu_EntreSemana();
+//		printMenu_EntreSemana(menuEntreSemanas);
+//		
+//		List<Menu_FinDeSemana> menuFinDeSemanas = bd.obtenerDatosMenu_FinDeSemana();
+//		printMenu_FinDeSemana(menuFinDeSemanas);
+//		
+//		List<Menu_Infantil> menuInfantiles = bd.obtenerDatosMenu_Infantil();
+//		printMenu_Infantil(menuInfantiles);
 		
 		//PARA LA PARTE DEL ADMIN
 		
@@ -76,19 +79,19 @@ public class RistoranteMain {
 //		bd.borrarBBDD();
 	
 	}
-	private static void cargarBD(BD bd) {
-		List<Cliente> clientes = initClientes();
-		List<Admin> admins = initAdmin();
-		List<Bebida> bebidas = initBebidas();
-		List<Comida> comidas = initComidas();
-		List<Menu_Degustacion> menuDegustacion = initMenu_Degustacion();
-		List<Menu_EntreSemana> menuEntreSemanas = initMenu_EntreSemana();
-		List<Menu_FinDeSemana> menuFinDeSemanas = initMenu_FinDeSemana();
-		List<Menu_Infantil> menuInfantiles = initMenu_Infantil();
-		List<Mesa> mesas = initMesa();
-		List<Reserva> reservas = initReservas();
-		bd.insertarDatos(clientes, admins, bebidas, comidas, menuDegustacion, menuEntreSemanas, menuFinDeSemanas, menuInfantiles, mesas, reservas);
-	}
+//	private static void cargarBD(BD bd) {
+//		List<Cliente> clientes = initClientes();
+//		List<Admin> admins = initAdmin();
+//		List<Bebida> bebidas = initBebidas();
+//		List<Comida> comidas = initComidas();
+//		List<Menu_Degustacion> menuDegustacion = initMenu_Degustacion();
+//		List<Menu_EntreSemana> menuEntreSemanas = initMenu_EntreSemana();
+//		List<Menu_FinDeSemana> menuFinDeSemanas = initMenu_FinDeSemana();
+//		List<Menu_Infantil> menuInfantiles = initMenu_Infantil();
+//		List<Mesa> mesas = initMesa();
+//		List<Reserva> reservas = initReservas();
+//		bd.insertarDatos(clientes, admins, bebidas, comidas, menuDegustacion, menuEntreSemanas, menuFinDeSemanas, menuInfantiles, mesas, reservas);
+//	}
 	
 	private static void printClientes(List<Cliente> clientes) {
 		if (!clientes.isEmpty()) {		

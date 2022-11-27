@@ -1,9 +1,9 @@
 package Ventanas;
 import Logica.Comida;
 
+
 import Logica.Producto;
 
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.util.ArrayList;
 
@@ -23,22 +23,11 @@ public class VentanaStock extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private ArrayList<Producto> listaProductos= new ArrayList<>(); 
+	private ArrayList<Producto> listaProductos= new ArrayList<>();
 	/**
 	 * Create the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaStock frame = new VentanaStock();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 	public VentanaStock() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
