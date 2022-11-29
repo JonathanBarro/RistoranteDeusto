@@ -97,7 +97,7 @@ public class VentanaStock extends JFrame{
 		
 	
 	
-	listaProductos=bd.obtenerDatosComidas();
+		listaProductos=bd.obtenerDatosComidas();
 	
 		JButton CambiarPrecio= new JButton("Cambiar el precio");
 		panelSur.add(CambiarPrecio);
