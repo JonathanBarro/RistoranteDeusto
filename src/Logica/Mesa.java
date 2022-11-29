@@ -6,6 +6,7 @@ public class Mesa {
 	private String idMesa;
 	private int lugar;//para saber si se ubica dentro a fuera: 0 Dentro / 1 Fuera
 	private boolean ocupada;
+	private int numPersonas;
 	
 	
 	
@@ -14,11 +15,12 @@ public class Mesa {
 		
 	}
 
-	public Mesa(String idMesa, int lugar, boolean ocupada) {
+	public Mesa(String idMesa, int lugar, boolean ocupada,int numPersonas) {
 		super();
 		this.idMesa = idMesa;
 		this.lugar = lugar;
 		this.ocupada = ocupada;
+		this.numPersonas = numPersonas;
 		
 	}
 
@@ -60,11 +62,22 @@ public class Mesa {
 	public void setOcupada(boolean ocupada) {
 		this.ocupada = ocupada;
 	}
+	
+	
 
+
+	public int getNumPersonas() {
+		return numPersonas;
+	}
+
+	public void setNumPersonas(int numPersonas) {
+		this.numPersonas = numPersonas;
+	}
 
 	@Override
 	public String toString() {
-		return "Mesa [idMesa=" + idMesa + ", lugar=" + lugar + ", ocupada=" + ocupada + ", sitios por mesa="+ sitiosMesa + "]";
+		return "Mesa [idMesa=" + idMesa + ", lugar=" + lugar + ", ocupada=" + ocupada + ", numPersonas=" + numPersonas
+				+ "]";
 	}
 
 

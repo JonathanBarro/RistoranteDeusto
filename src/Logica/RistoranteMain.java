@@ -35,8 +35,8 @@ public class RistoranteMain {
 		List<Producto> comidas = bd.obtenerDatosComidas();
 		printComida(comidas);
 //		
-//		List<Mesa> mesas = bd.obtenerDatosMesas();
-//		printMesa(mesas);
+		List<Mesa> mesas = bd.obtenerDatosMesas();
+		printMesa(mesas);
 //		
 //		List<Reserva> reservas = bd.obtenerDatosReservas();
 //		printReserva(reservas);
@@ -47,8 +47,8 @@ public class RistoranteMain {
 //		List<Menu_EntreSemana>menuEntreSemanas = bd.obtenerDatosMenu_EntreSemana();
 //		printMenu_EntreSemana(menuEntreSemanas);
 //		
-//		List<Menu_FinDeSemana> menuFinDeSemanas = bd.obtenerDatosMenu_FinDeSemana();
-//		printMenu_FinDeSemana(menuFinDeSemanas);
+		List<Menu_FinDeSemana> menuFinDeSemanas = bd.obtenerDatosMenu_FinDeSemana();
+		printMenu_FinDeSemana(menuFinDeSemanas);
 //		
 //		List<Menu_Infantil> menuInfantiles = bd.obtenerDatosMenu_Infantil();
 //		printMenu_Infantil(menuInfantiles);
@@ -74,8 +74,8 @@ public class RistoranteMain {
 		
 		//ACABAPARTE DEL ADMIN
 		
-//		bd.borrarDatos();
-//		
+//	bd.borrarDatos();
+////		
 //		bd.borrarBBDD();
 	
 	}
@@ -258,7 +258,12 @@ public class RistoranteMain {
 		mFS.setId("3A");
 		mFS.setNumProductos(3);
 		mFS.setNumPersonas(6);
+		Menu_FinDeSemana mFS1 = new Menu_FinDeSemana();
+		mFS1.setId("2A");
+		mFS1.setNumProductos(3);
+		mFS1.setNumPersonas(6);
 		menuFinDeSemanas.add(mFS);
+		menuFinDeSemanas.add(mFS1);
 		
 		return menuFinDeSemanas;
 	}
@@ -277,10 +282,28 @@ public class RistoranteMain {
 		
 		Mesa mesa = new Mesa();
 		mesa.setIdMesa("1z");
+		mesa.setNumPersonas(3);
 		mesa.setLugar(0);
 		mesa.setOcupada(false);
 		mesas.add(mesa);
-		
+		Mesa mesa1 = new Mesa();
+		mesa1.setIdMesa("2z");
+		mesa1.setNumPersonas(5);
+		mesa1.setLugar(1);
+		mesa1.setOcupada(true);
+		mesas.add(mesa1);
+		Mesa mesa3 = new Mesa();
+		mesa3.setIdMesa("3z");
+		mesa3.setNumPersonas(7);
+		mesa3.setLugar(0);
+		mesa3.setOcupada(false);
+		mesas.add(mesa3);
+		Mesa mesa5 = new Mesa();
+		mesa5.setIdMesa("7z");
+		mesa5.setNumPersonas(7);
+		mesa5.setLugar(0);
+		mesa5.setOcupada(false);
+		mesas.add(mesa5);
 		return mesas;
 	}
 	

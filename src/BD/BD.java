@@ -64,7 +64,7 @@ public class BD {
 			st.executeUpdate(sql6);
 			String sql7 = "CREATE TABLE IF NOT EXISTS Menu_Infantil(id TEXT NOT NULL, numProductos Integer)";
 			st.executeUpdate(sql7);
-			String sql8 = "CREATE TABLE IF NOT EXISTS Mesa(idMesa TEXT NOT NULL, lugar Integer, ocupada TEXT NOT NULL)";
+			String sql8 = "CREATE TABLE IF NOT EXISTS Mesa(idMesa TEXT NOT NULL, lugar Integer, ocupada TEXT NOT NULL, numPersonas Integer)";
 			st.executeUpdate(sql8);
 			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha TEXT NOT NULL, numeroPersonas Integer, idReserva Integer PRIMARY KEY NOT NULL)";
 			st.executeUpdate(sql9);
@@ -131,7 +131,7 @@ public class BD {
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				//Se define la plantilla de la sentencia SQL
-				String sql = "INSERT INTO Cliente (nombre, apellido, contrasena, numTlf) VALUES ('%s', '%s', '%s',%d);";
+				String sql = "INSERT INTO Cliente (nombre, apellido, contrasena, numTlf) VALUES ('%s', '%s', '%s', %d);";
 				System.out.println("- Insertando clientes...");
 				
 				String sql1 = "INSERT INTO Admin (nombre, apellido, contrasena, idAdmin, sueldo) VALUES ('%s', '%s', '%s', %d, '%.2f');";
@@ -150,7 +150,7 @@ public class BD {
 				System.out.println("- Insertando menus...");
 				
 
-				String sql8 = "INSERT INTO Mesa(idMesa, lugar, ocupada) VALUES ('%s', %d, '%s');";
+				String sql8 = "INSERT INTO Mesa(idMesa, lugar, ocupada, numPersonas) VALUES ('%s', %d, '%s', %d);";
 				System.out.println("- Insertando mesas...");
 				
 				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, '%d');";
@@ -218,7 +218,7 @@ public class BD {
 					}
 				}
 				for (Mesa mes : mesas) {
-					if (1 == stmt.executeUpdate(String.format(sql8, mes.getIdMesa(), mes.getLugar(), mes.isOcupada()))) {				
+					if (1 == stmt.executeUpdate(String.format(sql8, mes.getIdMesa(), mes.getLugar(), mes.isOcupada(), mes.getNumPersonas()))) {				
 						System.out.println(String.format(" - Mesas insertadas: %s", mes.toString()));
 					} else {
 						System.out.println(String.format(" - No se ha insertado las mesas: %s", mes.toString()));
@@ -241,6 +241,7 @@ public class BD {
 		public void insertarDatosReserva(List<Reserva> reservas) {
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 				     Statement stmt = con.createStatement()) {
+				
 				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, '%d');";
 				System.out.println("- Insertando reservas...");	
 				for (Reserva r : reservas) {
@@ -445,7 +446,7 @@ public class BD {
 					mesa.setIdMesa(rs.getString("idMesa"));
 					mesa.setLugar(rs.getInt("lugar"));
 					mesa.setOcupada(rs.getBoolean("ocupada"));
-					
+					mesa.setNumPersonas(rs.getInt("numPersonas"));
 					
 					//Se inserta cada nuevo cliente en la lista de clientes
 					mesas.add(mesa);

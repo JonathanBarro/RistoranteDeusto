@@ -42,9 +42,9 @@ public class testReserva {
 	public void setUp() throws Exception {
 		cliente = new Cliente("iker", "Mario", "123", 612123123);
 		cliente2 = new Cliente("ander", "Perez", "123", 612123123);
-		mesa = new Mesa("M1", 0, false);
+		mesa = new Mesa("M1", 0, false,0);
 		aMesa.add(mesa);
-		mesa2 = new Mesa("M2", 1, true);
+		mesa2 = new Mesa("M2", 1, true,0);
 		aMesa2.add(mesa2);
 		menu = new Menu("menu1", hmPods, 4, 10.5);
 		aMenu.add(menu);

@@ -13,11 +13,12 @@ public class testMesa {
 	private String idMesa="1";
 	private int lugar=3;
 	private boolean ocupada=false;
+	private int numPersonas=1;
 	Mesa mesa;
 	
 	@Before
 	public void setUp() throws Exception {
-		mesa= new Mesa(idMesa, lugar, ocupada);
+		mesa= new Mesa(idMesa, lugar, ocupada,numPersonas);
 	}
 
 	@After

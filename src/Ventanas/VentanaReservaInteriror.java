@@ -156,7 +156,7 @@ public class VentanaReservaInteriror extends JFrame {
 					
 					Reserva  res = new Reserva();
 					List<Reserva> reservas = new ArrayList <Reserva>();
-					//reservas = bd.obtenerDatosReservas();
+					reservas = bd.obtenerDatosReservas();
 				
 					
 					for(int i = 0;i<reservas.size();i++) {
@@ -172,7 +172,7 @@ public class VentanaReservaInteriror extends JFrame {
 					 
 					}
 					reservas.add(res);
-					//bd.insertarDatosReserva(reservas);
+					bd.insertarDatosReserva(reservas);
 					VentanaMenus window = new VentanaMenus();
 					window.setVisible(true);
 					dispose();
