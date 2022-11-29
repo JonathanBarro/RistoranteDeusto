@@ -79,12 +79,12 @@ public class VentanaMesasExteriror extends JFrame {
 		contentPane.add(scroll, BorderLayout.CENTER);
 		
 		pSur = new JPanel();
-		pSur.setBackground(new Color(255, 255, 128));
+		pSur.setBackground(new Color(255, 128, 64));
 		contentPane.add(pSur, BorderLayout.SOUTH);
 		
-		btnVolver = new JButton("Volver");
-		btnVolver.setBackground(new Color(0, 128, 255));
-		btnVolver.setForeground(new Color(255, 128, 64));
+		btnVolver = new JButton("<-");
+		btnVolver.setBackground(new Color(255, 255, 255));
+		btnVolver.setForeground(new Color(0, 128, 255));
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VentanaReservaExteriror window = new VentanaReservaExteriror();
@@ -96,7 +96,7 @@ public class VentanaMesasExteriror extends JFrame {
 		
 		
 		btnMesa = new JButton("Seleccione Mesa");
-		btnMesa.setBackground(new Color(0, 128, 255));
+		btnMesa.setBackground(new Color(255, 255, 128));
 		btnMesa.setForeground(new Color(255, 128, 64));
 		btnMesa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -105,13 +105,13 @@ public class VentanaMesasExteriror extends JFrame {
 		pSur.add(btnMesa);
 		
 		pNorte = new JPanel();
-		pNorte.setBackground(new Color(255, 255, 128));
+		pNorte.setBackground(new Color(255, 128, 64));
 		pNorte.setForeground(new Color(255, 128, 64));
 		contentPane.add(pNorte, BorderLayout.NORTH);
 		
 		lblNombre = new JLabel("Mesas permitidas");
-		lblNombre.setForeground(new Color(255, 128, 64));
-		lblNombre.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 16));
+		lblNombre.setForeground(new Color(0, 0, 0));
+		lblNombre.setFont(new Font("Freestyle Script", Font.BOLD, 27));
 		pNorte.add(lblNombre);
 	}
 	
