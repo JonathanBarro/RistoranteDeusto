@@ -413,6 +413,7 @@ public class BD {
 				ex.printStackTrace();						
 			}		
 			
+			
 			return producto;
 		}
 		

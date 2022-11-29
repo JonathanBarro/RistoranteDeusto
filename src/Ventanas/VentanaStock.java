@@ -6,15 +6,22 @@ import Logica.Producto;
 
 import java.awt.Font;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import BD.BD;
 
 import java.awt.BorderLayout;
+import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class VentanaStock extends JFrame{
@@ -23,7 +30,13 @@ public class VentanaStock extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private ArrayList<Producto> listaProductos= new ArrayList<>();
+	private List<Producto> listaProductos;
+	private JTable table;
+	private JScrollPane scroll;
+	private DefaultTableModel modelo;
+
+	BD bd = new BD();
+	
 	/**
 	 * Create the application.
 	 */
@@ -48,10 +61,7 @@ public class VentanaStock extends JFrame{
 		lblStock.setFont(new Font("Freestyle Script", Font.BOLD, 28));
 		panelNorte.add(lblStock);
 		
-		Comida macarrones= new Comida("macarrones", 5, 111,1);
-		listaProductos.add(macarrones);
-		
-		
+	
 		
 		JPanel panelSur = new JPanel();
 		contentPane.add(panelSur, BorderLayout.SOUTH);
@@ -65,20 +75,50 @@ public class VentanaStock extends JFrame{
 		txtAreaStock.setFont(new Font("Times New Roman" , Font.BOLD, 28));
 		txtAreaStock.setBounds(10, 10, 200, 30);
 		
-		JButton AñadirStock= new JButton("Añadir");
-		panelSur.add(AñadirStock);
-//		for (Producto p : listaProductos) {
-//			
-//			
-//		}
+		JButton btnVolver= new JButton("Volver");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		panelSur.add(btnVolver);
+		btnVolver.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				VentanaInicio window= new VentanaInicio();
+				window.setVisible(true);
+				dispose();
+				
+				
+			}
+		});
 		
-		panelCentro.add(txtAreaStock);
+		
+	
+	
+	listaProductos=bd.obtenerDatosComidas();
+	
+		JButton CambiarPrecio= new JButton("Cambiar el precio");
+		panelSur.add(CambiarPrecio);
+		
+		
+
+		modelo = new DefaultTableModel();
+		
+		String [] titulos = {"NOMBRE","ID","PRECIO","STOCK"};
+		modelo.setColumnIdentifiers(titulos);
+		for (Producto p : listaProductos) {
+			String [] datos = {p.getNombre()+"",p.getId()+""+ p.getPrecio()+ ""+ p.getStock()+""};
+			modelo.addRow(datos);
+		}
+		
+		
+		table = new JTable(modelo);
+		scroll = new JScrollPane(table);
+		contentPane.add(scroll, BorderLayout.CENTER);
 		
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	
-
 }
+
