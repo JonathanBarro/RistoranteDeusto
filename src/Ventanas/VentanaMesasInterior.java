@@ -63,14 +63,7 @@ public class VentanaMesasInterior extends JFrame {
 			//AÃ±ado la fila al modelo
 			modelo.addRow(datos);
 		}
-//		String [] datos1 = {"Mesa1","3"};
-//		modelo.addRow(datos1);
-//		String [] datos2 = {"Mesa3","6"};
-//		modelo.addRow(datos2);
-//		String [] datos3 = {"Mesa4","4"};
-//		modelo.addRow(datos3);
-//		String [] datos4 = {"Mesa6","5"};
-//		modelo.addRow(datos4);
+
 		
 		//Creamos la JTable a partir del modelo
 		tabla = new JTable(modelo);

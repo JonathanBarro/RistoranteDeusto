@@ -48,13 +48,13 @@ public class BD {
 		//Al abrir la conexi�n, si no exist�a el fichero, se crea la base de datos
 		try (Connection con = DriverManager.getConnection("jdbc:sqlite:" + "db/database.db");
 		     Statement st = con.createStatement()) {
-			String sql = "CREATE TABLE IF NOT EXISTS Cliente (nombre TEXT NOT NULL, apellido TEXT NOT NULL, contrasena TEXT NOT NULL, numTlf Integer PRIMARY KEY NOT NULL)";
+			String sql = "CREATE TABLE IF NOT EXISTS Cliente (nombre TEXT NOT NULL, apellido TEXT NOT NULL, contrasena TEXT NOT NULL, numTlf Integer NOT NULL)";
 			st.executeUpdate(sql);
-			String sql1 = "CREATE TABLE IF NOT EXISTS Admin(nombre TEXT NOT NULL, apellido TEXT NOT NULL, contrasena TEXT NOT NULL, idAdmin Integer PRIMARY KEY NOT NULL, sueldo Real)";
+			String sql1 = "CREATE TABLE IF NOT EXISTS Admin(nombre TEXT NOT NULL, apellido TEXT NOT NULL, contrasena TEXT NOT NULL, idAdmin Integer NOT NULL, sueldo Real)";
 			st.executeUpdate(sql1);
-			String sql2 = "CREATE TABLE IF NOT EXISTS Bebida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer, frio TEXT NOT NULL)";
+			String sql2 = "CREATE TABLE IF NOT EXISTS Bebida(nombre TEXT NOT NULL, precio Real, id Integer NOT NULL, stock Integer, frio TEXT NOT NULL)";
 			st.executeUpdate(sql2);
-			String sql3 = "CREATE TABLE IF NOT EXISTS Comida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer)";
+			String sql3 = "CREATE TABLE IF NOT EXISTS Comida(nombre TEXT NOT NULL, precio Real, id Integer NOT NULL, stock Integer)";
 			st.executeUpdate(sql3);
 			String sql4 = "CREATE TABLE IF NOT EXISTS Menu_Degustacion(id TEXT NOT NULL, numProductos Integer)";
 			st.executeUpdate(sql4);
@@ -66,7 +66,7 @@ public class BD {
 			st.executeUpdate(sql7);
 			String sql8 = "CREATE TABLE IF NOT EXISTS Mesa(idMesa TEXT NOT NULL, lugar Integer, ocupada TEXT NOT NULL, numPersonas Integer)";
 			st.executeUpdate(sql8);
-			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha TEXT NOT NULL, numeroPersonas Integer, idReserva Integer PRIMARY KEY NOT NULL)";
+			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha TEXT NOT NULL, numeroPersonas Integer, idReserva Integer NOT NULL)";
 			st.executeUpdate(sql9);
 	        	        
 	        if (!st.execute(sql)) {
@@ -153,7 +153,7 @@ public class BD {
 				String sql8 = "INSERT INTO Mesa(idMesa, lugar, ocupada, numPersonas) VALUES ('%s', %d, '%s', %d);";
 				System.out.println("- Insertando mesas...");
 				
-				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, '%d');";
+				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, %d);";
 				
 				System.out.println("- Insertando reservas...");
 				

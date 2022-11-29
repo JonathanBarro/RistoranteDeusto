@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,6 +17,7 @@ import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import BD.BD;
 import Logica.Mesa;
 import Logica.Reserva;
 
@@ -29,6 +31,7 @@ public class VentanaMesasExteriror extends JFrame {
 	private JButton btnMesa;
 	private JPanel pNorte;
 	private JLabel lblNombre;
+	private BD bd = new BD();
 	/**
 	 * Launch the application.
 	 */
@@ -46,17 +49,17 @@ public class VentanaMesasExteriror extends JFrame {
 		//Creamos la conexiÃ³n con la BBDD
 		
 		//Obtenemos el ArrayList de Persona
-		ArrayList<Reserva> aMesas = new ArrayList<>();
-		
+		List<Mesa> aMesas = new ArrayList();
+		aMesas = bd.obtenerDatosMesas();
 		//Creamos el modelo de la tabla
 		modelo = new DefaultTableModel();
 		//Le asignamos al modelo la fila con los tÃ­tulos
-		String [] titulos = {"NOMBRE DE MESA","NUMERO DE PERSONAS"};
+		String [] titulos = {"NOMBRE DE MESA","LUGAR","OCUPADA","NUMERO DE PERSONAS"};
 		modelo.setColumnIdentifiers(titulos);
 		//Rellenamos el modelo con los datos de la lista de personas
-		for(Reserva p: aMesas) {
+		for(Mesa p: aMesas) {
 			//Con cada persona creamos una fila de datos
-			String [] datos = {p.getaMesa()+"",p.getNumPersonas()+""};
+			String [] datos = {p.getIdMesa()+"",p.getLugar()+"", p.isOcupada()+"", p.getNumPersonas()+""};
 			//AÃ±ado la fila al modelo
 			modelo.addRow(datos);
 		}
