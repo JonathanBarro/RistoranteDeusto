@@ -4,7 +4,10 @@ package Ventanas;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JDateChooser;
 
@@ -40,7 +43,13 @@ public class VentanaReservaInteriror extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JDateChooser calen; 
-	public static BD bd;
+	public static BD bd;	
+	private JTable tabla;
+	private DefaultTableModel modelo;
+	private JScrollPane scroll;
+	private JButton btnGuardarDatos;
+	private JPanel pNorte;
+	private JLabel lblNombre;
 
 
 
@@ -90,17 +99,21 @@ public class VentanaReservaInteriror extends JFrame {
 		panel_ComboCent.setBackground(new Color(231, 237, 236));
 		panel_Cent.add(panel_ComboCent, BorderLayout.NORTH);
 		
-		JLabel jLNumeroPersonas = new JLabel("Seleccion el numero de personas:");
+		JLabel jLNumeroPersonas = new JLabel("Pulse en el boton para ver la mesas libres:");
 		panel_ComboCent.add(jLNumeroPersonas);
 		
-		JComboBox<Integer> comboBox_NPersonas = new JComboBox<Integer>();
-		panel_ComboCent.add(comboBox_NPersonas);
-		
-		for(int i=0;i<=12;i++) {
-			comboBox_NPersonas.addItem(i);
-		}
-		
-		
+		JButton btnMesas = new JButton("Mesas");
+		btnMesas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaMesasInterior window = new VentanaMesasInterior();
+				window.setVisible(true);
+				dispose();
+				
+				
+			}
+		});
+		btnMesas.setBackground(new Color(255, 128, 64));
+		panel_ComboCent.add(btnMesas);
 		
 		
 		JPanel panel_JCalendar = new JPanel();
@@ -118,13 +131,22 @@ public class VentanaReservaInteriror extends JFrame {
 		} catch (ParseException e1) {
 			ultimaFecha = fechaActual;
 		}
+		panel_JCalendar.setLayout(null);
 
 		calen = new JDateChooser();
+		calen.setBounds(141, 35, 100, 25);
 		calen.setMinSelectableDate(fechaActual);
 		calen.setMaxSelectableDate(ultimaFecha);
 		panel_JCalendar.add(calen);
 		calen.setPreferredSize(new Dimension(100,25));
 		calen.setDateFormatString("dd-MMMM");
+		
+		JLabel lblCalen = new JLabel("Seleccione el dia de reserva:");
+		lblCalen.setBounds(117, 10, 215, 14);
+		panel_JCalendar.add(lblCalen);
+		
+	
+		
 	
 		
 		JButton btnConfirm = new JButton("Confirmar");
@@ -134,12 +156,14 @@ public class VentanaReservaInteriror extends JFrame {
 					
 					Reserva  res = new Reserva();
 					List<Reserva> reservas = new ArrayList <Reserva>();
-					reservas = bd.obtenerDatosReservas();
+					//reservas = bd.obtenerDatosReservas();
 				
 					
 					for(int i = 0;i<reservas.size();i++) {
 					res.setIdReserva(i+1);
-					res.setNumPersonas(comboBox_NPersonas.getSelectedIndex());
+
+
+	
 					 //String año = Integer.toString(calen.getCalendar().get(java.util.Calendar.YEAR));
 					String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
 					String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
@@ -148,7 +172,7 @@ public class VentanaReservaInteriror extends JFrame {
 					 
 					}
 					reservas.add(res);
-					bd.insertarDatosReserva(reservas);
+					//bd.insertarDatosReserva(reservas);
 					VentanaMenus window = new VentanaMenus();
 					window.setVisible(true);
 					dispose();
@@ -163,5 +187,4 @@ public class VentanaReservaInteriror extends JFrame {
 		panel.setBackground(new Color(128, 255, 128));
 		panel_Cent.add(panel, BorderLayout.WEST);
 	}
-
 }

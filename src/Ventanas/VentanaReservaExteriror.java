@@ -86,14 +86,20 @@ public class VentanaReservaExteriror extends JFrame {
 		panel_ComboCent.setBackground(new Color(231, 237, 236));
 		panel_Cent.add(panel_ComboCent, BorderLayout.NORTH);
 		
-		JLabel jLNumeroPer = new JLabel("Seleccion el numero de personas:");
+		JLabel jLNumeroPer = new JLabel("Seleccione mesas:");
 		panel_ComboCent.add(jLNumeroPer);
 		
-		JComboBox<Integer> comboBox_NPersonas = new JComboBox<Integer>();
-		panel_ComboCent.add(comboBox_NPersonas);
-		for(int i=0;i<=12;i++) {
-			comboBox_NPersonas.addItem(i);
-		}
+		JButton btnMesas = new JButton("Mesas");
+		btnMesas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaReservaExteriror window = new VentanaReservaExteriror();
+				window.setVisible(true);
+				dispose();
+			}
+		});
+		btnMesas.setBackground(new Color(255, 128, 64));
+		panel_ComboCent.add(btnMesas);
+		
 		
 		
 		JPanel panel_JCalendar = new JPanel();
@@ -132,7 +138,7 @@ public class VentanaReservaExteriror extends JFrame {
 					System.out.println("Hola");
 					for(int i = 0;i<reservas.size();i++) {
 					res1.setIdReserva(i+1);
-					res1.setNumPersonas(comboBox_NPersonas.getSelectedIndex());
+				
 					 String año = Integer.toString(calen.getCalendar().get(java.util.Calendar.YEAR));
 //					 String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
 //					 String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
