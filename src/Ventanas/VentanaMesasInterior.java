@@ -99,48 +99,19 @@ public class VentanaMesasInterior extends JFrame {
 		
 		
 		btnMesa = new JButton("Seleccione Mesa");
-		btnMesa.setBackground(new Color(255, 255, 128));
-		btnMesa.setForeground(new Color(255, 128, 64));
-		
-		tabla.addMouseListener(new MouseListener() {
-			
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-				btnMesa.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						
-						//modelo.getValueAt(e.g, 1);
-						//modelo.getValueAt(, ABORT)
-					}
-				});
+		btnMesa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ArrayList<Mesa> aMesa = new ArrayList<>();
+				Mesa mes = new Mesa((String)modelo.getValueAt(tabla.getSelectedRow(), 0) , Integer.valueOf((String) modelo.getValueAt(tabla.getSelectedRow(), 1)) , Boolean.valueOf((String) modelo.getValueAt(tabla.getSelectedRow(), 2)), Integer.valueOf((String) modelo.getValueAt(tabla.getSelectedRow(), 3)));
+				aMesa.add(mes);
+				res.setaMesa(aMesa);
 				
 			}
 		});
+		btnMesa.setBackground(new Color(255, 255, 128));
+		btnMesa.setForeground(new Color(255, 128, 64));
+		
+	
 		
 
 		pSur.add(btnMesa);
