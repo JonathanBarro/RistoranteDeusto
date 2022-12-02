@@ -8,10 +8,10 @@ import BD.BD;
 import Ventanas.VentanaAdminCliente;
 
 public class RistoranteMain {
-	
+	public static BD bd;
 	public static void main(String[] args) {
 		
-		BD bd = new BD();		
+		bd = new BD();		
 		VentanaAdminCliente window = new VentanaAdminCliente();
 		window.setVisible(true);
 		

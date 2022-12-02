@@ -26,6 +26,7 @@ import com.toedter.calendar.JDateChooser;
 
 import BD.BD;
 import Logica.Reserva;
+import Logica.RistoranteMain;
 
 
 
@@ -37,7 +38,6 @@ public class VentanaReservaExteriror extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JDateChooser calen;
-	private BD bd;
 	
 
 	/**
@@ -148,7 +148,7 @@ public class VentanaReservaExteriror extends JFrame {
 					}
 					reservas.add(res1);
 				 
-				bd.insertarDatosReserva(reservas);
+				RistoranteMain.bd.insertarDatosReserva(res);
 				dispose();
 				
 				

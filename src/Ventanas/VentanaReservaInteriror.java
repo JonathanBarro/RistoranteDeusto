@@ -13,6 +13,7 @@ import com.toedter.calendar.JDateChooser;
 
 import BD.BD;
 import Logica.Reserva;
+import Logica.RistoranteMain;
 
 import java.awt.BorderLayout;
 
@@ -43,14 +44,13 @@ public class VentanaReservaInteriror extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JDateChooser calen; 
-	public static BD bd;	
 	private JTable tabla;
 	private DefaultTableModel modelo;
 	private JScrollPane scroll;
 	private JButton btnGuardarDatos;
 	private JPanel pNorte;
 	private JLabel lblNombre;
-
+	private Reserva res;
 
 
 	/**
@@ -105,7 +105,7 @@ public class VentanaReservaInteriror extends JFrame {
 		JButton btnMesas = new JButton("Mesas");
 		btnMesas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaMesasInterior window = new VentanaMesasInterior();
+				VentanaMesasInterior window = new VentanaMesasInterior(res);
 				window.setVisible(true);
 				dispose();
 				
@@ -154,26 +154,23 @@ public class VentanaReservaInteriror extends JFrame {
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					
-					Reserva  res = new Reserva();
+					res = new Reserva();
 					List<Reserva> reservas = new ArrayList <Reserva>();
-					reservas = bd.obtenerDatosReservas();
-				
 					
-					for(int i = 0;i<reservas.size();i++) {
+					reservas = RistoranteMain.bd.obtenerDatosReservas();
+				
+					int i = reservas.get(reservas.size()-1).getIdReserva()+1;
 					res.setIdReserva(i+1);
-
-
-	
 					 //String año = Integer.toString(calen.getCalendar().get(java.util.Calendar.YEAR));
 					String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
 					String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
 					res.setFecha(dia+"-"+mes);
 					System.out.println( res.toString());
 					 
-					}
 					reservas.add(res);
-					bd.insertarDatosReserva(reservas);
-					VentanaMenus window = new VentanaMenus();
+					VentanaMenus window = new VentanaMenus(res);
+					//RistoranteMain.bd.insertarDatosReserva(res);
+					
 					window.setVisible(true);
 					dispose();
 				

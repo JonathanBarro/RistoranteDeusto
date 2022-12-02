@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 import BD.BD;
 import Logica.Mesa;
 import Logica.Reserva;
+import Logica.RistoranteMain;
 
 public class VentanaMesasInterior extends JFrame {
 	private JPanel contentPane;
@@ -31,14 +34,15 @@ public class VentanaMesasInterior extends JFrame {
 	private JButton btnMesa;
 	private JPanel pNorte;
 	private JLabel lblNombre;
-	private BD bd = new BD();
+	private Reserva res;
 	/**
 	 * Launch the application.
 	 */
 	/**
 	 * Create the frame.
 	 */
-	public VentanaMesasInterior() {
+	public VentanaMesasInterior(Reserva res) {
+		this.res = res;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -50,7 +54,7 @@ public class VentanaMesasInterior extends JFrame {
 		
 		//Obtenemos el ArrayList de Persona
 		List<Mesa> aMesas = new ArrayList();
-		aMesas = bd.obtenerDatosMesas();
+		aMesas = RistoranteMain.bd.obtenerDatosMesas();
 		//Creamos el modelo de la tabla
 		modelo = new DefaultTableModel();
 		//Le asignamos al modelo la fila con los tÃ­tulos
@@ -63,6 +67,9 @@ public class VentanaMesasInterior extends JFrame {
 			//AÃ±ado la fila al modelo
 			modelo.addRow(datos);
 		}
+		
+		
+		
 
 		
 		//Creamos la JTable a partir del modelo
@@ -94,10 +101,48 @@ public class VentanaMesasInterior extends JFrame {
 		btnMesa = new JButton("Seleccione Mesa");
 		btnMesa.setBackground(new Color(255, 255, 128));
 		btnMesa.setForeground(new Color(255, 128, 64));
-		btnMesa.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		
+		tabla.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnMesa.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						
+						//modelo.getValueAt(e.g, 1);
+						//modelo.getValueAt(, ABORT)
+					}
+				});
+				
 			}
 		});
+		
+
 		pSur.add(btnMesa);
 		
 		pNorte = new JPanel();

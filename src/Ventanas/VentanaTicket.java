@@ -35,18 +35,7 @@ public class VentanaTicket extends JFrame {
 	private VentanaMenus vM;
 	private BD bd = new BD();
 	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaMenus frame = new VentanaMenus();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 	public VentanaTicket(VentanaMenus vM) {
 		
 		this.vM = vM;

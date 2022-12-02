@@ -14,6 +14,7 @@ import Logica.Admin;
 import Logica.Bebida;
 import Logica.Cliente;
 import Logica.Comida;
+import Logica.Menu;
 import Logica.Menu_Degustacion;
 import Logica.Menu_EntreSemana;
 import Logica.Menu_FinDeSemana;
@@ -66,7 +67,7 @@ public class BD {
 			st.executeUpdate(sql7);
 			String sql8 = "CREATE TABLE IF NOT EXISTS Mesa(idMesa TEXT NOT NULL, lugar Integer, ocupada TEXT NOT NULL, numPersonas Integer)";
 			st.executeUpdate(sql8);
-			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha TEXT NOT NULL, numeroPersonas Integer, idReserva Integer PRIMARY KEY NOT NULL)";
+			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha TEXT NOT NULL, numeroPersonas Integer, idReserva Integer PRIMARY KEY NOT NULL, idMesa TEXT, idMenu TEXT)";
 			st.executeUpdate(sql9);
 	        	        
 	        if (!st.execute(sql)) {
@@ -238,19 +239,30 @@ public class BD {
 		}
 		
 		
-		public void insertarDatosReserva(List<Reserva> reservas) {
+		public void insertarDatosReserva(Reserva r) {
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 				     Statement stmt = con.createStatement()) {
-				
-				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, '%d');";
-				System.out.println("- Insertando reservas...");	
-				for (Reserva r : reservas) {
-					if (1 == stmt.executeUpdate(String.format(sql9, r.getFecha(), r.getNumPersonas(),r.getIdReserva()))) {					
-						System.out.println(String.format(" - Reservas insertadas: %s", r.toString()));
-					} else {
-						System.out.println(String.format(" - No se ha insertado las reservas: %s", r.toString()));
+				int numP = r.getNumPersonas();
+				int numM = 0;
+				while(numP>0) {
+					for(Mesa m: r.getaMesa()) {
+						for(int i=0;i<m.getNumPersonas() && numP>0;i++) {
+							numP--;
+							Menu me = r.getaMenu().get(numM);
+							numM++;
+							String sql = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva, idMesa, idMenu) VALUES ('%s', %d, %d, '%s','%s');";
+							System.out.println("- Insertando reservas...");	
+							
+							if (1 == stmt.executeUpdate(String.format(sql, r.getFecha(), r.getNumPersonas(),r.getIdReserva(),m.getIdMesa(),me.getId()))) {					
+								System.out.println(String.format(" - Reservas insertadas: %s", r.toString()));
+							} else {
+								System.out.println(String.format(" - No se ha insertado las reservas: %s", r.toString()));
+							}
+						}
 					}
 				}
+			
+				
 			}catch (Exception ex) {
 				System.err.println(String.format("* Error al insertar datos de la BBDD: %s", ex.getMessage()));
 				ex.printStackTrace();						
