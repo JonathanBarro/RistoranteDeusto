@@ -47,7 +47,7 @@ public class RistoranteMain {
 //		List<Menu_EntreSemana>menuEntreSemanas = bd.obtenerDatosMenu_EntreSemana();
 //		printMenu_EntreSemana(menuEntreSemanas);
 //		
-		List<Menu_FinDeSemana> menuFinDeSemanas = bd.obtenerDatosMenu_FinDeSemana();
+		List<Menu> menuFinDeSemanas = bd.obtenerDatosMenu_FinDeSemana();
 		printMenu_FinDeSemana(menuFinDeSemanas);
 //		
 //		List<Menu_Infantil> menuInfantiles = bd.obtenerDatosMenu_Infantil();
@@ -243,9 +243,9 @@ public class RistoranteMain {
 	}
 	
 	
-	private static void printMenu_FinDeSemana(List<Menu_FinDeSemana> menuFinDeSemanas) {
+	private static void printMenu_FinDeSemana(List<Menu> menuFinDeSemanas) {
 		if (!menuFinDeSemanas.isEmpty()) {		
-			for(Menu_FinDeSemana mFS : menuFinDeSemanas) {
+			for(Menu mFS : menuFinDeSemanas) {
 				System.out.println(String.format(" - %s", mFS.toString()));
 			}
 		}		

@@ -513,8 +513,8 @@ public class BD {
 			return reservas;
 		}
 		
-		public List<Menu_EntreSemana> obtenerDatosMenu_EntreSemana() {
-			List<Menu_EntreSemana> menusEntreSemana = new ArrayList<>();
+		public List<Menu> obtenerDatosMenu_EntreSemana() {
+			List<Menu> menusEntreSemana = new ArrayList<>();
 			
 			//Se abre la conexi�n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -550,8 +550,8 @@ public class BD {
 			return menusEntreSemana;
 		}
 		
-		public List<Menu_FinDeSemana> obtenerDatosMenu_FinDeSemana() {
-			List<Menu_FinDeSemana> menusFinDeSemana = new ArrayList<>();
+		public List<Menu> obtenerDatosMenu_FinDeSemana() {
+			List<Menu> menusFinDeSemana = new ArrayList<>();
 			
 			//Se abre la conexi�n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -587,8 +587,8 @@ public class BD {
 			return menusFinDeSemana;
 		}
 		
-		public List<Menu_Degustacion> obtenerDatosMenu_Degustacion() {
-			List<Menu_Degustacion> menusDegustacion = new ArrayList<>();
+		public List<Menu> obtenerDatosMenu_Degustacion() {
+			List<Menu> menusDegustacion = new ArrayList<>();
 			
 			//Se abre la conexi�n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -623,8 +623,8 @@ public class BD {
 			return menusDegustacion;
 		}
 		
-		public List<Menu_Infantil> obtenerDatosMenu_Infantil() {
-			List<Menu_Infantil> menusInfantil = new ArrayList<>();
+		public List<Menu> obtenerDatosMenu_Infantil() {
+			List<Menu> menusInfantil = new ArrayList<>();
 			
 			
 			//Se abre la conexi�n y se obtiene el Statement
@@ -660,6 +660,24 @@ public class BD {
 			return menusInfantil;
 		}
 		
+		public List<Menu> obtenerMenus(){
+			List<Menu> lMenus = new ArrayList<>();
+			List<Menu> listAux;
+			listAux = obtenerDatosMenu_Degustacion();
+			for (Menu menu : listAux) 
+				lMenus.add(menu);
+			listAux = obtenerDatosMenu_EntreSemana();
+			for (Menu menu : listAux) 
+				lMenus.add(menu);
+			listAux = obtenerDatosMenu_FinDeSemana();
+			for (Menu menu : listAux) 
+				lMenus.add(menu);
+			listAux = obtenerDatosMenu_Infantil(); 
+			for (Menu menu : listAux) 
+				lMenus.add(menu);
+			
+			return lMenus;
+		}
 		
 		public void cambiarPrecio(Producto bebida, Integer nuevoprecio) {
 			//Se abre la conexi�n y se obtiene el Statement

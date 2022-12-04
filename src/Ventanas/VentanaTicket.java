@@ -104,7 +104,7 @@ public class VentanaTicket extends JFrame {
 		aReserva.get(aReserva.size()-1).setaMenu(aMenu);
 		for(Menu m: aMenu) {
 			texto = texto + "	" + m.toString().replace("\n", "") + "\n";
-			total = m.obtenerPreciototal(m.getpL());
+			total += m.obtenerPreciototal(m.getpL());
 		}
 		texto = texto + "	" + aReserva.get(aReserva.size()-1).toString().replace("\n", "") + "\n";
 		texto = texto + "TOTAL: "+total+" €";
