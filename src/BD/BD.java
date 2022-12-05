@@ -67,7 +67,7 @@ public class BD {
 			st.executeUpdate(sql7);
 			String sql8 = "CREATE TABLE IF NOT EXISTS Mesa(idMesa TEXT NOT NULL, lugar Integer, ocupada TEXT NOT NULL, numPersonas Integer)";
 			st.executeUpdate(sql8);
-			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha TEXT NOT NULL, numeroPersonas Integer, idReserva Integer PRIMARY KEY NOT NULL, idMesa TEXT, idMenu TEXT)";
+			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha TEXT NOT NULL, numeroPersonas Integer, idReserva Integer , idMesa TEXT, idMenu TEXT)";
 			st.executeUpdate(sql9);
 	        	        
 	        if (!st.execute(sql)) {
@@ -132,6 +132,8 @@ public class BD {
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				//Se define la plantilla de la sentencia SQL
+				String s = "DELETE FROM CLIENTE";
+				stmt.executeUpdate(s);
 				String sql = "INSERT INTO Cliente (nombre, apellido, contrasena, numTlf) VALUES ('%s', '%s', '%s', %d);";
 				System.out.println("- Insertando clientes...");
 				
@@ -154,9 +156,9 @@ public class BD {
 				String sql8 = "INSERT INTO Mesa(idMesa, lugar, ocupada, numPersonas) VALUES ('%s', %d, '%s', %d);";
 				System.out.println("- Insertando mesas...");
 				
-				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, %d);";
+				//String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, %d);";
 				
-				System.out.println("- Insertando reservas...");
+				//System.out.println("- Insertando reservas...");
 				
 				//Se recorren los clientes y se insertan uno a uno
 				for (Cliente c : clientes) {
@@ -225,13 +227,13 @@ public class BD {
 						System.out.println(String.format(" - No se ha insertado las mesas: %s", mes.toString()));
 					}
 				}
-				for (Reserva r : reservas) {
+				/*for (Reserva r : reservas) {
 					if (1 == stmt.executeUpdate(String.format(sql9, r.getFecha(), r.getNumPersonas(),r.getIdReserva()))) {					
 						System.out.println(String.format(" - Reservas insertadas: %s", r.toString()));
 					} else {
 						System.out.println(String.format(" - No se ha insertado las reservas: %s", r.toString()));
 					}
-				}
+				}*/
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al insertar datos de la BBDD: %s", ex.getMessage()));
 				ex.printStackTrace();						

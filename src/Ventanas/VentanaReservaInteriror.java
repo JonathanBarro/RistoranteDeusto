@@ -51,7 +51,7 @@ public class VentanaReservaInteriror extends JFrame {
 	private JPanel pNorte;
 	private JLabel lblNombre;
 	private Reserva res;
-
+	private JFrame ventanaActual;
 
 	/**
 	 * Launch the application.
@@ -61,6 +61,8 @@ public class VentanaReservaInteriror extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaReservaInteriror() {
+		res = new Reserva();
+		ventanaActual = this;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -105,10 +107,9 @@ public class VentanaReservaInteriror extends JFrame {
 		JButton btnMesas = new JButton("Mesas");
 		btnMesas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaMesasInterior window = new VentanaMesasInterior(res);
+				VentanaMesasInterior window = new VentanaMesasInterior(res, ventanaActual);
 				window.setVisible(true);
-				dispose();
-				
+				ventanaActual.setVisible(false);
 				
 			}
 		});
@@ -154,13 +155,12 @@ public class VentanaReservaInteriror extends JFrame {
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					
-					res = new Reserva();
 					List<Reserva> reservas = new ArrayList <Reserva>();
 					
 					reservas = RistoranteMain.bd.obtenerDatosReservas();
 				
 					int i = reservas.get(reservas.size()-1).getIdReserva()+1;
-					res.setIdReserva(i+1);
+					res.setIdReserva(i);
 					 //String año = Integer.toString(calen.getCalendar().get(java.util.Calendar.YEAR));
 					String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
 					String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
@@ -169,10 +169,9 @@ public class VentanaReservaInteriror extends JFrame {
 					 
 					reservas.add(res);
 					VentanaMenus window = new VentanaMenus(res);
-					//RistoranteMain.bd.insertarDatosReserva(res);
 					
 					window.setVisible(true);
-					dispose();
+					ventanaActual.setVisible(false);
 				
 				
 			}

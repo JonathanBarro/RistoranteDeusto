@@ -35,14 +35,16 @@ public class VentanaMesasInterior extends JFrame {
 	private JPanel pNorte;
 	private JLabel lblNombre;
 	private Reserva res;
+	private JFrame ventanaAnterior;
 	/**
 	 * Launch the application.
 	 */
 	/**
 	 * Create the frame.
 	 */
-	public VentanaMesasInterior(Reserva res) {
+	public VentanaMesasInterior(Reserva res, JFrame va) {
 		this.res = res;
+		this.ventanaAnterior = va;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -90,8 +92,7 @@ public class VentanaMesasInterior extends JFrame {
 		btnVolver.setForeground(new Color(0, 0, 255));
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaReservaInteriror window = new VentanaReservaInteriror();
-				window.setVisible(true);
+				ventanaAnterior.setVisible(true);
 				dispose();
 			}
 		});
@@ -105,6 +106,7 @@ public class VentanaMesasInterior extends JFrame {
 				Mesa mes = new Mesa((String)modelo.getValueAt(tabla.getSelectedRow(), 0) , Integer.valueOf((String) modelo.getValueAt(tabla.getSelectedRow(), 1)) , Boolean.valueOf((String) modelo.getValueAt(tabla.getSelectedRow(), 2)), Integer.valueOf((String) modelo.getValueAt(tabla.getSelectedRow(), 3)));
 				aMesa.add(mes);
 				res.setaMesa(aMesa);
+				res.setNumPersonas(mes.getNumPersonas());
 				
 			}
 		});

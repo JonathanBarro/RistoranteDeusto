@@ -1,0 +1,10 @@
+Factura de la compra del dia: 05-12-2022 09.39.44
+	Menu_Degustacion
+	Menu_Degustacion
+	Menu_Degustacion
+	Menu_Degustacion
+	Menu_Degustacion
+	Menu_Degustacion
+	Menu_Infantil
+	Reserva [fecha=25-12, numPersonas=7, idReserva=4]
+TOTAL: 52.4 €

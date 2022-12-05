@@ -1,0 +1,6 @@
+Factura de la compra del dia: 05-12-2022 09.41.58
+	Menu_FinDeSemana
+	Menu_FinDeSemana
+	Menu_FinDeSemana
+	Reserva [fecha=17-12, numPersonas=3, idReserva=6]
+TOTAL: 52.4 €

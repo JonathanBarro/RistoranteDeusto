@@ -16,6 +16,8 @@ public class Reserva {
 	
 	public Reserva() {
 
+		this.aMenu = new ArrayList<>();
+		this.aMesa = new ArrayList<>();
 	}
 	
 	public Reserva(String fecha, int numPersonas, int idReserva, ArrayList<Mesa> aMesa, ArrayList<Menu> aMenu,
@@ -33,6 +35,8 @@ public class Reserva {
 		this.fecha = fecha;
 		this.numPersonas = numPersonas;
 		this.idReserva = idReserva;
+		this.aMenu = new ArrayList<>();
+		this.aMesa = new ArrayList<>();
 	}
 
 	public String getFecha() {

@@ -1,0 +1,8 @@
+Factura de la compra del dia: 05-12-2022 09.44.04
+	Menu_EntreSemana
+	Menu_EntreSemana
+	Menu_EntreSemana
+	Menu_EntreSemana
+	Menu_EntreSemana
+	Reserva [fecha=16-12, numPersonas=5, idReserva=7]
+TOTAL: 52.4 €

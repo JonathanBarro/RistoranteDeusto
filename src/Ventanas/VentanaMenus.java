@@ -17,6 +17,7 @@ import Logica.Menu_FinDeSemana;
 import Logica.Menu_Infantil;
 import Logica.Producto;
 import Logica.Reserva;
+import Logica.RistoranteMain;
 
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
@@ -46,7 +47,6 @@ public class VentanaMenus extends JFrame {
 	private JList<Menu> aMenus;
 	private DefaultListModel <Menu> modeloCarrito;
 	private JScrollPane menusPane;
-
 	public VentanaMenus(Reserva res) {
 		this.res = res;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -211,6 +211,8 @@ public class VentanaMenus extends JFrame {
 					Menu m = modeloCarrito.getElementAt(i);
 					res.getaMenu().add(m);
 				}
+				RistoranteMain.bd.insertarDatosReserva(res);
+				
 				VentanaTicket vt = new VentanaTicket(vM);
 				vt.setVisible(true);
 			}

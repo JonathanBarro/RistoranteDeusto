@@ -11,7 +11,9 @@ public class RistoranteMain {
 	public static BD bd;
 	public static void main(String[] args) {
 		
-		bd = new BD();		
+		bd = new BD();	
+		//bd.borrarDatos();
+	    //bd.borrarBBDD();
 		VentanaAdminCliente window = new VentanaAdminCliente();
 		window.setVisible(true);
 		
@@ -74,9 +76,7 @@ public class RistoranteMain {
 		
 		//ACABAPARTE DEL ADMIN
 		
-//	bd.borrarDatos();
-////		
-//		bd.borrarBBDD();
+
 	
 	}
 	private static void cargarBD(BD bd) {
