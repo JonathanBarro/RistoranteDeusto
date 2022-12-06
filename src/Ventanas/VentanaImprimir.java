@@ -68,7 +68,7 @@ public class VentanaImprimir extends JFrame{
 		ArrayList<Menu> aMenu = vM.obtenerCarrito();
 		for(Menu m: aMenu) {
 			texto = texto + "	" + m.toString().replace("\n", "") + "\n";
-			total = m.obtenerPreciototal(m.getpL());
+			total += m.obtenerPreciototal(m.getpL());
 		}
 		List<Reserva> aReserva = bd.obtenerDatosReservas();
 		texto = texto + "	" + aReserva.get(aReserva.size()-1).toString().replace("\n", "") + "\n";
