@@ -50,6 +50,7 @@ public class VentanaMenus extends JFrame {
 	private JList<Menu> aMenus;
 	private DefaultListModel <Menu> modeloCarrito;
 	private JScrollPane menusPane;
+
 	public VentanaMenus(Reserva res) {
 		this.res = res;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -64,6 +65,8 @@ public class VentanaMenus extends JFrame {
 		
 		ArrayList<Producto> aComida = new ArrayList<>();
 		ArrayList<Producto> aBebdia = new ArrayList<>();
+		List<Producto> aComida1 = RistoranteMain.bd.obtenerDatosComidas();
+		List<Producto> aBebdia1 =  RistoranteMain.bd.obtenerDatosBebidas();
 		Comida p1 = new Comida("Plato1", 10.1,01,1);
 		Comida p2 = new Comida("Plato2", 10.1,02,1);
 		Comida p3 = new Comida("Plato3", 10.1,03,1);
@@ -78,6 +81,7 @@ public class VentanaMenus extends JFrame {
 		aBebdia.add(b2);
 		
 		HashMap<String, List<Producto>> hmProdsBd = RistoranteMain.bd.obtenerProductos();
+		HashMap<String, List<Producto>> hmProds = new HashMap<>();
 		
 		List<Menu> lMenus = RistoranteMain.bd.obtenerMenus();
 		for (Menu menu : lMenus) {
@@ -85,35 +89,35 @@ public class VentanaMenus extends JFrame {
 		}
 		
 		
-//		hmProds.putIfAbsent("Bebida", aBebdia);
-//		hmProds.putIfAbsent("Comida", aComida);
+		hmProds.putIfAbsent("Bebida", aBebdia1);
+		hmProds.putIfAbsent("Comida", aComida1);
 		
-//		double precioTot=0;
+		double precioTot=0;
 		
-//		Menu_Degustacion m1 = new Menu_Degustacion("Menu_Degustacion", hmProdsBd, hmProdsBd.get("Comida").size()+hmProdsBd.get("Bebida").size(),precioTot);
-//		Menu_EntreSemana m2 = new Menu_EntreSemana("Menu_EntreSemana", hmProdsBd, hmProdsBd.get("Comida").size()+hmProdsBd.get("Bebida").size(), precioTot,false);
-//		Menu_Infantil m3 = new Menu_Infantil("Menu_Infantil", hmProdsBd, hmProdsBd.get("Comida").size()+hmProdsBd.get("Bebida").size(),precioTot);
-//		Menu_FinDeSemana m4 = new Menu_FinDeSemana("Menu_FinDeSemana", hmProdsBd, hmProdsBd.get("Comida").size()+hmProdsBd.get("Bebida").size(), precioTot,8);
-//		
-//		m1.setPrecioTotal(m1.obtenerPreciototal(hmProdsBd));
-//		m2.setPrecioTotal(m2.obtenerPreciototal(hmProdsBd));
-//		m3.setPrecioTotal(m3.obtenerPreciototal(hmProdsBd));
-//		m4.setPrecioTotal(m4.obtenerPreciototal(hmProdsBd));
+		Menu_Degustacion m1 = new Menu_Degustacion("Menu_Degustacion", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot);
+		Menu_EntreSemana m2 = new Menu_EntreSemana("Menu_EntreSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(), precioTot,false);
+		Menu_Infantil m3 = new Menu_Infantil("Menu_Infantil", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot);
+		Menu_FinDeSemana m4 = new Menu_FinDeSemana("Menu_FinDeSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(), precioTot,8);
 		
-		for (String prod : hmProdsBd.keySet()) {
-			for (Producto producto : hmProdsBd.get(prod)) {
+		m1.setPrecioTotal(m1.obtenerPreciototal(hmProds));
+		m2.setPrecioTotal(m2.obtenerPreciototal(hmProds));
+		m3.setPrecioTotal(m3.obtenerPreciototal(hmProds));
+		m4.setPrecioTotal(m4.obtenerPreciototal(hmProds));
+		
+		for (String prod : hmProds.keySet()) {
+			for (Producto producto : hmProds.get(prod)) {
 				if(prod.equals("Bebida")) 
 					cbBebida.addItem(producto);
 			}
 		}
-		for (Menu menu : lMenus) {
-			cbMenu.addItem(menu);
-		}
+//		for (Menu menu : lMenus) {
+//			cbMenu.addItem(menu);
+//		}
 		
-//		cbMenu.addItem(m1);
-//		cbMenu.addItem(m2);
-//		cbMenu.addItem(m3);
-//		cbMenu.addItem(m4);
+		cbMenu.addItem(m1);
+		cbMenu.addItem(m2);
+		cbMenu.addItem(m3);
+		cbMenu.addItem(m4);
 //		cbBebida.addItem(b1);
 //		cbBebida.addItem(b2);
 		
@@ -174,10 +178,21 @@ public class VentanaMenus extends JFrame {
 				Object ob = cbMenu.getSelectedItem();
 				Menu menu = (Menu) ob;
 				menu = (Menu) ob;
-				HashMap<String, List<Producto>> hmPords = RistoranteMain.bd.obtenerProductos();
-				menu.setpL(hmPords);
-				menu.setPrecioTotal(menu.obtenerPreciototal(menu.getpL()));
-				modeloCarrito.addElement(menu);
+//				HashMap<String, List<Producto>> hmPords = RistoranteMain.bd.obtenerProductos();
+//				menu.setpL(hmPords);
+//				menu.setPrecioTotal(menu.obtenerPreciototal(menu.getpL()));
+				Menu mn = new Menu();
+				List<Producto> aComida1 = RistoranteMain.bd.obtenerDatosComidas();
+				List<Producto> aBebdia1 =  RistoranteMain.bd.obtenerDatosBebidas();
+				HashMap<String, List<Producto>> hmProds1 = new HashMap<>();
+				hmProds1 .putIfAbsent("Bebida", aBebdia1);
+				hmProds1.putIfAbsent("Comida", aComida1);
+				mn.setpL(hmProds1);
+				mn.setId(menu.getId());
+				mn.setPrecioTotal(mn.obtenerPreciototal(mn.getpL()));
+				mn.setNumProductos(2);
+				
+				modeloCarrito.addElement(mn);
 				aMenus.setModel(modeloCarrito);
 			}
 
@@ -193,7 +208,6 @@ public class VentanaMenus extends JFrame {
 				Menu menu = modeloCarrito.get(modeloCarrito.size()-1);
 				menu.getpL().get("Bebida").add(bebida);
 				menu.setPrecioTotal(menu.obtenerPreciototal(menu.getpL()));
-				System.out.println(menu.getpL().get("Bebida").get(menu.getpL().get("Bebida").size()-1).toString());
 			}
 		});
 
@@ -203,9 +217,15 @@ public class VentanaMenus extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Object ob = cbMenu.getSelectedItem();
 				Menu menu = (Menu) ob;
-				HashMap<String, List<Producto>> hmPords = RistoranteMain.bd.obtenerProductos();
-				menu.setpL(hmPords);
-				menu.setPrecioTotal(menu.obtenerPreciototal(menu.getpL()));
+//				HashMap<String, List<Producto>> hmPords = RistoranteMain.bd.obtenerProductos();
+//				menu.setpL(hmPords);
+//				menu.setPrecioTotal(menu.obtenerPreciototal(menu.getpL()));
+				List<Producto> aComida1 = RistoranteMain.bd.obtenerDatosComidas();
+				List<Producto> aBebdia1 =  RistoranteMain.bd.obtenerDatosBebidas();
+				HashMap<String, List<Producto>> hmProds1 = new HashMap<>();
+				hmProds1 .putIfAbsent("Bebida", aBebdia1);
+				hmProds1.putIfAbsent("Comida", aComida1);
+				menu.setpL(hmProds1);
 				modeloCarrito.addElement(menu);
 				aMenus.setModel(modeloCarrito);
 			}
@@ -239,11 +259,8 @@ public class VentanaMenus extends JFrame {
 					Menu m = modeloCarrito.getElementAt(i);
 					lMenu.add(m);
 				}
-				RistoranteMain.bd.insertarDatosReserva(res);
-				
-
 				res.setaMenu(lMenu);
-
+				RistoranteMain.bd.insertarDatosReserva(res);
 				VentanaTicket vt = new VentanaTicket(vM);
 				vt.setVisible(true);
 			}

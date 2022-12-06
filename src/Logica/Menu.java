@@ -73,5 +73,16 @@ public class Menu {
 		}
 		return sumaTotal;
 	}
+	public int contarProds() {
+		int cont = 0;
+		cont += this.getpL().get("Comida").size();
+		cont += this.getpL().get("Bebida").size();
+		return cont;
+	}
+
+	@Override
+	public String toString() {
+		return id;
+	}
 	
 }

@@ -245,13 +245,13 @@ public class BD {
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 				     Statement stmt = con.createStatement()) {
 				int numP = r.getNumPersonas();
-				int numM = 0;
+//				int numM = 0;
 				while(numP>0) {
 					for(Mesa m: r.getaMesa()) {
 						for(int i=0;i<m.getNumPersonas() && numP>0;i++) {
 							numP--;
-							Menu me = r.getaMenu().get(numM);
-							numM++;
+							Menu me = r.getaMenu().get(i);
+//							numM++;
 							String sql = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva, idMesa, idMenu) VALUES ('%s', %d, %d, '%s','%s');";
 							System.out.println("- Insertando reservas...");	
 							
@@ -263,14 +263,10 @@ public class BD {
 						}
 					}
 				}
-			
-				
 			}catch (Exception ex) {
 				System.err.println(String.format("* Error al insertar datos de la BBDD: %s", ex.getMessage()));
 				ex.printStackTrace();						
 			}
-			
-			
 		}
 		
 		
