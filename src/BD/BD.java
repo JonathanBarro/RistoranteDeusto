@@ -156,7 +156,7 @@ public class BD {
 				String sql8 = "INSERT INTO Mesa(idMesa, lugar, ocupada, numPersonas) VALUES ('%s', %d, '%s', %d);";
 				System.out.println("- Insertando mesas...");
 				
-				//String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, %d);";
+				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, %d);";
 				
 				//System.out.println("- Insertando reservas...");
 				
@@ -227,13 +227,13 @@ public class BD {
 						System.out.println(String.format(" - No se ha insertado las mesas: %s", mes.toString()));
 					}
 				}
-				/*for (Reserva r : reservas) {
+			for (Reserva r : reservas) {
 					if (1 == stmt.executeUpdate(String.format(sql9, r.getFecha(), r.getNumPersonas(),r.getIdReserva()))) {					
 						System.out.println(String.format(" - Reservas insertadas: %s", r.toString()));
 					} else {
 						System.out.println(String.format(" - No se ha insertado las reservas: %s", r.toString()));
 					}
-				}*/
+				}
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al insertar datos de la BBDD: %s", ex.getMessage()));
 				ex.printStackTrace();						

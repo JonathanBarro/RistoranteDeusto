@@ -12,8 +12,8 @@ public class RistoranteMain {
 	public static void main(String[] args) {
 		
 		bd = new BD();	
-		//bd.borrarDatos();
-	    //bd.borrarBBDD();
+		bd.borrarDatos();
+	    bd.borrarBBDD();
 		VentanaAdminCliente window = new VentanaAdminCliente();
 		window.setVisible(true);
 		
@@ -40,8 +40,8 @@ public class RistoranteMain {
 		List<Mesa> mesas = bd.obtenerDatosMesas();
 		printMesa(mesas);
 //		
-//		List<Reserva> reservas = bd.obtenerDatosReservas();
-//		printReserva(reservas);
+		List<Reserva> reservas = bd.obtenerDatosReservas();
+		printReserva(reservas);
 //		
 //		List<Menu_Degustacion> menuDegustacion = bd.obtenerDatosMenu_Degustacion();
 //		printMenu_Degustacion(menuDegustacion);

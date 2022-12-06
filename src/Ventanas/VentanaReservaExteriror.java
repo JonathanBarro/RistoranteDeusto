@@ -1,32 +1,38 @@
 package Ventanas;
 
-import java.awt.BorderLayout;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JDateChooser;
 
 import BD.BD;
 import Logica.Reserva;
 import Logica.RistoranteMain;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JLabel;
+
+
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.awt.event.ActionEvent;
+
+import javax.swing.JComboBox;
+import java.awt.Color;
+import java.awt.Dimension;
 
 
 
@@ -37,8 +43,15 @@ public class VentanaReservaExteriror extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JDateChooser calen;
-	
+	private JDateChooser calen; 
+	private JTable tabla;
+	private DefaultTableModel modelo;
+	private JScrollPane scroll;
+	private JButton btnGuardarDatos;
+	private JPanel pNorte;
+	private JLabel lblNombre;
+	private Reserva res;
+	private JFrame ventanaActual;
 
 	/**
 	 * Launch the application.
@@ -48,6 +61,8 @@ public class VentanaReservaExteriror extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaReservaExteriror() {
+		res = new Reserva();
+		ventanaActual = this;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -86,24 +101,24 @@ public class VentanaReservaExteriror extends JFrame {
 		panel_ComboCent.setBackground(new Color(231, 237, 236));
 		panel_Cent.add(panel_ComboCent, BorderLayout.NORTH);
 		
-		JLabel jLNumeroPer = new JLabel("Seleccione mesas:");
-		panel_ComboCent.add(jLNumeroPer);
+		JLabel jLNumeroPersonas = new JLabel("Pulse en el boton para ver la mesas libres:");
+		panel_ComboCent.add(jLNumeroPersonas);
 		
 		JButton btnMesas = new JButton("Mesas");
 		btnMesas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaMesasExteriror window = new VentanaMesasExteriror();
+				VentanaMesasInterior window = new VentanaMesasInterior(res, ventanaActual);
 				window.setVisible(true);
-				dispose();
+				ventanaActual.setVisible(false);
+				
 			}
 		});
 		btnMesas.setBackground(new Color(255, 128, 64));
 		panel_ComboCent.add(btnMesas);
 		
 		
-		
 		JPanel panel_JCalendar = new JPanel();
-		panel_JCalendar.setBackground(new Color(255, 255, 128));
+		panel_JCalendar.setBackground(new Color(128, 255, 128));
 		panel_Cent.add(panel_JCalendar, BorderLayout.CENTER);
 		
 		Date fechaActual = new Date(System.currentTimeMillis());
@@ -117,39 +132,46 @@ public class VentanaReservaExteriror extends JFrame {
 		} catch (ParseException e1) {
 			ultimaFecha = fechaActual;
 		}
+		panel_JCalendar.setLayout(null);
 
 		calen = new JDateChooser();
+		calen.setBounds(141, 35, 100, 25);
 		calen.setMinSelectableDate(fechaActual);
 		calen.setMaxSelectableDate(ultimaFecha);
 		panel_JCalendar.add(calen);
 		calen.setPreferredSize(new Dimension(100,25));
 		calen.setDateFormatString("dd-MMMM");
+		
+		JLabel lblCalen = new JLabel("Seleccione el dia de reserva:");
+		lblCalen.setBounds(117, 10, 215, 14);
+		panel_JCalendar.add(lblCalen);
+		
+	
+		
+	
+		
 		JButton btnConfirm = new JButton("Confirmar");
 		btnConfirm.setFont(new Font("MV Boli", Font.PLAIN, 11));
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-					int id=0;
-					String fecha="11";
-					int numPer=0;
-					Reserva  res = new Reserva(fecha,numPer,id);
-					Reserva  res1 = new Reserva();
+					
 					List<Reserva> reservas = new ArrayList <Reserva>();
-					reservas.add(res);
-					System.out.println("Hola");
-					for(int i = 0;i<reservas.size();i++) {
-					res1.setIdReserva(i+1);
+					
+					reservas = RistoranteMain.bd.obtenerDatosReservas();
 				
-					 String año = Integer.toString(calen.getCalendar().get(java.util.Calendar.YEAR));
-//					 String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
-//					 String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
-//					 res1.setFecha(dia+"-"+mes);
-					 System.out.println( res1.toString());
+					int i = reservas.get(reservas.size()-1).getIdReserva()+1;
+					res.setIdReserva(i);
+					 //String año = Integer.toString(calen.getCalendar().get(java.util.Calendar.YEAR));
+					String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
+					String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
+					res.setFecha(dia+"-"+mes);
+					System.out.println( res.toString());
 					 
-					}
-					reservas.add(res1);
-				 
-				RistoranteMain.bd.insertarDatosReserva(res);
-				dispose();
+					reservas.add(res);
+					VentanaMenus window = new VentanaMenus(res);
+					
+					window.setVisible(true);
+					ventanaActual.setVisible(false);
 				
 				
 			}
@@ -158,9 +180,8 @@ public class VentanaReservaExteriror extends JFrame {
 		
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 255, 128));
+		panel.setBackground(new Color(128, 255, 128));
 		panel_Cent.add(panel, BorderLayout.WEST);
 	}
-
 }
 
