@@ -13,6 +13,7 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -107,6 +108,14 @@ public class VentanaMesasInterior extends JFrame {
 				aMesa.add(mes);
 				res.setaMesa(aMesa);
 				res.setNumPersonas(mes.getNumPersonas());
+				modelo.removeRow(tabla.getSelectedRow());
+				RistoranteMain.bd.borrarMesa(mes.getIdMesa());
+				JOptionPane.showMessageDialog(null,"Mesa seleccionada correctamente");
+				
+			}
+
+			private void removeRow(int selectedRow) {
+				// TODO Auto-generated method stub
 				
 			}
 		});

@@ -755,6 +755,23 @@ public class BD {
 				}		
 		}
 		
+		
+		
+		
+		public void borrarMesa(String id) {
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+				     Statement stmt = con.createStatement()) {
+					//Se ejecuta la sentencia de borrado de datos
+					String sql = "DELETE FROM Mesa WHERE idMesa='%s'";
+					
+					int result = stmt.executeUpdate(String.format(sql, id));
+					
+					System.out.println(String.format("- Se ha borrado %d mesa", result));
+				} catch (Exception ex) {
+					System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+					ex.printStackTrace();						
+				}		
+		}
 //Se acaba para borrar en la parte del admin
 		
 		
