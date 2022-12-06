@@ -254,12 +254,11 @@ public class VentanaMenus extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				ArrayList<Menu> lMenu =  new ArrayList<>();
 				for(int i=0;i<modeloCarrito.getSize();i++) {
 					Menu m = modeloCarrito.getElementAt(i);
-					lMenu.add(m);
+					res.getaMenu().add(m);
 				}
-				res.setaMenu(lMenu);
+				
 				RistoranteMain.bd.insertarDatosReserva(res);
 				VentanaTicket vt = new VentanaTicket(vM);
 				vt.setVisible(true);
