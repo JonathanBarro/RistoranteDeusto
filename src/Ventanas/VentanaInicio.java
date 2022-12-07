@@ -8,6 +8,7 @@ import java.awt.Font;
 import java.awt.Color;
 
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JLabel;
 
 import javax.swing.JTextField;
@@ -83,7 +84,7 @@ public class VentanaInicio extends JFrame{
 		LabelContrasenya.setBounds(116, 81, 87, 14);
 		panelCent.add(LabelContrasenya);
 		
-		textFieldContrasena = new JTextField();
+		textFieldContrasena = new JPasswordField();
 		textFieldContrasena.setBounds(213, 78, 96, 20);
 		panelCent.add(textFieldContrasena);
 		textFieldContrasena.setColumns(10);

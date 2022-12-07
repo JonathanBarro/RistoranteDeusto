@@ -16,6 +16,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 
 public class VentanaRegistro extends JFrame{
 
@@ -97,7 +98,7 @@ public class VentanaRegistro extends JFrame{
 		panelCent.add(textField_1);
 		textField_1.setColumns(10);
 		
-		textField_2 = new JTextField();
+		textField_2 = new JPasswordField();
 		textField_2.setBounds(231, 92, 96, 20);
 		panelCent.add(textField_2);
 		textField_2.setColumns(10);

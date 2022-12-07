@@ -4,6 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -817,7 +818,60 @@ public class BD {
 			}		
 		}	
 		
-		
+		//Guardar Clientes en la base de datos
+		public static PreparedStatement sentencia_preparada;
+		public int guardarClientes(String nombre, String apellido, String contrasenia, int numTlfn){
+			Connection con= null;
+			int resultado = 0;
+			String sentencia_guardar = ("INSERT INTO clientes (nombre,apellido,contrasenia,numTlfn) VALUES (?,?,?,?)");
+			
+			
+			try {
+				Connection conexion = DriverManager.getConnection(CONNECTION_STRING);
+				sentencia_preparada = con.prepareStatement(sentencia_guardar);
+				sentencia_preparada.setString(1, nombre	);
+				sentencia_preparada.setString(2, apellido);
+				sentencia_preparada.setString(3, contrasenia	);
+				sentencia_preparada.setInt(4, numTlfn	);
+				resultado = sentencia_preparada.executeUpdate();
+				sentencia_preparada.close();
+			
+			} catch (Exception e) {
+				
+				System.out.println(e);
+			}
+			
+			return resultado;
+			}
+		//Guardar Administradores en la base de datos
+		public int guardarAdmins(String nombre, String apellido, String contrasenia, int idAdmin, int sueldo){
+			Connection con= null;
+			int resultado = 0;
+			String sentencia_guardar = ("INSERT INTO clientes (nombre,apellido,contrasenia,numTlfn) VALUES (?,?,?,?,?)");
+					
+					
+			try {
+				Connection conexion = DriverManager.getConnection(CONNECTION_STRING);
+				sentencia_preparada = con.prepareStatement(sentencia_guardar);
+				sentencia_preparada.setString(1, nombre	);
+				sentencia_preparada.setString(2, apellido);
+				sentencia_preparada.setString(3, contrasenia	);
+				sentencia_preparada.setInt(4, idAdmin	);
+				sentencia_preparada.setInt(5, sueldo	);
+						
+				resultado = sentencia_preparada.executeUpdate();
+				sentencia_preparada.close();
+					
+			} catch (Exception e) {
+						
+				System.out.println(e);
+			}
+					
+			return resultado;
+		}
+				
+}
+			
 		
 		//Cambiar ocupacion
 		
@@ -825,4 +879,4 @@ public class BD {
 	
 	
 
-}
+
