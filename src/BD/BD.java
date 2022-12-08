@@ -46,8 +46,8 @@ public class BD {
 	}
 	
 	public void crearBBDD() {
-		//Se abre la conexi�n y se obtiene el Statement
-		//Al abrir la conexi�n, si no exist�a el fichero, se crea la base de datos
+		//Se abre la conexi n y se obtiene el Statement
+		//Al abrir la conexi n, si no exist a el fichero, se crea la base de datos
 		try (Connection con = DriverManager.getConnection("jdbc:sqlite:" + "db/database.db");
 		     Statement st = con.createStatement()) {
 			String sql = "CREATE TABLE IF NOT EXISTS Cliente (nombre TEXT NOT NULL, apellido TEXT NOT NULL, contrasena TEXT NOT NULL, numTlf Integer PRIMARY KEY NOT NULL)";
@@ -88,7 +88,7 @@ public class BD {
 	}
 	
 	public void borrarBBDD() {
-		//Se abre la conexi�n y se obtiene el Statement
+		//Se abre la conexi n y se obtiene el Statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
 	        String sql = "DROP TABLE IF EXISTS Cliente";
@@ -102,7 +102,7 @@ public class BD {
 	         sql = "DROP TABLE IF EXISTS Mesa";
 	         sql = "DROP TABLE IF EXISTS Reserva";
 			
-	        //Se ejecuta la sentencia de creaci�n de la tabla Estudiantes
+	        //Se ejecuta la sentencia de creaci n de la tabla Estudiantes
 	        if (!stmt.execute(sql)) {
 	        	System.out.println("- Se ha borrado las tablas");
 	        }
@@ -129,7 +129,7 @@ public class BD {
 				List<Menu_Infantil> menus_infantiles, List<Mesa> mesas, List<Reserva> reservas) {
 		
 			
-			//Se abre la conexi�n y se obtiene el Statement
+			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				//Se define la plantilla de la sentencia SQL
@@ -275,7 +275,7 @@ public class BD {
 		public List<Cliente> obtenerDatosClientes() {
 			List<Cliente> clientes = new ArrayList<>();
 			
-			//Se abre la conexi�n y se obtiene el Statement
+			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				String sql = "SELECT * FROM CLIENTE WHERE numTlf >= 0";
@@ -314,7 +314,7 @@ public class BD {
 		public List<Admin> obtenerDatosAdmins() {
 			List<Admin> admins = new ArrayList<>();
 			
-			//Se abre la conexi�n y se obtiene el Statement
+			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				String sql = "SELECT * FROM Admin WHERE idAdmin >= 0";
@@ -354,7 +354,7 @@ public class BD {
 		public List<Producto> obtenerDatosBebidas() {
 			List<Producto> productos = new ArrayList<>();
 			
-			//Se abre la conexi�n y se obtiene el Statement
+			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				String sql = "SELECT * FROM BEBIDA WHERE id >= 0";
@@ -393,7 +393,7 @@ public class BD {
 		public List<Producto> obtenerDatosComidas() {
 			
 			List<Producto> producto = new ArrayList<>();
-			//Se abre la conexi�n y se obtiene el Statement
+			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				String sql = "SELECT * FROM Comida WHERE id >= 0";
@@ -441,7 +441,7 @@ public class BD {
 		public List<Mesa> obtenerDatosMesas() {
 			List<Mesa> mesas = new ArrayList<>();
 			
-			//Se abre la conexi�n y se obtiene el Statement
+			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				String sql = "SELECT * FROM Mesa";
@@ -478,7 +478,7 @@ public class BD {
 		public List<Reserva> obtenerDatosReservas() {
 			List<Reserva> reservas = new ArrayList<>();
 			
-			//Se abre la conexi�n y se obtiene el Statement
+			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				String sql = "SELECT * FROM Reserva";
@@ -515,7 +515,7 @@ public class BD {
 		public List<Menu> obtenerDatosMenu_EntreSemana() {
 			List<Menu> menusEntreSemana = new ArrayList<>();
 			
-			//Se abre la conexi�n y se obtiene el Statement
+			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				String sql = "SELECT * FROM Menu_EntreSemana";
@@ -552,7 +552,7 @@ public class BD {
 		public List<Menu> obtenerDatosMenu_FinDeSemana() {
 			List<Menu> menusFinDeSemana = new ArrayList<>();
 			
-			//Se abre la conexi�n y se obtiene el Statement
+			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				String sql = "SELECT * FROM Menu_FinDeSemana";
@@ -589,7 +589,7 @@ public class BD {
 		public List<Menu> obtenerDatosMenu_Degustacion() {
 			List<Menu> menusDegustacion = new ArrayList<>();
 			
-			//Se abre la conexi�n y se obtiene el Statement
+			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				String sql = "SELECT * FROM Menu_Degustacion";
@@ -626,7 +626,7 @@ public class BD {
 			List<Menu> menusInfantil = new ArrayList<>();
 			
 			
-			//Se abre la conexi�n y se obtiene el Statement
+			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				String sql = "SELECT * FROM Menu_Infantil";
@@ -678,8 +678,8 @@ public class BD {
 			return lMenus;
 		}
 		
-		public void cambiarPrecio(Producto bebida, Integer nuevoprecio) {
-			//Se abre la conexi�n y se obtiene el Statement
+		public void cambiarPrecioBebida(Producto bebida, Integer nuevoprecio) {
+			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				//Se ejecuta la sentencia de borrado de datos
@@ -688,6 +688,21 @@ public class BD {
 				int result = stmt.executeUpdate(String.format(sql, nuevoprecio, bebida.getId()));
 				
 				System.out.println(String.format("- Se ha actulizado %d bebida", result));
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}		
+		}
+		public void cambiarPrecioComida(Producto comida, Integer nuevoprecio) {
+			//Se abre la conexi n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				//Se ejecuta la sentencia de borrado de datos
+				String sql = "UPDATE COMIDA SET precio = %d WHERE ID = %d;";
+				
+				int result = stmt.executeUpdate(String.format(sql, nuevoprecio, comida.getId()));
+				
+				System.out.println(String.format("- Se ha actulizado %d comida", result));
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
 				ex.printStackTrace();						
@@ -777,7 +792,7 @@ public class BD {
 		
 		
 		public void borrarDatos() {
-			//Se abre la conexi�n y se obtiene el Statement
+			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				//Se ejecuta la sentencia de borrado de datos
@@ -877,6 +892,3 @@ public class BD {
 		
 	
 	
-	
-
-

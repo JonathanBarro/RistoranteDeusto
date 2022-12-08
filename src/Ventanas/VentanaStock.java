@@ -11,6 +11,7 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
@@ -21,6 +22,8 @@ import BD.BD;
 import java.awt.BorderLayout;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.ActionEvent;
 
 
@@ -74,12 +77,16 @@ public class VentanaStock extends JFrame{
 		JLabel txtAreaStock= new JLabel();
 		txtAreaStock.setFont(new Font("Times New Roman" , Font.BOLD, 28));
 		txtAreaStock.setBounds(10, 10, 200, 30);
+		JButton btnCambiarPrecio = new JButton("Cambiar Precio");
+		
+		JButton btnAniadirComida = new JButton("Aniadir");
+		panelSur.add(btnAniadirComida);
+		
+		JButton btnBorrar = new JButton("Borrar");
+		panelSur.add(btnBorrar);
+		panelSur.add(btnCambiarPrecio);
 		
 		JButton btnVolver= new JButton("Volver");
-		btnVolver.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		panelSur.add(btnVolver);
 		btnVolver.addActionListener(new ActionListener() {
 			
@@ -95,12 +102,11 @@ public class VentanaStock extends JFrame{
 		});
 		
 		
+		
 	
 	
-		listaProductos=bd.obtenerDatosComidas();
+	listaProductos=bd.obtenerDatosComidas();
 	
-		JButton CambiarPrecio= new JButton("Cambiar el precio");
-		panelSur.add(CambiarPrecio);
 		
 		
 
@@ -109,7 +115,7 @@ public class VentanaStock extends JFrame{
 		String [] titulos = {"NOMBRE","ID","PRECIO","STOCK"};
 		modelo.setColumnIdentifiers(titulos);
 		for (Producto p : listaProductos) {
-			String [] datos = {p.getNombre()+"",p.getId()+""+ p.getPrecio()+ ""+ p.getStock()+""};
+			String [] datos = {p.getNombre()+"",p.getId()+"", p.getPrecio()+ "", p.getStock()+""};
 			modelo.addRow(datos);
 		}
 		
@@ -118,7 +124,76 @@ public class VentanaStock extends JFrame{
 		scroll = new JScrollPane(table);
 		contentPane.add(scroll, BorderLayout.CENTER);
 		
-	}
+		btnAniadirComida.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String nombre=JOptionPane.showInputDialog("Introduce un nombre:");
+				String Id= JOptionPane.showInputDialog("Introduce un ID:");
+				String precio= JOptionPane.showInputDialog("Introduce un precio");
+				String Stock=JOptionPane.showInputDialog("Introduce un Stock");
+				Comida nuevacomida = new Comida(nombre,Integer.parseInt(Id),Integer.parseInt(precio),Integer.parseInt(Stock));
+				String [] comidastring= { nombre+"", Id+"", precio+"",Stock+""};
+				modelo.addRow(comidastring);
+			}
+		});
+		
+		table.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+				btnCambiarPrecio.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						String Nuevoprecio= JOptionPane.showInputDialog("Introduce un nuevo precio:");
+						bd.cambiarPrecioComida((Producto)modelo.getValueAt(table.getSelectedRow(),table.getSelectedColumn()), Integer.parseInt(Nuevoprecio));
+						System.out.println("cambio de precio");
+					}
+				});
+				
+				btnBorrar.addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						// TODO Auto-generated method stub
+						modelo.removeRow(table.getSelectedRow());
+						
+					}
+				});
+				
+			}
+		});
+		}
 
 }
+
 
