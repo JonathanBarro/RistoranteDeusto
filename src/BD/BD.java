@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,6 +35,9 @@ public class BD {
 	protected static final String DRIVER_NAME = "org.sqlite.JDBC";
 	protected static final String DATABASE_FILE = "db/database.db";
 	protected static final String CONNECTION_STRING = "jdbc:sqlite:" + DATABASE_FILE;
+	public static ResultSet resultado;
+	public static int resultadoguardar;
+	
 	
 	public BD() {		
 		try {
@@ -835,9 +839,8 @@ public class BD {
 		
 		//Guardar Clientes en la base de datos
 		public static PreparedStatement sentencia_preparada;
-		public int guardarClientes(String nombre, String apellido, String contrasenia, int numTlfn){
+		public int guardarClientes(String nombre, String apellido, String contrasenia, String numTlfn){
 			Connection con= null;
-			int resultado = 0;
 			String sentencia_guardar = ("INSERT INTO clientes (nombre,apellido,contrasenia,numTlfn) VALUES (?,?,?,?)");
 			
 			
@@ -847,21 +850,21 @@ public class BD {
 				sentencia_preparada.setString(1, nombre	);
 				sentencia_preparada.setString(2, apellido);
 				sentencia_preparada.setString(3, contrasenia	);
-				sentencia_preparada.setInt(4, numTlfn	);
-				resultado = sentencia_preparada.executeUpdate();
+				sentencia_preparada.setString(4, numTlfn	);
+				resultadoguardar = sentencia_preparada.executeUpdate();
 				sentencia_preparada.close();
-			
-			} catch (Exception e) {
 				
-				System.out.println(e);
+				System.out.println(String.format("- Se ha guardado un nuevo cliente en la BBDD", resultadoguardar));
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al guardar un nuevo cliente en la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();	
 			}
 			
-			return resultado;
+			return resultadoguardar;
 			}
 		//Guardar Administradores en la base de datos
 		public int guardarAdmins(String nombre, String apellido, String contrasenia, int idAdmin, int sueldo){
 			Connection con= null;
-			int resultado = 0;
 			String sentencia_guardar = ("INSERT INTO clientes (nombre,apellido,contrasenia,numTlfn) VALUES (?,?,?,?,?)");
 					
 					
@@ -872,21 +875,69 @@ public class BD {
 				sentencia_preparada.setString(2, apellido);
 				sentencia_preparada.setString(3, contrasenia	);
 				sentencia_preparada.setInt(4, idAdmin	);
-				sentencia_preparada.setInt(5, sueldo	);
-						
-				resultado = sentencia_preparada.executeUpdate();
+				sentencia_preparada.setInt(5, sueldo	);	
+				resultadoguardar = sentencia_preparada.executeUpdate();
 				sentencia_preparada.close();
-					
-			} catch (Exception e) {
-						
-				System.out.println(e);
+				
+				System.out.println(String.format("- Se ha guardado un nuevo administrador en la BBDD", resultadoguardar));
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al guardar un nuevo administrador en la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();	
 			}
 					
-			return resultado;
+			return resultadoguardar;
 		}
-				
-}
+		//Buscar nombre del Cliente
+		public static String buscarNombre(String numTlfn) {
 			
+			String busqueda_nombre = null;
+			Connection conexion = null;
+			try {
+				conexion = DriverManager.getConnection(CONNECTION_STRING);
+				String sentencia_buscar = ("SELECT nombre, apellido FROM clientes WHERE numTlfn = '" + numTlfn + "'");
+				sentencia_preparada = conexion.prepareStatement(sentencia_buscar);
+				resultado = sentencia_preparada.executeQuery();
+				if(resultado.next()) {
+					String nombre = resultado.getString("nombre");
+					String apellido = resultado.getString("apellido");
+					busqueda_nombre = (nombre +" "+ apellido);
+				}
+				conexion.close();
+		
+			} catch (Exception e) {
+					
+			}
+			return busqueda_nombre;	
+		}
+		//Buscar si un cliente esta registrado
+		public static String buscarClienteRegistrado ( String usuario, String contrasenya) {
+			String busqueda_cliente = null;
+			Connection conexion = null;
+			
+			try {
+				conexion = DriverManager.getConnection(CONNECTION_STRING);
+				String sentencia_buscar_cliente = ("SELECT nombre,apellido,numTlfn,contrasenya FROM clientes WHERE usuario = '"+ usuario +"' && contrasenya = '"+ contrasenya +"'");	
+				sentencia_preparada = conexion.prepareStatement(sentencia_buscar_cliente);
+				resultado = sentencia_preparada.executeQuery();
+				if(resultado.next()) {
+					busqueda_cliente = "Cliente encontrado";
+				}else {
+					busqueda_cliente = "Cliente no encontrado";
+				}
+				
+			
+			
+				conexion.close();
+				System.out.println(String.format("- Se ha podido iniciar sesion correctamente", resultado));
+			} catch (Exception e) {
+				System.err.println(String.format("* Error, no se puede iniciar sesion porque este Cliente no esta registrado", e.getMessage()));
+				e.printStackTrace();
+			}
+			return busqueda_cliente;
+		
+		
+		}
+}			
 		
 		//Cambiar ocupacion
 		

@@ -9,14 +9,19 @@ import javax.swing.JLabel;
 
 import javax.swing.JTextField;
 
+import BD.BD;
+
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import java.awt.event.MouseListener;
+
 
 public class VentanaRegistro extends JFrame{
 
@@ -25,7 +30,8 @@ public class VentanaRegistro extends JFrame{
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
-
+	BD metodosbases = new BD();
+	
 	/**
 	 * Launch the application.
 	 */
@@ -129,6 +135,19 @@ public class VentanaRegistro extends JFrame{
 		btnVolver.setForeground(new Color(0, 128, 255));
 		btnVolver.setBounds(37, 175, 89, 23);
 		panelCent.add(btnVolver);
-	}
 
-}
+	}
+	private void btnRegisActionPerformed(java.awt.ActiveEvent evt) {
+		metodosbases.guardarClientes(textField.getText(), textField_1.getText(), textField_2.getText(), textField_3.getText());
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}	

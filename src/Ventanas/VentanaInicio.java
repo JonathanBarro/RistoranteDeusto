@@ -10,8 +10,11 @@ import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JLabel;
-
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import BD.BD;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -24,8 +27,8 @@ public class VentanaInicio extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTextField textFieldContrasena;
-
-
+	BD metodosbases = new BD();
+	
 	/**
 	 * Create the application.
 	 */
@@ -75,10 +78,10 @@ public class VentanaInicio extends JFrame{
 		lblNewLabel.setBounds(116, 43, 87, 14);
 		panelCent.add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setBounds(213, 40, 96, 20);
-		panelCent.add(textField);
-		textField.setColumns(10);
+		JTextField JTextField = new JTextField();
+		JTextField.setBounds(213, 40, 96, 20);
+		panelCent.add(JTextField);
+		JTextField.setColumns(10);
 		
 		JLabel LabelContrasenya = new JLabel("Contrasenya:");
 		LabelContrasenya.setBounds(116, 81, 87, 14);
@@ -106,8 +109,8 @@ public class VentanaInicio extends JFrame{
 		panelCent.add(btnRegis);
 		
 		
-		JButton btnNewButton = new JButton("Iniciar Sesion");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnInicioSesion = new JButton("Iniciar Sesion");
+		btnInicioSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				EleccionInteriorExterior window = new EleccionInteriorExterior();
@@ -115,11 +118,27 @@ public class VentanaInicio extends JFrame{
 				dispose();
 			}
 		});
-		btnNewButton.setBackground(new Color(255, 128, 64));
-		btnNewButton.setBounds(159, 123, 123, 20);
-		panelCent.add(btnNewButton);
+		btnInicioSesion.setBackground(new Color(255, 128, 64));
+		btnInicioSesion.setBounds(159, 123, 123, 20);
+		panelCent.add(btnInicioSesion);
 		setBounds(100, 100, 450, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	private void btnInicioSesionActionPerformance(java.awt.event.ActionEvent evt) {
+		String busqueda_cliente = metodosbases.buscarClienteRegistrado(textField.getText(), textFieldContrasena.getText());
+		
+		if(textField.getText().equals("root") && textFieldContrasena.getText().equals("root")) {
+			JOptionPane.showMessageDialog(this, "Bienvenido, iniciaste sesion correctamente");
+	
+		}else if(busqueda_cliente.equals("cliente encontrado")) {
+			String busqueda_nombre = metodosbases.buscarNombre(textField.getText());
+			JOptionPane.showMessageDialog(this, "Bienvenido (a) \n"+ busqueda_nombre);
+		}else {
+			JOptionPane.showMessageDialog(this, "Cliente no registrado, por favor, registrese");
+		}
+		
+				
 	}
 }
 
