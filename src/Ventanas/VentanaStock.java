@@ -14,7 +14,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.DefaultTableModel;
 
 import BD.BD;
@@ -34,7 +36,7 @@ public class VentanaStock extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private List<Producto> listaProductos;
-	private JTable table;
+	private JTable tablaComida;
 	private JScrollPane scroll;
 	private DefaultTableModel modelo;
 
@@ -120,8 +122,8 @@ public class VentanaStock extends JFrame{
 		}
 		
 		
-		table = new JTable(modelo);
-		scroll = new JScrollPane(table);
+		tablaComida = new JTable(modelo);
+		scroll = new JScrollPane(tablaComida);
 		contentPane.add(scroll, BorderLayout.CENTER);
 		
 		btnAniadirComida.addActionListener(new ActionListener() {
@@ -136,10 +138,12 @@ public class VentanaStock extends JFrame{
 				Comida nuevacomida = new Comida(nombre,Integer.parseInt(Id),Integer.parseInt(precio),Integer.parseInt(Stock));
 				String [] comidastring= { nombre+"", Id+"", precio+"",Stock+""};
 				modelo.addRow(comidastring);
+				
+				bd.insertarNuevaComida(nuevacomida);
 			}
 		});
 		
-		table.addMouseListener(new MouseListener() {
+		tablaComida.addMouseListener(new MouseListener() {
 			
 			@Override
 			public void mouseReleased(MouseEvent e) {
@@ -174,8 +178,11 @@ public class VentanaStock extends JFrame{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						// TODO Auto-generated method stub
+						
 						String Nuevoprecio= JOptionPane.showInputDialog("Introduce un nuevo precio:");
-						bd.cambiarPrecioComida((Producto)modelo.getValueAt(table.getSelectedRow(),table.getSelectedColumn()), Integer.parseInt(Nuevoprecio));
+						modelo.setValueAt(Nuevoprecio, tablaComida.getSelectedRow(), 2);
+						
+						bd.cambiarPrecioComida((Producto)modelo.getValueAt(tablaComida.getSelectedRow(),1), Integer.parseInt(Nuevoprecio));
 						System.out.println("cambio de precio");
 					}
 				});
@@ -185,15 +192,18 @@ public class VentanaStock extends JFrame{
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						// TODO Auto-generated method stub
-						modelo.removeRow(table.getSelectedRow());
+						modelo.removeRow(tablaComida.getSelectedRow());
+						bd.borrarComida((int) modelo.getValueAt(tablaComida.getSelectedRow(), 0));
+						
 						
 					}
 				});
 				
 			}
+		
 		});
-		}
-
+	}
 }
+
 
 

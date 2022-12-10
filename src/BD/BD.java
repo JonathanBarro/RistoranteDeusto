@@ -245,6 +245,23 @@ public class BD {
 			}				
 		}
 		
+		public void insertarNuevaComida(Comida c) {
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+				     Statement stmt = con.createStatement()) {
+				String sql = "INSERT INTO Comida (nombre, precio, id, stock) VALUES ('%s', '%.2f', %d, %d);";
+				System.out.println("- Insertando comida...");
+				
+				if (1 == stmt.executeUpdate(String.format(sql, c.getNombre(), c.getPrecio(), c.getId(),c.getStock()))) {					
+					System.out.println(String.format(" - Comida insertada: %s", c.toString()));
+				} else {
+					System.out.println(String.format(" - No se ha insertado la comida: %s", c.toString()));
+				}
+				
+			}catch (Exception ex) {
+				System.err.println(String.format("* Error al insertar datos de la BBDD: %s", ex.getMessage()));
+				ex.printStackTrace();						
+			}
+		}
 		
 		public void insertarDatosReserva(Reserva r) {
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
