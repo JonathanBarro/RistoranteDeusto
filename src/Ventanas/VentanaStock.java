@@ -182,7 +182,7 @@ public class VentanaStock extends JFrame{
 						String Nuevoprecio= JOptionPane.showInputDialog("Introduce un nuevo precio:");
 						modelo.setValueAt(Nuevoprecio, tablaComida.getSelectedRow(), 2);
 						
-						bd.cambiarPrecioComida((Producto)modelo.getValueAt(tablaComida.getSelectedRow(),1), Integer.parseInt(Nuevoprecio));
+						bd.cambiarPrecioComida(Integer.parseInt((String)modelo.getValueAt(tablaComida.getSelectedRow(),1)), Integer.parseInt(Nuevoprecio));
 						System.out.println("cambio de precio");
 					}
 				});

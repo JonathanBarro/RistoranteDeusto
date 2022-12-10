@@ -714,14 +714,14 @@ public class BD {
 				ex.printStackTrace();						
 			}		
 		}
-		public void cambiarPrecioComida(Producto comida, Integer nuevoprecio) {
+		public void cambiarPrecioComida(Integer id, Integer nuevoprecio) {
 			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				//Se ejecuta la sentencia de borrado de datos
 				String sql = "UPDATE COMIDA SET precio = %d WHERE ID = %d;";
 				
-				int result = stmt.executeUpdate(String.format(sql, nuevoprecio, comida.getId()));
+				int result = stmt.executeUpdate(String.format(sql, nuevoprecio, id));
 				
 				System.out.println(String.format("- Se ha actulizado %d comida", result));
 			} catch (Exception ex) {
