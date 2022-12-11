@@ -138,12 +138,8 @@ public class VentanaInicio extends JFrame implements MouseListener{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				String busqueda_cliente = metodosbases.buscarClienteRegistrado(textField.getText(), textFieldContrasena.getText());
-				
-				if(textField.getText().equals("") && textFieldContrasena.getText().equals("")) {
-					JOptionPane.showInputDialog(this, "Bienvenido, iniciaste sesion correctamente");
-			
-				}else if(busqueda_cliente.equals("cliente encontrado")) {
+				String busqueda_cliente = metodosbases.buscarClienteRegistrado(textField.getText(), textFieldContrasena.getText());		
+				if(busqueda_cliente.equals("Cliente encontrado")) {
 					String busqueda_nombre = metodosbases.buscarNombre(textField.getText());
 					JOptionPane.showInputDialog(this, "Bienvenido a Ristorante \n"+ busqueda_nombre);
 				}else {

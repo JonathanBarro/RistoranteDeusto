@@ -858,7 +858,7 @@ public class BD {
 		public static PreparedStatement sentencia_preparada;
 		public int guardarClientes(String nombre, String apellido, String contrasenia, int numTlfn){
 			Connection con= null;
-			String sentencia_guardar = ("INSERT INTO clientes (nombre,apellido,contrasenia,numTlfn) VALUES (?,?,?,?)");
+			String sentencia_guardar = ("INSERT INTO Cliente (nombre,apellido,contrasenia,numTlfn) VALUES (?,?,?,?)");
 			
 			
 			try {
@@ -911,7 +911,7 @@ public class BD {
 			Connection conexion = null;
 			try {
 				conexion = DriverManager.getConnection(CONNECTION_STRING);
-				String sentencia_buscar = ("SELECT nombre, apellido FROM clientes WHERE numTlfn = '" + numTlfn + "'");
+				String sentencia_buscar = ("SELECT nombre, apellido FROM Cliente WHERE numTlfn = '" + numTlfn + "'");
 				sentencia_preparada = conexion.prepareStatement(sentencia_buscar);
 				resultado = sentencia_preparada.executeQuery();
 				if(resultado.next()) {
@@ -933,7 +933,7 @@ public class BD {
 			
 			try {
 				conexion = DriverManager.getConnection(CONNECTION_STRING);
-				String sentencia_buscar_cliente = ("SELECT nombre,apellido,numTlfn,contrasenya FROM clientes WHERE usuario = '"+ usuario +"' && contrasenya = '"+ contrasenya +"'");	
+				String sentencia_buscar_cliente = ("SELECT nombre,apellido,numTlfn,contrasenya FROM Cliente WHERE usuario = '"+ usuario +"' && contrasenya = '"+ contrasenya +"'");	
 				sentencia_preparada = conexion.prepareStatement(sentencia_buscar_cliente);
 				resultado = sentencia_preparada.executeQuery();
 				if(resultado.next()) {
