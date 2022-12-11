@@ -23,7 +23,7 @@ import javax.swing.JPasswordField;
 import java.awt.event.MouseListener;
 
 
-public class VentanaRegistro extends JFrame{
+public class VentanaRegistro extends JFrame implements MouseListener{
 
 
 	private JTextField textField;
@@ -31,8 +31,7 @@ public class VentanaRegistro extends JFrame{
 	private JTextField textField_2;
 	private JTextField textField_3;
 	BD metodosbases = new BD();
-	
-	/**
+	JButton btnRegis = new JButton("Regristrarse");/**
 	 * Launch the application.
 	 */
 
@@ -114,7 +113,7 @@ public class VentanaRegistro extends JFrame{
 		panelCent.add(textField_3);
 		textField_3.setColumns(10);
 		
-		JButton btnRegis = new JButton("Regristrarse");
+		
 		btnRegis.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VentanaInicio window = new VentanaInicio();
@@ -137,17 +136,45 @@ public class VentanaRegistro extends JFrame{
 		panelCent.add(btnVolver);
 
 	}
-	private void btnRegisActionPerformed(java.awt.ActiveEvent evt) {
-		metodosbases.guardarClientes(textField.getText(), textField_1.getText(), textField_2.getText(), textField_3.getText());
+	
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		btnRegis.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				metodosbases.guardarClientes(textField.getText(), textField_1.getText(), textField_2.getText(), Integer.parseInt(textField_3.getText()));
+			}
+			
+			
+			
+		});
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
-		
-		
-		
-		
-		
-		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 }	

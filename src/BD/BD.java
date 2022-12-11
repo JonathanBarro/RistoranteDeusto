@@ -856,7 +856,7 @@ public class BD {
 		
 		//Guardar Clientes en la base de datos
 		public static PreparedStatement sentencia_preparada;
-		public int guardarClientes(String nombre, String apellido, String contrasenia, String numTlfn){
+		public int guardarClientes(String nombre, String apellido, String contrasenia, int numTlfn){
 			Connection con= null;
 			String sentencia_guardar = ("INSERT INTO clientes (nombre,apellido,contrasenia,numTlfn) VALUES (?,?,?,?)");
 			
@@ -867,7 +867,7 @@ public class BD {
 				sentencia_preparada.setString(1, nombre	);
 				sentencia_preparada.setString(2, apellido);
 				sentencia_preparada.setString(3, contrasenia	);
-				sentencia_preparada.setString(4, numTlfn	);
+				sentencia_preparada.setInt(4, numTlfn	);
 				resultadoguardar = sentencia_preparada.executeUpdate();
 				sentencia_preparada.close();
 				
@@ -880,9 +880,9 @@ public class BD {
 			return resultadoguardar;
 			}
 		//Guardar Administradores en la base de datos
-		public int guardarAdmins(String nombre, String apellido, String contrasenia, int idAdmin, int sueldo){
+		/*public int guardarAdmins(String nombre, String apellido, String contrasenia, int idAdmin, int sueldo){
 			Connection con= null;
-			String sentencia_guardar = ("INSERT INTO clientes (nombre,apellido,contrasenia,numTlfn) VALUES (?,?,?,?,?)");
+			String sentencia_guardar = ("INSERT INTO Admins (nombre,apellido,contrasenia,idAdmin,sueldo) VALUES (?,?,?,?,?)");
 					
 					
 			try {
@@ -903,7 +903,7 @@ public class BD {
 			}
 					
 			return resultadoguardar;
-		}
+		}*/
 		//Buscar nombre del Cliente
 		public static String buscarNombre(String numTlfn) {
 			

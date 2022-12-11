@@ -16,9 +16,11 @@ import javax.swing.JTextField;
 import BD.BD;
 
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.ActionEvent;
 
-public class VentanaInicio extends JFrame{
+public class VentanaInicio extends JFrame implements MouseListener{
 
 	
 	/**
@@ -28,7 +30,7 @@ public class VentanaInicio extends JFrame{
 	private JTextField textField;
 	private JTextField textFieldContrasena;
 	BD metodosbases = new BD();
-	
+	JButton btnInicioSesion = new JButton("Iniciar Sesion");
 	/**
 	 * Create the application.
 	 */
@@ -123,23 +125,59 @@ public class VentanaInicio extends JFrame{
 		panelCent.add(btnInicioSesion);
 		setBounds(100, 100, 450, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
 	
-	private void btnInicioSesionActionPerformance(java.awt.event.ActionEvent evt) {
-		String busqueda_cliente = metodosbases.buscarClienteRegistrado(textField.getText(), textFieldContrasena.getText());
-		
-		if(textField.getText().equals("root") && textFieldContrasena.getText().equals("root")) {
-			JOptionPane.showMessageDialog(this, "Bienvenido, iniciaste sesion correctamente");
-	
-		}else if(busqueda_cliente.equals("cliente encontrado")) {
-			String busqueda_nombre = metodosbases.buscarNombre(textField.getText());
-			JOptionPane.showMessageDialog(this, "Bienvenido (a) \n"+ busqueda_nombre);
-		}else {
-			JOptionPane.showMessageDialog(this, "Cliente no registrado, por favor, registrese");
-		}
-		
 				
 	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+		btnInicioSesion.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String busqueda_cliente = metodosbases.buscarClienteRegistrado(textField.getText(), textFieldContrasena.getText());
+				
+				if(textField.getText().equals("") && textFieldContrasena.getText().equals("")) {
+					JOptionPane.showInputDialog(this, "Bienvenido, iniciaste sesion correctamente");
+			
+				}else if(busqueda_cliente.equals("cliente encontrado")) {
+					String busqueda_nombre = metodosbases.buscarNombre(textField.getText());
+					JOptionPane.showInputDialog(this, "Bienvenido a Ristorante \n"+ busqueda_nombre);
+				}else {
+					JOptionPane.showInputDialog(this, "Cliente no registrado, por favor, registrese");
+				}
+				
+			}
+		});
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
 
 
