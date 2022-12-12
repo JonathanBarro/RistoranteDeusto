@@ -116,8 +116,6 @@ public class VentanaInicio extends JFrame{
 				v.setVisible(true);
 			}
 		});
-		volver.setForeground(new Color(0, 128, 255));
-		volver.setBounds(271, 166, 104, 10);
 		panelCent.add(volver);
 		btnRegis.setForeground(new Color(0, 128, 255));
 		btnRegis.setBounds(271, 166, 104, 23);
