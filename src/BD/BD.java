@@ -857,12 +857,10 @@ public class BD {
 		//Guardar Clientes en la base de datos
 		public static PreparedStatement sentencia_preparada;
 		public int guardarClientes(String nombre, String apellido, String contrasenia, int numTlfn){
-			Connection con= null;
-			String sentencia_guardar = ("INSERT INTO Cliente (nombre,apellido,contrasenia,numTlfn) VALUES (?,?,?,?)");
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+				     Statement stmt = con.createStatement()) {
+			String sentencia_guardar = ("INSERT INTO Cliente (nombre,apellido,contrasena,numTlf) VALUES (?,?,?,?)");
 			
-			
-			try {
-				Connection conexion = DriverManager.getConnection(CONNECTION_STRING);
 				sentencia_preparada = con.prepareStatement(sentencia_guardar);
 				sentencia_preparada.setString(1, nombre	);
 				sentencia_preparada.setString(2, apellido);
@@ -905,21 +903,19 @@ public class BD {
 			return resultadoguardar;
 		}*/
 		//Buscar nombre del Cliente
-		public static String buscarNombre(String numTlfn) {
+		public static String buscarNombre(String usuario) {
 			
 			String busqueda_nombre = null;
-			Connection conexion = null;
-			try {
-				conexion = DriverManager.getConnection(CONNECTION_STRING);
-				String sentencia_buscar = ("SELECT nombre, apellido FROM Cliente WHERE numTlfn = '" + numTlfn + "'");
-				sentencia_preparada = conexion.prepareStatement(sentencia_buscar);
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);){
+				
+				String sentencia_buscar = ("SELECT nombre, apellido FROM Cliente WHERE nombre = '" + usuario + "'");
+				sentencia_preparada = con.prepareStatement(sentencia_buscar);
 				resultado = sentencia_preparada.executeQuery();
 				if(resultado.next()) {
 					String nombre = resultado.getString("nombre");
 					String apellido = resultado.getString("apellido");
 					busqueda_nombre = (nombre +" "+ apellido);
 				}
-				conexion.close();
 		
 			} catch (Exception e) {
 					
@@ -933,7 +929,7 @@ public class BD {
 			
 			try {
 				conexion = DriverManager.getConnection(CONNECTION_STRING);
-				String sentencia_buscar_cliente = ("SELECT nombre,apellido,numTlfn,contrasenya FROM Cliente WHERE usuario = '"+ usuario +"' && contrasenya = '"+ contrasenya +"'");	
+				String sentencia_buscar_cliente = ("SELECT nombre,apellido,numTlf,contrasena FROM Cliente WHERE nombre = '"+ usuario +"' && contrasena = '"+ contrasenya +"'");	
 				sentencia_preparada = conexion.prepareStatement(sentencia_buscar_cliente);
 				resultado = sentencia_preparada.executeQuery();
 				if(resultado.next()) {

@@ -6,24 +6,25 @@ package Ventanas;
 import javax.swing.JFrame;
 
 import javax.swing.JLabel;
-
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import BD.BD;
+import Logica.RistoranteMain;
 
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
+
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-import java.awt.event.MouseListener;
 
 
-public class VentanaRegistro extends JFrame implements MouseListener{
+
+public class VentanaRegistro extends JFrame{
 
 
 	private JTextField textField;
@@ -116,6 +117,8 @@ public class VentanaRegistro extends JFrame implements MouseListener{
 		
 		btnRegis.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				RistoranteMain.bd.guardarClientes(textField.getText(), textField_1.getText(), textField_2.getText(), Integer.parseInt(textField_3.getText()));
+				JOptionPane.showMessageDialog(null, "Se ha registrado correctamente");
 				VentanaInicio window = new VentanaInicio();
 				window.setVisible(true);
 			}
@@ -137,44 +140,4 @@ public class VentanaRegistro extends JFrame implements MouseListener{
 
 	}
 	
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		btnRegis.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				metodosbases.guardarClientes(textField.getText(), textField_1.getText(), textField_2.getText(), Integer.parseInt(textField_3.getText()));
-			}
-			
-			
-			
-		});
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 }	

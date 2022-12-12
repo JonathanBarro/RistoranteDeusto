@@ -2,6 +2,7 @@
 package Ventanas;
 
 import javax.swing.JFrame;
+
 import javax.swing.JButton;
 
 import java.awt.Font;
@@ -13,23 +14,21 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import BD.BD;
+
+import Logica.RistoranteMain;
 
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.event.ActionEvent;
 
-public class VentanaInicio extends JFrame implements MouseListener{
+public class VentanaInicio extends JFrame{
 
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
 	private JTextField textFieldContrasena;
-	BD metodosbases = new BD();
+	
 	JButton btnInicioSesion = new JButton("Iniciar Sesion");
 	/**
 	 * Create the application.
@@ -114,10 +113,18 @@ public class VentanaInicio extends JFrame implements MouseListener{
 		JButton btnInicioSesion = new JButton("Iniciar Sesion");
 		btnInicioSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String busqueda_cliente = RistoranteMain.bd.buscarClienteRegistrado(JTextField.getText(), textFieldContrasena.getText());		
+				if(busqueda_cliente.equals("Cliente encontrado")) {
+					String busqueda_nombre = RistoranteMain.bd.buscarNombre(JTextField.getText());
+					JOptionPane.showInputDialog(this, "Bienvenido al Ristorante \n"+ busqueda_nombre);
+					EleccionInteriorExterior window = new EleccionInteriorExterior();
+					window.setVisible(true);
+					dispose();
+				}else {
+					JOptionPane.showInputDialog(this, "Cliente no registrado, por favor, registrese");
+				}
 				
-				EleccionInteriorExterior window = new EleccionInteriorExterior();
-				window.setVisible(true);
-				dispose();
+				
 			}
 		});
 		btnInicioSesion.setBackground(new Color(255, 128, 64));
@@ -129,50 +136,7 @@ public class VentanaInicio extends JFrame implements MouseListener{
 				
 	}
 
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-		btnInicioSesion.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				String busqueda_cliente = metodosbases.buscarClienteRegistrado(textField.getText(), textFieldContrasena.getText());		
-				if(busqueda_cliente.equals("Cliente encontrado")) {
-					String busqueda_nombre = metodosbases.buscarNombre(textField.getText());
-					JOptionPane.showInputDialog(this, "Bienvenido a Ristorante \n"+ busqueda_nombre);
-				}else {
-					JOptionPane.showInputDialog(this, "Cliente no registrado, por favor, registrese");
-				}
-				
-			}
-		});
-	}
 
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 }
 
