@@ -14,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-
+import BD.BD;
 import Logica.RistoranteMain;
 
 import java.awt.event.ActionListener;
@@ -102,9 +102,23 @@ public class VentanaInicio extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				VentanaRegistro window = new VentanaRegistro();
 				window.setVisible(true);
+				dispose();
 				
 			}
 		});
+		JButton volver = new JButton("Voler");
+		volver.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				VentanaAdminCliente v = new VentanaAdminCliente();
+				v.setVisible(true);
+			}
+		});
+		volver.setForeground(new Color(0, 128, 255));
+		volver.setBounds(271, 166, 104, 10);
+		panelCent.add(volver);
 		btnRegis.setForeground(new Color(0, 128, 255));
 		btnRegis.setBounds(271, 166, 104, 23);
 		panelCent.add(btnRegis);
@@ -113,15 +127,15 @@ public class VentanaInicio extends JFrame{
 		JButton btnInicioSesion = new JButton("Iniciar Sesion");
 		btnInicioSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String busqueda_cliente = RistoranteMain.bd.buscarClienteRegistrado(JTextField.getText(), textFieldContrasena.getText());		
+				String busqueda_cliente = BD.buscarClienteRegistrado(JTextField.getText(), textFieldContrasena.getText());		
 				if(busqueda_cliente.equals("Cliente encontrado")) {
-					String busqueda_nombre = RistoranteMain.bd.buscarNombre(JTextField.getText());
-					JOptionPane.showInputDialog(this, "Bienvenido al Ristorante \n"+ busqueda_nombre);
+					String busqueda_nombre = BD.buscarNombre(JTextField.getText());
+					JOptionPane.showMessageDialog(null, "Bienvenido al Ristorante \n"+ busqueda_nombre);
 					EleccionInteriorExterior window = new EleccionInteriorExterior();
 					window.setVisible(true);
 					dispose();
 				}else {
-					JOptionPane.showInputDialog(this, "Cliente no registrado, por favor, registrese");
+					JOptionPane.showMessageDialog(null,"Error al iniciar sesion.");
 				}
 				
 				
@@ -135,9 +149,6 @@ public class VentanaInicio extends JFrame{
 	
 				
 	}
-
-
-	
 }
 
 

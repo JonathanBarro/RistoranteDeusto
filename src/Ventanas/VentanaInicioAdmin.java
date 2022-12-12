@@ -7,8 +7,12 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import BD.BD;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -96,10 +100,15 @@ public class VentanaInicioAdmin extends JFrame{
 		JButton btnNewButton = new JButton("Iniciar Sesion");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaStock window = new VentanaStock();
-				window.setVisible(true);
-				dispose();
-				
+				String busqueda_cliente = BD.buscarAdminRegistrado(textField.getText(), textFieldContrasena.getText());		
+				if(busqueda_cliente.equals("Admin encontrado")) {
+					JOptionPane.showMessageDialog(null, "Bienvenido al Ristorante");
+					VentanaStock window = new VentanaStock();
+					window.setVisible(true);
+					dispose();
+				}else {
+					JOptionPane.showMessageDialog(null,"Error al iniciar sesion.");
+				}
 			}
 		});
 		btnNewButton.setBackground(new Color(255, 128, 64));

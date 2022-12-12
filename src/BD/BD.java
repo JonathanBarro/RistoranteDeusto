@@ -137,8 +137,7 @@ public class BD {
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
 				//Se define la plantilla de la sentencia SQL
-				String s = "DELETE FROM CLIENTE";
-				stmt.executeUpdate(s);
+				
 				String sql = "INSERT INTO Cliente (nombre, apellido, contrasena, numTlf) VALUES ('%s', '%s', '%s', %d);";
 				System.out.println("- Insertando clientes...");
 				
@@ -856,18 +855,38 @@ public class BD {
 		
 		//Guardar Clientes en la base de datos
 		public static PreparedStatement sentencia_preparada;
+//		public int guardarClientes(String nombre, String apellido, String contrasenia, int numTlfn){
+//			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+//				     Statement stmt = con.createStatement()) {
+//			String sentencia_guardar = ("INSERT INTO Cliente (nombre, apellido, contrasena, numTlf) VALUES ('%s', '%s', '%s', %d);");
+//			
+//				sentencia_preparada = con.prepareStatement(sentencia_guardar);
+//				sentencia_preparada.setString(1, nombre	);
+//				sentencia_preparada.setString(2, apellido);
+//				sentencia_preparada.setString(3, contrasenia	);
+//				sentencia_preparada.setInt(4, numTlfn	);
+//				resultadoguardar = sentencia_preparada.executeUpdate();
+//				sentencia_preparada.close();
+//				
+//				System.out.println(String.format("- Se ha guardado un nuevo cliente en la BBDD", resultadoguardar));
+//			} catch (Exception ex) {
+//				System.err.println(String.format("* Error al guardar un nuevo cliente en la BBDD: %s", ex.getMessage()));
+//				ex.printStackTrace();	
+//			}
+//			
+//			return resultadoguardar;
+//			}
 		public int guardarClientes(String nombre, String apellido, String contrasenia, int numTlfn){
+			Cliente c = new Cliente(nombre, apellido, contrasenia, numTlfn);
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 				     Statement stmt = con.createStatement()) {
-			String sentencia_guardar = ("INSERT INTO Cliente (nombre,apellido,contrasena,numTlf) VALUES (?,?,?,?)");
+			String sentencia_guardar = ("INSERT INTO Cliente (nombre, apellido, contrasena, numTlf) VALUES ('%s', '%s', '%s', %d);");
 			
-				sentencia_preparada = con.prepareStatement(sentencia_guardar);
-				sentencia_preparada.setString(1, nombre	);
-				sentencia_preparada.setString(2, apellido);
-				sentencia_preparada.setString(3, contrasenia	);
-				sentencia_preparada.setInt(4, numTlfn	);
-				resultadoguardar = sentencia_preparada.executeUpdate();
-				sentencia_preparada.close();
+			if (1 == stmt.executeUpdate(String.format(sentencia_guardar, c.getNombre(), c.getApellido(), c.getContrasenia(), c.getNumTlfn()))) {					
+				System.out.println(String.format(" - Cliente insertado: %s", c.toString()));
+			} else {
+				System.out.println(String.format(" - No se ha insertado el cliente: %s", c.toString()));
+			}
 				
 				System.out.println(String.format("- Se ha guardado un nuevo cliente en la BBDD", resultadoguardar));
 			} catch (Exception ex) {
@@ -877,31 +896,28 @@ public class BD {
 			
 			return resultadoguardar;
 			}
+
 		//Guardar Administradores en la base de datos
-		/*public int guardarAdmins(String nombre, String apellido, String contrasenia, int idAdmin, int sueldo){
-			Connection con= null;
-			String sentencia_guardar = ("INSERT INTO Admins (nombre,apellido,contrasenia,idAdmin,sueldo) VALUES (?,?,?,?,?)");
-					
-					
-			try {
-				Connection conexion = DriverManager.getConnection(CONNECTION_STRING);
-				sentencia_preparada = con.prepareStatement(sentencia_guardar);
-				sentencia_preparada.setString(1, nombre	);
-				sentencia_preparada.setString(2, apellido);
-				sentencia_preparada.setString(3, contrasenia	);
-				sentencia_preparada.setInt(4, idAdmin	);
-				sentencia_preparada.setInt(5, sueldo	);	
-				resultadoguardar = sentencia_preparada.executeUpdate();
-				sentencia_preparada.close();
-				
-				System.out.println(String.format("- Se ha guardado un nuevo administrador en la BBDD", resultadoguardar));
-			} catch (Exception ex) {
-				System.err.println(String.format("* Error al guardar un nuevo administrador en la BBDD: %s", ex.getMessage()));
-				ex.printStackTrace();	
-			}
-					
-			return resultadoguardar;
-		}*/
+//		public int guardarAdmins(String nombre, String apellido, String contrasenia, int idAdmin, int sueldo){
+//			Admin a = new Admin(nombre, apellido, contrasenia, idAdmin, sueldo);
+//			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+//				     Statement stmt = con.createStatement()) {
+//			String sentencia_guardar = ("INSERT INTO Admin (nombre, apellido, contrasena, idAdmin, sueldo) VALUES ('%s', '%s', '%s', %d, '%.2f');");
+//					
+//			if (1 == stmt.executeUpdate(String.format(sentencia_guardar, a.getNombre(),a.getApellido(),a.getContrasenia(), a.getIdAdmin(), a.getSueldo()))) {					
+//				System.out.println(String.format(" - Admin insertado: %s", a.toString()));
+//			} else {
+//				System.out.println(String.format(" - No se ha insertado el Admin: %s", a.toString()));
+//			}
+//				
+//				System.out.println(String.format("- Se ha guardado un nuevo administrador en la BBDD", resultadoguardar));
+//			} catch (Exception ex) {
+//				System.err.println(String.format("* Error al guardar un nuevo administrador en la BBDD: %s", ex.getMessage()));
+//				ex.printStackTrace();	
+//			}
+//					
+//			return resultadoguardar;
+//		}
 		//Buscar nombre del Cliente
 		public static String buscarNombre(String usuario) {
 			
@@ -929,7 +945,7 @@ public class BD {
 			
 			try {
 				conexion = DriverManager.getConnection(CONNECTION_STRING);
-				String sentencia_buscar_cliente = ("SELECT nombre,apellido,numTlf,contrasena FROM Cliente WHERE nombre = '"+ usuario +"' && contrasena = '"+ contrasenya +"'");	
+				String sentencia_buscar_cliente = ("SELECT nombre,apellido,numTlf,contrasena FROM Cliente WHERE nombre = '"+ usuario +"' AND contrasena = '"+ contrasenya +"'");	
 				sentencia_preparada = conexion.prepareStatement(sentencia_buscar_cliente);
 				resultado = sentencia_preparada.executeQuery();
 				if(resultado.next()) {
@@ -944,6 +960,34 @@ public class BD {
 				System.out.println(String.format("- Se ha podido iniciar sesion correctamente", resultado));
 			} catch (Exception e) {
 				System.err.println(String.format("* Error, no se puede iniciar sesion porque este Cliente no esta registrado", e.getMessage()));
+				e.printStackTrace();
+			}
+			return busqueda_cliente;
+		
+		
+		}
+		
+		public static String buscarAdminRegistrado ( String usuario, String contrasenya) {
+			String busqueda_cliente = null;
+			Connection conexion = null;
+			
+			try {
+				conexion = DriverManager.getConnection(CONNECTION_STRING);
+				String sentencia_buscar_cliente = ("SELECT nombre,apellido,idAdmin,contrasena,sueldo FROM Admin WHERE nombre = '"+ usuario +"' AND contrasena = '"+ contrasenya +"'");	
+				sentencia_preparada = conexion.prepareStatement(sentencia_buscar_cliente);
+				resultado = sentencia_preparada.executeQuery();
+				if(resultado.next()) {
+					busqueda_cliente = "Admin encontrado";
+				}else {
+					busqueda_cliente = "Admin no encontrado";
+				}
+				
+			
+			
+				conexion.close();
+				System.out.println(String.format("- Se ha podido iniciar sesion correctamente", resultado));
+			} catch (Exception e) {
+				System.err.println(String.format("* Error, no se puede iniciar sesion porque este Admin no esta registrado", e.getMessage()));
 				e.printStackTrace();
 			}
 			return busqueda_cliente;

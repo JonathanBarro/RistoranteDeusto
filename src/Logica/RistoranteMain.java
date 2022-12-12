@@ -132,6 +132,7 @@ public class RistoranteMain {
 		admin.setApellido("ApeA1");
 		admin.setIdAdmin(12);
 		admin.setSueldo(2234);
+		admin.setContrasenia("123");
 		admins.add(admin);
 		
 		return admins;

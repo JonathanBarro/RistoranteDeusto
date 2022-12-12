@@ -73,6 +73,7 @@ public class VentanaAdminCliente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				VentanaInicioAdmin window = new VentanaInicioAdmin();
 				window.setVisible(true);
+				dispose();
 				
 			}
 		});
@@ -86,6 +87,7 @@ public class VentanaAdminCliente extends JFrame {
 			public void actionPerformed(ActionEvent e) {	
 				VentanaInicio window = new VentanaInicio();
 				window.setVisible(true);
+				dispose();
 				
 			}
 		});
