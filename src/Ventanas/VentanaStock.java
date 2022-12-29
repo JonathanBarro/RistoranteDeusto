@@ -135,7 +135,7 @@ public class VentanaStock extends JFrame{
 				String Id= JOptionPane.showInputDialog("Introduce un ID:");
 				String precio= JOptionPane.showInputDialog("Introduce un precio");
 				String Stock=JOptionPane.showInputDialog("Introduce un Stock");
-				Comida nuevacomida = new Comida(nombre,Integer.parseInt(Id),Integer.parseInt(precio),Integer.parseInt(Stock));
+				Comida nuevacomida = new Comida(nombre,Integer.parseInt(Id),Integer.parseInt(precio),Integer.parseInt(Stock), "");
 				String [] comidastring= { nombre+"", Id+"", precio+"",Stock+""};
 				modelo.addRow(comidastring);
 				

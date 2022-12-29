@@ -178,6 +178,7 @@ public class RistoranteMain {
 		comida.setId(3);
 		comida.setStock(6);
 		comidas.add(comida);
+		comida.setIdMenu("1A");
 		
 		return comidas;
 	}

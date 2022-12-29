@@ -35,9 +35,9 @@ public class testMenu {
 	
 	@Before
 	public void setUp() throws Exception {
-		producto = new Comida(idMen, 25, 1, 1);
-		producto1 =  new Comida(idMen, 25, 1, 1);
-		producto2 = new Comida(idMen, 25, 1, 1);
+		producto = new Comida(idMen, 25, 1, 1,"1A");
+		producto1 =  new Comida(idMen, 25, 1, 1,"1A");
+		producto2 = new Comida(idMen, 25, 1, 1,"1A");
 		producto3 = new Bebida(idMen, precioTot, numProd, 10, false);
 		comida.add(producto);
 		comida.add(producto1);

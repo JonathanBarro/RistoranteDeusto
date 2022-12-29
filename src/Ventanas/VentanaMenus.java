@@ -67,9 +67,9 @@ public class VentanaMenus extends JFrame {
 		ArrayList<Producto> aBebdia = new ArrayList<>();
 		List<Producto> aComida1 = RistoranteMain.bd.obtenerDatosComidas();
 		List<Producto> aBebdia1 =  RistoranteMain.bd.obtenerDatosBebidas();
-		Comida p1 = new Comida("Plato1", 10.1,01,1);
-		Comida p2 = new Comida("Plato2", 10.1,02,1);
-		Comida p3 = new Comida("Plato3", 10.1,03,1);
+		Comida p1 = new Comida("Plato1", 10.1,01,1,"1A");
+		Comida p2 = new Comida("Plato2", 10.1,02,1,"1A");
+		Comida p3 = new Comida("Plato3", 10.1,03,1,"1A");
 		Bebida b1 = new Bebida("Bebida1", 10.1,3,1,true);
 		Bebida b2 = new Bebida("Bebida2", 12,3,1,false);
 		

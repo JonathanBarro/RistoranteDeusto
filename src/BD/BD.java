@@ -60,16 +60,10 @@ public class BD {
 			st.executeUpdate(sql1);
 			String sql2 = "CREATE TABLE IF NOT EXISTS Bebida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer, frio TEXT NOT NULL)";
 			st.executeUpdate(sql2);
-			String sql3 = "CREATE TABLE IF NOT EXISTS Comida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer)";
-			st.executeUpdate(sql3);
-			String sql4 = "CREATE TABLE IF NOT EXISTS Menu_Degustacion(id TEXT NOT NULL, numProductos Integer)";
+			String sql4 = "CREATE TABLE IF NOT EXISTS Menu(id PRIMARY KEY NOT NULL, numProductos Integer, caracteristica TEXT)";
 			st.executeUpdate(sql4);
-			String sql5 = "CREATE TABLE IF NOT EXISTS Menu_EntreSemana(id TEXT NOT NULL, numProductos Integer, descuentoEstudiante TEXT NOT NULL)";
-			st.executeUpdate(sql5);
-			String sql6 = "CREATE TABLE IF NOT EXISTS Menu_FinDeSemana(id TEXT NOT NULL, numProductos Integer, numPersonas Integer)";
-			st.executeUpdate(sql6);
-			String sql7 = "CREATE TABLE IF NOT EXISTS Menu_Infantil(id TEXT NOT NULL, numProductos Integer)";
-			st.executeUpdate(sql7);
+			String sql3 = "CREATE TABLE IF NOT EXISTS Comida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer, FOREING KEY(Menu_id) references Menu)";
+			st.executeUpdate(sql3);
 			String sql8 = "CREATE TABLE IF NOT EXISTS Mesa(idMesa TEXT NOT NULL, lugar Integer, ocupada TEXT NOT NULL, numPersonas Integer)";
 			st.executeUpdate(sql8);
 			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha TEXT NOT NULL, numeroPersonas Integer, idReserva Integer , idMesa TEXT, idMenu TEXT)";
@@ -80,7 +74,7 @@ public class BD {
 	        	System.out.println("- Se ha creado la tabla Admin");
 	        	System.out.println("- Se ha creado la tabla Bebida");
 	        	System.out.println("- Se ha creado la tabla Comida");
-	        	System.out.println("- Se ha creado las tabla de Menus");
+	        	System.out.println("- Se ha creado las tabla de Menu");
 	        	System.out.println("- Se ha creado la tabla de Rervas");
 	        	System.out.println("- Se ha creado la tabla Mesas");
 	     
@@ -99,10 +93,7 @@ public class BD {
 	         sql = "DROP TABLE IF EXISTS Admin";
 	         sql = "DROP TABLE IF EXISTS Comida";
 	         sql = "DROP TABLE IF EXISTS Bebida";
-	         sql = "DROP TABLE IF EXISTS Menu_Degustacion";
-	         sql = "DROP TABLE IF EXISTS Menu_EntreSemana";
-	         sql = "DROP TABLE IF EXISTS Menu_FinDeSemana";
-	         sql = "DROP TABLE IF EXISTS Menu_Infantil";
+	         sql = "DROP TABLE IF EXISTS Menu";
 	         sql = "DROP TABLE IF EXISTS Mesa";
 	         sql = "DROP TABLE IF EXISTS Reserva";
 			
@@ -126,13 +117,11 @@ public class BD {
 	}
 	
 		
-		
 		public void insertarDatos(List<Cliente> clientes, List<Admin> admins,
 				List<Bebida> bebidas, List<Comida> comidas, List<Menu_Degustacion> menus_degustacion,
-				List<Menu_EntreSemana> menus_entreSemana, List<Menu_FinDeSemana> menus_finDeSemanas,
-				List<Menu_Infantil> menus_infantiles, List<Mesa> mesas, List<Reserva> reservas) {
+				List<Menu_EntreSemana> menus_entreSemana, List<Menu_FinDeSemana> menus_finDeSemanas, List<Menu_Infantil> menus_infantiles,
+				List<Mesa> mesas, List<Reserva> reservas) {
 		
-			
 			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
@@ -147,16 +136,12 @@ public class BD {
 				String sql2 = "INSERT INTO Bebida (nombre, precio, id, stock, frio) VALUES ('%s', '%f', %d, %d, '%s');";
 				System.out.println("- Insertando bebida...");
 				
-				String sql3 = "INSERT INTO Comida (nombre, precio, id, stock) VALUES ('%s', '%.2f', %d, %d);";
+				String sql3 = "INSERT INTO Comida (nombre, precio, id, stock, id) VALUES ('%s', '%.2f', %d, %d, '%s');";
 				System.out.println("- Insertando comida...");
 				
-				String sql4 = "INSERT INTO Menu_Degustacion(id , numProductos) VALUES ('%s', %d);";
-				String sql5 = "INSERT INTO Menu_EntreSemana(id , numProductos , descuentoEstudiante) VALUES ('%s', %d, '%s');";
-				String sql6 = "INSERT INTO Menu_FinDeSemana(id, numProductos, numPersonas) VALUES ('%s', %d, %d);";
-				String sql7 = "INSERT INTO Menu_Infantil(id, numProductos) VALUES ('%s', %d);";
+				String sql4 = "INSERT INTO Menu(id , numProductos, caracteristica) VALUES ('%s', %d, '%s');";
 				System.out.println("- Insertando menus...");
 				
-
 				String sql8 = "INSERT INTO Mesa(idMesa, lugar, ocupada, numPersonas) VALUES ('%s', %d, '%s', %d);";
 				System.out.println("- Insertando mesas...");
 				
@@ -190,7 +175,7 @@ public class BD {
 					}
 				}
 				for (Comida com : comidas) {
-					if (1 == stmt.executeUpdate(String.format(sql3, com.getNombre(), com.getPrecio(), com.getId(),com.getStock()))) {					
+					if (1 == stmt.executeUpdate(String.format(sql3, com.getNombre(), com.getPrecio(), com.getId(),com.getStock(), com.getIdMenu()))) {					
 						System.out.println(String.format(" - Comida insertada: %s", com.toString()));
 					} else {
 						System.out.println(String.format(" - No se ha insertado la comida: %s", com.toString()));
@@ -204,21 +189,21 @@ public class BD {
 					}
 				}
 				for (Menu_Infantil mI : menus_infantiles) {
-					if (1 == stmt.executeUpdate(String.format(sql7, mI.getId(), mI.getNumProductos()))) {					
+					if (1 == stmt.executeUpdate(String.format(sql4, mI.getId(), mI.getNumProductos()))) {					
 						System.out.println(String.format(" - Menu infantil insertado: %s", mI.toString()));
 					} else {
 						System.out.println(String.format(" - No se ha insertado el menu infantil: %s", mI.toString()));
 					}
 				}
 				for (Menu_FinDeSemana mDS : menus_finDeSemanas) {
-					if (1 == stmt.executeUpdate(String.format(sql6, mDS.getId(), mDS.getNumProductos(), mDS.getNumPersonas()))) {					
+					if (1 == stmt.executeUpdate(String.format(sql4, mDS.getId(), mDS.getNumProductos(), mDS.getNumPersonas(), Integer.toString(mDS.getNumPersonas())))) {					
 						System.out.println(String.format(" - Menu fin de semana insertado: %s", mDS.toString()));
 					} else {
 						System.out.println(String.format(" - No se ha insertado el menu fin de semana: %s", mDS.toString()));
 					}
 				}
 				for (Menu_EntreSemana mES : menus_entreSemana) {
-					if (1 == stmt.executeUpdate(String.format(sql5, mES.getId(),mES.getNumProductos(), mES.isDescuentoEstudiantes()))) {					
+					if (1 == stmt.executeUpdate(String.format(sql4, mES.getId(),mES.getNumProductos(), mES.isDescuentoEstudiantes(), Boolean.toString(mES.isDescuentoEstudiantes())))) {					
 						System.out.println(String.format(" - Menu entre semana insertado: %s", mES.toString()));
 					} else {
 						System.out.println(String.format(" - No se ha insertado el menu entre semana: %s", mES.toString()));

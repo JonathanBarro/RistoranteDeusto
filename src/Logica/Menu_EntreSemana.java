@@ -22,7 +22,7 @@ public class Menu_EntreSemana extends Menu{
 	public boolean isDescuentoEstudiantes() {
 		return descuentoEstudiantes;
 	}
-
+	
 
 
 	public void setDescuentoEstudiantes(boolean descuentoEstudiantes) {
