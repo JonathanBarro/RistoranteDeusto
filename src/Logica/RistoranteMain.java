@@ -182,27 +182,9 @@ public class RistoranteMain {
 	
 	
 
+
 	
 
-	private static void printMenu_Infantil(List<Menu_Infantil> menuInfantiles) {
-		if (!menuInfantiles.isEmpty()) {		
-			for(Menu_Infantil mI : menuInfantiles) {
-				System.out.println(String.format(" - %s", mI.toString()));
-			}
-		}		
-	}
-	
-	public static List<Menu_Infantil> initMenu_Infantil() {
-		List<Menu_Infantil> menuInfantiles = new ArrayList<>();
-		
-		Menu_Infantil mI = new Menu_Infantil();
-		mI.setId("3D");
-		mI.setNumProductos(3);
-		menuInfantiles.add(mI);
-		
-		return menuInfantiles;
-	}
-	
 	
 	private static void printMenu_FinDeSemana(List<Menu> menuFinDeSemanas) {
 		if (!menuFinDeSemanas.isEmpty()) {		
@@ -216,15 +198,15 @@ public class RistoranteMain {
 		List<Menu> menuFinDeSemanas = new ArrayList<>();
 		
 		Menu mFS = new Menu();
-		mFS.setId("3A");
+		mFS.setId(3);
 		mFS.setNumProductos(3);
 		mFS.setCaracteristicas("Menu Fin de Semana");
 		Menu mFS1 = new Menu();
-		mFS.setId("1A");
+		mFS.setId(1);
 		mFS.setNumProductos(3);
 		mFS.setCaracteristicas("Menu Infantil");
 		Menu mFS2 = new Menu();
-		mFS.setId("2A");
+		mFS.setId(2);
 		mFS.setNumProductos(3);
 		mFS.setCaracteristicas("Menu Entre Semana");
 		menuFinDeSemanas.add(mFS);

@@ -46,9 +46,9 @@ public class testReserva {
 		aMesa.add(mesa);
 		mesa2 = new Mesa("M2", 1, true,0);
 		aMesa2.add(mesa2);
-		menu = new Menu("menu1", hmPods, 4, 10.5,"");
+		menu = new Menu(3, hmPods, 4, 10.5,"");
 		aMenu.add(menu);
-		menu2 = new Menu("menu2", hmPods, 3, 12.5,"");
+		menu2 = new Menu(1, hmPods, 3, 12.5,"");
 		aMenu2.add(menu2);
 		reserva = new Reserva(fecha, numPersonas, idReserva, aMesa, aMenu, cliente);
 	}

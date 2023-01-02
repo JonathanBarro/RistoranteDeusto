@@ -22,7 +22,7 @@ import Logica.Cliente;
 import Logica.Comida;
 import Logica.Menu;
 
-import Logica.Menu_Infantil;
+
 import Logica.Mesa;
 import Logica.Producto;
 import Logica.Reserva;
@@ -66,7 +66,7 @@ public class BD {
 			st.executeUpdate(sql1);
 			String sql2 = "CREATE TABLE IF NOT EXISTS Bebida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer, frio TEXT NOT NULL)";
 			st.executeUpdate(sql2);
-			String sql4 = "CREATE TABLE IF NOT EXISTS Menu(idMenu PRIMARY KEY NOT NULL, numProductos Integer, caracteristica TEXT)";
+			String sql4 = "CREATE TABLE IF NOT EXISTS Menu(idMenu Integer PRIMARY KEY NOT NULL, numProductos Integer, caracteristica TEXT)";
 			st.executeUpdate(sql4);
 			String sql3 = "CREATE TABLE IF NOT EXISTS Comida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer, FOREING KEY idMenu references Menu)";
 			st.executeUpdate(sql3);
@@ -85,6 +85,7 @@ public class BD {
 	        	System.out.println("- Se ha creado la tabla Mesas");
 	     
 	        }
+	
 	        log( Level.INFO, "Se han creado las tablas de la BD" , null );
 		} catch (Exception ex) {
 			System.err.println(String.format("* Error al crear la BBDD: %s", ex.getMessage()));
@@ -116,16 +117,16 @@ public class BD {
 			ex.printStackTrace();			
 		}
 		
-//		try {
-//			//Se borra el fichero de la BBDD
-//			Files.delete(Paths.get(DATABASE_FILE));
-//			System.out.println("- Se ha borrado el fichero de la BBDD");
-//			log( Level.INFO, "ConexiÃ³n de base de datos " , null );
-//		} catch (Exception ex) {
-//			System.err.println(String.format("* Error al borrar el archivo de la BBDD: %s", ex.getMessage()));
-//			log( Level.SEVERE, " Error al borrar el archivo de la BBDD: " , ex );
-//			ex.printStackTrace();						
-//		}
+		try {
+			//Se borra el fichero de la BBDD
+			Files.delete(Paths.get(DATABASE_FILE));
+			System.out.println("- Se ha borrado el fichero de la BBDD");
+			log( Level.INFO, "ConexiÃ³n de base de datos " , null );
+		} catch (Exception ex) {
+			System.err.println(String.format("* Error al borrar el archivo de la BBDD: %s", ex.getMessage()));
+			log( Level.SEVERE, " Error al borrar el archivo de la BBDD: " , ex );
+			ex.printStackTrace();						
+		}
 	}
 	
 		
@@ -150,7 +151,7 @@ public class BD {
 				String sql3 = "INSERT INTO Comida (nombre, precio, id, stock) VALUES ('%s', '%.2f', %d, %d);";
 				System.out.println("- Insertando comida...");
 				
-				String sql4 = "INSERT INTO Menu(idMenu, numProductos, caracteristica) VALUES ('%s', %d, '%s');";
+				String sql4 = "INSERT INTO Menu(idMenu, numProductos, caracteristica) VALUES (%d, %d, '%s');";
 				System.out.println("- Insertando menus...");
 				
 				String sql8 = "INSERT INTO Mesa(idMesa, lugar, ocupada, numPersonas) VALUES ('%s', %d, '%s', %d);";
@@ -534,7 +535,7 @@ public class BD {
 			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
-				String sql = "SELECT * FROM Menu_EntreSemana";
+				String sql = "SELECT * FROM Menu";
 				
 				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
 				ResultSet rs = stmt.executeQuery(sql);			
@@ -544,7 +545,7 @@ public class BD {
 				while (rs.next()) {
 					menuEntreSemana = new Menu();
 					
-					menuEntreSemana.setId(rs.getString("id"));
+					menuEntreSemana.setId(rs.getInt("idMenu"));
 					menuEntreSemana.setNumProductos(rs.getInt("numProductos"));
 					menuEntreSemana.setCaracteristicas(rs.getString("caracteristica"));
 					
@@ -556,7 +557,7 @@ public class BD {
 				//Se cierra el ResultSet
 				rs.close();
 				
-				System.out.println(String.format("- Se han recuperado %d Menu_EntreSemana...", menusEntreSemana.size()));
+				System.out.println(String.format("- Se han recuperado %d Menu...", menusEntreSemana.size()));
 				log( Level.INFO, "Se han recuperado Menu_EntreSemana... " , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
@@ -710,13 +711,7 @@ public class BD {
 				int result2 = stmt.executeUpdate(sql2);
 				String sql3 = "DELETE FROM Comida;";			
 				int result3 = stmt.executeUpdate(sql3);
-				String sql4 = "DELETE FROM Menu_Degustacion;";			
-				int result4 = stmt.executeUpdate(sql4);
-				String sql5 = "DELETE FROM Menu_FinDeSemana;";			
-				int result5 = stmt.executeUpdate(sql5);
-				String sql6 = "DELETE FROM Menu_EntreSemana;";			
-				int result6 = stmt.executeUpdate(sql6);
-				String sql7= "DELETE FROM Menu_Infantil;";			
+				String sql7= "DELETE FROM Menu;";			
 				int result7 = stmt.executeUpdate(sql7);
 				String sql8 = "DELETE FROM Reserva;";			
 				int result8 = stmt.executeUpdate(sql8);
@@ -727,9 +722,6 @@ public class BD {
 				System.out.println(String.format("- Se han borrado %d admins", result1));
 				System.out.println(String.format("- Se han borrado %d bebidas", result2));
 				System.out.println(String.format("- Se han borrado %d comidas", result3));
-				System.out.println(String.format("- Se han borrado %d menus de degustacion", result4));
-				System.out.println(String.format("- Se han borrado %d menus de fin de semana", result5));
-				System.out.println(String.format("- Se han borrado %d menus de entre semana", result6));
 				System.out.println(String.format("- Se han borrado %d menu infantil", result7));
 				System.out.println(String.format("- Se han borrado %d reservas", result8));
 				System.out.println(String.format("- Se han borrado %d mesas", result9));

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Menu {
 	
-	private String id;
+	private Integer id;
 	private HashMap<String, List<Producto>> hmProds;
 	private int numProductos;
 	private double precioTotal;
@@ -15,7 +15,7 @@ public class Menu {
 
 	}
 	
-	public Menu(String id, HashMap<String, List<Producto>> hmProds, int numProductos, double precioTotal,String caracteristicas) {
+	public Menu(Integer id, HashMap<String, List<Producto>> hmProds, int numProductos, double precioTotal,String caracteristicas) {
 		super();
 		this.id = id;
 		this.hmProds = hmProds;
@@ -25,12 +25,12 @@ public class Menu {
 	}
 
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -93,7 +93,10 @@ public class Menu {
 
 	@Override
 	public String toString() {
-		return id;
+		return "Menu [id=" + id + ", hmProds=" + hmProds + ", numProductos=" + numProductos + ", precioTotal="
+				+ precioTotal + ", caracteristicas=" + caracteristicas + "]";
 	}
+
+
 	
 }

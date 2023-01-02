@@ -2,6 +2,7 @@ package Ventanas;
 
 import java.awt.EventQueue;
 
+
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
@@ -13,7 +14,7 @@ import Logica.Bebida;
 import Logica.Comida;
 import Logica.Menu;
 
-import Logica.Menu_Infantil;
+
 import Logica.Producto;
 
 
@@ -66,10 +67,10 @@ public class VentanaVerMenus extends JFrame {
 		double precioTot=0;
 		
 		
-		Menu m1 = new Menu("Menu_Degustacion", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot, "");
-		Menu m2 = new Menu("Menu_EntreSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot, "");
-		Menu m3 = new Menu("Menu_Infantil", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot,"");
-		Menu m4 = new Menu("Menu_FinDeSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot, "");
+		Menu m1 = new Menu(1, hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot, "Menu_Degustacion");
+		Menu m2 = new Menu(2, hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot, "Menu_EntreSemana");
+		Menu m3 = new Menu(3, hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot,"Menu_Infantil");
+		Menu m4 = new Menu(4, hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot, "Menu_FinDeSemana");
 		
 		
 		m1.setPrecioTotal(m1.obtenerPreciototal(hmProds));
