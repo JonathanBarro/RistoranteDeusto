@@ -9,18 +9,19 @@ public class Menu {
 	private HashMap<String, List<Producto>> hmProds;
 	private int numProductos;
 	private double precioTotal;
-	
+	private String caracteristicas;
 
 	public Menu() {
 
 	}
 	
-	public Menu(String id, HashMap<String, List<Producto>> hmProds, int numProductos, double precioTotal) {
+	public Menu(String id, HashMap<String, List<Producto>> hmProds, int numProductos, double precioTotal,String caracteristicas) {
 		super();
 		this.id = id;
 		this.hmProds = hmProds;
 		this.numProductos = numProductos;
 		this.precioTotal = precioTotal;
+		this.caracteristicas = caracteristicas;
 	}
 
 
@@ -63,6 +64,16 @@ public class Menu {
 		this.precioTotal = precioTotal;
 	}
 	
+	
+	
+	public String getCaracteristicas() {
+		return caracteristicas;
+	}
+
+	public void setCaracteristicas(String caracteristicas) {
+		this.caracteristicas = caracteristicas;
+	}
+
 	public double obtenerPreciototal(HashMap<String, List<Producto>> hmProds) {
 		double sumaTotal = 0;
 		for (Producto producto : hmProds.get("Comida")) {

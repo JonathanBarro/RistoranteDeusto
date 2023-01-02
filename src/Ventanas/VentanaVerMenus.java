@@ -1,6 +1,7 @@
 package Ventanas;
 
 import java.awt.EventQueue;
+
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
@@ -10,10 +11,8 @@ import javax.swing.JPanel;
 import BD.BD;
 import Logica.Bebida;
 import Logica.Comida;
+import Logica.Menu;
 
-import Logica.Menu_Degustacion;
-import Logica.Menu_EntreSemana;
-import Logica.Menu_FinDeSemana;
 import Logica.Menu_Infantil;
 import Logica.Producto;
 
@@ -67,20 +66,21 @@ public class VentanaVerMenus extends JFrame {
 		double precioTot=0;
 		
 		
-		Menu_Degustacion m1 = new Menu_Degustacion("Menu_Degustacion", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot);
-		Menu_EntreSemana m2 = new Menu_EntreSemana("Menu_EntreSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(), precioTot,false);
-		Menu_Infantil m3 = new Menu_Infantil("Menu_Infantil", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot);
-		Menu_FinDeSemana m4 = new Menu_FinDeSemana("Menu_FinDeSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(), precioTot,8);
+		Menu m1 = new Menu("Menu_Degustacion", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot, "");
+		Menu m2 = new Menu("Menu_EntreSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot, "");
+		Menu m3 = new Menu("Menu_Infantil", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot,"");
+		Menu m4 = new Menu("Menu_FinDeSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot, "");
+		
 		
 		m1.setPrecioTotal(m1.obtenerPreciototal(hmProds));
 		m2.setPrecioTotal(m2.obtenerPreciototal(hmProds));
 		m3.setPrecioTotal(m3.obtenerPreciototal(hmProds));
 		m4.setPrecioTotal(m4.obtenerPreciototal(hmProds));
 		
-		JLabel lblDegus = new JLabel(m1.toStringCarta());
-		JLabel lblEntre = new JLabel(m2.toStringCarta());
-		JLabel lblFinDe = new JLabel(m4.toStringCarta());
-		JLabel lblInfant = new JLabel(m3.toStringCarta());
+		JLabel lblDegus = new JLabel(m1.toString());
+		JLabel lblEntre = new JLabel(m2.toString());
+		JLabel lblFinDe = new JLabel(m4.toString());
+		JLabel lblInfant = new JLabel(m3.toString());
 		JPanel panel = new JPanel(new FlowLayout());
 		
 		

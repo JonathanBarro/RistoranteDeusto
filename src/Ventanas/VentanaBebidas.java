@@ -1,6 +1,7 @@
 package Ventanas;
 
 import java.awt.EventQueue;
+
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
@@ -12,9 +13,6 @@ import javax.swing.JRadioButton;
 import Logica.Bebida;
 import Logica.Comida;
 import Logica.Menu;
-import Logica.Menu_Degustacion;
-import Logica.Menu_EntreSemana;
-import Logica.Menu_FinDeSemana;
 import Logica.Menu_Infantil;
 import Logica.Producto;
 

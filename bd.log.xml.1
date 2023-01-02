@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-02T10:39:37.529199800Z</date>
+  <millis>1672655977529</millis>
+  <nanos>199800</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T10:39:37.920007200Z</date>
+  <millis>1672655977920</millis>
+  <nanos>7200</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T10:39:38.349362400Z</date>
+  <millis>1672655978349</millis>
+  <nanos>362400</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>* Error al crear la BBDD</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "Menu_id": syntax error)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1030</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1042</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1007</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>102</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>crearBBDD</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>main</method>
+      <line>21</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-02T10:39:38.367314900Z</date>
+  <millis>1672655978367</millis>
+  <nanos>314900</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al insertar datos de la BBDD:s </message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_CONSTRAINT_PRIMARYKEY]  A PRIMARY KEY constraint failed (UNIQUE constraint failed: Cliente.numTlf)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1030</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1042</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1007</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>102</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>insertarDatos</method>
+      <line>168</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>cargarBD</method>
+      <line>93</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>main</method>
+      <line>24</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-02T10:39:38.372300400Z</date>
+  <millis>1672655978372</millis>
+  <nanos>300400</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-02T10:39:38.380279Z</date>
+  <millis>1672655978380</millis>
+  <nanos>279000</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-02T10:39:38.383276Z</date>
+  <millis>1672655978383</millis>
+  <nanos>276000</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al obtener datos de la BBDD: </message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: Reserva)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1030</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1042</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1007</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>137</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>257</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>66</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>obtenerDatosReservas</method>
+      <line>522</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>main</method>
+      <line>43</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-02T10:39:38.392247700Z</date>
+  <millis>1672655978392</millis>
+  <nanos>247700</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado  Menu_FinDeSemana... </message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-02T10:40:46.074630200Z</date>
+  <millis>1672656046074</millis>
+  <nanos>630200</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T10:40:46.461779200Z</date>
+  <millis>1672656046461</millis>
+  <nanos>779200</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T10:40:46.882151100Z</date>
+  <millis>1672656046882</millis>
+  <nanos>151100</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>* Error al crear la BBDD</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (near "id": syntax error)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1030</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1042</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1007</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>102</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>crearBBDD</method>
+      <line>73</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>main</method>
+      <line>21</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-02T10:40:46.899105500Z</date>
+  <millis>1672656046899</millis>
+  <nanos>105500</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al insertar datos de la BBDD:s </message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_CONSTRAINT_PRIMARYKEY]  A PRIMARY KEY constraint failed (UNIQUE constraint failed: Cliente.numTlf)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1030</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1042</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1007</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>102</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>insertarDatos</method>
+      <line>168</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>cargarBD</method>
+      <line>93</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>main</method>
+      <line>24</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-02T10:40:46.904091300Z</date>
+  <millis>1672656046904</millis>
+  <nanos>91300</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-02T10:40:46.909079Z</date>
+  <millis>1672656046909</millis>
+  <nanos>79000</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-02T10:40:46.914066800Z</date>
+  <millis>1672656046914</millis>
+  <nanos>66800</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al obtener datos de la BBDD: </message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: Reserva)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1030</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1042</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1007</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>prepare</method>
+      <line>137</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>prepare</method>
+      <line>257</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeQuery</method>
+      <line>66</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>obtenerDatosReservas</method>
+      <line>522</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>main</method>
+      <line>43</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-02T10:40:46.928028Z</date>
+  <millis>1672656046928</millis>
+  <nanos>28000</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado  Menu_FinDeSemana... </message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-02T10:48:11.584931400Z</date>
+  <millis>1672656491584</millis>
+  <nanos>931400</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T10:48:12.021764Z</date>
+  <millis>1672656492021</millis>
+  <nanos>764000</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-02T10:48:12.029742400Z</date>
+  <millis>1672656492029</millis>
+  <nanos>742400</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-02T10:48:12.518705600Z</date>
+  <millis>1672656492518</millis>
+  <nanos>705600</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-02T10:48:12.565580400Z</date>
+  <millis>1672656492565</millis>
+  <nanos>580400</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al insertar datos de la BBDD:s </message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_MISMATCH]  Data type mismatch (datatype mismatch)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1030</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1042</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1007</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>102</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>insertarDatos</method>
+      <line>191</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>cargarBD</method>
+      <line>93</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>main</method>
+      <line>24</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-02T10:48:12.569569900Z</date>
+  <millis>1672656492569</millis>
+  <nanos>569900</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-02T10:48:12.577549100Z</date>
+  <millis>1672656492577</millis>
+  <nanos>549100</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-02T10:48:12.583531900Z</date>
+  <millis>1672656492583</millis>
+  <nanos>531900</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-02T10:48:12.588520300Z</date>
+  <millis>1672656492588</millis>
+  <nanos>520300</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado  Menu_FinDeSemana... </message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-02T10:56:37.064544700Z</date>
+  <millis>1672656997064</millis>
+  <nanos>544700</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T10:56:37.638061800Z</date>
+  <millis>1672656997638</millis>
+  <nanos>61800</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-02T10:56:37.647039400Z</date>
+  <millis>1672656997647</millis>
+  <nanos>39400</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-02T10:56:38.168642700Z</date>
+  <millis>1672656998168</millis>
+  <nanos>642700</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-02T10:56:38.208188100Z</date>
+  <millis>1672656998208</millis>
+  <nanos>188100</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Error al insertar datos de la BBDD:s </message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (table Menu has no column named idMenu)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1030</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1042</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1007</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>102</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>insertarDatos</method>
+      <line>199</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>cargarBD</method>
+      <line>93</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>main</method>
+      <line>24</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-02T10:56:38.214172700Z</date>
+  <millis>1672656998214</millis>
+  <nanos>172700</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-02T10:56:38.219154800Z</date>
+  <millis>1672656998219</millis>
+  <nanos>154800</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-02T10:56:38.221150100Z</date>
+  <millis>1672656998221</millis>
+  <nanos>150100</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-02T10:56:38.224142800Z</date>
+  <millis>1672656998224</millis>
+  <nanos>142800</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado  Menu_FinDeSemana... </message>
+</record>
+</log>

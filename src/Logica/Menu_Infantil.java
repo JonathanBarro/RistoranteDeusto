@@ -12,7 +12,7 @@ public class Menu_Infantil extends Menu {
 	}
 
 	public Menu_Infantil(String id, HashMap<String, List<Producto>> hmProds, int numProductos, double precioTotal) {
-		super(id, hmProds, numProductos, precioTotal);
+		super(id, hmProds, numProductos, precioTotal, id);
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -33,5 +33,7 @@ public class Menu_Infantil extends Menu {
 		return getId() + " : " + " numero de platos: " + getNumProductos() + "   Primer plato: " + getpL().get("Comida").get(0).getNombre() + "   Segundo plato: " + getpL().get("Comida").get(1).getNombre() 
 				+ "   Postre: " + getpL().get("Comida").get(2).getNombre() + "   Bebida: " + aBebida;   
 	}
+
+
 
 }

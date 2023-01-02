@@ -12,8 +12,8 @@ public class RistoranteMain {
 	public static void main(String[] args) {
 		
 		bd = new BD();	
-//		bd.borrarDatos();
-//	    bd.borrarBBDD();
+		bd.borrarDatos();
+	    bd.borrarBBDD();
 		VentanaAdminCliente window = new VentanaAdminCliente();
 		window.setVisible(true);
 		
@@ -49,7 +49,7 @@ public class RistoranteMain {
 //		List<Menu_EntreSemana>menuEntreSemanas = bd.obtenerDatosMenu_EntreSemana();
 //		printMenu_EntreSemana(menuEntreSemanas);
 //		
-		List<Menu> menuFinDeSemanas = bd.obtenerDatosMenu_FinDeSemana();
+		List<Menu> menuFinDeSemanas = bd.obtenerDatosMenu();
 		printMenu_FinDeSemana(menuFinDeSemanas);
 //		
 //		List<Menu_Infantil> menuInfantiles = bd.obtenerDatosMenu_Infantil();
@@ -84,13 +84,10 @@ public class RistoranteMain {
 		List<Admin> admins = initAdmin();
 		List<Bebida> bebidas = initBebidas();
 		List<Comida> comidas = initComidas();
-		List<Menu_Degustacion> menuDegustacion = initMenu_Degustacion();
-		List<Menu_EntreSemana> menuEntreSemanas = initMenu_EntreSemana();
-		List<Menu_FinDeSemana> menuFinDeSemanas = initMenu_FinDeSemana();
-		List<Menu_Infantil> menuInfantiles = initMenu_Infantil();
+		List<Menu> menuInfantiles = initMenu();
 		List<Mesa> mesas = initMesa();
 		List<Reserva> reservas = initReservas();
-		bd.insertarDatos(clientes, admins, bebidas, comidas, menuDegustacion, menuEntreSemanas, menuFinDeSemanas, menuInfantiles, mesas, reservas);
+		bd.insertarDatos(clientes, admins, bebidas, comidas, menuInfantiles, mesas, reservas);
 	}
 	
 	private static void printClientes(List<Cliente> clientes) {
@@ -184,47 +181,9 @@ public class RistoranteMain {
 	}
 	
 	
-	private static void printMenu_Degustacion(List<Menu_Degustacion> menuDegustaciones) {
-		if (!menuDegustaciones.isEmpty()) {		
-			for(Menu_Degustacion mD : menuDegustaciones) {
-				System.out.println(String.format(" - %s", mD.toString()));
-			}
-		}		
-	}
+
 	
-	public static List<Menu_Degustacion> initMenu_Degustacion() {
-		List<Menu_Degustacion> menuDegustaciones = new ArrayList<>();
-		
-		Menu_Degustacion menuDegustacion = new Menu_Degustacion();
-		menuDegustacion.setId("1A");
-		menuDegustacion.setNumProductos(3);
-		menuDegustaciones.add(menuDegustacion);
-		
-		return menuDegustaciones;
-	}
-	
-	
-	private static void printMenu_EntreSemana(List<Menu_EntreSemana> menuEntreSemanas) {
-		if (!menuEntreSemanas.isEmpty()) {		
-			for(Menu_EntreSemana mES : menuEntreSemanas) {
-				System.out.println(String.format(" - %s", mES.toString()));
-			}
-		}		
-	}
-	
-	public static List<Menu_EntreSemana> initMenu_EntreSemana() {
-		List<Menu_EntreSemana> menuEntreSemanas = new ArrayList<>();
-		
-		Menu_EntreSemana mES = new Menu_EntreSemana();
-		mES.setId("1B");
-		mES.setDescuentoEstudiantes(false);
-		mES.setNumProductos(4);
-		menuEntreSemanas.add(mES);
-		
-		return menuEntreSemanas;
-	}
-	
-	
+
 	private static void printMenu_Infantil(List<Menu_Infantil> menuInfantiles) {
 		if (!menuInfantiles.isEmpty()) {		
 			for(Menu_Infantil mI : menuInfantiles) {
@@ -253,20 +212,24 @@ public class RistoranteMain {
 		}		
 	}
 	
-	public static List<Menu_FinDeSemana> initMenu_FinDeSemana() {
-		List<Menu_FinDeSemana> menuFinDeSemanas = new ArrayList<>();
+	public static List<Menu> initMenu() {
+		List<Menu> menuFinDeSemanas = new ArrayList<>();
 		
-		Menu_FinDeSemana mFS = new Menu_FinDeSemana();
+		Menu mFS = new Menu();
 		mFS.setId("3A");
 		mFS.setNumProductos(3);
-		mFS.setNumPersonas(6);
-		Menu_FinDeSemana mFS1 = new Menu_FinDeSemana();
-		mFS1.setId("2A");
-		mFS1.setNumProductos(3);
-		mFS1.setNumPersonas(6);
+		mFS.setCaracteristicas("Menu Fin de Semana");
+		Menu mFS1 = new Menu();
+		mFS.setId("1A");
+		mFS.setNumProductos(3);
+		mFS.setCaracteristicas("Menu Infantil");
+		Menu mFS2 = new Menu();
+		mFS.setId("2A");
+		mFS.setNumProductos(3);
+		mFS.setCaracteristicas("Menu Entre Semana");
 		menuFinDeSemanas.add(mFS);
 		menuFinDeSemanas.add(mFS1);
-		
+		menuFinDeSemanas.add(mFS2);
 		return menuFinDeSemanas;
 	}
 	
@@ -324,6 +287,7 @@ public class RistoranteMain {
 		reserva.setFecha("20-03-22");
 		reserva.setIdReserva(2);
 		reserva.setNumPersonas(3);
+		reserva.setHora("14:00");
 		reservas.add(reserva);
 		
 		return reservas;

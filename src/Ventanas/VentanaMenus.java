@@ -1,6 +1,7 @@
 package Ventanas;
 
 import java.awt.EventQueue;
+
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
@@ -11,9 +12,6 @@ import javax.swing.JPanel;
 import Logica.Bebida;
 import Logica.Comida;
 import Logica.Menu;
-import Logica.Menu_Degustacion;
-import Logica.Menu_EntreSemana;
-import Logica.Menu_FinDeSemana;
 import Logica.Menu_Infantil;
 import Logica.Producto;
 import Logica.Reserva;
@@ -83,7 +81,7 @@ public class VentanaMenus extends JFrame {
 		HashMap<String, List<Producto>> hmProdsBd = RistoranteMain.bd.obtenerProductos();
 		HashMap<String, List<Producto>> hmProds = new HashMap<>();
 		
-		List<Menu> lMenus = RistoranteMain.bd.obtenerMenus();
+		List<Menu> lMenus = RistoranteMain.bd.obtenerDatosMenu();
 		for (Menu menu : lMenus) {
 			menu.setpL(hmProdsBd);
 		}
@@ -94,10 +92,10 @@ public class VentanaMenus extends JFrame {
 		
 		double precioTot=0;
 		
-		Menu_Degustacion m1 = new Menu_Degustacion("Menu_Degustacion", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot);
-		Menu_EntreSemana m2 = new Menu_EntreSemana("Menu_EntreSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(), precioTot,false);
-		Menu_Infantil m3 = new Menu_Infantil("Menu_Infantil", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot);
-		Menu_FinDeSemana m4 = new Menu_FinDeSemana("Menu_FinDeSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(), precioTot,8);
+		Menu m1 = new Menu("Menu_Degustacion", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot, "");
+		Menu m2 = new Menu("Menu_EntreSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot, "");
+		Menu m3 = new Menu("Menu_Infantil", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot,"");
+		Menu m4 = new Menu("Menu_FinDeSemana", hmProds, hmProds.get("Comida").size()+hmProds.get("Bebida").size(),precioTot, "");
 		
 		m1.setPrecioTotal(m1.obtenerPreciototal(hmProds));
 		m2.setPrecioTotal(m2.obtenerPreciototal(hmProds));

@@ -1,6 +1,7 @@
 package BD;
 
 import java.nio.file.Files;
+
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,15 +12,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import Logica.Admin;
 import Logica.Bebida;
 import Logica.Cliente;
 import Logica.Comida;
 import Logica.Menu;
-import Logica.Menu_Degustacion;
-import Logica.Menu_EntreSemana;
-import Logica.Menu_FinDeSemana;
+
 import Logica.Menu_Infantil;
 import Logica.Mesa;
 import Logica.Producto;
@@ -33,18 +35,22 @@ public class BD {
 	 */
 	
 	protected static final String DRIVER_NAME = "org.sqlite.JDBC";
+	private static Exception lastError = null; 
 	protected static final String DATABASE_FILE = "db/database.db";
 	protected static final String CONNECTION_STRING = "jdbc:sqlite:" + DATABASE_FILE;
 	public static ResultSet resultado;
 	public static int resultadoguardar;
+	private Logger logger = null;
 	
 	
 	public BD() {		
 		try {
 			//Cargar el diver SQLite
 			Class.forName(DRIVER_NAME);
+			log( Level.INFO, "ConexiÃ³n de base de datos " , null );
 		} catch (ClassNotFoundException ex) {
 			System.err.println(String.format("* Error al cargar el driver de BBDD: %s", ex.getMessage()));
+			log( Level.SEVERE, "Error en conexiÃ³n de base de datos " , ex );
 			ex.printStackTrace();
 		}
 	}
@@ -60,13 +66,13 @@ public class BD {
 			st.executeUpdate(sql1);
 			String sql2 = "CREATE TABLE IF NOT EXISTS Bebida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer, frio TEXT NOT NULL)";
 			st.executeUpdate(sql2);
-			String sql4 = "CREATE TABLE IF NOT EXISTS Menu(id PRIMARY KEY NOT NULL, numProductos Integer, caracteristica TEXT)";
+			String sql4 = "CREATE TABLE IF NOT EXISTS Menu(idMenu PRIMARY KEY NOT NULL, numProductos Integer, caracteristica TEXT)";
 			st.executeUpdate(sql4);
-			String sql3 = "CREATE TABLE IF NOT EXISTS Comida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer, FOREING KEY(Menu_id) references Menu)";
+			String sql3 = "CREATE TABLE IF NOT EXISTS Comida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer, FOREING KEY idMenu references Menu)";
 			st.executeUpdate(sql3);
 			String sql8 = "CREATE TABLE IF NOT EXISTS Mesa(idMesa TEXT NOT NULL, lugar Integer, ocupada TEXT NOT NULL, numPersonas Integer)";
 			st.executeUpdate(sql8);
-			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha TEXT NOT NULL, numeroPersonas Integer, idReserva Integer , idMesa TEXT, idMenu TEXT)";
+			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha TEXT NOT NULL, numeroPersonas Integer, idReserva Integer , idMesa TEXT, idMenu TEXT, hora TEXT)";
 			st.executeUpdate(sql9);
 	        	        
 	        if (!st.execute(sql)) {
@@ -79,8 +85,10 @@ public class BD {
 	        	System.out.println("- Se ha creado la tabla Mesas");
 	     
 	        }
+	        log( Level.INFO, "Se han creado las tablas de la BD" , null );
 		} catch (Exception ex) {
 			System.err.println(String.format("* Error al crear la BBDD: %s", ex.getMessage()));
+			log( Level.SEVERE, "* Error al crear la BBDD" , ex );
 			ex.printStackTrace();			
 		}
 	}
@@ -101,25 +109,28 @@ public class BD {
 	        if (!stmt.execute(sql)) {
 	        	System.out.println("- Se ha borrado las tablas");
 	        }
+	        log( Level.INFO, "Se han borrado las tablas" , null );
 		} catch (Exception ex) {
 			System.err.println(String.format("* Error al borrar la BBDD: %s", ex.getMessage()));
+			log( Level.SEVERE, " Error al borrar la BBDD:" , ex );
 			ex.printStackTrace();			
 		}
 		
-		try {
-			//Se borra el fichero de la BBDD
-			Files.delete(Paths.get(DATABASE_FILE));
-			System.out.println("- Se ha borrado el fichero de la BBDD");
-		} catch (Exception ex) {
-			System.err.println(String.format("* Error al borrar el archivo de la BBDD: %s", ex.getMessage()));
-			ex.printStackTrace();						
-		}
+//		try {
+//			//Se borra el fichero de la BBDD
+//			Files.delete(Paths.get(DATABASE_FILE));
+//			System.out.println("- Se ha borrado el fichero de la BBDD");
+//			log( Level.INFO, "ConexiÃ³n de base de datos " , null );
+//		} catch (Exception ex) {
+//			System.err.println(String.format("* Error al borrar el archivo de la BBDD: %s", ex.getMessage()));
+//			log( Level.SEVERE, " Error al borrar el archivo de la BBDD: " , ex );
+//			ex.printStackTrace();						
+//		}
 	}
 	
 		
 		public void insertarDatos(List<Cliente> clientes, List<Admin> admins,
-				List<Bebida> bebidas, List<Comida> comidas, List<Menu_Degustacion> menus_degustacion,
-				List<Menu_EntreSemana> menus_entreSemana, List<Menu_FinDeSemana> menus_finDeSemanas, List<Menu_Infantil> menus_infantiles,
+				List<Bebida> bebidas, List<Comida> comidas,  List<Menu> menus,
 				List<Mesa> mesas, List<Reserva> reservas) {
 		
 			//Se abre la conexi n y se obtiene el Statement
@@ -136,16 +147,16 @@ public class BD {
 				String sql2 = "INSERT INTO Bebida (nombre, precio, id, stock, frio) VALUES ('%s', '%f', %d, %d, '%s');";
 				System.out.println("- Insertando bebida...");
 				
-				String sql3 = "INSERT INTO Comida (nombre, precio, id, stock, id) VALUES ('%s', '%.2f', %d, %d, '%s');";
+				String sql3 = "INSERT INTO Comida (nombre, precio, id, stock) VALUES ('%s', '%.2f', %d, %d);";
 				System.out.println("- Insertando comida...");
 				
-				String sql4 = "INSERT INTO Menu(id , numProductos, caracteristica) VALUES ('%s', %d, '%s');";
+				String sql4 = "INSERT INTO Menu(idMenu, numProductos, caracteristica) VALUES ('%s', %d, '%s');";
 				System.out.println("- Insertando menus...");
 				
 				String sql8 = "INSERT INTO Mesa(idMesa, lugar, ocupada, numPersonas) VALUES ('%s', %d, '%s', %d);";
 				System.out.println("- Insertando mesas...");
 				
-				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva) VALUES ('%s', %d, %d);";
+				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva, hora) VALUES ('%s', %d, %d, '%s');";
 				
 				//System.out.println("- Insertando reservas...");
 				
@@ -175,35 +186,15 @@ public class BD {
 					}
 				}
 				for (Comida com : comidas) {
-					if (1 == stmt.executeUpdate(String.format(sql3, com.getNombre(), com.getPrecio(), com.getId(),com.getStock(), com.getIdMenu()))) {					
+					if (1 == stmt.executeUpdate(String.format(sql3, com.getNombre(), com.getPrecio(), com.getId(),com.getStock()))) {					
 						System.out.println(String.format(" - Comida insertada: %s", com.toString()));
 					} else {
 						System.out.println(String.format(" - No se ha insertado la comida: %s", com.toString()));
 					}
 				}
-				for (Menu_Degustacion mD : menus_degustacion) {
-					if (1 == stmt.executeUpdate(String.format(sql4, mD.getId(), mD.getNumProductos()))) {					
-						System.out.println(String.format(" - Menu degustacion insertado: %s", mD.toString()));
-					} else {
-						System.out.println(String.format(" - No se ha insertado el menu degustacion: %s", mD.toString()));
-					}
-				}
-				for (Menu_Infantil mI : menus_infantiles) {
-					if (1 == stmt.executeUpdate(String.format(sql4, mI.getId(), mI.getNumProductos()))) {					
-						System.out.println(String.format(" - Menu infantil insertado: %s", mI.toString()));
-					} else {
-						System.out.println(String.format(" - No se ha insertado el menu infantil: %s", mI.toString()));
-					}
-				}
-				for (Menu_FinDeSemana mDS : menus_finDeSemanas) {
-					if (1 == stmt.executeUpdate(String.format(sql4, mDS.getId(), mDS.getNumProductos(), mDS.getNumPersonas(), Integer.toString(mDS.getNumPersonas())))) {					
-						System.out.println(String.format(" - Menu fin de semana insertado: %s", mDS.toString()));
-					} else {
-						System.out.println(String.format(" - No se ha insertado el menu fin de semana: %s", mDS.toString()));
-					}
-				}
-				for (Menu_EntreSemana mES : menus_entreSemana) {
-					if (1 == stmt.executeUpdate(String.format(sql4, mES.getId(),mES.getNumProductos(), mES.isDescuentoEstudiantes(), Boolean.toString(mES.isDescuentoEstudiantes())))) {					
+
+				for (Menu mES : menus) {
+					if (1 == stmt.executeUpdate(String.format(sql4, mES.getId(),mES.getNumProductos(), mES.getCaracteristicas()))) {					
 						System.out.println(String.format(" - Menu entre semana insertado: %s", mES.toString()));
 					} else {
 						System.out.println(String.format(" - No se ha insertado el menu entre semana: %s", mES.toString()));
@@ -217,14 +208,16 @@ public class BD {
 					}
 				}
 			for (Reserva r : reservas) {
-					if (1 == stmt.executeUpdate(String.format(sql9, r.getFecha(), r.getNumPersonas(),r.getIdReserva()))) {					
+					if (1 == stmt.executeUpdate(String.format(sql9, r.getFecha(), r.getNumPersonas(),r.getIdReserva(), r.getHora()))) {					
 						System.out.println(String.format(" - Reservas insertadas: %s", r.toString()));
 					} else {
 						System.out.println(String.format(" - No se ha insertado las reservas: %s", r.toString()));
 					}
 				}
+			log( Level.INFO, "Se han isetado todas las tablas " , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al insertar datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "Error al insertar datos de la BBDD:s " , ex );
 				ex.printStackTrace();						
 			}				
 		}
@@ -240,9 +233,11 @@ public class BD {
 				} else {
 					System.out.println(String.format(" - No se ha insertado la comida: %s", c.toString()));
 				}
+				log( Level.INFO, "Comida insertada" , null );
 				
 			}catch (Exception ex) {
 				System.err.println(String.format("* Error al insertar datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "Error al insertar datos de la BBDD: " , ex );
 				ex.printStackTrace();						
 			}
 		}
@@ -258,10 +253,10 @@ public class BD {
 							numP--;
 							Menu me = r.getaMenu().get(i);
 //							numM++;
-							String sql = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva, idMesa, idMenu) VALUES ('%s', %d, %d, '%s','%s');";
+							String sql = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva, idMesa, idMenu, hora) VALUES ('%s', %d, %d, '%s','%s','%s');";
 							System.out.println("- Insertando reservas...");	
 							
-							if (1 == stmt.executeUpdate(String.format(sql, r.getFecha(), r.getNumPersonas(),r.getIdReserva(),m.getIdMesa(),me.getId()))) {					
+							if (1 == stmt.executeUpdate(String.format(sql, r.getFecha(), r.getNumPersonas(),r.getIdReserva(),m.getIdMesa(),me.getId(), r.getHora()))) {					
 								System.out.println(String.format(" - Reservas insertadas: %s", r.toString()));
 							} else {
 								System.out.println(String.format(" - No se ha insertado las reservas: %s", r.toString()));
@@ -269,8 +264,10 @@ public class BD {
 						}
 					}
 				}
+				log( Level.INFO, "Reservas insertadas " , null );
 			}catch (Exception ex) {
 				System.err.println(String.format("* Error al insertar datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "Error al insertar datos de la BBDD:  " , ex );
 				ex.printStackTrace();						
 			}
 		}
@@ -289,6 +286,7 @@ public class BD {
 				ResultSet rs = stmt.executeQuery(sql);			
 				Cliente cliente;
 				
+				
 				//Se recorre el ResultSet y se crean objetos Cliente
 				while (rs.next()) {
 					cliente = new Cliente();
@@ -306,9 +304,11 @@ public class BD {
 				//Se cierra el ResultSet
 				rs.close();
 				
-				System.out.println(String.format("- Se han recuperado %d clientes...", clientes.size()));			
+				System.out.println(String.format("- Se han recuperado %d clientes...", clientes.size()));
+				log( Level.INFO, "- Se han recuperado clientes... " , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "* Error al obtener datos de la BBDD: " , ex );
 				ex.printStackTrace();						
 			}		
 			
@@ -346,9 +346,11 @@ public class BD {
 				//Se cierra el ResultSet
 				rs.close();
 				
-				System.out.println(String.format("- Se han recuperado %d admins...", admins.size()));			
+				System.out.println(String.format("- Se han recuperado %d admins...", admins.size()));	
+				log( Level.INFO, "Se han recuperado %d admins... " , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "Error al obtener datos de la BBDD: " , ex );
 				ex.printStackTrace();						
 			}		
 			
@@ -386,9 +388,11 @@ public class BD {
 				//Se cierra el ResultSet
 				rs.close();
 				
-				System.out.println(String.format("- Se han recuperado %d bebidas...", productos.size()));			
+				System.out.println(String.format("- Se han recuperado %d bebidas...", productos.size()));
+				log( Level.INFO, "Se han recuperado %d bebidas... " , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "Error al obtener datos de la BBDD:" , ex );
 				ex.printStackTrace();						
 			}		
 			
@@ -424,9 +428,11 @@ public class BD {
 				//Se cierra el ResultSet
 				rs.close();
 				
-				System.out.println(String.format("- Se han recuperado %d comidas...", producto.size()));			
+				System.out.println(String.format("- Se han recuperado %d comidas...", producto.size()));
+				log( Level.INFO, " Se han recuperado %d comidas..." , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "Error al obtener datos de la BBDD:" , ex );
 				ex.printStackTrace();						
 			}		
 			
@@ -471,9 +477,11 @@ public class BD {
 				//Se cierra el ResultSet
 				rs.close();
 				
-				System.out.println(String.format("- Se han recuperado %d mesas...", mesas.size()));			
+				System.out.println(String.format("- Se han recuperado %d mesas...", mesas.size()));	
+				log( Level.INFO, "- Se han recuperado mesas... " , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "Error al obtener datos de la BBDD: " , ex );
 				ex.printStackTrace();						
 			}		
 			
@@ -499,6 +507,7 @@ public class BD {
 					reserva.setFecha(rs.getString("fecha"));
 					reserva.setNumPersonas(rs.getInt("numeroPersonas"));
 					reserva.setIdReserva(rs.getInt("idReserva"));
+					reserva.setHora(rs.getString("hora"));
 					
 					
 					//Se inserta cada nuevo cliente en la lista de clientes
@@ -508,16 +517,18 @@ public class BD {
 				//Se cierra el ResultSet
 				rs.close();
 				
-				System.out.println(String.format("- Se han recuperado %d reservas...", reservas.size()));			
+				System.out.println(String.format("- Se han recuperado %d reservas...", reservas.size()));
+				log( Level.INFO, "Se han recuperado reservas" , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "Error al obtener datos de la BBDD: " , ex );
 				ex.printStackTrace();						
 			}		
 			
 			return reservas;
 		}
 		
-		public List<Menu> obtenerDatosMenu_EntreSemana() {
+		public List<Menu> obtenerDatosMenu() {
 			List<Menu> menusEntreSemana = new ArrayList<>();
 			
 			//Se abre la conexi n y se obtiene el Statement
@@ -527,15 +538,15 @@ public class BD {
 				
 				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
 				ResultSet rs = stmt.executeQuery(sql);			
-				Menu_EntreSemana menuEntreSemana;
+				Menu menuEntreSemana;
 				
 				//Se recorre el ResultSet y se crean objetos Cliente
 				while (rs.next()) {
-					menuEntreSemana = new Menu_EntreSemana();
+					menuEntreSemana = new Menu();
 					
 					menuEntreSemana.setId(rs.getString("id"));
 					menuEntreSemana.setNumProductos(rs.getInt("numProductos"));
-					menuEntreSemana.setDescuentoEstudiantes(rs.getBoolean("descuentoEstudiante"));
+					menuEntreSemana.setCaracteristicas(rs.getString("caracteristica"));
 					
 					
 					//Se inserta cada nuevo cliente en la lista de clientes
@@ -545,143 +556,19 @@ public class BD {
 				//Se cierra el ResultSet
 				rs.close();
 				
-				System.out.println(String.format("- Se han recuperado %d Menu_EntreSemana...", menusEntreSemana.size()));			
+				System.out.println(String.format("- Se han recuperado %d Menu_EntreSemana...", menusEntreSemana.size()));
+				log( Level.INFO, "Se han recuperado Menu_EntreSemana... " , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "Error al obtener datos de la BBDD " , ex );
 				ex.printStackTrace();						
 			}		
 			
 			return menusEntreSemana;
 		}
 		
-		public List<Menu> obtenerDatosMenu_FinDeSemana() {
-			List<Menu> menusFinDeSemana = new ArrayList<>();
-			
-			//Se abre la conexi n y se obtiene el Statement
-			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-			     Statement stmt = con.createStatement()) {
-				String sql = "SELECT * FROM Menu_FinDeSemana";
-				
-				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
-				ResultSet rs = stmt.executeQuery(sql);			
-				Menu_FinDeSemana menuFinDeSemana;
-				
-				//Se recorre el ResultSet y se crean objetos Cliente
-				while (rs.next()) {
-					menuFinDeSemana = new Menu_FinDeSemana();
-					
-					menuFinDeSemana.setId(rs.getString("id"));
-					menuFinDeSemana.setNumProductos(rs.getInt("numProductos"));
-					menuFinDeSemana.setNumPersonas(rs.getInt("numPersonas"));
-					
-					
-					//Se inserta cada nuevo cliente en la lista de clientes
-					menusFinDeSemana.add(menuFinDeSemana);
-				}
-				
-				//Se cierra el ResultSet
-				rs.close();
-				
-				System.out.println(String.format("- Se han recuperado %d Menu_FinDeSemana...", menusFinDeSemana.size()));			
-			} catch (Exception ex) {
-				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
-				ex.printStackTrace();						
-			}		
-			
-			return menusFinDeSemana;
-		}
+
 		
-		public List<Menu> obtenerDatosMenu_Degustacion() {
-			List<Menu> menusDegustacion = new ArrayList<>();
-			
-			//Se abre la conexi n y se obtiene el Statement
-			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-			     Statement stmt = con.createStatement()) {
-				String sql = "SELECT * FROM Menu_Degustacion";
-				
-				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
-				ResultSet rs = stmt.executeQuery(sql);			
-				Menu_Degustacion menuDegustacion;
-				
-				//Se recorre el ResultSet y se crean objetos Cliente
-				while (rs.next()) {
-					menuDegustacion = new Menu_Degustacion();
-					
-					menuDegustacion.setId(rs.getString("id"));
-					menuDegustacion.setNumProductos(rs.getInt("numProductos"));
-					
-					
-					//Se inserta cada nuevo cliente en la lista de clientes
-					menusDegustacion.add(menuDegustacion);
-				}
-				
-				//Se cierra el ResultSet
-				rs.close();
-				
-				System.out.println(String.format("- Se han recuperado %d Menu_Degustacion...", menusDegustacion.size()));			
-			} catch (Exception ex) {
-				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
-				ex.printStackTrace();						
-			}		
-			
-			return menusDegustacion;
-		}
-		
-		public List<Menu> obtenerDatosMenu_Infantil() {
-			List<Menu> menusInfantil = new ArrayList<>();
-			
-			
-			//Se abre la conexi n y se obtiene el Statement
-			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
-			     Statement stmt = con.createStatement()) {
-				String sql = "SELECT * FROM Menu_Infantil";
-				
-				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
-				ResultSet rs = stmt.executeQuery(sql);			
-				Menu_Infantil menuInfantil;
-				
-				//Se recorre el ResultSet y se crean objetos Cliente
-				while (rs.next()) {
-					menuInfantil = new Menu_Infantil();
-					
-					menuInfantil.setId(rs.getString("id"));
-					menuInfantil.setNumProductos(rs.getInt("numProductos"));
-					
-					
-					//Se inserta cada nuevo cliente en la lista de clientes
-					menusInfantil.add(menuInfantil);
-				}
-				
-				//Se cierra el ResultSet
-				rs.close();
-				
-				System.out.println(String.format("- Se han recuperado %d Menu_Infantil...", menusInfantil.size()));			
-			} catch (Exception ex) {
-				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
-				ex.printStackTrace();						
-			}		
-			
-			return menusInfantil;
-		}
-		
-		public List<Menu> obtenerMenus(){
-			List<Menu> lMenus = new ArrayList<>();
-			List<Menu> listAux;
-			listAux = obtenerDatosMenu_Degustacion();
-			for (Menu menu : listAux) 
-				lMenus.add(menu);
-			listAux = obtenerDatosMenu_EntreSemana();
-			for (Menu menu : listAux) 
-				lMenus.add(menu);
-			listAux = obtenerDatosMenu_FinDeSemana();
-			for (Menu menu : listAux) 
-				lMenus.add(menu);
-			listAux = obtenerDatosMenu_Infantil(); 
-			for (Menu menu : listAux) 
-				lMenus.add(menu);
-			
-			return lMenus;
-		}
 		
 		public void cambiarPrecioBebida(Producto bebida, Integer nuevoprecio) {
 			//Se abre la conexi n y se obtiene el Statement
@@ -693,8 +580,10 @@ public class BD {
 				int result = stmt.executeUpdate(String.format(sql, nuevoprecio, bebida.getId()));
 				
 				System.out.println(String.format("- Se ha actulizado %d bebida", result));
+				log( Level.INFO, "- Se ha actulizado bebida " , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "* Error actualizando datos de la BBDD" , ex );
 				ex.printStackTrace();						
 			}		
 		}
@@ -708,8 +597,10 @@ public class BD {
 				int result = stmt.executeUpdate(String.format(sql, nuevoprecio, id));
 				
 				System.out.println(String.format("- Se ha actulizado %d comida", result));
+				log( Level.INFO, "Se ha actulizado %d comida " , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "* Error actualizando datos de la BBDD: " , ex );
 				ex.printStackTrace();						
 			}		
 		}
@@ -724,8 +615,10 @@ public class BD {
 					int result = stmt.executeUpdate(String.format(sql, numTlfn));
 					
 					System.out.println(String.format("- Se ha borrado %d Cliente", result));
+					log( Level.INFO, "- Se ha borrado Cliente\"" , null );
 				} catch (Exception ex) {
 					System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+					log( Level.SEVERE, "* Error actualizando datos de la BBDD: " , ex );
 					ex.printStackTrace();						
 				}		
 		}
@@ -739,8 +632,10 @@ public class BD {
 					int result = stmt.executeUpdate(String.format(sql, id));
 					
 					System.out.println(String.format("- Se ha borrado %d reserva", result));
+					log( Level.INFO, "- Se ha borrado %d reserva " , null );
 				} catch (Exception ex) {
 					System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+					log( Level.SEVERE, "* Error actualizando datos de la BBDD: " , ex );
 					ex.printStackTrace();						
 				}		
 		}
@@ -754,8 +649,10 @@ public class BD {
 					int result = stmt.executeUpdate(String.format(sql, id));
 					
 					System.out.println(String.format("- Se ha borrado %d bebida", result));
+					log( Level.INFO, "- Se ha borrado bebida" , null );
 				} catch (Exception ex) {
 					System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+					log( Level.SEVERE, "* Error actualizando datos de la BBDD: " , ex );
 					ex.printStackTrace();						
 				}		
 		}
@@ -770,8 +667,10 @@ public class BD {
 					int result = stmt.executeUpdate(String.format(sql, id));
 					
 					System.out.println(String.format("- Se ha borrado %d comida", result));
+					log( Level.INFO, "ConexiÃ³n de base de datos " , null );
 				} catch (Exception ex) {
 					System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+					log( Level.SEVERE, "Error en conexiÃ³n de base de datos " , ex );
 					ex.printStackTrace();						
 				}		
 		}
@@ -788,8 +687,10 @@ public class BD {
 					int result = stmt.executeUpdate(String.format(sql, id));
 					
 					System.out.println(String.format("- Se ha borrado %d mesa", result));
+					log( Level.INFO, "- Se ha borrado %d mesa" , null );
 				} catch (Exception ex) {
 					System.err.println(String.format("* Error actualizando datos de la BBDD: %s", ex.getMessage()));
+					log( Level.SEVERE, "Error actualizando datos de la BBDD:  " , ex );
 					ex.printStackTrace();						
 				}		
 		}
@@ -832,8 +733,10 @@ public class BD {
 				System.out.println(String.format("- Se han borrado %d menu infantil", result7));
 				System.out.println(String.format("- Se han borrado %d reservas", result8));
 				System.out.println(String.format("- Se han borrado %d mesas", result9));
+				log( Level.INFO, "Se han borrado todos los datos correctamente " , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al borrar datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, " Error al borrar datos de la BBDD" , ex );
 				ex.printStackTrace();						
 			}		
 		}	
@@ -874,8 +777,10 @@ public class BD {
 			}
 				
 				System.out.println(String.format("- Se ha guardado un nuevo cliente en la BBDD", resultadoguardar));
+				log( Level.INFO, "ConexiÃ³n de base de datos " , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al guardar un nuevo cliente en la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "* Error al guardar un nuevo cliente en la BBDD:" , ex );
 				ex.printStackTrace();	
 			}
 			
@@ -917,8 +822,12 @@ public class BD {
 					String apellido = resultado.getString("apellido");
 					busqueda_nombre = (nombre +" "+ apellido);
 				}
-		
-			} catch (Exception e) {
+				
+				
+			}
+			
+			catch (Exception e) {
+				
 					
 			}
 			return busqueda_nombre;	
@@ -943,6 +852,7 @@ public class BD {
 			
 				conexion.close();
 				System.out.println(String.format("- Se ha podido iniciar sesion correctamente", resultado));
+				
 			} catch (Exception e) {
 				System.err.println(String.format("* Error, no se puede iniciar sesion porque este Cliente no esta registrado", e.getMessage()));
 				e.printStackTrace();
@@ -979,9 +889,35 @@ public class BD {
 		
 		
 		}
-}			
+			
 		
-		//Cambiar ocupacion
+		//LOGGE
+
+
+	private void log( Level level, String msg, Throwable excepcion ) {
+		if (logger==null) {  // Logger por defecto local:
+			logger = Logger.getLogger( "BD-local" );  // Nombre del logger
+			logger.setLevel( Level.ALL );  // Loguea todos los niveles
+			try {
+				logger.addHandler( new FileHandler( "bd.log.xml", true ) );  // Y saca el log a fichero xml
+			} catch (Exception e) {
+				logger.log( Level.SEVERE, "No se pudo crear fichero de log", e );
+			}
+		}
+		if (excepcion==null)
+			logger.log( level, msg );
+		else
+			logger.log( level, msg, excepcion );
+	}
+	
+	/** Devuelve la informaciÃ³n de excepciÃ³n del Ãºltimo error producido por cualquiera 
+	 * de los mÃ©todos de gestiÃ³n de base de datos
+	 */
+	public Exception getLastError() {
+		return lastError;
+	}
 		
+
+}
 	
 	
