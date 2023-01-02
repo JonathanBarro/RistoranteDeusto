@@ -18,7 +18,7 @@ import Logica.RistoranteMain;
 import java.awt.BorderLayout;
 
 import javax.swing.JLabel;
-
+import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.JButton;
@@ -52,6 +52,9 @@ public class VentanaReservaInteriror extends JFrame {
 	private JLabel lblNombre;
 	private Reserva res;
 	private JFrame ventanaActual;
+	private JPanel panel_hora = new JPanel();
+	JComboBox<String> hora_comboBox = new JComboBox<String>();
+	boolean posiciones;
 
 	/**
 	 * Launch the application.
@@ -97,30 +100,19 @@ public class VentanaReservaInteriror extends JFrame {
 		contentPane.add(panel_Cent, BorderLayout.CENTER);
 		panel_Cent.setLayout(new BorderLayout(0, 0));
 		
-		JPanel panel_ComboCent = new JPanel();
-		panel_ComboCent.setBackground(new Color(231, 237, 236));
-		panel_Cent.add(panel_ComboCent, BorderLayout.NORTH);
-		
-		JLabel jLNumeroPersonas = new JLabel("Pulse en el boton para ver la mesas libres:");
-		panel_ComboCent.add(jLNumeroPersonas);
-		
-		JButton btnMesas = new JButton("Mesas");
-		btnMesas.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				VentanaMesasInterior window = new VentanaMesasInterior(res, ventanaActual);
-				window.setVisible(true);
-				ventanaActual.setVisible(false);
-				
-			}
-		});
-		btnMesas.setBackground(new Color(255, 128, 64));
-		panel_ComboCent.add(btnMesas);
 		
 		
-		JPanel panel_JCalendar = new JPanel();
-		panel_JCalendar.setBackground(new Color(128, 255, 128));
-		panel_Cent.add(panel_JCalendar, BorderLayout.CENTER);
 		
+		//Calendario-------------------------------------------------------
+		
+		
+		
+		
+		JPanel panel_Calendar = new JPanel();
+		panel_Calendar.setBackground(new Color(231, 237, 236));
+		panel_Cent.add(panel_Calendar, BorderLayout.NORTH);
+		
+		hora_comboBox.setEnabled(false);
 		Date fechaActual = new Date(System.currentTimeMillis());
 		SimpleDateFormat sdfAnio = new SimpleDateFormat("yyyy");
 		String anio = sdfAnio.format(fechaActual);
@@ -132,21 +124,95 @@ public class VentanaReservaInteriror extends JFrame {
 		} catch (ParseException e1) {
 			ultimaFecha = fechaActual;
 		}
-		panel_JCalendar.setLayout(null);
-
+		
+		JLabel lblCalen = new JLabel("Seleccione el dia de reserva:");
+		panel_Calendar.add(lblCalen);
 		calen = new JDateChooser();
-		calen.setBounds(141, 35, 100, 25);
+		panel_Calendar.add(calen);
 		calen.setMinSelectableDate(fechaActual);
 		calen.setMaxSelectableDate(ultimaFecha);
-		panel_JCalendar.add(calen);
 		calen.setPreferredSize(new Dimension(100,25));
 		calen.setDateFormatString("dd-MMMM");
 		
-		JLabel lblCalen = new JLabel("Seleccione el dia de reserva:");
-		lblCalen.setBounds(117, 10, 215, 14);
-		panel_JCalendar.add(lblCalen);
 		
-	
+
+		
+		
+		
+		//HORA-----------------------------------
+		hora_comboBox.setEnabled(true);
+		
+		panel_hora.setBackground(new Color(255, 255, 128));
+		panel_Cent.add(panel_hora, BorderLayout.WEST);
+		
+		JLabel lblNewLabel = new JLabel("Hora:");
+		panel_hora.add(lblNewLabel);
+		
+
+		
+		
+		
+		panel_hora.add(hora_comboBox);
+		
+		
+		 String hora;
+		 ArrayList<String> horas = new ArrayList<>();
+		 horas.add("14:00");
+		 horas.add("15:00");
+		 horas.add("16:00");
+		 horas.add("20:00");
+		 horas.add("21:00");
+		 horas.add("22:00");
+		 
+		 try {
+			 for(int i = 0; i<horas.size(); i++){
+                 hora = horas.get(i);
+                 hora_comboBox.addItem(hora);
+			 }
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		 
+		//Mesas----------------------------------------------------------------------
+		 
+		
+		JPanel panel_Mesas = new JPanel();
+		panel_Mesas.setBackground(new Color(128, 255, 128));
+		panel_Cent.add(panel_Mesas, BorderLayout.CENTER);
+		
+		panel_Mesas.setLayout(null);
+		
+		JLabel jLNumeroPersonas = new JLabel("Pulse en el boton para ver la mesas libres:");
+		jLNumeroPersonas.setBounds(48, 25, 259, 14);
+		panel_Mesas.add(jLNumeroPersonas);
+		
+		JButton btnMesas = new JButton("Mesas");
+		btnMesas.setBounds(105, 50, 86, 23);
+		panel_Mesas.add(btnMesas);
+		btnMesas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				VentanaMesasInterior window = new VentanaMesasInterior(res, ventanaActual);
+				window.setVisible(true);
+				ventanaActual.setVisible(false);
+				btnMesas.setEnabled(false);
+				jLNumeroPersonas.setVisible(false);
+				
+				
+			}
+		});
+		btnMesas.setBackground(new Color(255, 128, 64));
+		
+		
+		
+		
+		
+
+		
+		
+
+		
 		
 	
 		
@@ -154,7 +220,13 @@ public class VentanaReservaInteriror extends JFrame {
 		btnConfirm.setFont(new Font("MV Boli", Font.PLAIN, 11));
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+			
+				
+				int resp = JOptionPane.showConfirmDialog(null, "Tras confirmar la reserva no se podra volver atras para cambiarla\n"+"¿Esta seguro?",//<- EL MENSAJE
+			            "Alerta!"/*<- El título de la ventana*/, JOptionPane.YES_NO_OPTION/*Las opciones (si o no)*/, JOptionPane.WARNING_MESSAGE/*El tipo de ventana, en este caso WARNING*/);
 					
+				if(resp==0) {
 					List<Reserva> reservas = new ArrayList <Reserva>();
 					
 					reservas = RistoranteMain.bd.obtenerDatosReservas();
@@ -165,6 +237,8 @@ public class VentanaReservaInteriror extends JFrame {
 					String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
 					String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
 					res.setFecha(dia+"-"+mes);
+					String horass = (String) hora_comboBox.getSelectedItem();
+					res.setHora(horass);
 					System.out.println( res.toString());
 					 
 					reservas.add(res);
@@ -172,6 +246,9 @@ public class VentanaReservaInteriror extends JFrame {
 					
 					window.setVisible(true);
 					ventanaActual.setVisible(false);
+				}else {
+					ventanaActual.setVisible(true);
+				}
 				
 				
 			}
@@ -179,8 +256,7 @@ public class VentanaReservaInteriror extends JFrame {
 		panel_Sur.add(btnConfirm);
 		
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(128, 255, 128));
-		panel_Cent.add(panel, BorderLayout.WEST);
+
+		//hora_comboBox.addI
 	}
 }

@@ -2,6 +2,7 @@ package Ventanas;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 import BD.BD;
@@ -37,6 +39,8 @@ public class VentanaMesasInterior extends JFrame {
 	private JLabel lblNombre;
 	private Reserva res;
 	private JFrame ventanaAnterior;
+	private int mouseRow = -1;
+	private int mouseCol = -1;
 	/**
 	 * Launch the application.
 	 */
@@ -103,16 +107,28 @@ public class VentanaMesasInterior extends JFrame {
 		btnMesa = new JButton("Seleccione Mesa");
 		btnMesa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				int resp = JOptionPane.showConfirmDialog(null, "Tras confirmar la mesa no se podrá volver a esta ventana\n"+"¿Esta seguro?",//<- EL MENSAJE
+			            "Alerta!"/*<- El título de la ventana*/, JOptionPane.YES_NO_OPTION/*Las opciones (si o no)*/, JOptionPane.WARNING_MESSAGE/*El tipo de ventana, en este caso WARNING*/);
+				
+				if(resp == 0) {
 				ArrayList<Mesa> aMesa = new ArrayList<>();
 				Mesa mes = new Mesa((String)modelo.getValueAt(tabla.getSelectedRow(), 0) , Integer.valueOf((String) modelo.getValueAt(tabla.getSelectedRow(), 1)) , Boolean.valueOf((String) modelo.getValueAt(tabla.getSelectedRow(), 2)), Integer.valueOf((String) modelo.getValueAt(tabla.getSelectedRow(), 3)));
 				aMesa.add(mes);
 				res.setaMesa(aMesa);
 				res.setNumPersonas(mes.getNumPersonas());
-				modelo.removeRow(tabla.getSelectedRow());
+				
 				RistoranteMain.bd.borrarMesa(mes.getIdMesa());
 				JOptionPane.showMessageDialog(null,"Mesa seleccionada correctamente");
+				ventanaAnterior.setVisible(true);
+				dispose();
+				}else {
+					VentanaMesasInterior vI = new VentanaMesasInterior(res, va);
+					vI.setVisible(true);
+				}
 				
 			}
+			
+			
 
 			private void removeRow(int selectedRow) {
 				// TODO Auto-generated method stub
@@ -127,6 +143,32 @@ public class VentanaMesasInterior extends JFrame {
 
 		pSur.add(btnMesa);
 		
+		
+		tabla.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+		
+		@Override
+		public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,
+				int row, int column) {
+			Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+			//Empieza el cambio
+			String categoria = (String)modelo.getValueAt(row,2);
+			if(row %2 ==0) {
+				c.setBackground(new Color(224, 224, 224));
+			}else {
+				c.setBackground(Color.WHITE);
+			}
+			if (isSelected) {
+				c.setBackground(table.getSelectionBackground());
+				c.setForeground(table.getSelectionForeground());
+			}
+			
+	
+			//Acaba el cambio
+			return c;
+		}
+	});
+	
+			
 		pNorte = new JPanel();
 		pNorte.setBackground(new Color(255, 128, 64));
 		pNorte.setForeground(new Color(255, 128, 64));

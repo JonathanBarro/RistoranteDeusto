@@ -70,7 +70,7 @@ public class EleccionInteriorExterior extends JFrame{
 				dispose();
 			}
 		});
-		btnInterior.setBounds(165, 45, 89, 23);
+		btnInterior.setBounds(99, 75, 89, 23);
 		panelCent.add(btnInterior);
 		
 		JButton btnExteriror = new JButton("Exteriror");
@@ -82,8 +82,12 @@ public class EleccionInteriorExterior extends JFrame{
 				dispose();
 			}
 		});
-		btnExteriror.setBounds(165, 117, 89, 23);
+		btnExteriror.setBounds(223, 75, 89, 23);
 		panelCent.add(btnExteriror);
+		
+		JLabel lblNewLabel_1 = new JLabel("Seleccione donde quiere comer:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_1.setBounds(118, 35, 194, 14);
+		panelCent.add(lblNewLabel_1);
 	}
-
 }

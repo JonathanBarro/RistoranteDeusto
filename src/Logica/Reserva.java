@@ -12,6 +12,7 @@ public class Reserva {
 	private ArrayList<Mesa> aMesa;
 	private ArrayList<Menu> aMenu;
 	private Cliente cliente;
+	private String hora;
 	
 	
 	public Reserva() {
@@ -30,11 +31,12 @@ public class Reserva {
 		this.aMenu = aMenu;
 		this.cliente = cliente;
 	}
-	public Reserva(String fecha, int numPersonas, int idReserva) {
+	public Reserva(String fecha, int numPersonas, int idReserva, String hora) {
 		super();
 		this.fecha = fecha;
 		this.numPersonas = numPersonas;
 		this.idReserva = idReserva;
+		this.hora = hora;
 		this.aMenu = new ArrayList<>();
 		this.aMesa = new ArrayList<>();
 	}
@@ -86,10 +88,20 @@ public class Reserva {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+	
+	
+
+	public String getHora() {
+		return hora;
+	}
+
+	public void setHora(String hora) {
+		this.hora = hora;
+	}
 
 	@Override
 	public String toString() {
-		return "Reserva [fecha=" + fecha + ", numPersonas=" + numPersonas + ", idReserva=" + idReserva + "]";
+		return "Reserva [fecha=" + fecha + ", numPersonas=" + numPersonas + ", idReserva=" + idReserva + ", hora= "+ hora +"]";
 	}
 	
 	public String toString1() {
