@@ -16,12 +16,18 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.DefaultTableModel;
 
 import BD.BD;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -143,6 +149,47 @@ public class VentanaStock extends JFrame{
 			}
 		});
 		
+
+
+	
+		tablaComida.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+	
+	@Override
+	public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,
+				int row, int column) {
+		Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+		//Empieza el cambio
+		int stock = Integer.parseInt((String) modelo.getValueAt(row, 3));
+		
+		if (stock<=2) {
+			c.setBackground(Color.RED);
+		} else {
+			c.setBackground(Color.GREEN);
+		}
+		//Si la celda estÃ¡ seleccionada se asocia un color de fondo y letra
+
+	
+		return c;
+	}
+	});
+
+//	modelo.addTableModelListener(new TableModelListener() {
+//		
+//		@Override
+//		public void tableChanged(TableModelEvent e) {
+//			// TODO Auto-generated method stub
+//			if(e.getType() == TableModelEvent.UPDATE) {
+//				modelo.get
+//				modelo.setValueAt(Nuevoprecio, tablaComida.getSelectedRow(), 2);
+//				
+//				bd.cambiarPrecioComida(Integer.parseInt((String)modelo.getValueAt(tablaComida.getSelectedRow(),1)), Integer.parseInt(Nuevoprecio));
+//				System.out.println("cambio de precio");
+//				
+//			}
+//		}
+//	});
+//		
+		
 		tablaComida.addMouseListener(new MouseListener() {
 			
 			@Override
@@ -202,6 +249,7 @@ public class VentanaStock extends JFrame{
 			}
 		
 		});
+		
 	}
 }
 

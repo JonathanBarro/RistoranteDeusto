@@ -254,7 +254,7 @@ public class BD {
 							numP--;
 							Menu me = r.getaMenu().get(i);
 //							numM++;
-							String sql = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva, idMesa, idMenu, hora) VALUES ('%s', %d, %d, '%s','%s','%s');";
+							String sql = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva, idMesa, idMenu, hora) VALUES ('%s', %d, %d, '%s',%d,'%s');";
 							System.out.println("- Insertando reservas...");	
 							
 							if (1 == stmt.executeUpdate(String.format(sql, r.getFecha(), r.getNumPersonas(),r.getIdReserva(),m.getIdMesa(),me.getId(), r.getHora()))) {					

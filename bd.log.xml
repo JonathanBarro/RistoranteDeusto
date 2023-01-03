@@ -2237,3 +2237,4482 @@
   <thread>1</thread>
   <message>Se han recuperado Menu_EntreSemana... </message>
 </record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-02T17:10:00.572738800Z</date>
+  <millis>1672679400572</millis>
+  <nanos>738800</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:10:00.926062Z</date>
+  <millis>1672679400926</millis>
+  <nanos>62000</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-02T17:10:00.933252500Z</date>
+  <millis>1672679400933</millis>
+  <nanos>252500</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-02T17:10:00.936247900Z</date>
+  <millis>1672679400936</millis>
+  <nanos>247900</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:10:01.371576200Z</date>
+  <millis>1672679401371</millis>
+  <nanos>576200</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-02T17:10:01.445387200Z</date>
+  <millis>1672679401445</millis>
+  <nanos>387200</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-02T17:10:01.450365200Z</date>
+  <millis>1672679401450</millis>
+  <nanos>365200</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-02T17:10:01.454356200Z</date>
+  <millis>1672679401454</millis>
+  <nanos>356200</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-02T17:10:01.458354500Z</date>
+  <millis>1672679401458</millis>
+  <nanos>354500</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-02T17:10:01.462333200Z</date>
+  <millis>1672679401462</millis>
+  <nanos>333200</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-02T17:10:06.436101200Z</date>
+  <millis>1672679406436</millis>
+  <nanos>101200</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:10:13.851745800Z</date>
+  <millis>1672679413851</millis>
+  <nanos>745800</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:10:32.520204600Z</date>
+  <millis>1672679432520</millis>
+  <nanos>204600</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-02T17:10:39.335906600Z</date>
+  <millis>1672679439335</millis>
+  <nanos>906600</nanos>
+  <sequence>13</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>- Se ha borrado %d mesa</message>
+</record>
+<record>
+  <date>2023-01-02T17:10:55.438719900Z</date>
+  <millis>1672679455438</millis>
+  <nanos>719900</nanos>
+  <sequence>14</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-02T17:10:55.449696200Z</date>
+  <millis>1672679455449</millis>
+  <nanos>696200</nanos>
+  <sequence>15</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-02T17:10:55.451684400Z</date>
+  <millis>1672679455451</millis>
+  <nanos>684400</nanos>
+  <sequence>16</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-02T17:10:55.455674500Z</date>
+  <millis>1672679455455</millis>
+  <nanos>674500</nanos>
+  <sequence>17</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-02T17:10:55.459665600Z</date>
+  <millis>1672679455459</millis>
+  <nanos>665600</nanos>
+  <sequence>18</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-02T17:10:55.462654800Z</date>
+  <millis>1672679455462</millis>
+  <nanos>654800</nanos>
+  <sequence>19</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-02T17:11:19.414690200Z</date>
+  <millis>1672679479414</millis>
+  <nanos>690200</nanos>
+  <sequence>20</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:11:28.398730400Z</date>
+  <millis>1672679488398</millis>
+  <nanos>730400</nanos>
+  <sequence>21</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-02T17:11:28.402719200Z</date>
+  <millis>1672679488402</millis>
+  <nanos>719200</nanos>
+  <sequence>22</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-02T17:11:34.251682300Z</date>
+  <millis>1672679494251</millis>
+  <nanos>682300</nanos>
+  <sequence>23</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Error al insertar datos de la BBDD:  </message>
+  <exception>
+    <message>java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1</message>
+    <frame>
+      <class>jdk.internal.util.Preconditions</class>
+      <method>outOfBounds</method>
+      <line>64</line>
+    </frame>
+    <frame>
+      <class>jdk.internal.util.Preconditions</class>
+      <method>outOfBoundsCheckIndex</method>
+      <line>70</line>
+    </frame>
+    <frame>
+      <class>jdk.internal.util.Preconditions</class>
+      <method>checkIndex</method>
+      <line>266</line>
+    </frame>
+    <frame>
+      <class>java.util.Objects</class>
+      <method>checkIndex</method>
+      <line>359</line>
+    </frame>
+    <frame>
+      <class>java.util.ArrayList</class>
+      <method>get</method>
+      <line>427</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>insertarDatosReserva</method>
+      <line>255</line>
+    </frame>
+    <frame>
+      <class>Ventanas.VentanaMenus$7</class>
+      <method>actionPerformed</method>
+      <line>260</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>1972</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2313</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>405</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>262</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>279</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6626</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3389</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6391</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2266</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>5001</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4948</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4575</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4516</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2310</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2780</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>773</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>722</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>716</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>744</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>743</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>203</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>109</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>90</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-02T17:11:34.259660600Z</date>
+  <millis>1672679494259</millis>
+  <nanos>660600</nanos>
+  <sequence>24</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:11:34.266642Z</date>
+  <millis>1672679494266</millis>
+  <nanos>642000</nanos>
+  <sequence>25</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-02T17:11:42.506519600Z</date>
+  <millis>1672679502506</millis>
+  <nanos>519600</nanos>
+  <sequence>26</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:11:42.514501500Z</date>
+  <millis>1672679502514</millis>
+  <nanos>501500</nanos>
+  <sequence>27</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-02T17:14:26.756927900Z</date>
+  <millis>1672679666756</millis>
+  <nanos>927900</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:14:27.095833600Z</date>
+  <millis>1672679667095</millis>
+  <nanos>833600</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-02T17:14:27.101627500Z</date>
+  <millis>1672679667101</millis>
+  <nanos>627500</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-02T17:14:27.103625200Z</date>
+  <millis>1672679667103</millis>
+  <nanos>625200</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:14:27.504454800Z</date>
+  <millis>1672679667504</millis>
+  <nanos>454800</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-02T17:14:27.572789Z</date>
+  <millis>1672679667572</millis>
+  <nanos>789000</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-02T17:14:27.576779200Z</date>
+  <millis>1672679667576</millis>
+  <nanos>779200</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-02T17:14:27.579771600Z</date>
+  <millis>1672679667579</millis>
+  <nanos>771600</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-02T17:14:27.582762700Z</date>
+  <millis>1672679667582</millis>
+  <nanos>762700</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-02T17:14:27.584757400Z</date>
+  <millis>1672679667584</millis>
+  <nanos>757400</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-02T17:14:35.204132200Z</date>
+  <millis>1672679675204</millis>
+  <nanos>132200</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:14:39.157387400Z</date>
+  <millis>1672679679157</millis>
+  <nanos>387400</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:14:48.294739800Z</date>
+  <millis>1672679688294</millis>
+  <nanos>739800</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-02T17:15:00.509786700Z</date>
+  <millis>1672679700509</millis>
+  <nanos>786700</nanos>
+  <sequence>13</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>- Se ha borrado %d mesa</message>
+</record>
+<record>
+  <date>2023-01-02T17:15:05.781153500Z</date>
+  <millis>1672679705781</millis>
+  <nanos>153500</nanos>
+  <sequence>14</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-02T17:15:05.796117Z</date>
+  <millis>1672679705796</millis>
+  <nanos>117000</nanos>
+  <sequence>15</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-02T17:15:05.799103600Z</date>
+  <millis>1672679705799</millis>
+  <nanos>103600</nanos>
+  <sequence>16</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-02T17:15:05.802094900Z</date>
+  <millis>1672679705802</millis>
+  <nanos>94900</nanos>
+  <sequence>17</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-02T17:15:05.806084200Z</date>
+  <millis>1672679705806</millis>
+  <nanos>84200</nanos>
+  <sequence>18</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-02T17:15:05.813076200Z</date>
+  <millis>1672679705813</millis>
+  <nanos>76200</nanos>
+  <sequence>19</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-02T17:15:41.867055500Z</date>
+  <millis>1672679741867</millis>
+  <nanos>55500</nanos>
+  <sequence>20</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-02T17:15:41.870048Z</date>
+  <millis>1672679741870</millis>
+  <nanos>48000</nanos>
+  <sequence>21</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-02T17:15:46.299180600Z</date>
+  <millis>1672679746299</millis>
+  <nanos>180600</nanos>
+  <sequence>22</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Error al insertar datos de la BBDD:  </message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (table Reserva has no column named id)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1030</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1042</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1007</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>102</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>insertarDatosReserva</method>
+      <line>260</line>
+    </frame>
+    <frame>
+      <class>Ventanas.VentanaMenus$7</class>
+      <method>actionPerformed</method>
+      <line>260</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>1972</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2313</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>405</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>262</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>279</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6626</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3389</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6391</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2266</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>5001</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4948</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4575</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4516</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2310</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2780</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>773</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>722</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>716</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>744</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>743</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>203</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>109</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>90</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-02T17:15:46.312146200Z</date>
+  <millis>1672679746312</millis>
+  <nanos>146200</nanos>
+  <sequence>23</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:15:46.319127Z</date>
+  <millis>1672679746319</millis>
+  <nanos>127000</nanos>
+  <sequence>24</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-02T17:15:54.478415100Z</date>
+  <millis>1672679754478</millis>
+  <nanos>415100</nanos>
+  <sequence>25</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:15:54.486397700Z</date>
+  <millis>1672679754486</millis>
+  <nanos>397700</nanos>
+  <sequence>26</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T11:50:04.603718200Z</date>
+  <millis>1672746604603</millis>
+  <nanos>718200</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:50:05.140966500Z</date>
+  <millis>1672746605140</millis>
+  <nanos>966500</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-03T11:50:05.152936200Z</date>
+  <millis>1672746605152</millis>
+  <nanos>936200</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-03T11:50:05.156926100Z</date>
+  <millis>1672746605156</millis>
+  <nanos>926100</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:50:07.141088800Z</date>
+  <millis>1672746607141</millis>
+  <nanos>88800</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-03T11:50:07.305649300Z</date>
+  <millis>1672746607305</millis>
+  <nanos>649300</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-03T11:50:07.331579600Z</date>
+  <millis>1672746607331</millis>
+  <nanos>579600</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:50:07.356513600Z</date>
+  <millis>1672746607356</millis>
+  <nanos>513600</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:50:07.371472900Z</date>
+  <millis>1672746607371</millis>
+  <nanos>472900</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T11:50:07.382444100Z</date>
+  <millis>1672746607382</millis>
+  <nanos>444100</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T11:50:16.525298700Z</date>
+  <millis>1672746616525</millis>
+  <nanos>298700</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:50:16.875730900Z</date>
+  <millis>1672746616875</millis>
+  <nanos>730900</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-03T11:50:16.882712200Z</date>
+  <millis>1672746616882</millis>
+  <nanos>712200</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-03T11:50:16.884709200Z</date>
+  <millis>1672746616884</millis>
+  <nanos>709200</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:50:17.322179200Z</date>
+  <millis>1672746617322</millis>
+  <nanos>179200</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-03T11:50:17.396986100Z</date>
+  <millis>1672746617396</millis>
+  <nanos>986100</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-03T11:50:17.401966600Z</date>
+  <millis>1672746617401</millis>
+  <nanos>966600</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:50:17.404958300Z</date>
+  <millis>1672746617404</millis>
+  <nanos>958300</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:50:17.407951600Z</date>
+  <millis>1672746617407</millis>
+  <nanos>951600</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T11:50:17.410944500Z</date>
+  <millis>1672746617410</millis>
+  <nanos>944500</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-03T11:50:30.357199900Z</date>
+  <millis>1672746630357</millis>
+  <nanos>199900</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:50:40.273383800Z</date>
+  <millis>1672746640273</millis>
+  <nanos>383800</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:50:58.974071100Z</date>
+  <millis>1672746658974</millis>
+  <nanos>71100</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:51:04.528156900Z</date>
+  <millis>1672746664528</millis>
+  <nanos>156900</nanos>
+  <sequence>13</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>- Se ha borrado %d mesa</message>
+</record>
+<record>
+  <date>2023-01-03T11:51:19.578325700Z</date>
+  <millis>1672746679578</millis>
+  <nanos>325700</nanos>
+  <sequence>14</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T11:51:19.600274500Z</date>
+  <millis>1672746679600</millis>
+  <nanos>274500</nanos>
+  <sequence>15</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:51:19.604256500Z</date>
+  <millis>1672746679604</millis>
+  <nanos>256500</nanos>
+  <sequence>16</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:51:19.607248600Z</date>
+  <millis>1672746679607</millis>
+  <nanos>248600</nanos>
+  <sequence>17</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:51:19.611237300Z</date>
+  <millis>1672746679611</millis>
+  <nanos>237300</nanos>
+  <sequence>18</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:51:19.614228800Z</date>
+  <millis>1672746679614</millis>
+  <nanos>228800</nanos>
+  <sequence>19</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-03T11:51:38.674081700Z</date>
+  <millis>1672746698674</millis>
+  <nanos>81700</nanos>
+  <sequence>20</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:51:38.677073700Z</date>
+  <millis>1672746698677</millis>
+  <nanos>73700</nanos>
+  <sequence>21</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:51:47.240044800Z</date>
+  <millis>1672746707240</millis>
+  <nanos>44800</nanos>
+  <sequence>22</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Error al insertar datos de la BBDD:  </message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (table Reserva has no column named id)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1030</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1042</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1007</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>102</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>insertarDatosReserva</method>
+      <line>260</line>
+    </frame>
+    <frame>
+      <class>Ventanas.VentanaMenus$7</class>
+      <method>actionPerformed</method>
+      <line>260</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>1972</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2313</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>405</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>262</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>279</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6626</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3389</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6391</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2266</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>5001</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4948</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4575</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4516</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2310</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2780</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>773</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>722</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>716</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>744</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>743</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>203</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>109</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>90</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-03T11:51:47.256001900Z</date>
+  <millis>1672746707256</millis>
+  <nanos>1900</nanos>
+  <sequence>23</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:51:47.261986Z</date>
+  <millis>1672746707261</millis>
+  <nanos>986000</nanos>
+  <sequence>24</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T11:53:42.052995200Z</date>
+  <millis>1672746822052</millis>
+  <nanos>995200</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:53:42.374850200Z</date>
+  <millis>1672746822374</millis>
+  <nanos>850200</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-03T11:53:42.382828400Z</date>
+  <millis>1672746822382</millis>
+  <nanos>828400</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-03T11:53:42.385821900Z</date>
+  <millis>1672746822385</millis>
+  <nanos>821900</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:53:42.840606400Z</date>
+  <millis>1672746822840</millis>
+  <nanos>606400</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-03T11:53:42.910418400Z</date>
+  <millis>1672746822910</millis>
+  <nanos>418400</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-03T11:53:42.913411200Z</date>
+  <millis>1672746822913</millis>
+  <nanos>411200</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:53:42.916402200Z</date>
+  <millis>1672746822916</millis>
+  <nanos>402200</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:53:42.922387900Z</date>
+  <millis>1672746822922</millis>
+  <nanos>387900</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T11:53:42.924381600Z</date>
+  <millis>1672746822924</millis>
+  <nanos>381600</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-03T11:53:51.118201600Z</date>
+  <millis>1672746831118</millis>
+  <nanos>201600</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:53:58.742407500Z</date>
+  <millis>1672746838742</millis>
+  <nanos>407500</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>* Error al guardar un nuevo cliente en la BBDD:</message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_CONSTRAINT_PRIMARYKEY]  A PRIMARY KEY constraint failed (UNIQUE constraint failed: Cliente.numTlf)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1030</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1042</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1007</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>102</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>guardarClientes</method>
+      <line>765</line>
+    </frame>
+    <frame>
+      <class>Ventanas.VentanaRegistro$1</class>
+      <method>actionPerformed</method>
+      <line>120</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>1972</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2313</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>405</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>262</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>279</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6626</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3389</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6391</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2266</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>5001</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4948</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4575</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4516</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2310</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2780</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>773</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>722</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>716</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>744</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>743</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>203</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>109</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>90</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T11:54:29.007786400Z</date>
+  <millis>1672746869007</millis>
+  <nanos>786400</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:54:29.549338600Z</date>
+  <millis>1672746869549</millis>
+  <nanos>338600</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-03T11:54:29.558314600Z</date>
+  <millis>1672746869558</millis>
+  <nanos>314600</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-03T11:54:29.565295900Z</date>
+  <millis>1672746869565</millis>
+  <nanos>295900</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:54:30.123802500Z</date>
+  <millis>1672746870123</millis>
+  <nanos>802500</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-03T11:54:30.203591900Z</date>
+  <millis>1672746870203</millis>
+  <nanos>591900</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-03T11:54:30.207579500Z</date>
+  <millis>1672746870207</millis>
+  <nanos>579500</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:54:30.210571700Z</date>
+  <millis>1672746870210</millis>
+  <nanos>571700</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:54:30.213563400Z</date>
+  <millis>1672746870213</millis>
+  <nanos>563400</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T11:54:30.218554900Z</date>
+  <millis>1672746870218</millis>
+  <nanos>554900</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-03T11:54:34.465706300Z</date>
+  <millis>1672746874465</millis>
+  <nanos>706300</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:54:39.538443500Z</date>
+  <millis>1672746879538</millis>
+  <nanos>443500</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:54:54.874384800Z</date>
+  <millis>1672746894874</millis>
+  <nanos>384800</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:54:57.574275900Z</date>
+  <millis>1672746897574</millis>
+  <nanos>275900</nanos>
+  <sequence>13</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>- Se ha borrado %d mesa</message>
+</record>
+<record>
+  <date>2023-01-03T11:55:05.988238800Z</date>
+  <millis>1672746905988</millis>
+  <nanos>238800</nanos>
+  <sequence>14</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T11:55:06.001203900Z</date>
+  <millis>1672746906001</millis>
+  <nanos>203900</nanos>
+  <sequence>15</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:55:06.003198200Z</date>
+  <millis>1672746906003</millis>
+  <nanos>198200</nanos>
+  <sequence>16</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:55:06.006190Z</date>
+  <millis>1672746906006</millis>
+  <nanos>190000</nanos>
+  <sequence>17</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:55:06.009182400Z</date>
+  <millis>1672746906009</millis>
+  <nanos>182400</nanos>
+  <sequence>18</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:55:06.012174700Z</date>
+  <millis>1672746906012</millis>
+  <nanos>174700</nanos>
+  <sequence>19</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-03T11:55:13.224047900Z</date>
+  <millis>1672746913224</millis>
+  <nanos>47900</nanos>
+  <sequence>20</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:55:13.227039100Z</date>
+  <millis>1672746913227</millis>
+  <nanos>39100</nanos>
+  <sequence>21</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:55:14.984472Z</date>
+  <millis>1672746914984</millis>
+  <nanos>472000</nanos>
+  <sequence>22</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:55:14.986513500Z</date>
+  <millis>1672746914986</millis>
+  <nanos>513500</nanos>
+  <sequence>23</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:55:19.553439100Z</date>
+  <millis>1672746919553</millis>
+  <nanos>439100</nanos>
+  <sequence>24</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:55:19.557389700Z</date>
+  <millis>1672746919557</millis>
+  <nanos>389700</nanos>
+  <sequence>25</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:55:22.307754400Z</date>
+  <millis>1672746922307</millis>
+  <nanos>754400</nanos>
+  <sequence>26</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Error al insertar datos de la BBDD:  </message>
+  <exception>
+    <message>java.lang.IndexOutOfBoundsException: Index 3 out of bounds for length 3</message>
+    <frame>
+      <class>jdk.internal.util.Preconditions</class>
+      <method>outOfBounds</method>
+      <line>64</line>
+    </frame>
+    <frame>
+      <class>jdk.internal.util.Preconditions</class>
+      <method>outOfBoundsCheckIndex</method>
+      <line>70</line>
+    </frame>
+    <frame>
+      <class>jdk.internal.util.Preconditions</class>
+      <method>checkIndex</method>
+      <line>266</line>
+    </frame>
+    <frame>
+      <class>java.util.Objects</class>
+      <method>checkIndex</method>
+      <line>359</line>
+    </frame>
+    <frame>
+      <class>java.util.ArrayList</class>
+      <method>get</method>
+      <line>427</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>insertarDatosReserva</method>
+      <line>255</line>
+    </frame>
+    <frame>
+      <class>Ventanas.VentanaMenus$7</class>
+      <method>actionPerformed</method>
+      <line>260</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>1972</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2313</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>405</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>262</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>279</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6626</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3389</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6391</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2266</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>5001</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4948</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4575</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4516</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2310</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2780</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>773</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>722</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>716</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>744</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>743</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>203</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>109</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>90</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-03T11:55:22.314735800Z</date>
+  <millis>1672746922314</millis>
+  <nanos>735800</nanos>
+  <sequence>27</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:55:22.320719700Z</date>
+  <millis>1672746922320</millis>
+  <nanos>719700</nanos>
+  <sequence>28</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T11:55:58.161653100Z</date>
+  <millis>1672746958161</millis>
+  <nanos>653100</nanos>
+  <sequence>29</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:55:58.165643200Z</date>
+  <millis>1672746958165</millis>
+  <nanos>643200</nanos>
+  <sequence>30</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:55:59.534431200Z</date>
+  <millis>1672746959534</millis>
+  <nanos>431200</nanos>
+  <sequence>31</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:55:59.537419800Z</date>
+  <millis>1672746959537</millis>
+  <nanos>419800</nanos>
+  <sequence>32</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:56:00.946112600Z</date>
+  <millis>1672746960946</millis>
+  <nanos>112600</nanos>
+  <sequence>33</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:56:00.951062300Z</date>
+  <millis>1672746960951</millis>
+  <nanos>62300</nanos>
+  <sequence>34</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:56:01.632054Z</date>
+  <millis>1672746961632</millis>
+  <nanos>54000</nanos>
+  <sequence>35</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:56:01.636042200Z</date>
+  <millis>1672746961636</millis>
+  <nanos>42200</nanos>
+  <sequence>36</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:56:03.214393400Z</date>
+  <millis>1672746963214</millis>
+  <nanos>393400</nanos>
+  <sequence>37</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Reservas insertadas </message>
+</record>
+<record>
+  <date>2023-01-03T11:56:03.220376700Z</date>
+  <millis>1672746963220</millis>
+  <nanos>376700</nanos>
+  <sequence>38</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:56:03.225363800Z</date>
+  <millis>1672746963225</millis>
+  <nanos>363800</nanos>
+  <sequence>39</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T11:56:08.580228600Z</date>
+  <millis>1672746968580</millis>
+  <nanos>228600</nanos>
+  <sequence>40</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:56:08.587209600Z</date>
+  <millis>1672746968587</millis>
+  <nanos>209600</nanos>
+  <sequence>41</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T11:59:45.018999800Z</date>
+  <millis>1672747185018</millis>
+  <nanos>999800</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:59:45.343904700Z</date>
+  <millis>1672747185343</millis>
+  <nanos>904700</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-03T11:59:45.349768900Z</date>
+  <millis>1672747185349</millis>
+  <nanos>768900</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-03T11:59:45.352768Z</date>
+  <millis>1672747185352</millis>
+  <nanos>768000</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:59:45.737033500Z</date>
+  <millis>1672747185737</millis>
+  <nanos>33500</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-03T11:59:45.806844200Z</date>
+  <millis>1672747185806</millis>
+  <nanos>844200</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-03T11:59:45.809836700Z</date>
+  <millis>1672747185809</millis>
+  <nanos>836700</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:59:45.813831800Z</date>
+  <millis>1672747185813</millis>
+  <nanos>831800</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:59:45.818812800Z</date>
+  <millis>1672747185818</millis>
+  <nanos>812800</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T11:59:45.821804600Z</date>
+  <millis>1672747185821</millis>
+  <nanos>804600</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-03T12:00:13.182694900Z</date>
+  <millis>1672747213182</millis>
+  <nanos>694900</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:00:13.187644500Z</date>
+  <millis>1672747213187</millis>
+  <nanos>644500</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T12:00:36.471519500Z</date>
+  <millis>1672747236471</millis>
+  <nanos>519500</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Error al insertar datos de la BBDD: </message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_CONSTRAINT_PRIMARYKEY]  A PRIMARY KEY constraint failed (UNIQUE constraint failed: Comida.id)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1030</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1042</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1007</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>102</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>insertarNuevaComida</method>
+      <line>232</line>
+    </frame>
+    <frame>
+      <class>Ventanas.VentanaStock$2</class>
+      <method>actionPerformed</method>
+      <line>142</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>1972</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2313</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>405</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>262</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>279</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6626</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3389</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6391</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2266</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>5001</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4948</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4575</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4516</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2310</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2780</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>773</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>722</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>716</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>744</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>743</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>203</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>109</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>90</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T12:12:17.314127300Z</date>
+  <millis>1672747937314</millis>
+  <nanos>127300</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:12:17.660316900Z</date>
+  <millis>1672747937660</millis>
+  <nanos>316900</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-03T12:12:17.667298400Z</date>
+  <millis>1672747937667</millis>
+  <nanos>298400</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-03T12:12:17.669293500Z</date>
+  <millis>1672747937669</millis>
+  <nanos>293500</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:12:18.119326Z</date>
+  <millis>1672747938119</millis>
+  <nanos>326000</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-03T12:12:18.189142400Z</date>
+  <millis>1672747938189</millis>
+  <nanos>142400</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-03T12:12:18.192133600Z</date>
+  <millis>1672747938192</millis>
+  <nanos>133600</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T12:12:18.195124600Z</date>
+  <millis>1672747938195</millis>
+  <nanos>124600</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T12:12:18.198115300Z</date>
+  <millis>1672747938198</millis>
+  <nanos>115300</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T12:12:18.201108400Z</date>
+  <millis>1672747938201</millis>
+  <nanos>108400</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-03T12:12:29.356947400Z</date>
+  <millis>1672747949356</millis>
+  <nanos>947400</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:12:29.361934800Z</date>
+  <millis>1672747949361</millis>
+  <nanos>934800</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T12:13:12.004903700Z</date>
+  <millis>1672747992004</millis>
+  <nanos>903700</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:13:12.344497700Z</date>
+  <millis>1672747992344</millis>
+  <nanos>497700</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-03T12:13:12.352476200Z</date>
+  <millis>1672747992352</millis>
+  <nanos>476200</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-03T12:13:12.354471600Z</date>
+  <millis>1672747992354</millis>
+  <nanos>471600</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:13:12.797286900Z</date>
+  <millis>1672747992797</millis>
+  <nanos>286900</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-03T12:13:12.867101200Z</date>
+  <millis>1672747992867</millis>
+  <nanos>101200</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-03T12:13:12.871090600Z</date>
+  <millis>1672747992871</millis>
+  <nanos>90600</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T12:13:12.874082300Z</date>
+  <millis>1672747992874</millis>
+  <nanos>82300</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T12:13:12.877075Z</date>
+  <millis>1672747992877</millis>
+  <nanos>75000</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T12:13:12.880066900Z</date>
+  <millis>1672747992880</millis>
+  <nanos>66900</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-03T12:13:25.430617400Z</date>
+  <millis>1672748005430</millis>
+  <nanos>617400</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:13:25.434604900Z</date>
+  <millis>1672748005434</millis>
+  <nanos>604900</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T12:13:53.549354700Z</date>
+  <millis>1672748033549</millis>
+  <nanos>354700</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Comida insertada</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T12:16:31.053574400Z</date>
+  <millis>1672748191053</millis>
+  <nanos>574400</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:16:31.483826700Z</date>
+  <millis>1672748191483</millis>
+  <nanos>826700</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-03T12:16:31.490769500Z</date>
+  <millis>1672748191490</millis>
+  <nanos>769500</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-03T12:16:31.492764600Z</date>
+  <millis>1672748191492</millis>
+  <nanos>764600</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:16:32.002402900Z</date>
+  <millis>1672748192002</millis>
+  <nanos>402900</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-03T12:16:32.067228600Z</date>
+  <millis>1672748192067</millis>
+  <nanos>228600</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-03T12:16:32.072225900Z</date>
+  <millis>1672748192072</millis>
+  <nanos>225900</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T12:16:32.075208400Z</date>
+  <millis>1672748192075</millis>
+  <nanos>208400</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T12:16:32.078200900Z</date>
+  <millis>1672748192078</millis>
+  <nanos>200900</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T12:16:32.081192100Z</date>
+  <millis>1672748192081</millis>
+  <nanos>192100</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-03T12:16:43.755598700Z</date>
+  <millis>1672748203755</millis>
+  <nanos>598700</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:16:43.759589300Z</date>
+  <millis>1672748203759</millis>
+  <nanos>589300</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T12:21:55.308724900Z</date>
+  <millis>1672748515308</millis>
+  <nanos>724900</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:21:55.650783500Z</date>
+  <millis>1672748515650</millis>
+  <nanos>783500</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-03T12:21:55.657421800Z</date>
+  <millis>1672748515657</millis>
+  <nanos>421800</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-03T12:21:55.660421200Z</date>
+  <millis>1672748515660</millis>
+  <nanos>421200</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:21:56.044561400Z</date>
+  <millis>1672748516044</millis>
+  <nanos>561400</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-03T12:21:56.109388300Z</date>
+  <millis>1672748516109</millis>
+  <nanos>388300</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-03T12:21:56.112381200Z</date>
+  <millis>1672748516112</millis>
+  <nanos>381200</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T12:21:56.115374700Z</date>
+  <millis>1672748516115</millis>
+  <nanos>374700</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T12:21:56.119368700Z</date>
+  <millis>1672748516119</millis>
+  <nanos>368700</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T12:21:56.122356600Z</date>
+  <millis>1672748516122</millis>
+  <nanos>356600</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-03T12:22:07.668283600Z</date>
+  <millis>1672748527668</millis>
+  <nanos>283600</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:22:07.673270900Z</date>
+  <millis>1672748527673</millis>
+  <nanos>270900</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T12:22:31.848905400Z</date>
+  <millis>1672748551848</millis>
+  <nanos>905400</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Error al insertar datos de la BBDD: </message>
+  <exception>
+    <message>org.sqlite.SQLiteException: [SQLITE_CONSTRAINT_PRIMARYKEY]  A PRIMARY KEY constraint failed (UNIQUE constraint failed: Comida.id)</message>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1030</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>newSQLException</method>
+      <line>1042</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.DB</class>
+      <method>throwex</method>
+      <line>1007</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec_utf8</method>
+    </frame>
+    <frame>
+      <class>org.sqlite.core.NativeDB</class>
+      <method>_exec</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>org.sqlite.jdbc3.JDBC3Statement</class>
+      <method>executeUpdate</method>
+      <line>102</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>insertarNuevaComida</method>
+      <line>232</line>
+    </frame>
+    <frame>
+      <class>Ventanas.VentanaStock$2</class>
+      <method>actionPerformed</method>
+      <line>146</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>1972</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2313</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>405</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>262</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>279</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6626</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3389</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6391</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2266</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>5001</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4948</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4575</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4516</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2310</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2780</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>773</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>722</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>716</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>744</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>743</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>203</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>109</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>90</line>
+    </frame>
+  </exception>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T12:28:43.849185600Z</date>
+  <millis>1672748923849</millis>
+  <nanos>185600</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:28:44.207826700Z</date>
+  <millis>1672748924207</millis>
+  <nanos>826700</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-03T12:28:44.212831500Z</date>
+  <millis>1672748924212</millis>
+  <nanos>831500</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-03T12:28:44.214834900Z</date>
+  <millis>1672748924214</millis>
+  <nanos>834900</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:28:44.643613800Z</date>
+  <millis>1672748924643</millis>
+  <nanos>613800</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-03T12:28:44.706443600Z</date>
+  <millis>1672748924706</millis>
+  <nanos>443600</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-03T12:28:44.710437100Z</date>
+  <millis>1672748924710</millis>
+  <nanos>437100</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T12:28:44.715419600Z</date>
+  <millis>1672748924715</millis>
+  <nanos>419600</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T12:28:44.718413800Z</date>
+  <millis>1672748924718</millis>
+  <nanos>413800</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T12:28:44.720407700Z</date>
+  <millis>1672748924720</millis>
+  <nanos>407700</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-03T12:28:58.576790800Z</date>
+  <millis>1672748938576</millis>
+  <nanos>790800</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:28:58.582771400Z</date>
+  <millis>1672748938582</millis>
+  <nanos>771400</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T12:29:28.537524700Z</date>
+  <millis>1672748968537</millis>
+  <nanos>524700</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:29:28.850360400Z</date>
+  <millis>1672748968850</millis>
+  <nanos>360400</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-03T12:29:28.856918Z</date>
+  <millis>1672748968856</millis>
+  <nanos>918000</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-03T12:29:28.859911300Z</date>
+  <millis>1672748968859</millis>
+  <nanos>911300</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:29:29.291756800Z</date>
+  <millis>1672748969291</millis>
+  <nanos>756800</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-03T12:29:29.354589100Z</date>
+  <millis>1672748969354</millis>
+  <nanos>589100</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-03T12:29:29.359592700Z</date>
+  <millis>1672748969359</millis>
+  <nanos>592700</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T12:29:29.362568100Z</date>
+  <millis>1672748969362</millis>
+  <nanos>568100</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T12:29:29.364563300Z</date>
+  <millis>1672748969364</millis>
+  <nanos>563300</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T12:29:29.367555200Z</date>
+  <millis>1672748969367</millis>
+  <nanos>555200</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-03T12:29:39.591123400Z</date>
+  <millis>1672748979591</millis>
+  <nanos>123400</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:29:39.597106900Z</date>
+  <millis>1672748979597</millis>
+  <nanos>106900</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T12:29:58.472304300Z</date>
+  <millis>1672748998472</millis>
+  <nanos>304300</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:29:58.861405200Z</date>
+  <millis>1672748998861</millis>
+  <nanos>405200</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-03T12:29:58.868850Z</date>
+  <millis>1672748998868</millis>
+  <nanos>850000</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-03T12:29:58.870843600Z</date>
+  <millis>1672748998870</millis>
+  <nanos>843600</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:29:59.374501300Z</date>
+  <millis>1672748999374</millis>
+  <nanos>501300</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-03T12:29:59.446305200Z</date>
+  <millis>1672748999446</millis>
+  <nanos>305200</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-03T12:29:59.449302Z</date>
+  <millis>1672748999449</millis>
+  <nanos>302000</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T12:29:59.452289Z</date>
+  <millis>1672748999452</millis>
+  <nanos>289000</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-03T12:29:59.456278300Z</date>
+  <millis>1672748999456</millis>
+  <nanos>278300</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T12:29:59.460272900Z</date>
+  <millis>1672748999460</millis>
+  <nanos>272900</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-03T12:30:08.303561800Z</date>
+  <millis>1672749008303</millis>
+  <nanos>561800</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T12:30:08.310543400Z</date>
+  <millis>1672749008310</millis>
+  <nanos>543400</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>

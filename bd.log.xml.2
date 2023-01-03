@@ -865,3 +865,579 @@
     </frame>
   </exception>
 </record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-02T17:11:19.414690200Z</date>
+  <millis>1672679479414</millis>
+  <nanos>690200</nanos>
+  <sequence>20</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:11:28.398730400Z</date>
+  <millis>1672679488398</millis>
+  <nanos>730400</nanos>
+  <sequence>21</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-02T17:11:28.402719200Z</date>
+  <millis>1672679488402</millis>
+  <nanos>719200</nanos>
+  <sequence>22</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-02T17:11:34.251682300Z</date>
+  <millis>1672679494251</millis>
+  <nanos>682300</nanos>
+  <sequence>23</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Error al insertar datos de la BBDD:  </message>
+  <exception>
+    <message>java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1</message>
+    <frame>
+      <class>jdk.internal.util.Preconditions</class>
+      <method>outOfBounds</method>
+      <line>64</line>
+    </frame>
+    <frame>
+      <class>jdk.internal.util.Preconditions</class>
+      <method>outOfBoundsCheckIndex</method>
+      <line>70</line>
+    </frame>
+    <frame>
+      <class>jdk.internal.util.Preconditions</class>
+      <method>checkIndex</method>
+      <line>266</line>
+    </frame>
+    <frame>
+      <class>java.util.Objects</class>
+      <method>checkIndex</method>
+      <line>359</line>
+    </frame>
+    <frame>
+      <class>java.util.ArrayList</class>
+      <method>get</method>
+      <line>427</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>insertarDatosReserva</method>
+      <line>255</line>
+    </frame>
+    <frame>
+      <class>Ventanas.VentanaMenus$7</class>
+      <method>actionPerformed</method>
+      <line>260</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton</class>
+      <method>fireActionPerformed</method>
+      <line>1972</line>
+    </frame>
+    <frame>
+      <class>javax.swing.AbstractButton$Handler</class>
+      <method>actionPerformed</method>
+      <line>2313</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>fireActionPerformed</method>
+      <line>405</line>
+    </frame>
+    <frame>
+      <class>javax.swing.DefaultButtonModel</class>
+      <method>setPressed</method>
+      <line>262</line>
+    </frame>
+    <frame>
+      <class>javax.swing.plaf.basic.BasicButtonListener</class>
+      <method>mouseReleased</method>
+      <line>279</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processMouseEvent</method>
+      <line>6626</line>
+    </frame>
+    <frame>
+      <class>javax.swing.JComponent</class>
+      <method>processMouseEvent</method>
+      <line>3389</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>processEvent</method>
+      <line>6391</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>processEvent</method>
+      <line>2266</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEventImpl</method>
+      <line>5001</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2324</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>retargetMouseEvent</method>
+      <line>4948</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>processMouseEvent</method>
+      <line>4575</line>
+    </frame>
+    <frame>
+      <class>java.awt.LightweightDispatcher</class>
+      <method>dispatchEvent</method>
+      <line>4516</line>
+    </frame>
+    <frame>
+      <class>java.awt.Container</class>
+      <method>dispatchEventImpl</method>
+      <line>2310</line>
+    </frame>
+    <frame>
+      <class>java.awt.Window</class>
+      <method>dispatchEventImpl</method>
+      <line>2780</line>
+    </frame>
+    <frame>
+      <class>java.awt.Component</class>
+      <method>dispatchEvent</method>
+      <line>4833</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEventImpl</method>
+      <line>773</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>722</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$4</class>
+      <method>run</method>
+      <line>716</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>97</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>746</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue$5</class>
+      <method>run</method>
+      <line>744</line>
+    </frame>
+    <frame>
+      <class>java.security.AccessController</class>
+      <method>doPrivileged</method>
+      <line>399</line>
+    </frame>
+    <frame>
+      <class>java.security.ProtectionDomain$JavaSecurityAccessImpl</class>
+      <method>doIntersectionPrivilege</method>
+      <line>86</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventQueue</class>
+      <method>dispatchEvent</method>
+      <line>743</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpOneEventForFilters</method>
+      <line>203</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForFilter</method>
+      <line>124</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEventsForHierarchy</method>
+      <line>113</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>109</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>pumpEvents</method>
+      <line>101</line>
+    </frame>
+    <frame>
+      <class>java.awt.EventDispatchThread</class>
+      <method>run</method>
+      <line>90</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-02T17:11:34.259660600Z</date>
+  <millis>1672679494259</millis>
+  <nanos>660600</nanos>
+  <sequence>24</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:11:34.266642Z</date>
+  <millis>1672679494266</millis>
+  <nanos>642000</nanos>
+  <sequence>25</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-02T17:11:42.506519600Z</date>
+  <millis>1672679502506</millis>
+  <nanos>519600</nanos>
+  <sequence>26</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:11:42.514501500Z</date>
+  <millis>1672679502514</millis>
+  <nanos>501500</nanos>
+  <sequence>27</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-02T17:15:46.312146200Z</date>
+  <millis>1672679746312</millis>
+  <nanos>146200</nanos>
+  <sequence>23</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:15:46.319127Z</date>
+  <millis>1672679746319</millis>
+  <nanos>127000</nanos>
+  <sequence>24</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-02T17:15:54.478415100Z</date>
+  <millis>1672679754478</millis>
+  <nanos>415100</nanos>
+  <sequence>25</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-02T17:15:54.486397700Z</date>
+  <millis>1672679754486</millis>
+  <nanos>397700</nanos>
+  <sequence>26</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T11:51:47.256001900Z</date>
+  <millis>1672746707256</millis>
+  <nanos>1900</nanos>
+  <sequence>23</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:51:47.261986Z</date>
+  <millis>1672746707261</millis>
+  <nanos>986000</nanos>
+  <sequence>24</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-03T11:55:22.314735800Z</date>
+  <millis>1672746922314</millis>
+  <nanos>735800</nanos>
+  <sequence>27</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:55:22.320719700Z</date>
+  <millis>1672746922320</millis>
+  <nanos>719700</nanos>
+  <sequence>28</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T11:55:58.161653100Z</date>
+  <millis>1672746958161</millis>
+  <nanos>653100</nanos>
+  <sequence>29</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:55:58.165643200Z</date>
+  <millis>1672746958165</millis>
+  <nanos>643200</nanos>
+  <sequence>30</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:55:59.534431200Z</date>
+  <millis>1672746959534</millis>
+  <nanos>431200</nanos>
+  <sequence>31</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:55:59.537419800Z</date>
+  <millis>1672746959537</millis>
+  <nanos>419800</nanos>
+  <sequence>32</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:56:00.946112600Z</date>
+  <millis>1672746960946</millis>
+  <nanos>112600</nanos>
+  <sequence>33</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:56:00.951062300Z</date>
+  <millis>1672746960951</millis>
+  <nanos>62300</nanos>
+  <sequence>34</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:56:01.632054Z</date>
+  <millis>1672746961632</millis>
+  <nanos>54000</nanos>
+  <sequence>35</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-03T11:56:01.636042200Z</date>
+  <millis>1672746961636</millis>
+  <nanos>42200</nanos>
+  <sequence>36</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-03T11:56:03.214393400Z</date>
+  <millis>1672746963214</millis>
+  <nanos>393400</nanos>
+  <sequence>37</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Reservas insertadas </message>
+</record>
+<record>
+  <date>2023-01-03T11:56:03.220376700Z</date>
+  <millis>1672746963220</millis>
+  <nanos>376700</nanos>
+  <sequence>38</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:56:03.225363800Z</date>
+  <millis>1672746963225</millis>
+  <nanos>363800</nanos>
+  <sequence>39</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-03T11:56:08.580228600Z</date>
+  <millis>1672746968580</millis>
+  <nanos>228600</nanos>
+  <sequence>40</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-03T11:56:08.587209600Z</date>
+  <millis>1672746968587</millis>
+  <nanos>209600</nanos>
+  <sequence>41</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>19</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+</log>

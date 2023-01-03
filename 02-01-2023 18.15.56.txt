@@ -1,0 +1,4 @@
+Factura de la compra del dia: 02-01-2023 18.15.54
+	Menu [id=3, hmProds={Comida=[Spagueti 6.0€ 3 - 6], Bebida=[Cocacola 2.0 € del tiempo, Cocacola 2.0 € del tiempo]}, numProductos=2, precioTotal=10.0, caracteristicas=null]
+	Reserva [fecha=20-03-22, numPersonas=3, idReserva=2, hora= 14:00]
+TOTAL: 10.0 €
