@@ -45,7 +45,7 @@ public class VentanaStock extends JFrame{
 	private JTable tablaComida;
 	private JScrollPane scroll;
 	private DefaultTableModel modelo;
-
+	private ArrayList<Comida> comidas;
 	BD bd = new BD();
 	
 	/**
@@ -172,23 +172,36 @@ public class VentanaStock extends JFrame{
 		return c;
 	}
 	});
+		//Cargamos unos un array en el modelo
+		comidas= new ArrayList();
+			for(int i=0;i<modelo.getRowCount();i++) {
+				String nom = (String)modelo.getValueAt(i, 0);
+				int id =Integer.parseInt((String)modelo.getValueAt(i, 1));
+				Float precio = Float.parseFloat((String)modelo.getValueAt(i, 2));
+				int stock = Integer.parseInt((String)modelo.getValueAt(i, 3));
+				Comida c = new Comida(nom, precio, id, stock);
+				comidas.add(c);
+			}
+		
 
-//	modelo.addTableModelListener(new TableModelListener() {
-//		
-//		@Override
-//		public void tableChanged(TableModelEvent e) {
-//			// TODO Auto-generated method stub
-//			if(e.getType() == TableModelEvent.UPDATE) {
-//				modelo.get
-//				modelo.setValueAt(Nuevoprecio, tablaComida.getSelectedRow(), 2);
-//				
-//				bd.cambiarPrecioComida(Integer.parseInt((String)modelo.getValueAt(tablaComida.getSelectedRow(),1)), Integer.parseInt(Nuevoprecio));
-//				System.out.println("cambio de precio");
-//				
-//			}
-//		}
-//	});
-//		
+	modelo.addTableModelListener(new TableModelListener() {
+		
+		@Override
+		public void tableChanged(TableModelEvent e) {
+			int fila = e.getFirstRow();
+			String nom = (String) modelo.getValueAt(fila, 0);
+			float precio =Float.parseFloat((String) modelo.getValueAt(fila, 2));
+			int stock =Integer.parseInt((String) modelo.getValueAt(fila, 3)) ;
+			comidas.get(fila).setNombre(nom);;
+			comidas.get(fila).setPrecio(precio);;
+			comidas.get(fila).setStock(stock);;
+			bd.modificarDatoComidas(comidas.get(fila));
+				
+		}
+	});
+		
+	
+	
 		
 		tablaComida.addMouseListener(new MouseListener() {
 			
@@ -240,6 +253,7 @@ public class VentanaStock extends JFrame{
 					public void actionPerformed(ActionEvent e) {
 						// TODO Auto-generated method stub
 						modelo.removeRow(tablaComida.getSelectedRow());
+						//comidas.remove(ABORT);
 						bd.borrarComida((int) modelo.getValueAt(tablaComida.getSelectedRow(), 0));
 						
 						

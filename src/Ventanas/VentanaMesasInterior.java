@@ -92,18 +92,6 @@ public class VentanaMesasInterior extends JFrame {
 		pSur.setBackground(new Color(255, 128, 64));
 		contentPane.add(pSur, BorderLayout.SOUTH);
 		
-		btnVolver = new JButton("<-");
-		btnVolver.setBackground(new Color(255, 255, 255));
-		btnVolver.setForeground(new Color(0, 0, 255));
-		btnVolver.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ventanaAnterior.setVisible(true);
-				dispose();
-			}
-		});
-		pSur.add(btnVolver);
-		
-		
 		btnMesa = new JButton("Seleccione Mesa");
 		btnMesa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -158,8 +146,11 @@ public class VentanaMesasInterior extends JFrame {
 				c.setBackground(Color.WHITE);
 			}
 			if (isSelected) {
-				c.setBackground(table.getSelectionBackground());
-				c.setForeground(table.getSelectionForeground());
+				c.setBackground(Color.orange);
+				c.setForeground(Color.white);
+			}else {
+				c.setBackground(table.getBackground());
+				c.setForeground(table.getForeground());
 			}
 			
 	

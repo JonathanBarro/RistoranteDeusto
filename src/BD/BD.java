@@ -605,6 +605,20 @@ public class BD {
 				ex.printStackTrace();						
 			}		
 		}
+		
+		
+		public void modificarDatoComidas(Comida c) {
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+					Statement stmt = con.createStatement())  {
+				String sql = "UPDATE Comida SET nombre='"+c.getNombre()+"',precio='"+c.getPrecio()+"',stock='"+c.getStock()+"' WHERE id='"+c.getId()+"'";
+				stmt.executeUpdate(sql);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+			
+	
 //Borrar para el admin
 		
 		public void borrarCliente(int numTlfn) {
