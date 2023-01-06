@@ -21,6 +21,7 @@ import java.awt.Font;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JProgressBar;
 
 
 
@@ -31,6 +32,8 @@ public class VentanaRegistro extends JFrame{
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
+	private JPanel panelProgress;
+	JProgressBar progreso;
 	BD metodosbases = new BD();
 	JButton btnRegis = new JButton("Regristrarse");/**
 	 * Launch the application.
@@ -49,7 +52,7 @@ public class VentanaRegistro extends JFrame{
 	 */
 	private void initialize() {
 		
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 400);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		
@@ -118,9 +121,27 @@ public class VentanaRegistro extends JFrame{
 		btnRegis.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				RistoranteMain.bd.guardarClientes(textField.getText(), textField_1.getText(), textField_2.getText(), Integer.parseInt(textField_3.getText()));
-				JOptionPane.showMessageDialog(null, "Se ha registrado correctamente");
-				VentanaInicio window = new VentanaInicio();
-				window.setVisible(true);
+				progreso.setVisible(true);
+				Thread hilo = new Thread(new Runnable() {
+					public void run() {
+						for (int i = 0; i <= 100; i++) {
+							progreso.setValue(i);
+							try {
+								Thread.sleep(100);
+							}
+							catch (InterruptedException e1) {
+								e1.printStackTrace();
+							}
+						}
+						JOptionPane.showMessageDialog(null, "Se ha registrado correctamente");
+						progreso.setVisible(false);
+						dispose();
+						VentanaInicio window = new VentanaInicio();
+						window.setVisible(true);
+					}
+				
+				});
+				hilo.start();
 			}
 		});
 		btnRegis.setBackground(new Color(255, 128, 64));
@@ -137,7 +158,15 @@ public class VentanaRegistro extends JFrame{
 		btnVolver.setForeground(new Color(0, 128, 255));
 		btnVolver.setBounds(37, 175, 89, 23);
 		panelCent.add(btnVolver);
+		progreso = new JProgressBar(0, 100);
+		progreso.setBounds(131, 242, 146, 14);
+		panelCent.add(progreso);
+		progreso.setVisible(false);
+		
+		panelProgress = new JPanel();
+		panelProgress.setOpaque(false);
+		panelSur.add(panelProgress, BorderLayout.CENTER);
 
 	}
-	
+
 }	

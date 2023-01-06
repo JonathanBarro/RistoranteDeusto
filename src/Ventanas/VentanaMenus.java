@@ -37,6 +37,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 
 public class VentanaMenus extends JFrame {
 
@@ -48,7 +49,22 @@ public class VentanaMenus extends JFrame {
 	private JList<Menu> aMenus;
 	private DefaultListModel <Menu> modeloCarrito;
 	private JScrollPane menusPane;
-
+	int contadorMenus = 0;
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Reserva r = new Reserva("asas", 5, 12, "dsdewd");
+					VentanaMenus frame = new VentanaMenus(r);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
 	public VentanaMenus(Reserva res) {
 		this.res = res;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -173,6 +189,9 @@ public class VentanaMenus extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				if(contadorMenus == res.getNumPersonas()) {
+					JOptionPane.showMessageDialog(null, "Ya ha saleecionado un menú por persona");
+				}
 				Object ob = cbMenu.getSelectedItem();
 				Menu menu = (Menu) ob;
 				menu = (Menu) ob;
@@ -192,6 +211,7 @@ public class VentanaMenus extends JFrame {
 				
 				modeloCarrito.addElement(mn);
 				aMenus.setModel(modeloCarrito);
+				contadorMenus ++;
 			}
 
 		});
