@@ -91,12 +91,16 @@ public class Menu {
 		return cont;
 	}
 
+	
+	public String toStringMenu() {
+		return "Menu: " + id;
+		
+	}
 	@Override
 	public String toString() {
-		return "Menu [id=" + id + ", hmProds=" + hmProds + ", numProductos=" + numProductos + ", precioTotal="
-				+ precioTotal + ", caracteristicas=" + caracteristicas + "]";
+		return "Menu: id = " + id + ", hmProds = " + hmProds + ", numProductos = " + numProductos + ", precioTotal = "
+				+ precioTotal + ", caracteristicas = " + caracteristicas + "]";
 	}
-
 
 	
 }

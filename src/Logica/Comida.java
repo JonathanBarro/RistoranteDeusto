@@ -31,6 +31,6 @@ public class Comida extends Producto{
 
 	@Override
 	public String toString() {
-		return  getNombre() + " " + getPrecio() + "€ " + getId() + " - " + getStock();
+		return  getNombre() + " " + getPrecio() + " € " + getId() + " - " + getStock();
 	}
 }

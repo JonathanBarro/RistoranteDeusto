@@ -18,6 +18,8 @@ import Logica.Reserva;
 import Logica.RistoranteMain;
 
 import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
+import javax.swing.JTable;
 
 import BD.BD;
 
@@ -50,6 +52,8 @@ public class VentanaMenus extends JFrame {
 	private DefaultListModel <Menu> modeloCarrito;
 	private JScrollPane menusPane;
 	int contadorMenus = 0;
+	JSpinner spNum = new JSpinner();
+	JTable jtMenus = new JTable();
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -68,9 +72,11 @@ public class VentanaMenus extends JFrame {
 	public VentanaMenus(Reserva res) {
 		this.res = res;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setSize(800, 400);
+		setSize(1000, 400);
 		aMenus = new JList<>();
 		modeloCarrito = new DefaultListModel<>();
+		contadorMenus = res.getNumPersonas();
+		spNum.setEnabled(false);
 		
 		JComboBox <Menu> cbMenu = new JComboBox<>();
 		JComboBox <Producto> cbBebida = new JComboBox<>();
@@ -132,15 +138,28 @@ public class VentanaMenus extends JFrame {
 		cbMenu.addItem(m2);
 		cbMenu.addItem(m3);
 		cbMenu.addItem(m4);
+		
+		JLabel lblDegus = new JLabel(m1.toString());
+		JLabel lblEntre = new JLabel(m2.toString());
+		JLabel lblFinDe = new JLabel(m4.toString());
+		JLabel lblInfant = new JLabel(m3.toString());
+		JPanel panel = new JPanel(new FlowLayout());
+		
+		
+		panel.add(lblDegus);
+		panel.add(lblEntre);
+		panel.add(lblFinDe);
+		panel.add(lblInfant);
+		
 //		cbBebida.addItem(b1);
 //		cbBebida.addItem(b2);
 		
 		JPanel pcbx = new JPanel(new FlowLayout());
 		JPanel pMedio2 = new JPanel(new FlowLayout());
-		JPanel pNorth = new JPanel(new GridLayout(2, 1));
+		JPanel pNorth = new JPanel(new GridLayout(3, 1));
 		
 		JPanel pBtnsAnadir = new JPanel(new FlowLayout());
-		JPanel pMedio = new JPanel(new FlowLayout());
+		JPanel pMedio = new JPanel(new GridLayout(6,1));
 		JPanel pBtnJL = new JPanel(new GridLayout(3,1));
 		
 		JPanel pTicket = new JPanel(new FlowLayout());
@@ -154,12 +173,16 @@ public class VentanaMenus extends JFrame {
 		JLabel lblCB = new JLabel("Seleccione el menú :");
 		JLabel lblCBB = new JLabel("Seleccione bebida :");
 		JButton btnVerMenus = new JButton("Ver Menus");
+		JButton btnQMenus = new JButton("Cerrar");
+		JLabel jlMnRes = new JLabel("Menus restantes: ");
+		
 		
 		pcbx.add(lblCB);
 		pcbx.add(cbMenu);
 		pcbx.add(lblCBB);
 		pcbx.add(cbBebida);
 		pMedio.add(btnVerMenus);
+		pMedio.add(btnQMenus);
 		
 		pNorth.add(pMedio2);
 		pNorth.add(pcbx);
@@ -180,7 +203,27 @@ public class VentanaMenus extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				new VentanaVerMenus();
+				pMedio.add(lblDegus);
+				pMedio.add(lblEntre);
+				pMedio.add(lblFinDe);
+				pMedio.add(lblInfant);
+				
+				setSize(1000, 410);
+			}
+		
+		});
+		
+		btnQMenus.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				pMedio.remove(lblDegus);
+				pMedio.remove(lblEntre);
+				pMedio.remove(lblFinDe);
+				pMedio.remove(lblInfant);
+				
+				setSize(1000, 400);
 			}
 		});
 		
@@ -189,29 +232,32 @@ public class VentanaMenus extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if(contadorMenus == res.getNumPersonas()) {
-					JOptionPane.showMessageDialog(null, "Ya ha saleecionado un menú por persona");
+				if(contadorMenus == 0) {
+					JOptionPane.showMessageDialog(null, "Ya ha saleccionado un menú por persona");
+				}else {
+					Object ob = cbMenu.getSelectedItem();
+					Menu menu = (Menu) ob;
+					menu = (Menu) ob;
+	//				HashMap<String, List<Producto>> hmPords = RistoranteMain.bd.obtenerProductos();
+	//				menu.setpL(hmPords);
+	//				menu.setPrecioTotal(menu.obtenerPreciototal(menu.getpL()));
+					Menu mn = new Menu();
+					List<Producto> aComida1 = RistoranteMain.bd.obtenerDatosComidas();
+					List<Producto> aBebdia1 =  RistoranteMain.bd.obtenerDatosBebidas();
+					HashMap<String, List<Producto>> hmProds1 = new HashMap<>();
+					hmProds1 .putIfAbsent("Bebida", aBebdia1);
+					hmProds1.putIfAbsent("Comida", aComida1);
+					mn.setpL(hmProds1);
+					mn.setId(menu.getId());
+					mn.setPrecioTotal(mn.obtenerPreciototal(mn.getpL()));
+					mn.setNumProductos(2);
+					
+					modeloCarrito.addElement(mn);
+					aMenus.setModel(modeloCarrito);
+					contadorMenus --;
+					spNum.setValue(contadorMenus);
 				}
-				Object ob = cbMenu.getSelectedItem();
-				Menu menu = (Menu) ob;
-				menu = (Menu) ob;
-//				HashMap<String, List<Producto>> hmPords = RistoranteMain.bd.obtenerProductos();
-//				menu.setpL(hmPords);
-//				menu.setPrecioTotal(menu.obtenerPreciototal(menu.getpL()));
-				Menu mn = new Menu();
-				List<Producto> aComida1 = RistoranteMain.bd.obtenerDatosComidas();
-				List<Producto> aBebdia1 =  RistoranteMain.bd.obtenerDatosBebidas();
-				HashMap<String, List<Producto>> hmProds1 = new HashMap<>();
-				hmProds1 .putIfAbsent("Bebida", aBebdia1);
-				hmProds1.putIfAbsent("Comida", aComida1);
-				mn.setpL(hmProds1);
-				mn.setId(menu.getId());
-				mn.setPrecioTotal(mn.obtenerPreciototal(mn.getpL()));
-				mn.setNumProductos(2);
 				
-				modeloCarrito.addElement(mn);
-				aMenus.setModel(modeloCarrito);
-				contadorMenus ++;
 			}
 
 		});
@@ -226,6 +272,9 @@ public class VentanaMenus extends JFrame {
 				Menu menu = modeloCarrito.get(modeloCarrito.size()-1);
 				menu.getpL().get("Bebida").add(bebida);
 				menu.setPrecioTotal(menu.obtenerPreciototal(menu.getpL()));
+				modeloCarrito.remove(modeloCarrito.getSize()-1);
+				modeloCarrito.addElement(menu);
+				aMenus.setModel(modeloCarrito);
 			}
 		});
 
@@ -233,19 +282,25 @@ public class VentanaMenus extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Object ob = cbMenu.getSelectedItem();
-				Menu menu = (Menu) ob;
-//				HashMap<String, List<Producto>> hmPords = RistoranteMain.bd.obtenerProductos();
-//				menu.setpL(hmPords);
-//				menu.setPrecioTotal(menu.obtenerPreciototal(menu.getpL()));
-				List<Producto> aComida1 = RistoranteMain.bd.obtenerDatosComidas();
-				List<Producto> aBebdia1 =  RistoranteMain.bd.obtenerDatosBebidas();
-				HashMap<String, List<Producto>> hmProds1 = new HashMap<>();
-				hmProds1 .putIfAbsent("Bebida", aBebdia1);
-				hmProds1.putIfAbsent("Comida", aComida1);
-				menu.setpL(hmProds1);
-				modeloCarrito.addElement(menu);
-				aMenus.setModel(modeloCarrito);
+				if(contadorMenus == 0) {
+					JOptionPane.showMessageDialog(null, "Ya ha saleccionado un menú por persona");
+				}else {
+					Object ob = cbMenu.getSelectedItem();
+					Menu menu = (Menu) ob;
+	//				HashMap<String, List<Producto>> hmPords = RistoranteMain.bd.obtenerProductos();
+	//				menu.setpL(hmPords);
+	//				menu.setPrecioTotal(menu.obtenerPreciototal(menu.getpL()));
+					List<Producto> aComida1 = RistoranteMain.bd.obtenerDatosComidas();
+					List<Producto> aBebdia1 =  RistoranteMain.bd.obtenerDatosBebidas();
+					HashMap<String, List<Producto>> hmProds1 = new HashMap<>();
+					hmProds1 .putIfAbsent("Bebida", aBebdia1);
+					hmProds1.putIfAbsent("Comida", aComida1);
+					menu.setpL(hmProds1);
+					modeloCarrito.addElement(menu);
+					aMenus.setModel(modeloCarrito);
+					contadorMenus --;
+					spNum.setValue(contadorMenus);
+				}
 			}
 			
 		});
@@ -254,7 +309,10 @@ public class VentanaMenus extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				modeloCarrito.removeElement(aMenus.getSelectedValue());
+				contadorMenus++;
+				spNum.setValue(contadorMenus);
 			}
 		});
 		
@@ -264,6 +322,8 @@ public class VentanaMenus extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				modeloCarrito.clear();
+				contadorMenus = res.getNumPersonas();
+				spNum.setValue(res.getNumPersonas());
 			}
 		});
 		VentanaMenus vM = this;
@@ -272,6 +332,9 @@ public class VentanaMenus extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				if(contadorMenus != 0) {
+					JOptionPane.showMessageDialog(null, "No ha seleccionado un menu por persona");
+				}else {
 				for(int i=0;i<modeloCarrito.getSize();i++) {
 					Menu m = modeloCarrito.getElementAt(i);
 					res.getaMenu().add(m);
@@ -280,10 +343,14 @@ public class VentanaMenus extends JFrame {
 				RistoranteMain.bd.insertarDatosReserva(res);
 				VentanaTicket vt = new VentanaTicket(vM);
 				vt.setVisible(true);
+				}
 			}
 		});
 		
 		getContentPane().add(pNorth, BorderLayout.NORTH);
+		pcbx.add(jlMnRes);
+		pcbx.add(spNum);
+		spNum.setValue(contadorMenus);
 		getContentPane().add(pBtnJL, BorderLayout.CENTER);
 		getContentPane().add(pTicket, BorderLayout.SOUTH);
 		
