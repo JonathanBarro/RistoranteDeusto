@@ -40,6 +40,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import java.awt.Color;
+import java.awt.Font;
 
 public class VentanaMenus extends JFrame {
 
@@ -55,19 +57,7 @@ public class VentanaMenus extends JFrame {
 	JSpinner spNum = new JSpinner();
 	JTable jtMenus = new JTable();
 	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Reserva r = new Reserva("asas", 5, 12, "dsdewd");
-					VentanaMenus frame = new VentanaMenus(r);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 	
 	public VentanaMenus(Reserva res) {
 		this.res = res;
@@ -155,14 +145,21 @@ public class VentanaMenus extends JFrame {
 //		cbBebida.addItem(b2);
 		
 		JPanel pcbx = new JPanel(new FlowLayout());
+		pcbx.setBackground(new Color(255, 128, 0));
 		JPanel pMedio2 = new JPanel(new FlowLayout());
+		pMedio2.setBackground(new Color(255, 128, 0));
+		pMedio2.setForeground(new Color(0, 0, 0));
 		JPanel pNorth = new JPanel(new GridLayout(3, 1));
+		pNorth.setBackground(new Color(255, 128, 0));
 		
 		JPanel pBtnsAnadir = new JPanel(new FlowLayout());
+		pBtnsAnadir.setBackground(new Color(255, 255, 128));
 		JPanel pMedio = new JPanel(new GridLayout(6,1));
+		pMedio.setBackground(new Color(255, 255, 128));
 		JPanel pBtnJL = new JPanel(new GridLayout(3,1));
 		
 		JPanel pTicket = new JPanel(new FlowLayout());
+		pTicket.setBackground(new Color(255, 128, 0));
 		
 		menusPane = new JScrollPane(aMenus);
 		menusPane.setBorder(BorderFactory.createTitledBorder("Menus"));
@@ -185,6 +182,10 @@ public class VentanaMenus extends JFrame {
 		pMedio.add(btnQMenus);
 		
 		pNorth.add(pMedio2);
+		
+		JLabel lbltit = new JLabel("Menus");
+		lbltit.setFont(new Font("Script MT Bold", Font.BOLD, 20));
+		pMedio2.add(lbltit);
 		pNorth.add(pcbx);
 		
 		pBtnsAnadir.add(btnAnadir);
@@ -338,11 +339,12 @@ public class VentanaMenus extends JFrame {
 				for(int i=0;i<modeloCarrito.getSize();i++) {
 					Menu m = modeloCarrito.getElementAt(i);
 					res.getaMenu().add(m);
+					vM.setVisible(false);
 				}
 				
 				RistoranteMain.bd.insertarDatosReserva(res);
 				VentanaTicket vt = new VentanaTicket(vM);
-				vt.setVisible(true);
+				dispose();
 				}
 			}
 		});

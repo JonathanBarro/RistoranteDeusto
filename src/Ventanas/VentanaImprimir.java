@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -55,6 +56,10 @@ public class VentanaImprimir extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				generarFicheroFactura();
+				JOptionPane.showMessageDialog(null, "Gracias por su compra, esperemos que vuelva pronto");
+				dispose();
+				VentanaAdminCliente vIA = new VentanaAdminCliente();
+				vIA.setVisible(true);
 			}
 		});
 		setLocationRelativeTo(null);

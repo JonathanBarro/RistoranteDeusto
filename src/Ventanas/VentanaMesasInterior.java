@@ -65,14 +65,17 @@ public class VentanaMesasInterior extends JFrame {
 		//Creamos el modelo de la tabla
 		modelo = new DefaultTableModel();
 		//Le asignamos al modelo la fila con los tÃ­tulos
-		String [] titulos = {"NOMBRE DE MESA","LUGAR","OCUPADA","NUMERO DE PERSONAS"};
+		String [] titulos = {"NOMBRE DE MESA","NUMERO DE PERSONAS"};
 		modelo.setColumnIdentifiers(titulos);
 		//Rellenamos el modelo con los datos de la lista de personas
 		for(Mesa p: aMesas) {
 			//Con cada persona creamos una fila de datos
-			String [] datos = {p.getIdMesa()+"",p.getLugar()+"", p.isOcupada()+"", p.getNumPersonas()+""};
+			if(p.getLugar()==0) {
+			String [] datos = {p.getIdMesa()+"", p.getNumPersonas()+""};
 			//AÃ±ado la fila al modelo
 			modelo.addRow(datos);
+			}
+			
 		}
 		
 		
@@ -100,8 +103,9 @@ public class VentanaMesasInterior extends JFrame {
 				
 				if(resp == 0) {
 				ArrayList<Mesa> aMesa = new ArrayList<>();
-				Mesa mes = new Mesa((String)modelo.getValueAt(tabla.getSelectedRow(), 0) , Integer.valueOf((String) modelo.getValueAt(tabla.getSelectedRow(), 1)) , Boolean.valueOf((String) modelo.getValueAt(tabla.getSelectedRow(), 2)), Integer.valueOf((String) modelo.getValueAt(tabla.getSelectedRow(), 3)));
+				Mesa mes = new Mesa((String)modelo.getValueAt(tabla.getSelectedRow(), 0) , Integer.valueOf((String) modelo.getValueAt(tabla.getSelectedRow(), 1)));
 				aMesa.add(mes);
+				
 				res.setaMesa(aMesa);
 				res.setNumPersonas(mes.getNumPersonas());
 				
@@ -139,12 +143,6 @@ public class VentanaMesasInterior extends JFrame {
 				int row, int column) {
 			Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 			//Empieza el cambio
-			String categoria = (String)modelo.getValueAt(row,2);
-			if(row %2 ==0) {
-				c.setBackground(new Color(224, 224, 224));
-			}else {
-				c.setBackground(Color.WHITE);
-			}
 			if (isSelected) {
 				c.setBackground(Color.orange);
 				c.setForeground(Color.white);

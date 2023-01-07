@@ -18,7 +18,7 @@ public class testMesa {
 	
 	@Before
 	public void setUp() throws Exception {
-		mesa= new Mesa(idMesa, lugar, ocupada,numPersonas);
+		mesa= new Mesa(idMesa, numPersonas);
 	}
 
 	@After

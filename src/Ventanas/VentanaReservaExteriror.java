@@ -107,7 +107,7 @@ public class VentanaReservaExteriror extends JFrame {
 		JButton btnMesas = new JButton("Mesas");
 		btnMesas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VentanaMesasInterior window = new VentanaMesasInterior(res, ventanaActual);
+				VentanaMesasExterior window = new VentanaMesasExterior(res, ventanaActual);
 				window.setVisible(true);
 				ventanaActual.setVisible(false);
 				

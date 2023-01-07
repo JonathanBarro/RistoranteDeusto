@@ -150,7 +150,7 @@ public class VentanaStock extends JFrame{
 		});
 		
 
-
+		
 	
 		tablaComida.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
 	
@@ -188,6 +188,7 @@ public class VentanaStock extends JFrame{
 		
 		@Override
 		public void tableChanged(TableModelEvent e) {
+			
 			int fila = e.getFirstRow();
 			String nom = (String) modelo.getValueAt(fila, 0);
 			float precio =Float.parseFloat((String) modelo.getValueAt(fila, 2));

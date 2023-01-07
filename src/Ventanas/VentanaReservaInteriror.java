@@ -180,11 +180,6 @@ public class VentanaReservaInteriror extends JFrame {
 	
 	
 		
-
-		
-		
-		
-		
 		//HORA-----------------------------------
 		
 	
@@ -285,15 +280,9 @@ public class VentanaReservaInteriror extends JFrame {
 					JOptionPane.showMessageDialog(btnConfirm, "Debe rellenar todos los campos");
 					ventanaActual.setVisible(true);
 				}
+				
 					
 			
-				
-			
-				
-				int resp = JOptionPane.showConfirmDialog(null, "Tras confirmar la reserva no se podra volver atras para cambiarla\n"+"¿Esta seguro?",//<- EL MENSAJE
-			            "Alerta!"/*<- El título de la ventana*/, JOptionPane.YES_NO_OPTION/*Las opciones (si o no)*/, JOptionPane.WARNING_MESSAGE/*El tipo de ventana, en este caso WARNING*/);
-					
-				if(resp==0) {
 					List<Reserva> reservas = new ArrayList <Reserva>();
 					
 					reservas = RistoranteMain.bd.obtenerDatosReservas();
@@ -307,15 +296,13 @@ public class VentanaReservaInteriror extends JFrame {
 					String horass = (String) hora_comboBox.getSelectedItem();
 					res.setHora(horass);
 					System.out.println( res.toString());
-					modif.setText("Reserva: Dia: "+ dia +"-" + mes+", hora:" + hora_comboBox.getSelectedItem() +"Id de la mesa: " + res.getIdReserva());
 					reservas.add(res);
+					JOptionPane.showMessageDialog(null, "Se ha confirmado se reserva el dia "+ dia +"-" + mes+" a las " + hora_comboBox.getSelectedItem() );
+					dispose();
 					VentanaMenus window = new VentanaMenus(res);
-					
 					window.setVisible(true);
-					ventanaActual.setVisible(false);
-				}else {
-					ventanaActual.setVisible(true);
-				}
+					
+				
 				}
 				
 			

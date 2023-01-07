@@ -12,8 +12,8 @@ public class RistoranteMain {
 	public static void main(String[] args) {
 		
 		bd = new BD();	
-//		bd.borrarDatos();
-//	    bd.borrarBBDD();
+		bd.borrarDatos();
+	    bd.borrarBBDD();
 		VentanaAdminCliente window = new VentanaAdminCliente();
 		window.setVisible(true);
 		
@@ -228,29 +228,67 @@ public class RistoranteMain {
 		List<Mesa> mesas = new ArrayList<>();
 		
 		Mesa mesa = new Mesa();
-		mesa.setIdMesa("1z");
+		mesa.setIdMesa("1I");
 		mesa.setNumPersonas(3);
 		mesa.setLugar(0);
 		mesa.setOcupada(false);
 		mesas.add(mesa);
 		Mesa mesa1 = new Mesa();
-		mesa1.setIdMesa("2z");
+		mesa1.setIdMesa("2I");
 		mesa1.setNumPersonas(5);
-		mesa1.setLugar(1);
+		mesa1.setLugar(0);
 		mesa1.setOcupada(true);
 		mesas.add(mesa1);
 		Mesa mesa3 = new Mesa();
-		mesa3.setIdMesa("3z");
+		mesa3.setIdMesa("3I");
 		mesa3.setNumPersonas(7);
 		mesa3.setLugar(0);
 		mesa3.setOcupada(false);
 		mesas.add(mesa3);
 		Mesa mesa5 = new Mesa();
-		mesa5.setIdMesa("7z");
+		mesa5.setIdMesa("4I");
 		mesa5.setNumPersonas(7);
 		mesa5.setLugar(0);
 		mesa5.setOcupada(false);
 		mesas.add(mesa5);
+		Mesa mesa6 = new Mesa();
+		mesa6.setIdMesa("5I");
+		mesa6.setNumPersonas(7);
+		mesa6.setLugar(0);
+		mesa6.setOcupada(false);
+		mesas.add(mesa6);
+		
+		Mesa mesa7 = new Mesa();
+		mesa7.setIdMesa("1E");
+		mesa7.setNumPersonas(7);
+		mesa7.setLugar(1);
+		mesa7.setOcupada(false);
+		mesas.add(mesa7);
+		Mesa mesa8 = new Mesa();
+		mesa8.setIdMesa("2E");
+		mesa8.setNumPersonas(7);
+		mesa8.setLugar(1);
+		mesa8.setOcupada(false);
+		mesas.add(mesa8);
+		Mesa mesa9 = new Mesa();
+		mesa9.setIdMesa("3E");
+		mesa9.setNumPersonas(7);
+		mesa9.setLugar(1);
+		mesa9.setOcupada(false);
+		mesas.add(mesa9);
+		Mesa mesa10 = new Mesa();
+		mesa10.setIdMesa("4E");
+		mesa10.setNumPersonas(7);
+		mesa10.setLugar(1);
+		mesa10.setOcupada(false);
+		mesas.add(mesa10);
+		Mesa mesa11 = new Mesa();
+		mesa11.setIdMesa("5E");
+		mesa11.setNumPersonas(7);
+		mesa11.setLugar(1);
+		mesa11.setOcupada(false);
+		mesas.add(mesa11);
+		
 		return mesas;
 	}
 	

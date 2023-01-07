@@ -15,11 +15,9 @@ public class Mesa {
 		
 	}
 
-	public Mesa(String idMesa, int lugar, boolean ocupada,int numPersonas) {
+	public Mesa(String idMesa,int numPersonas) {
 		super();
 		this.idMesa = idMesa;
-		this.lugar = lugar;
-		this.ocupada = ocupada;
 		this.numPersonas = numPersonas;
 		
 	}
