@@ -16,6 +16,7 @@ import Logica.Menu;
 import Logica.Producto;
 import Logica.Reserva;
 import Logica.RistoranteMain;
+import recursividad.Recursividad;
 
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
@@ -57,6 +58,11 @@ public class VentanaMenus extends JFrame {
 	JSpinner spNum = new JSpinner();
 	JTable jtMenus = new JTable();
 	
+	private JButton btnVerOpciones;
+	private DefaultListModel<String> modeloLista;
+	private JList<String> lista;
+	private JScrollPane scrollLista;
+	private JComboBox <Menu> cbMenu;
 
 	
 	public VentanaMenus(Reserva res) {
@@ -68,7 +74,7 @@ public class VentanaMenus extends JFrame {
 		contadorMenus = res.getNumPersonas();
 		spNum.setEnabled(false);
 		
-		JComboBox <Menu> cbMenu = new JComboBox<>();
+		cbMenu = new JComboBox<>();
 		JComboBox <Producto> cbBebida = new JComboBox<>();
 		cbMenu.setPreferredSize(new Dimension(140, 20));
 		cbBebida.setPreferredSize(new Dimension(140, 20));
@@ -154,7 +160,7 @@ public class VentanaMenus extends JFrame {
 		
 		JPanel pBtnsAnadir = new JPanel(new FlowLayout());
 		pBtnsAnadir.setBackground(new Color(255, 255, 128));
-		JPanel pMedio = new JPanel(new GridLayout(6,1));
+		JPanel pMedio = new JPanel(new GridLayout(8,1));
 		pMedio.setBackground(new Color(255, 255, 128));
 		JPanel pBtnJL = new JPanel(new GridLayout(3,1));
 		
@@ -178,6 +184,14 @@ public class VentanaMenus extends JFrame {
 		pcbx.add(cbMenu);
 		pcbx.add(lblCBB);
 		pcbx.add(cbBebida);
+		
+		btnVerOpciones = new JButton("Ver opciones");
+		modeloLista = new DefaultListModel<>();
+		lista = new JList<>(modeloLista);
+		scrollLista = new JScrollPane(lista);
+		btnVerOpciones.addActionListener((e)->{cargarModelo();});
+		pMedio.add(btnVerOpciones);
+		pMedio.add(scrollLista);
 		pMedio.add(btnVerMenus);
 		pMedio.add(btnQMenus);
 		
@@ -191,7 +205,6 @@ public class VentanaMenus extends JFrame {
 		pBtnsAnadir.add(btnAnadir);
 		pBtnsAnadir.add(btnEliminar);
 		pBtnsAnadir.add(btnVaciar);
-
 		
 		pBtnJL.add(pMedio);
 		pBtnJL.add(pBtnsAnadir);
@@ -372,5 +385,21 @@ public class VentanaMenus extends JFrame {
 	}
 	public void vaciarCarrito() {
 		modeloCarrito.removeAllElements();
+	}
+	private void cargarModelo() {
+		List<String> menus = new ArrayList<>();
+		for(int i=0;i<cbMenu.getItemCount();i++) {
+			Menu m = cbMenu.getItemAt(i);
+			menus.add(m.getCaracteristicas());
+		}
+		List<List<String>> opciones = Recursividad.combinaciones(menus, res.getNumPersonas());
+		for(List<String> l: opciones) {
+			String s = "";
+			for(String ss: l) {
+				s = s + " | " + ss;
+			}
+			modeloLista.addElement(s);
+		}
+		
 	}
 }

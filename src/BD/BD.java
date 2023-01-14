@@ -1,5 +1,8 @@
 package BD;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.nio.file.Files;
 
 import java.nio.file.Paths;
@@ -14,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
+import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 import Logica.Admin;
@@ -903,12 +907,21 @@ public class BD {
 	private void log( Level level, String msg, Throwable excepcion ) {
 		if (logger==null) {  // Logger por defecto local:
 			logger = Logger.getLogger( "BD-local" );  // Nombre del logger
-			logger.setLevel( Level.ALL );  // Loguea todos los niveles
+			/*logger.setLevel( Level.ALL );  // Loguea todos los niveles
 			try {
 				logger.addHandler( new FileHandler( "bd.log.xml", true ) );  // Y saca el log a fichero xml
 			} catch (Exception e) {
 				logger.log( Level.SEVERE, "No se pudo crear fichero de log", e );
+			}*/
+			
+			try (FileInputStream fis = new FileInputStream("conf/logger.properties");){
+				LogManager.getLogManager().readConfiguration(fis);
+				logger.addHandler( new FileHandler( "bd.log.xml", true ) );
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
+			
 		}
 		if (excepcion==null)
 			logger.log( level, msg );
