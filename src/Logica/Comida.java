@@ -9,8 +9,7 @@ public class Comida extends Producto{
 	}
 	
 	public Comida(String nombre, double precio, int id, int stock) {
-		// TODO Auto-generated constructor stub
-		
+		super(nombre, precio, id, stock);
 	}
 	
 	public Comida(String nombre, double precio, int id, int stock, String idMenu) {

@@ -34,7 +34,7 @@ public class RistoranteMain {
 //		List<Admin> admins = bd.obtenerDatosAdmins();
 //		printAdmin(admins);
 //		
-		List<Producto> comidas = bd.obtenerDatosComidas();
+		List<Comida> comidas = bd.obtenerDatosComidas();
 		printComida(comidas);
 //		
 		List<Mesa> mesas = bd.obtenerDatosMesas();
@@ -158,7 +158,7 @@ public class RistoranteMain {
 	}
 	
 	
-	private static void printComida(List<Producto> comidas) {
+	private static void printComida(List<Comida> comidas) {
 		if (!comidas.isEmpty()) {		
 			for(Producto comida : comidas) {
 				System.out.println(String.format(" - %s", comida.toString()));

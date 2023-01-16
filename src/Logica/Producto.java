@@ -6,7 +6,7 @@ public class Producto {
 	private double precio;
 	private int id;
 	private int stock;
-	
+	public enum TipoProducto{Comida, Bebida};
 	
 	
 	public Producto() {

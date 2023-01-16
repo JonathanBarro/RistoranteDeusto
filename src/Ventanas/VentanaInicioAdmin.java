@@ -103,7 +103,7 @@ public class VentanaInicioAdmin extends JFrame{
 				String busqueda_cliente = BD.buscarAdminRegistrado(textField.getText(), textFieldContrasena.getText());		
 				if(busqueda_cliente.equals("Admin encontrado")) {
 					JOptionPane.showMessageDialog(null, "Bienvenido al Ristorante");
-					VentanaStock window = new VentanaStock();
+					VentanaAdmin window = new VentanaAdmin();
 					window.setVisible(true);
 					dispose();
 				}else {

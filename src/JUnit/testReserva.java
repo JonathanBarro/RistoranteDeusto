@@ -28,7 +28,7 @@ public class testReserva {
 	private ArrayList<Mesa> aMesa2 = new ArrayList<>();
 	private ArrayList<Menu> aMenu = new ArrayList<>();
 	private ArrayList<Menu> aMenu2 = new ArrayList<>();
-	private HashMap<String, List<Producto>> hmPods = new HashMap<>();
+	private HashMap<String, List<? extends Producto>> hmPods = new HashMap<>();
 	private Cliente cliente;
 	private Cliente cliente2;
 	private Reserva reserva;

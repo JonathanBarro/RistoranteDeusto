@@ -1,8 +1,5 @@
 package BD;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.nio.file.Files;
 
 import java.nio.file.Paths;
@@ -17,7 +14,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
-import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 import Logica.Admin;
@@ -247,7 +243,28 @@ public class BD {
 			}
 		}
 		
+		public void insertarNuevaBebida(Bebida c) {
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+				     Statement stmt = con.createStatement()) {
+				String sql = "INSERT INTO Bebida (nombre, precio, id, stock, frio) VALUES ('%s', '%.2f', %d, %d, %b);";
+				System.out.println("- Insertando bebida...");
+				
+				if (1 == stmt.executeUpdate(String.format(sql, c.getNombre(), c.getPrecio(), c.getId(),c.getStock(), c.isFrio()))) {					
+					System.out.println(String.format(" - Bebida insertada: %s", c.toString()));
+				} else {
+					System.out.println(String.format(" - No se ha insertado la bebida: %s", c.toString()));
+				}
+				log( Level.INFO, "Bebida insertada" , null );
+				
+			}catch (Exception ex) {
+				System.err.println(String.format("* Error al insertar datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "Error al insertar datos de la BBDD: " , ex );
+				ex.printStackTrace();						
+			}
+		}
+		
 		public void insertarDatosReserva(Reserva r) {
+			if(r.getIdReserva() == -1)return;
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 				     Statement stmt = con.createStatement()) {
 				int numP = r.getNumPersonas();
@@ -363,8 +380,8 @@ public class BD {
 		}
 		
 		
-		public List<Producto> obtenerDatosBebidas() {
-			List<Producto> productos = new ArrayList<>();
+		public List<Bebida> obtenerDatosBebidas() {
+			List<Bebida> productos = new ArrayList<>();
 			
 			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -404,9 +421,9 @@ public class BD {
 			return productos;
 		}
 		
-		public List<Producto> obtenerDatosComidas() {
+		public List<Comida> obtenerDatosComidas() {
 			
-			List<Producto> producto = new ArrayList<>();
+			List<Comida> producto = new ArrayList<>();
 			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 			     Statement stmt = con.createStatement()) {
@@ -445,10 +462,10 @@ public class BD {
 			return producto;
 		}
 		
-		public HashMap<String, List<Producto>> obtenerProductos(){
-			HashMap<String, List<Producto>> hmProds = new HashMap<>();
-			List<Producto> comida = obtenerDatosComidas();
-			List<Producto> bebida = obtenerDatosBebidas();
+		public HashMap<String, List<? extends Producto>> obtenerProductos(){
+			HashMap<String, List<? extends Producto>> hmProds = new HashMap<>();
+			List<Comida> comida = obtenerDatosComidas();
+			List<Bebida> bebida = obtenerDatosBebidas();
 			hmProds.putIfAbsent("Comida", comida);
 			hmProds.putIfAbsent("Bebida", bebida);
 			return hmProds;
@@ -615,6 +632,16 @@ public class BD {
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 					Statement stmt = con.createStatement())  {
 				String sql = "UPDATE Comida SET nombre='"+c.getNombre()+"',precio='"+c.getPrecio()+"',stock='"+c.getStock()+"' WHERE id='"+c.getId()+"'";
+				stmt.executeUpdate(sql);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		public void modificarDatoBebidas(Bebida b) {
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+					Statement stmt = con.createStatement())  {
+				String sql = "UPDATE Bebida SET nombre='"+b.getNombre()+"',precio='"+b.getPrecio()+"',stock='"+b.getStock()+"', frio='"+b.isFrio()+"' WHERE id='"+b.getId()+"'";
 				stmt.executeUpdate(sql);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -907,21 +934,12 @@ public class BD {
 	private void log( Level level, String msg, Throwable excepcion ) {
 		if (logger==null) {  // Logger por defecto local:
 			logger = Logger.getLogger( "BD-local" );  // Nombre del logger
-			/*logger.setLevel( Level.ALL );  // Loguea todos los niveles
+			logger.setLevel( Level.ALL );  // Loguea todos los niveles
 			try {
 				logger.addHandler( new FileHandler( "bd.log.xml", true ) );  // Y saca el log a fichero xml
 			} catch (Exception e) {
 				logger.log( Level.SEVERE, "No se pudo crear fichero de log", e );
-			}*/
-			
-			try (FileInputStream fis = new FileInputStream("conf/logger.properties");){
-				LogManager.getLogManager().readConfiguration(fis);
-				logger.addHandler( new FileHandler( "bd.log.xml", true ) );
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
-			
 		}
 		if (excepcion==null)
 			logger.log( level, msg );
@@ -935,6 +953,8 @@ public class BD {
 	public Exception getLastError() {
 		return lastError;
 	}
+
+	
 		
 
 }

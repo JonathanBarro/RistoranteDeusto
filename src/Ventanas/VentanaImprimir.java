@@ -2,7 +2,6 @@ package Ventanas;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
@@ -12,8 +11,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.SwingConstants;
-
 import BD.BD;
 import Logica.Menu;
 import Logica.Reserva;
@@ -28,9 +25,10 @@ import java.util.Date;
 import java.util.List;
 
 public class VentanaImprimir extends JFrame{
+	private static final long serialVersionUID = -4174990565436263519L;
 	private VentanaMenus vM;
-	private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy kk.mm.ss");
-	private JTextArea taResumen;
+	protected SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy kk.mm.ss");
+	protected JTextArea taResumen;
 	private JScrollPane scrollAreaResumen;
 	private BD bd = new BD();
 	
@@ -47,7 +45,9 @@ public class VentanaImprimir extends JFrame{
 		scrollAreaResumen = new JScrollPane(taResumen);
 		getContentPane().add(scrollAreaResumen, BorderLayout.CENTER);
 		taResumen.setText("");
-		cargarCarritoEnTextArea();
+		try {
+			cargarCarritoEnTextArea();
+		}catch(NullPointerException e) {}
 		
 		setVisible(true);
 		
@@ -64,7 +64,7 @@ public class VentanaImprimir extends JFrame{
 		});
 		setLocationRelativeTo(null);
 	}
-	private void cargarCarritoEnTextArea() {
+	protected void cargarCarritoEnTextArea() {
 
 		Date d = new Date(System.currentTimeMillis());
 		String texto = ""

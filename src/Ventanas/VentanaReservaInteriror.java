@@ -27,9 +27,7 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.awt.event.ActionEvent;
 
@@ -146,7 +144,7 @@ public class VentanaReservaInteriror extends JFrame {
 		calen.setMinSelectableDate(fechaActual);
 		calen.setMaxSelectableDate(ultimaFecha);
 		calen.setPreferredSize(new Dimension(100,25));
-		calen.setDateFormatString("dd-MMMM-yyyy");
+		calen.setDateFormatString("dd-MMMM");
 		JButton btnConfirmCalen = new JButton("Seleccionar dia");
 		btnConfirmCalen.setBounds(179, 50, 147, 23);
 		panel_Calendar.add(btnConfirmCalen);
@@ -155,6 +153,7 @@ public class VentanaReservaInteriror extends JFrame {
 			panel_Mesas.setVisible(false);
 		}
 		
+	
 		btnConfirmCalen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(calen.getDate() != null) {
@@ -164,13 +163,12 @@ public class VentanaReservaInteriror extends JFrame {
 					panel_hora.setVisible(true);
 					panel_Mesas.setVisible(false);
 					btnConfirmCalen.setVisible(false);
-					
 					String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
 					String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
 					modif.setText("Reserva: Dia: "+ dia +"-" + mes+".");
-						calen.setEnabled(false);
 					}else{
 						calen.setEnabled(true);
+						;
 					}
 				}else {
 					JOptionPane aviso = new JOptionPane();

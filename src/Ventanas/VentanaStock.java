@@ -1,11 +1,13 @@
 package Ventanas;
+import Logica.Bebida;
 import Logica.Comida;
 
 
 import Logica.Producto;
+import Logica.Producto.TipoProducto;
 
 import java.awt.Font;
-import java.util.ArrayList;
+import java.awt.GridLayout;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -20,18 +22,15 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.DefaultTableModel;
-
 import BD.BD;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 
-import javax.swing.JTable;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.awt.event.ActionEvent;
 
 
@@ -41,11 +40,14 @@ public class VentanaStock extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private List<Producto> listaProductos;
 	private JTable tablaComida;
-	private JScrollPane scroll;
-	private DefaultTableModel modelo;
-	private ArrayList<Comida> comidas;
+	private JTable tablaBebida;
+	private JScrollPane scrollComida;
+	private JScrollPane scrollBebida;
+	private DefaultTableModel modeloComida;
+	private DefaultTableModel modeloBebida;
+	private List<Comida> comidas;
+	private List<Bebida> bebidas;
 	BD bd = new BD();
 	
 	/**
@@ -101,7 +103,7 @@ public class VentanaStock extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				VentanaInicio window= new VentanaInicio();
+				VentanaAdmin window= new VentanaAdmin();
 				window.setVisible(true);
 				dispose();
 				
@@ -109,31 +111,37 @@ public class VentanaStock extends JFrame{
 			}
 		});
 		
-		
-		
-	
-	
-	listaProductos=bd.obtenerDatosComidas();
-	
-		
-		
-
-		modelo = new DefaultTableModel();
-		
+		comidas=bd.obtenerDatosComidas();
+		modeloComida = new DefaultTableModel();
+			
 		String [] titulos = {"NOMBRE","ID","PRECIO","STOCK"};
-		modelo.setColumnIdentifiers(titulos);
-		for (Producto p : listaProductos) {
+		modeloComida.setColumnIdentifiers(titulos);
+		for (Comida p : comidas) {
 			String [] datos = {p.getNombre()+"",p.getId()+"", p.getPrecio()+ "", p.getStock()+""};
-			modelo.addRow(datos);
+			modeloComida.addRow(datos);
 		}
 		
+		JPanel panelTablas = new JPanel(new GridLayout(2,1));
+		contentPane.add(panelTablas, BorderLayout.CENTER);
 		
-		tablaComida = new JTable(modelo);
-		scroll = new JScrollPane(tablaComida);
-		contentPane.add(scroll, BorderLayout.CENTER);
+		tablaComida = new JTable(modeloComida);
+		scrollComida = new JScrollPane(tablaComida);
+		panelTablas.add(scrollComida);
+		
+		bebidas = bd.obtenerDatosBebidas();
+		modeloBebida = new DefaultTableModel();
+		
+		modeloBebida.setColumnIdentifiers(titulos);
+		for (Bebida p : bebidas) {
+			String [] datos = {p.getNombre()+"",p.getId()+"", p.getPrecio()+ "", p.getStock()+""};
+			modeloBebida.addRow(datos);
+		}
+		
+		tablaBebida = new JTable(modeloBebida);
+		scrollBebida = new JScrollPane(tablaBebida);
+		panelTablas.add(scrollBebida);
 		
 		btnAniadirComida.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -141,128 +149,157 @@ public class VentanaStock extends JFrame{
 				String Id= JOptionPane.showInputDialog("Introduce un ID:");
 				String precio= JOptionPane.showInputDialog("Introduce un precio");
 				String Stock=JOptionPane.showInputDialog("Introduce un Stock");
-				Comida nuevacomida = new Comida(nombre,Integer.parseInt(Id),Integer.parseInt(precio),Integer.parseInt(Stock), "");
-				String [] comidastring= { nombre+"", Id+"", precio+"",Stock+""};
-				modelo.addRow(comidastring);
+				int tipo = JOptionPane.showOptionDialog(null, "Seleccione tipo de producto:", "", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, Producto.TipoProducto.values(), TipoProducto.Comida);
+				switch(tipo) {
+					case 0:
+						Comida nuevacomida = new Comida(nombre,Integer.parseInt(Id),Integer.parseInt(precio),Integer.parseInt(Stock), "");
+						String [] comidastring= { nombre+"", Id+"", precio+"",Stock+""};
+						modeloComida.addRow(comidastring);
+						comidas.add(nuevacomida);
+						bd.insertarNuevaComida(nuevacomida);
+						break;
+					case 1:
+						int fria = JOptionPane.showOptionDialog(null, "¿Es fria?", "", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, new String[]{"Si", "No"}, "No");
+						Bebida nuevabebida = new Bebida(nombre,Integer.parseInt(Id),Integer.parseInt(precio),Integer.parseInt(Stock), fria == 0);
+						String [] bebidastring= { nombre+"", Id+"", precio+"",Stock+""};
+						modeloBebida.addRow(bebidastring);
+						bebidas.add(nuevabebida);
+						bd.insertarNuevaBebida(nuevabebida);
+				}
 				
-				bd.insertarNuevaComida(nuevacomida);
 			}
 		});
 		
-
-		
-	
 		tablaComida.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
-	
-	@Override
-	public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,
-				int row, int column) {
-		Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-		//Empieza el cambio
-		int stock = Integer.parseInt((String) modelo.getValueAt(row, 3));
 		
-		if (stock<=2) {
-			c.setBackground(Color.RED);
-		} else {
-			c.setBackground(Color.GREEN);
-		}
-		//Si la celda estÃ¡ seleccionada se asocia un color de fondo y letra
+			private static final long serialVersionUID = 3352994971614263504L;
 
-	
-		return c;
-	}
-	});
-		//Cargamos unos un array en el modelo
-		comidas= new ArrayList();
-			for(int i=0;i<modelo.getRowCount();i++) {
-				String nom = (String)modelo.getValueAt(i, 0);
-				int id =Integer.parseInt((String)modelo.getValueAt(i, 1));
-				Float precio = Float.parseFloat((String)modelo.getValueAt(i, 2));
-				int stock = Integer.parseInt((String)modelo.getValueAt(i, 3));
-				Comida c = new Comida(nom, precio, id, stock);
-				comidas.add(c);
+			@Override
+			public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,
+						int row, int column) {
+				Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+				//Empieza el cambio
+				int stock = Integer.parseInt((String) modeloComida.getValueAt(row, 3));
+				
+				if (stock<=2) {
+					c.setBackground(Color.RED);
+				} else {
+					c.setBackground(Color.GREEN);
+				}
+				
+				return c;
 			}
-		
+		});
+		tablaBebida.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+			
+			private static final long serialVersionUID = 3352994971614263504L;
 
-	modelo.addTableModelListener(new TableModelListener() {
-		
-		@Override
-		public void tableChanged(TableModelEvent e) {
-			
-			int fila = e.getFirstRow();
-			String nom = (String) modelo.getValueAt(fila, 0);
-			float precio =Float.parseFloat((String) modelo.getValueAt(fila, 2));
-			int stock =Integer.parseInt((String) modelo.getValueAt(fila, 3)) ;
-			comidas.get(fila).setNombre(nom);;
-			comidas.get(fila).setPrecio(precio);;
-			comidas.get(fila).setStock(stock);;
-			bd.modificarDatoComidas(comidas.get(fila));
+			@Override
+			public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,
+						int row, int column) {
+				Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+				//Empieza el cambio
+				int stock = Integer.parseInt((String) modeloBebida.getValueAt(row, 3));
 				
-		}
-	});
-		
+				if (stock<=2) {
+					c.setBackground(Color.RED);
+				} else {
+					c.setBackground(Color.GREEN);
+				}
+				
+				return c;
+			}
+		});
 	
-	
-		
-		tablaComida.addMouseListener(new MouseListener() {
+		modeloComida.addTableModelListener(new TableModelListener() {
 			
 			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
+			public void tableChanged(TableModelEvent e) {
 				
-			}
-			
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-				btnCambiarPrecio.addActionListener(new ActionListener() {
+				int fila = e.getFirstRow();
+				if(fila >= comidas.size())return;
+				String nom = (String) modeloComida.getValueAt(fila, 0);
+				float precio =Float.parseFloat((String) modeloComida.getValueAt(fila, 2));
+				int stock =Integer.parseInt((String) modeloComida.getValueAt(fila, 3)) ;
+				comidas.get(fila).setNombre(nom);
+				comidas.get(fila).setPrecio(precio);
+				comidas.get(fila).setStock(stock);
+				bd.modificarDatoComidas(comidas.get(fila));
 					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						// TODO Auto-generated method stub
-						
-						String Nuevoprecio= JOptionPane.showInputDialog("Introduce un nuevo precio:");
-						modelo.setValueAt(Nuevoprecio, tablaComida.getSelectedRow(), 2);
-						
-						bd.cambiarPrecioComida(Integer.parseInt((String)modelo.getValueAt(tablaComida.getSelectedRow(),1)), Integer.parseInt(Nuevoprecio));
-						System.out.println("cambio de precio");
-					}
-				});
+			}
+		});
+		modeloBebida.addTableModelListener(new TableModelListener() {
+			
+			@Override
+			public void tableChanged(TableModelEvent e) {
 				
-				btnBorrar.addActionListener(new ActionListener() {
+				int fila = e.getFirstRow();
+				if(fila >= bebidas.size() || modeloBebida.getRowCount() == 0)return;
+				String nom = (String) modeloBebida.getValueAt(fila, 0);
+				float precio =Float.parseFloat((String) modeloBebida.getValueAt(fila, 2));
+				int stock =Integer.parseInt((String) modeloBebida.getValueAt(fila, 3)) ;
+				bebidas.get(fila).setNombre(nom);
+				bebidas.get(fila).setPrecio(precio);
+				bebidas.get(fila).setStock(stock);
+				bd.modificarDatoBebidas(bebidas.get(fila));
 					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						// TODO Auto-generated method stub
-						modelo.removeRow(tablaComida.getSelectedRow());
-						//comidas.remove(ABORT);
-						bd.borrarComida((int) modelo.getValueAt(tablaComida.getSelectedRow(), 0));
-						
-						
-					}
-				});
+			}
+		});	
+		StringBuilder selectedTable = new StringBuilder();
+		tablaComida.addFocusListener(new FocusAdapter() {
+
+			@Override
+			public void focusGained(FocusEvent e) {
+				selectedTable.setLength(0);
+				selectedTable.append("Comida");
+			}
+			
+		});
+		tablaBebida.addFocusListener(new FocusAdapter() {
+
+			@Override
+			public void focusGained(FocusEvent e) {
+				selectedTable.setLength(0);
+				selectedTable.append("Bebida");
+			}
+			
+		});
+		btnCambiarPrecio.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+				String Nuevoprecio= JOptionPane.showInputDialog("Introduce un nuevo precio:");
+				if(selectedTable.toString().equals("Comida")) {
+					modeloComida.setValueAt(Nuevoprecio, tablaComida.getSelectedRow(), 2);
+					bd.cambiarPrecioComida(Integer.parseInt((String)modeloComida.getValueAt(tablaComida.getSelectedRow(),1)), Integer.parseInt(Nuevoprecio));
+					System.out.println("cambio de precio");
+				}else {
+					modeloBebida.setValueAt(Nuevoprecio, tablaBebida.getSelectedRow(), 2);
+					bd.cambiarPrecioBebida(bebidas.get(tablaBebida.getSelectedRow()), Integer.parseInt(Nuevoprecio));
+					System.out.println("cambio de precio");
+				}
+			}
+		});
+		
+		btnBorrar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if(selectedTable.toString().equals("Comida")) {
+					bd.borrarComida(Integer.parseInt((String)modeloComida.getValueAt(tablaComida.getSelectedRow(), 1)));
+					comidas.remove(tablaComida.getSelectedRow());
+					modeloComida.removeRow(tablaComida.getSelectedRow());
+				}else {
+					bd.borrarBebida(Integer.parseInt((String)modeloBebida.getValueAt(tablaBebida.getSelectedRow(), 1)));
+					bebidas.remove(tablaBebida.getSelectedRow());
+					modeloBebida.removeRow(tablaBebida.getSelectedRow());
+				}
+				
 				
 			}
-		
 		});
 		
 	}

@@ -6,7 +6,7 @@ import java.util.List;
 public class Menu {
 	
 	private Integer id;
-	private HashMap<String, List<Producto>> hmProds;
+	private HashMap<String, List<? extends Producto>> hmProds;
 	private int numProductos;
 	private double precioTotal;
 	private String caracteristicas;
@@ -15,7 +15,7 @@ public class Menu {
 
 	}
 	
-	public Menu(Integer id, HashMap<String, List<Producto>> hmProds, int numProductos, double precioTotal,String caracteristicas) {
+	public Menu(Integer id, HashMap<String, List<? extends Producto>> hmProds, int numProductos, double precioTotal,String caracteristicas) {
 		super();
 		this.id = id;
 		this.hmProds = hmProds;
@@ -35,13 +35,13 @@ public class Menu {
 	}
 
 
-	public HashMap<String, List<Producto>> getpL() {
+	public HashMap<String, List<? extends Producto>> getpL() {
 		return hmProds;
 	}
 	
 
-	public void setpL(HashMap<String, List<Producto>> hmProds) {
-		this.hmProds = hmProds;
+	public void setpL(HashMap<String, List<? extends Producto>> hmProds1) {
+		this.hmProds = hmProds1;
 	}
 
 
@@ -74,12 +74,12 @@ public class Menu {
 		this.caracteristicas = caracteristicas;
 	}
 
-	public double obtenerPreciototal(HashMap<String, List<Producto>> hmProds) {
+	public double obtenerPreciototal(HashMap<String, List<? extends Producto>> hashMap) {
 		double sumaTotal = 0;
-		for (Producto producto : hmProds.get("Comida")) {
+		for (Producto producto : hashMap.get("Comida")) {
 			sumaTotal += producto.getPrecio();
 		}
-		for (Producto producto : hmProds.get("Bebida")) {
+		for (Producto producto : hashMap.get("Bebida")) {
 			sumaTotal += producto.getPrecio();
 		}
 		return sumaTotal;

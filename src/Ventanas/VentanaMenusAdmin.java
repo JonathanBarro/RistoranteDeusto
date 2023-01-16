@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import Logica.Bebida;
 import Logica.Comida;
 import Logica.Menu;
+import Logica.Mesa;
 import Logica.Producto;
 import Logica.Reserva;
 import Logica.RistoranteMain;
@@ -38,12 +39,11 @@ import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.Font;
 
-public class VentanaMenus extends JFrame {
+public class VentanaMenusAdmin extends JFrame {
 
 	/**
 	 * 
 	 */
-	private Reserva res;
 	private static final long serialVersionUID = 1L;
 	private JList<Menu> aMenus;
 	private DefaultListModel <Menu> modeloCarrito;
@@ -54,8 +54,7 @@ public class VentanaMenus extends JFrame {
 	
 
 	
-	public VentanaMenus(Reserva res) {
-		this.res = res;
+	public VentanaMenusAdmin(Reserva res) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setSize(1000, 400);
 		aMenus = new JList<>();
@@ -323,25 +322,20 @@ public class VentanaMenus extends JFrame {
 				spNum.setValue(res.getNumPersonas());
 			}
 		});
-		VentanaMenus vM = this;
 		btnTicket.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				if(contadorMenus != 0) {
-					JOptionPane.showMessageDialog(null, "No ha seleccionado un menu por persona");
-				}else {
 				for(int i=0;i<modeloCarrito.getSize();i++) {
 					Menu m = modeloCarrito.getElementAt(i);
 					res.getaMenu().add(m);
-					vM.setVisible(false);
 				}
-				
-				RistoranteMain.bd.insertarDatosReserva(res);
-				VentanaTicket vt = new VentanaTicket(vM);
+				for(Mesa m : res.getaMesa()) {
+					VentanaAdminMesas.mapaReservas.put(m.getIdMesa(), res);					
+				}
+				VentanaAdminMesas ventana = new VentanaAdminMesas();
+				ventana.setVisible(true);
 				dispose();
-				}
 			}
 		});
 		
