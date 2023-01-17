@@ -15,7 +15,7 @@ import Logica.RistoranteMain;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
-import java.util.regex.Pattern;
+
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.BorderLayout;
@@ -28,11 +28,10 @@ import javax.swing.JProgressBar;
 public class VentanaRegistro extends JFrame{
 
 
-
-	private JTextField textField_Nombre;
-	private JTextField textField_Apellido;
-	private JTextField textField_Contrasenia;
-	private JTextField textField_NumTlfn;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
 	private JPanel panelProgress;
 	JProgressBar progreso;
 	BD metodosbases = new BD();
@@ -94,51 +93,34 @@ public class VentanaRegistro extends JFrame{
 		lblContrasenia.setBounds(106, 92, 129, 14);
 		panelCent.add(lblContrasenia);
 		
-		JLabel lblNumTlfn = new JLabel("Numero de telefono");
-		lblNumTlfn.setBounds(106, 131, 136, 14);
-		panelCent.add(lblNumTlfn);
+		JLabel lblNewLabel_3 = new JLabel("Numero de telefono");
+		lblNewLabel_3.setBounds(106, 131, 136, 14);
+		panelCent.add(lblNewLabel_3);
 		
-		textField_Nombre = new JTextField();
-		textField_Nombre.setBounds(231, 19, 96, 20);
-		panelCent.add(textField_Nombre);
-		textField_Nombre.setColumns(10);
+		textField = new JTextField();
+		textField.setBounds(231, 19, 96, 20);
+		panelCent.add(textField);
+		textField.setColumns(10);
 		
-		textField_Apellido = new JTextField();
-		textField_Apellido.setBounds(231, 53, 96, 20);
-		panelCent.add(textField_Apellido);
-		textField_Apellido.setColumns(10);
+		textField_1 = new JTextField();
+		textField_1.setBounds(231, 53, 96, 20);
+		panelCent.add(textField_1);
+		textField_1.setColumns(10);
 		
-		textField_Contrasenia = new JPasswordField();
-		textField_Contrasenia.setBounds(231, 92, 96, 20);
-		panelCent.add(textField_Contrasenia);
-		textField_Contrasenia.setColumns(10);
+		textField_2 = new JPasswordField();
+		textField_2.setBounds(231, 92, 96, 20);
+		panelCent.add(textField_2);
+		textField_2.setColumns(10);
 		
-		textField_NumTlfn = new JTextField();
-		textField_NumTlfn.setBounds(231, 128, 96, 20);
-		panelCent.add(textField_NumTlfn);
-		textField_NumTlfn.setColumns(10);
-		 
+		textField_3 = new JTextField();
+		textField_3.setBounds(231, 128, 96, 20);
+		panelCent.add(textField_3);
+		textField_3.setColumns(10);
+		
 		
 		btnRegis.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String erNombre = "[A-Z][a-z]{0,19}";
-				String erApellido = "[A-Z][a-z]{0,19}";
-				String erContrasenia = "[A-Z][a-z][0-9]{0,19}";
-				String erNumTlfn = 	"[0-9]{0,9}";
-				if(Pattern.matches(erNombre, textField_Nombre.getText()) && Pattern.matches(erApellido, textField_Apellido.getText()) && Pattern.matches(erContrasenia, textField_Contrasenia.getText()) && Pattern.matches(erNumTlfn, textField_NumTlfn.getText()))  {
-					JOptionPane.showMessageDialog(null, "Los datos cumplen los requisitos, ahora comprobaremos si el usuario existe en la base de datos", "OK", JOptionPane.OK_OPTION);
-					RistoranteMain.bd.buscarClienteRegistrado(erNombre, erNumTlfn);
-					RistoranteMain.bd.guardarClientes(textField_Nombre.getText(), textField_Apellido.getText(), textField_Contrasenia.getText(), Integer.parseInt(textField_NumTlfn.getText()));
-					JOptionPane.showMessageDialog(null, "Se ha registrado correctamente.");
-					VentanaInicio window = new VentanaInicio();
-					window.setVisible(true);
-		 
-				}else {  
-					JOptionPane.showMessageDialog(null, "Este cliente ya existe o no se estan respetando los 20 carácteres alfanuméricos de los campos.", "ERROR", JOptionPane.ERROR_MESSAGE);
-
-				}
-
-				RistoranteMain.bd.guardarClientes(textField_Nombre.getText(), textField_Contrasenia.getText(), textField_Apellido.getText(), Integer.parseInt(textField_NumTlfn.getText()));
+				RistoranteMain.bd.guardarClientes(textField.getText(), textField_1.getText(), textField_2.getText(), Integer.parseInt(textField_3.getText()));
 				progreso.setVisible(true);
 				Thread hilo = new Thread(new Runnable() {
 					public void run() {
@@ -160,11 +142,8 @@ public class VentanaRegistro extends JFrame{
 				
 				});
 				hilo.start();
-
 			}
-				
-			}
-		);
+		});
 		btnRegis.setBackground(new Color(255, 128, 64));
 		btnRegis.setBounds(226, 175, 129, 23);
 		panelCent.add(btnRegis);

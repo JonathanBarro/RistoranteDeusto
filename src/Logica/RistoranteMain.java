@@ -12,13 +12,13 @@ public class RistoranteMain {
 	public static void main(String[] args) {
 		
 		bd = new BD();	
-		bd.borrarDatos();
-	    bd.borrarBBDD();
+//		bd.borrarDatos();
+//	    bd.borrarBBDD();
 		VentanaAdminCliente window = new VentanaAdminCliente();
 		window.setVisible(true);
 		
 		//CREATE DATABASE: Se crea la BBDD
-		bd.crearBBDD();
+//		bd.crearBBDD();
 		
 		//INSERT: Insertar datos en la BBDD		
 		cargarBD(bd);

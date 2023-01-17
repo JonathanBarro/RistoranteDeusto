@@ -144,7 +144,7 @@ public class VentanaReservaInteriror extends JFrame {
 		calen.setMinSelectableDate(fechaActual);
 		calen.setMaxSelectableDate(ultimaFecha);
 		calen.setPreferredSize(new Dimension(100,25));
-		calen.setDateFormatString("dd-MMMM");
+		calen.setDateFormatString("dd-MMMM-yyyy");
 		JButton btnConfirmCalen = new JButton("Seleccionar dia");
 		btnConfirmCalen.setBounds(179, 50, 147, 23);
 		panel_Calendar.add(btnConfirmCalen);
@@ -163,12 +163,14 @@ public class VentanaReservaInteriror extends JFrame {
 					panel_hora.setVisible(true);
 					panel_Mesas.setVisible(false);
 					btnConfirmCalen.setVisible(false);
+					calen.setEnabled(false);
 					String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
 					String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
 					modif.setText("Reserva: Dia: "+ dia +"-" + mes+".");
+					
 					}else{
 						calen.setEnabled(true);
-						;
+						
 					}
 				}else {
 					JOptionPane aviso = new JOptionPane();
