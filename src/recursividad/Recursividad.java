@@ -6,12 +6,12 @@ import java.util.List;
 
 public class Recursividad {
 	
-	public static List<List<String>> combinaciones(List<String> menus, int numPersonas){
-		List<List<String>> resultado = new ArrayList<>();
+	public static List<List<Integer>> combinaciones(List<Integer> menus, int numPersonas){
+		List<List<Integer>> resultado = new ArrayList<>();
 		combinacionesR(resultado,numPersonas,menus,new ArrayList<>(), 0);
 		return resultado;
 	}
-	public static void combinacionesR(List<List<String>> resultado, int numPersonas, List<String> menus, List<String> temp, int cont) {
+	public static void combinacionesR(List<List<Integer>> resultado, int numPersonas, List<Integer> menus, List<Integer> temp, int cont) {
 		if(cont == numPersonas) {
 			resultado.add(new ArrayList<>(temp));
 		}else {
@@ -26,14 +26,14 @@ public class Recursividad {
 	
 	
 	public static void main(String[] args) {
-		List<String> menis = new ArrayList<>();
-		menis.add("M1");
-		menis.add("M2");
-		menis.add("M3");
-		menis.add("M4");
-		List<List<String>> mm = new ArrayList<>();
+		List<Integer> menis = new ArrayList<>();
+		menis.add(1);
+		menis.add(2);
+		menis.add(3);
+		menis.add(4);
+		List<List<Integer>> mm = new ArrayList<>();
 		mm=combinaciones(menis, 3);
-		for(List<String> m : mm) {
+		for(List<Integer> m : mm) {
 			System.out.println(m);
 		}
 		

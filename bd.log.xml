@@ -4146,3 +4146,1733 @@
   <message>Se han recuperado Menu_EntreSemana... </message>
 </record>
 </log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-17T15:39:18.836420500Z</date>
+  <millis>1673969958836</millis>
+  <nanos>420500</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T15:39:19.760426100Z</date>
+  <millis>1673969959760</millis>
+  <nanos>426100</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-17T15:39:19.771426200Z</date>
+  <millis>1673969959771</millis>
+  <nanos>426200</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-17T15:39:19.773433700Z</date>
+  <millis>1673969959773</millis>
+  <nanos>433700</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T15:39:20.337427700Z</date>
+  <millis>1673969960337</millis>
+  <nanos>427700</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-17T15:39:20.418060300Z</date>
+  <millis>1673969960418</millis>
+  <nanos>60300</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-17T15:39:20.423274800Z</date>
+  <millis>1673969960423</millis>
+  <nanos>274800</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T15:39:20.424056200Z</date>
+  <millis>1673969960424</millis>
+  <nanos>56200</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:39:20.426056Z</date>
+  <millis>1673969960426</millis>
+  <nanos>56000</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-17T15:39:20.427058300Z</date>
+  <millis>1673969960427</millis>
+  <nanos>58300</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-17T15:39:56.659025100Z</date>
+  <millis>1673969996659</millis>
+  <nanos>25100</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T15:40:03.554422100Z</date>
+  <millis>1673970003554</millis>
+  <nanos>422100</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T15:40:34.345141700Z</date>
+  <millis>1673970034345</millis>
+  <nanos>141700</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:40:39.593013600Z</date>
+  <millis>1673970039593</millis>
+  <nanos>13600</nanos>
+  <sequence>13</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>- Se ha borrado %d mesa</message>
+</record>
+<record>
+  <date>2023-01-17T15:40:42.911242700Z</date>
+  <millis>1673970042911</millis>
+  <nanos>242700</nanos>
+  <sequence>14</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-17T15:40:44.221165800Z</date>
+  <millis>1673970044221</millis>
+  <nanos>165800</nanos>
+  <sequence>15</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T15:40:44.223166500Z</date>
+  <millis>1673970044223</millis>
+  <nanos>166500</nanos>
+  <sequence>16</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:40:44.224166700Z</date>
+  <millis>1673970044224</millis>
+  <nanos>166700</nanos>
+  <sequence>17</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T15:40:44.226150300Z</date>
+  <millis>1673970044226</millis>
+  <nanos>150300</nanos>
+  <sequence>18</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:40:44.228166600Z</date>
+  <millis>1673970044228</millis>
+  <nanos>166600</nanos>
+  <sequence>19</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-17T15:42:33.937106600Z</date>
+  <millis>1673970153937</millis>
+  <nanos>106600</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T15:42:34.226007700Z</date>
+  <millis>1673970154226</millis>
+  <nanos>7700</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-17T15:42:34.238849700Z</date>
+  <millis>1673970154238</millis>
+  <nanos>849700</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-17T15:42:34.239833300Z</date>
+  <millis>1673970154239</millis>
+  <nanos>833300</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Error al borrar el archivo de la BBDD: </message>
+  <exception>
+    <message>java.nio.file.FileSystemException: db\database.db: El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso</message>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>translateToIOException</method>
+      <line>92</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>rethrowAsIOException</method>
+      <line>103</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>rethrowAsIOException</method>
+      <line>108</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsFileSystemProvider</class>
+      <method>implDelete</method>
+      <line>275</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.AbstractFileSystemProvider</class>
+      <method>delete</method>
+      <line>105</line>
+    </frame>
+    <frame>
+      <class>java.nio.file.Files</class>
+      <method>delete</method>
+      <line>1152</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>borrarBBDD</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>main</method>
+      <line>16</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-17T15:42:34.544923400Z</date>
+  <millis>1673970154544</millis>
+  <nanos>923400</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-17T15:42:34.628965500Z</date>
+  <millis>1673970154628</millis>
+  <nanos>965500</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-17T15:42:34.634970800Z</date>
+  <millis>1673970154634</millis>
+  <nanos>970800</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T15:42:34.635982900Z</date>
+  <millis>1673970154635</millis>
+  <nanos>982900</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:42:34.637965700Z</date>
+  <millis>1673970154637</millis>
+  <nanos>965700</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-17T15:42:34.639716900Z</date>
+  <millis>1673970154639</millis>
+  <nanos>716900</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-17T15:42:44.170012900Z</date>
+  <millis>1673970164170</millis>
+  <nanos>12900</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T15:42:47.087817300Z</date>
+  <millis>1673970167087</millis>
+  <nanos>817300</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T15:43:10.993170200Z</date>
+  <millis>1673970190993</millis>
+  <nanos>170200</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:43:14.453193800Z</date>
+  <millis>1673970194453</millis>
+  <nanos>193800</nanos>
+  <sequence>13</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>- Se ha borrado %d mesa</message>
+</record>
+<record>
+  <date>2023-01-17T15:43:16.365770Z</date>
+  <millis>1673970196365</millis>
+  <nanos>770000</nanos>
+  <sequence>14</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-17T15:43:17.326358100Z</date>
+  <millis>1673970197326</millis>
+  <nanos>358100</nanos>
+  <sequence>15</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T15:43:17.327358400Z</date>
+  <millis>1673970197327</millis>
+  <nanos>358400</nanos>
+  <sequence>16</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:43:17.329893500Z</date>
+  <millis>1673970197329</millis>
+  <nanos>893500</nanos>
+  <sequence>17</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T15:43:17.331895400Z</date>
+  <millis>1673970197331</millis>
+  <nanos>895400</nanos>
+  <sequence>18</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:43:17.334895200Z</date>
+  <millis>1673970197334</millis>
+  <nanos>895200</nanos>
+  <sequence>19</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-17T15:52:35.173012400Z</date>
+  <millis>1673970755173</millis>
+  <nanos>12400</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T15:52:38.314955400Z</date>
+  <millis>1673970758314</millis>
+  <nanos>955400</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T15:53:02.622044300Z</date>
+  <millis>1673970782622</millis>
+  <nanos>44300</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:53:05.856932600Z</date>
+  <millis>1673970785856</millis>
+  <nanos>932600</nanos>
+  <sequence>13</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>- Se ha borrado %d mesa</message>
+</record>
+<record>
+  <date>2023-01-17T15:53:07.624333800Z</date>
+  <millis>1673970787624</millis>
+  <nanos>333800</nanos>
+  <sequence>14</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-17T15:53:09.450655500Z</date>
+  <millis>1673970789450</millis>
+  <nanos>655500</nanos>
+  <sequence>15</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T15:53:09.452577600Z</date>
+  <millis>1673970789452</millis>
+  <nanos>577600</nanos>
+  <sequence>16</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:53:09.453640800Z</date>
+  <millis>1673970789453</millis>
+  <nanos>640800</nanos>
+  <sequence>17</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T15:53:09.456004800Z</date>
+  <millis>1673970789456</millis>
+  <nanos>4800</nanos>
+  <sequence>18</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:53:09.457577700Z</date>
+  <millis>1673970789457</millis>
+  <nanos>577700</nanos>
+  <sequence>19</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-17T15:54:26.347859300Z</date>
+  <millis>1673970866347</millis>
+  <nanos>859300</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T15:54:26.598099400Z</date>
+  <millis>1673970866598</millis>
+  <nanos>99400</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-17T15:54:26.608584600Z</date>
+  <millis>1673970866608</millis>
+  <nanos>584600</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-17T15:54:26.609584200Z</date>
+  <millis>1673970866609</millis>
+  <nanos>584200</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Error al borrar el archivo de la BBDD: </message>
+  <exception>
+    <message>java.nio.file.FileSystemException: db\database.db: El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso</message>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>translateToIOException</method>
+      <line>92</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>rethrowAsIOException</method>
+      <line>103</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>rethrowAsIOException</method>
+      <line>108</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsFileSystemProvider</class>
+      <method>implDelete</method>
+      <line>275</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.AbstractFileSystemProvider</class>
+      <method>delete</method>
+      <line>105</line>
+    </frame>
+    <frame>
+      <class>java.nio.file.Files</class>
+      <method>delete</method>
+      <line>1152</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>borrarBBDD</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>main</method>
+      <line>16</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-17T15:54:26.927932800Z</date>
+  <millis>1673970866927</millis>
+  <nanos>932800</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-17T15:54:26.999352900Z</date>
+  <millis>1673970866999</millis>
+  <nanos>352900</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-17T15:54:27.004059600Z</date>
+  <millis>1673970867004</millis>
+  <nanos>59600</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T15:54:27.004837100Z</date>
+  <millis>1673970867004</millis>
+  <nanos>837100</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:54:27.005837400Z</date>
+  <millis>1673970867005</millis>
+  <nanos>837400</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-17T15:54:27.006916Z</date>
+  <millis>1673970867006</millis>
+  <nanos>916000</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-17T15:54:29.262627500Z</date>
+  <millis>1673970869262</millis>
+  <nanos>627500</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T15:54:33.318208300Z</date>
+  <millis>1673970873318</millis>
+  <nanos>208300</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T15:54:57.372100100Z</date>
+  <millis>1673970897372</millis>
+  <nanos>100100</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:55:00.885554500Z</date>
+  <millis>1673970900885</millis>
+  <nanos>554500</nanos>
+  <sequence>13</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>- Se ha borrado %d mesa</message>
+</record>
+<record>
+  <date>2023-01-17T15:55:05.024581800Z</date>
+  <millis>1673970905024</millis>
+  <nanos>581800</nanos>
+  <sequence>14</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-17T15:55:06.221500400Z</date>
+  <millis>1673970906221</millis>
+  <nanos>500400</nanos>
+  <sequence>15</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T15:55:06.224500200Z</date>
+  <millis>1673970906224</millis>
+  <nanos>500200</nanos>
+  <sequence>16</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:55:06.226508200Z</date>
+  <millis>1673970906226</millis>
+  <nanos>508200</nanos>
+  <sequence>17</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T15:55:06.228500100Z</date>
+  <millis>1673970906228</millis>
+  <nanos>500100</nanos>
+  <sequence>18</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-17T15:55:06.229610500Z</date>
+  <millis>1673970906229</millis>
+  <nanos>610500</nanos>
+  <sequence>19</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-17T16:07:33.266128300Z</date>
+  <millis>1673971653266</millis>
+  <nanos>128300</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T16:07:33.544006200Z</date>
+  <millis>1673971653544</millis>
+  <nanos>6200</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-17T16:07:33.552996Z</date>
+  <millis>1673971653552</millis>
+  <nanos>996000</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-17T16:07:33.554003400Z</date>
+  <millis>1673971653554</millis>
+  <nanos>3400</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Error al borrar el archivo de la BBDD: </message>
+  <exception>
+    <message>java.nio.file.FileSystemException: db\database.db: El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso</message>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>translateToIOException</method>
+      <line>92</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>rethrowAsIOException</method>
+      <line>103</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>rethrowAsIOException</method>
+      <line>108</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsFileSystemProvider</class>
+      <method>implDelete</method>
+      <line>275</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.AbstractFileSystemProvider</class>
+      <method>delete</method>
+      <line>105</line>
+    </frame>
+    <frame>
+      <class>java.nio.file.Files</class>
+      <method>delete</method>
+      <line>1152</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>borrarBBDD</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>main</method>
+      <line>16</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-17T16:07:33.866028900Z</date>
+  <millis>1673971653866</millis>
+  <nanos>28900</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-17T16:07:33.949939Z</date>
+  <millis>1673971653949</millis>
+  <nanos>939000</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-17T16:07:33.954930900Z</date>
+  <millis>1673971653954</millis>
+  <nanos>930900</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T16:07:33.956928900Z</date>
+  <millis>1673971653956</millis>
+  <nanos>928900</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-17T16:07:33.957929200Z</date>
+  <millis>1673971653957</millis>
+  <nanos>929200</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-17T16:07:33.958929900Z</date>
+  <millis>1673971653958</millis>
+  <nanos>929900</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-17T16:07:35.409128300Z</date>
+  <millis>1673971655409</millis>
+  <nanos>128300</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T16:07:38.731028900Z</date>
+  <millis>1673971658731</millis>
+  <nanos>28900</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T16:08:00.988896800Z</date>
+  <millis>1673971680988</millis>
+  <nanos>896800</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-17T16:08:03.498489Z</date>
+  <millis>1673971683498</millis>
+  <nanos>489000</nanos>
+  <sequence>13</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>- Se ha borrado %d mesa</message>
+</record>
+<record>
+  <date>2023-01-17T16:08:07.679385100Z</date>
+  <millis>1673971687679</millis>
+  <nanos>385100</nanos>
+  <sequence>14</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-17T16:08:08.779487700Z</date>
+  <millis>1673971688779</millis>
+  <nanos>487700</nanos>
+  <sequence>15</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T16:08:08.781488200Z</date>
+  <millis>1673971688781</millis>
+  <nanos>488200</nanos>
+  <sequence>16</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-17T16:08:08.785487800Z</date>
+  <millis>1673971688785</millis>
+  <nanos>487800</nanos>
+  <sequence>17</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T16:08:08.788000100Z</date>
+  <millis>1673971688788</millis>
+  <nanos>100</nanos>
+  <sequence>18</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-17T16:08:08.789999800Z</date>
+  <millis>1673971688789</millis>
+  <nanos>999800</nanos>
+  <sequence>19</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-17T17:22:06.705557Z</date>
+  <millis>1673976126705</millis>
+  <nanos>557000</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T17:22:07.037676100Z</date>
+  <millis>1673976127037</millis>
+  <nanos>676100</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-17T17:22:07.047811100Z</date>
+  <millis>1673976127047</millis>
+  <nanos>811100</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-17T17:22:07.048810900Z</date>
+  <millis>1673976127048</millis>
+  <nanos>810900</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Error al borrar el archivo de la BBDD: </message>
+  <exception>
+    <message>java.nio.file.FileSystemException: db\database.db: El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso</message>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>translateToIOException</method>
+      <line>92</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>rethrowAsIOException</method>
+      <line>103</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>rethrowAsIOException</method>
+      <line>108</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsFileSystemProvider</class>
+      <method>implDelete</method>
+      <line>275</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.AbstractFileSystemProvider</class>
+      <method>delete</method>
+      <line>105</line>
+    </frame>
+    <frame>
+      <class>java.nio.file.Files</class>
+      <method>delete</method>
+      <line>1152</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>borrarBBDD</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>main</method>
+      <line>16</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-17T17:22:07.459801700Z</date>
+  <millis>1673976127459</millis>
+  <nanos>801700</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-17T17:22:07.570114Z</date>
+  <millis>1673976127570</millis>
+  <nanos>114000</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-17T17:22:07.578113500Z</date>
+  <millis>1673976127578</millis>
+  <nanos>113500</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T17:22:07.579113700Z</date>
+  <millis>1673976127579</millis>
+  <nanos>113700</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-17T17:22:07.581113500Z</date>
+  <millis>1673976127581</millis>
+  <nanos>113500</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-17T17:22:07.582115300Z</date>
+  <millis>1673976127582</millis>
+  <nanos>115300</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-17T17:22:09.719848100Z</date>
+  <millis>1673976129719</millis>
+  <nanos>848100</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T17:22:12.919247200Z</date>
+  <millis>1673976132919</millis>
+  <nanos>247200</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T17:22:36.506783600Z</date>
+  <millis>1673976156506</millis>
+  <nanos>783600</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-17T17:22:38.620626100Z</date>
+  <millis>1673976158620</millis>
+  <nanos>626100</nanos>
+  <sequence>13</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>- Se ha borrado %d mesa</message>
+</record>
+<record>
+  <date>2023-01-17T17:22:40.308178600Z</date>
+  <millis>1673976160308</millis>
+  <nanos>178600</nanos>
+  <sequence>14</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-17T17:22:40.937590200Z</date>
+  <millis>1673976160937</millis>
+  <nanos>590200</nanos>
+  <sequence>15</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T17:22:40.941254700Z</date>
+  <millis>1673976160941</millis>
+  <nanos>254700</nanos>
+  <sequence>16</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-17T17:22:40.945590500Z</date>
+  <millis>1673976160945</millis>
+  <nanos>590500</nanos>
+  <sequence>17</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T17:22:40.948880Z</date>
+  <millis>1673976160948</millis>
+  <nanos>880000</nanos>
+  <sequence>18</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-17T17:22:40.950589400Z</date>
+  <millis>1673976160950</millis>
+  <nanos>589400</nanos>
+  <sequence>19</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-01-17T17:26:15.926425300Z</date>
+  <millis>1673976375926</millis>
+  <nanos>425300</nanos>
+  <sequence>0</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T17:26:16.213580100Z</date>
+  <millis>1673976376213</millis>
+  <nanos>580100</nanos>
+  <sequence>1</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado todos los datos correctamente </message>
+</record>
+<record>
+  <date>2023-01-17T17:26:16.224567700Z</date>
+  <millis>1673976376224</millis>
+  <nanos>567700</nanos>
+  <sequence>2</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han borrado las tablas</message>
+</record>
+<record>
+  <date>2023-01-17T17:26:16.225567900Z</date>
+  <millis>1673976376225</millis>
+  <nanos>567900</nanos>
+  <sequence>3</sequence>
+  <logger>BD-local</logger>
+  <level>SEVERE</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Error al borrar el archivo de la BBDD: </message>
+  <exception>
+    <message>java.nio.file.FileSystemException: db\database.db: El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso</message>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>translateToIOException</method>
+      <line>92</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>rethrowAsIOException</method>
+      <line>103</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsException</class>
+      <method>rethrowAsIOException</method>
+      <line>108</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.WindowsFileSystemProvider</class>
+      <method>implDelete</method>
+      <line>275</line>
+    </frame>
+    <frame>
+      <class>sun.nio.fs.AbstractFileSystemProvider</class>
+      <method>delete</method>
+      <line>105</line>
+    </frame>
+    <frame>
+      <class>java.nio.file.Files</class>
+      <method>delete</method>
+      <line>1152</line>
+    </frame>
+    <frame>
+      <class>BD.BD</class>
+      <method>borrarBBDD</method>
+      <line>122</line>
+    </frame>
+    <frame>
+      <class>Logica.RistoranteMain</class>
+      <method>main</method>
+      <line>16</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-01-17T17:26:16.579387100Z</date>
+  <millis>1673976376579</millis>
+  <nanos>387100</nanos>
+  <sequence>4</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han creado las tablas de la BD</message>
+</record>
+<record>
+  <date>2023-01-17T17:26:16.701290Z</date>
+  <millis>1673976376701</millis>
+  <nanos>290000</nanos>
+  <sequence>5</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han isetado todas las tablas </message>
+</record>
+<record>
+  <date>2023-01-17T17:26:16.708188900Z</date>
+  <millis>1673976376708</millis>
+  <nanos>188900</nanos>
+  <sequence>6</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T17:26:16.710148700Z</date>
+  <millis>1673976376710</millis>
+  <nanos>148700</nanos>
+  <sequence>7</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
+<record>
+  <date>2023-01-17T17:26:16.711146700Z</date>
+  <millis>1673976376711</millis>
+  <nanos>146700</nanos>
+  <sequence>8</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado reservas</message>
+</record>
+<record>
+  <date>2023-01-17T17:26:16.712146700Z</date>
+  <millis>1673976376712</millis>
+  <nanos>146700</nanos>
+  <sequence>9</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>1</thread>
+  <message>Se han recuperado Menu_EntreSemana... </message>
+</record>
+<record>
+  <date>2023-01-17T17:26:37.527187700Z</date>
+  <millis>1673976397527</millis>
+  <nanos>187700</nanos>
+  <sequence>10</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>ConexiÃ³n de base de datos </message>
+</record>
+<record>
+  <date>2023-01-17T17:26:37.532317100Z</date>
+  <millis>1673976397532</millis>
+  <nanos>317100</nanos>
+  <sequence>11</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message> Se han recuperado %d comidas...</message>
+</record>
+<record>
+  <date>2023-01-17T17:26:37.550178400Z</date>
+  <millis>1673976397550</millis>
+  <nanos>178400</nanos>
+  <sequence>12</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>Se han recuperado %d bebidas... </message>
+</record>
+<record>
+  <date>2023-01-17T17:27:56.822429200Z</date>
+  <millis>1673976476822</millis>
+  <nanos>429200</nanos>
+  <sequence>13</sequence>
+  <logger>BD-local</logger>
+  <level>INFO</level>
+  <class>BD.BD</class>
+  <method>log</method>
+  <thread>20</thread>
+  <message>- Se han recuperado mesas... </message>
+</record>
