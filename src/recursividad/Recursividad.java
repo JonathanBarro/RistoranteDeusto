@@ -22,5 +22,22 @@ public class Recursividad {
 			}
 		}
 	}
+	
+	
+	
+	public static void main(String[] args) {
+		List<String> menis = new ArrayList<>();
+		menis.add("M1");
+		menis.add("M2");
+		menis.add("M3");
+		menis.add("M4");
+		List<List<String>> mm = new ArrayList<>();
+		mm=combinaciones(menis, 3);
+		for(List<String> m : mm) {
+			System.out.println(m);
+		}
+		
+		
+	}
 
 }
