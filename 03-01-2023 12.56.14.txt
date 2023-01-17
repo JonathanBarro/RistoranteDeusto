@@ -1,0 +1,10 @@
+Factura de la compra del dia: 03-01-2023 12.56.08
+	Menu [id=2, hmProds={Comida=[Spagueti 6.0€ 3 - 6], Bebida=[Cocacola 2.0 € del tiempo]}, numProductos=2, precioTotal=8.0, caracteristicas=null]
+	Menu [id=3, hmProds={Comida=[Spagueti 6.0€ 3 - 6], Bebida=[Cocacola 2.0 € del tiempo]}, numProductos=2, precioTotal=8.0, caracteristicas=null]
+	Menu [id=3, hmProds={Comida=[Spagueti 6.0€ 3 - 6], Bebida=[Cocacola 2.0 € del tiempo]}, numProductos=2, precioTotal=8.0, caracteristicas=Menu_Infantil]
+	Menu [id=3, hmProds={Comida=[Spagueti 6.0€ 3 - 6], Bebida=[Cocacola 2.0 € del tiempo]}, numProductos=2, precioTotal=8.0, caracteristicas=Menu_Infantil]
+	Menu [id=3, hmProds={Comida=[Spagueti 6.0€ 3 - 6], Bebida=[Cocacola 2.0 € del tiempo]}, numProductos=2, precioTotal=8.0, caracteristicas=Menu_Infantil]
+	Menu [id=3, hmProds={Comida=[Spagueti 6.0€ 3 - 6], Bebida=[Cocacola 2.0 € del tiempo]}, numProductos=2, precioTotal=8.0, caracteristicas=Menu_Infantil]
+	Menu [id=3, hmProds={Comida=[Spagueti 6.0€ 3 - 6], Bebida=[Cocacola 2.0 € del tiempo]}, numProductos=2, precioTotal=8.0, caracteristicas=Menu_Infantil]
+	Reserva [fecha=6-1, numPersonas=7, idReserva=3, hora= 15:00]
+TOTAL: 56.0 €
