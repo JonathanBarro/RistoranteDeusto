@@ -7,7 +7,7 @@ public class Cliente extends Usuario{
 	public Cliente() {
 		
 	}
-	
+	 
 
 	public Cliente(String nombre, String apellido, String contrasenia, int numTlfn) {
 		super(nombre, apellido, contrasenia);
