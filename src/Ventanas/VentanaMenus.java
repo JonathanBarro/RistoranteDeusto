@@ -13,6 +13,7 @@ import Logica.Menu;
 import Logica.Producto;
 import Logica.Reserva;
 import Logica.RistoranteMain;
+import recursividad.Recursividad;
 
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
@@ -203,6 +204,11 @@ public class VentanaMenus extends JFrame {
 				pMedio.add(lblEntre);
 				pMedio.add(lblFinDe);
 				pMedio.add(lblInfant);
+				List<String> caracteristicasMenus = new ArrayList<>();
+				for(Menu mC : res.getaMenu()) {
+					caracteristicasMenus.add(mC.getCaracteristicas());
+				}
+				Recursividad.combinaciones(caracteristicasMenus, res.getNumPersonas());
 				
 				setSize(1000, 410);
 			}
