@@ -264,24 +264,7 @@ public class VentanaStock extends JFrame{
 			}
 			
 		});
-		btnCambiarPrecio.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
-				String Nuevoprecio= JOptionPane.showInputDialog("Introduce un nuevo precio:");
-				if(selectedTable.toString().equals("Comida")) {
-					modeloComida.setValueAt(Nuevoprecio, tablaComida.getSelectedRow(), 2);
-					bd.cambiarPrecioComida(Integer.parseInt((String)modeloComida.getValueAt(tablaComida.getSelectedRow(),1)), Integer.parseInt(Nuevoprecio));
-					System.out.println("cambio de precio");
-				}else {
-					modeloBebida.setValueAt(Nuevoprecio, tablaBebida.getSelectedRow(), 2);
-					bd.cambiarPrecioBebida(bebidas.get(tablaBebida.getSelectedRow()), Integer.parseInt(Nuevoprecio));
-					System.out.println("cambio de precio");
-				}
-			}
-		});
+		
 		
 		btnBorrar.addActionListener(new ActionListener() {
 			
