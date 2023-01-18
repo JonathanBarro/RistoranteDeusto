@@ -64,7 +64,7 @@ public class BD {
 			st.executeUpdate(sql);
 			String sql1 = "CREATE TABLE IF NOT EXISTS Admin(nombre TEXT NOT NULL, apellido TEXT NOT NULL, contrasena TEXT NOT NULL, idAdmin Integer PRIMARY KEY NOT NULL, sueldo Real)";
 			st.executeUpdate(sql1);
-			String sql2 = "CREATE TABLE IF NOT EXISTS Bebida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer, frio TEXT NOT NULL)";
+			String sql2 = "CREATE TABLE IF NOT EXISTS Bebida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer, frio TEXT NOT NULL, FOREING KEY idMenu references Menu)";
 			st.executeUpdate(sql2);
 			String sql4 = "CREATE TABLE IF NOT EXISTS Menu(idMenu Integer PRIMARY KEY NOT NULL, numProductos Integer, caracteristica TEXT)";
 			st.executeUpdate(sql4);
@@ -145,10 +145,10 @@ public class BD {
 				String sql1 = "INSERT INTO Admin (nombre, apellido, contrasena, idAdmin, sueldo) VALUES ('%s', '%s', '%s', %d, '%.2f');";
 				System.out.println("- Insertando admministradores...");
 				
-				String sql2 = "INSERT INTO Bebida (nombre, precio, id, stock, frio) VALUES ('%s', '%f', %d, %d, '%s');";
+				String sql2 = "INSERT INTO Bebida (nombre, precio, id, stock, frio, FOREINGKEY) VALUES ('%s', '%f', %d, %d, '%s', %d);";
 				System.out.println("- Insertando bebida...");
 				
-				String sql3 = "INSERT INTO Comida (nombre, precio, id, stock) VALUES ('%s', '%.2f', %d, %d);";
+				String sql3 = "INSERT INTO Comida (nombre, precio, id, stock, FOREINGKEY) VALUES ('%s', '%.2f', %d, %d);";
 				System.out.println("- Insertando comida...");
 				
 				String sql4 = "INSERT INTO Menu(idMenu, numProductos, caracteristica) VALUES (%d, %d, '%s');";

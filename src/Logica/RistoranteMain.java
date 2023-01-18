@@ -18,7 +18,7 @@ public class RistoranteMain {
 		window.setVisible(true);
 		
 		//CREATE DATABASE: Se crea la BBDD
-//		bd.crearBBDD();
+		bd.crearBBDD();
 		
 		//INSERT: Insertar datos en la BBDD		
 		cargarBD(bd);

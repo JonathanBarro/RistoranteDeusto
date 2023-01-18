@@ -54,6 +54,14 @@ public class VentanaAdminMesas extends JFrame{
 		JPanel panelBotones = new JPanel(new FlowLayout());
 		JButton btnMultiSeleccion = new JButton("Multi-Seleccion");
 		JButton btnVolver = new JButton("Volver");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaAdmin vA = new VentanaAdmin();
+				vA.setVisible(true);
+				dispose();
+				
+			}
+		});
 		panelBotones.add(btnMultiSeleccion);
 		panelBotones.add(btnVolver);
 		

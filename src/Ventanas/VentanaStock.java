@@ -74,6 +74,10 @@ public class VentanaStock extends JFrame{
 		lblStock.setFont(new Font("Freestyle Script", Font.BOLD, 28));
 		panelNorte.add(lblStock);
 		
+		JLabel lblNewLabel = new JLabel("(para cambiar el precio seleecion la celda)");
+		lblNewLabel.setFont(new Font("Segoe UI", Font.PLAIN, 11));
+		panelNorte.add(lblNewLabel);
+		
 	
 		
 		JPanel panelSur = new JPanel();
@@ -87,14 +91,12 @@ public class VentanaStock extends JFrame{
 		JLabel txtAreaStock= new JLabel();
 		txtAreaStock.setFont(new Font("Times New Roman" , Font.BOLD, 28));
 		txtAreaStock.setBounds(10, 10, 200, 30);
-		JButton btnCambiarPrecio = new JButton("Cambiar Precio");
 		
 		JButton btnAniadirComida = new JButton("Aniadir");
 		panelSur.add(btnAniadirComida);
 		
 		JButton btnBorrar = new JButton("Borrar");
 		panelSur.add(btnBorrar);
-		panelSur.add(btnCambiarPrecio);
 		
 		JButton btnVolver= new JButton("Volver");
 		panelSur.add(btnVolver);
