@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 
 import Logica.Admin;
 import Logica.Bebida;
+import Logica.Merch;
 import Logica.Cliente;
 import Logica.Comida;
 import Logica.Menu;
@@ -26,6 +27,7 @@ import Logica.Menu;
 import Logica.Mesa;
 import Logica.Producto;
 import Logica.Reserva;
+import Logica.Merch.Tipo;
 
 public class BD {
 	/**
@@ -64,7 +66,7 @@ public class BD {
 			st.executeUpdate(sql);
 			String sql1 = "CREATE TABLE IF NOT EXISTS Admin(nombre TEXT NOT NULL, apellido TEXT NOT NULL, contrasena TEXT NOT NULL, idAdmin Integer PRIMARY KEY NOT NULL, sueldo Real)";
 			st.executeUpdate(sql1);
-			String sql2 = "CREATE TABLE IF NOT EXISTS Bebida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer, frio TEXT NOT NULL, FOREING KEY idMenu references Menu)";
+			String sql2 = "CREATE TABLE IF NOT EXISTS Bebida(nombre TEXT NOT NULL, precio Real, id Integer PRIMARY KEY NOT NULL, stock Integer, frio TEXT NOT NULL)";
 			st.executeUpdate(sql2);
 			String sql4 = "CREATE TABLE IF NOT EXISTS Menu(idMenu Integer PRIMARY KEY NOT NULL, numProductos Integer, caracteristica TEXT)";
 			st.executeUpdate(sql4);
@@ -74,7 +76,8 @@ public class BD {
 			st.executeUpdate(sql8);
 			String sql9 = "CREATE TABLE IF NOT EXISTS Reserva(fecha TEXT NOT NULL, numeroPersonas Integer, idReserva Integer , idMesa TEXT, idMenu TEXT, hora TEXT)";
 			st.executeUpdate(sql9);
-	        	        
+			String sql10 = "CREATE TABLE IF NOT EXISTS Merch(idMerch TEXT NOT NULL, color TEXT, talla Integer, precio FLOAT, imagen TEXT, tipo TEXT)";
+			st.executeUpdate(sql10);
 	        if (!st.execute(sql)) {
 	        	System.out.println("- Se ha creado la tabla Cliente");
 	        	System.out.println("- Se ha creado la tabla Admin");
@@ -83,6 +86,7 @@ public class BD {
 	        	System.out.println("- Se ha creado las tabla de Menu");
 	        	System.out.println("- Se ha creado la tabla de Rervas");
 	        	System.out.println("- Se ha creado la tabla Mesas");
+	        	System.out.println("- Se ha creado la tabla Camiseta");
 	     
 	        }
 	
@@ -98,13 +102,14 @@ public class BD {
 		//Se abre la conexi n y se obtiene el Statement
 		try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
 		     Statement stmt = con.createStatement()) {
-	        String sql = "DROP TABLE IF EXISTS Cliente";
-	         sql = "DROP TABLE IF EXISTS Admin";
-	         sql = "DROP TABLE IF EXISTS Comida";
-	         sql = "DROP TABLE IF EXISTS Bebida";
-	         sql = "DROP TABLE IF EXISTS Menu";
-	         sql = "DROP TABLE IF EXISTS Mesa";
-	         sql = "DROP TABLE IF EXISTS Reserva";
+	        String sql = "DROP TABLE IF EXISTS Cliente;";
+	         sql += "DROP TABLE IF EXISTS Admin;";
+	         sql += "DROP TABLE IF EXISTS Comida;";
+	         sql += "DROP TABLE IF EXISTS Bebida;";
+	         sql += "DROP TABLE IF EXISTS Menu;";
+	         sql += "DROP TABLE IF EXISTS Mesa;";
+	         sql += "DROP TABLE IF EXISTS Reserva;";
+	         sql += "DROP TABLE IF EXISTS Camiseta;";
 			
 	        //Se ejecuta la sentencia de creaci n de la tabla Estudiantes
 	        if (!stmt.execute(sql)) {
@@ -132,7 +137,7 @@ public class BD {
 		
 		public void insertarDatos(List<Cliente> clientes, List<Admin> admins,
 				List<Bebida> bebidas, List<Comida> comidas,  List<Menu> menus,
-				List<Mesa> mesas, List<Reserva> reservas) {
+				List<Mesa> mesas, List<Reserva> reservas, List<Merch> merchs) {
 		
 			//Se abre la conexi n y se obtiene el Statement
 			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
@@ -145,10 +150,10 @@ public class BD {
 				String sql1 = "INSERT INTO Admin (nombre, apellido, contrasena, idAdmin, sueldo) VALUES ('%s', '%s', '%s', %d, '%.2f');";
 				System.out.println("- Insertando admministradores...");
 				
-				String sql2 = "INSERT INTO Bebida (nombre, precio, id, stock, frio, FOREINGKEY) VALUES ('%s', '%f', %d, %d, '%s', %d);";
+				String sql2 = "INSERT INTO Bebida (nombre, precio, id, stock, frio) VALUES ('%s', '%f', %d, %d, '%s');";
 				System.out.println("- Insertando bebida...");
 				
-				String sql3 = "INSERT INTO Comida (nombre, precio, id, stock, FOREINGKEY) VALUES ('%s', '%.2f', %d, %d);";
+				String sql3 = "INSERT INTO Comida (nombre, precio, id, stock) VALUES ('%s', '%.2f', %d, %d);";
 				System.out.println("- Insertando comida...");
 				
 				String sql4 = "INSERT INTO Menu(idMenu, numProductos, caracteristica) VALUES (%d, %d, '%s');";
@@ -158,8 +163,10 @@ public class BD {
 				System.out.println("- Insertando mesas...");
 				
 				String sql9 = "INSERT INTO Reserva(fecha, numeroPersonas, idReserva, hora) VALUES ('%s', %d, %d, '%s');";
-				
 				//System.out.println("- Insertando reservas...");
+				
+				String sql10 = "INSERT INTO Merch(idMerch, color, talla, precio, imagen, tipo) VALUES ('%s', '%s', %d, %s, '%s', '%s');";
+				System.out.println("- Insertando mesas...");
 				
 				//Se recorren los clientes y se insertan uno a uno
 				for (Cliente c : clientes) {
@@ -215,7 +222,14 @@ public class BD {
 						System.out.println(String.format(" - No se ha insertado las reservas: %s", r.toString()));
 					}
 				}
-			log( Level.INFO, "Se han isetado todas las tablas " , null );
+			for(Merch c : merchs) {
+				if (1 == stmt.executeUpdate(String.format(sql10, c.getIdMerch(), c.getColor(), c.getTalla(), ((Float)c.getPrecio()).toString().replace(",", "."), c.getImagen(), c.getTipo().toString()))) {					
+					System.out.println(String.format(" - Merch insertado: %s", c.toString()));
+				} else {
+					System.out.println(String.format(" - No se ha insertado el merch: %s", c.toString()));
+				}
+			}
+			log( Level.INFO, "Se han insertado todas las tablas " , null );
 			} catch (Exception ex) {
 				System.err.println(String.format("* Error al insertar datos de la BBDD: %s", ex.getMessage()));
 				log( Level.SEVERE, "Error al insertar datos de la BBDD:s " , ex );
@@ -445,6 +459,48 @@ public class BD {
 					
 					//Se inserta cada nuevo cliente en la lista de clientes
 					producto.add(comida);
+				}
+				
+				//Se cierra el ResultSet
+				rs.close();
+				
+				System.out.println(String.format("- Se han recuperado %d comidas...", producto.size()));
+				log( Level.INFO, " Se han recuperado %d comidas..." , null );
+			} catch (Exception ex) {
+				System.err.println(String.format("* Error al obtener datos de la BBDD: %s", ex.getMessage()));
+				log( Level.SEVERE, "Error al obtener datos de la BBDD:" , ex );
+				ex.printStackTrace();						
+			}		
+			
+			
+			return producto;
+		}
+		
+		public List<Merch> obtenerDatosMerch() {
+			
+			List<Merch> producto = new ArrayList<>();
+			//Se abre la conexi n y se obtiene el Statement
+			try (Connection con = DriverManager.getConnection(CONNECTION_STRING);
+			     Statement stmt = con.createStatement()) {
+				String sql = "SELECT * FROM Merch";
+				
+				//Se ejecuta la sentencia y se obtiene el ResultSet con los resutlados
+				ResultSet rs = stmt.executeQuery(sql);			
+				Merch merch;
+				
+				//Se recorre el ResultSet y se crean objetos Cliente
+				while (rs.next()) {
+					merch = new Merch();
+					merch.setColor(rs.getString("color"));
+					merch.setIdMerch(rs.getString("idMerch"));
+					merch.setImagen(rs.getString("imagen"));
+					merch.setPrecio(rs.getFloat("precio"));
+					merch.setTalla(rs.getInt("talla"));
+					merch.setTipo(Tipo.valueOf(rs.getString("tipo")));
+					
+					
+					//Se inserta cada nuevo cliente en la lista de clientes
+					producto.add(merch);
 				}
 				
 				//Se cierra el ResultSet

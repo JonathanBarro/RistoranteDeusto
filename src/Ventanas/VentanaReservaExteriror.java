@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.AncestorListener;
 import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JDateChooser;
@@ -19,7 +18,7 @@ import Logica.RistoranteMain;
 import java.awt.BorderLayout;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+
 
 import java.awt.Font;
 import javax.swing.JButton;
@@ -53,11 +52,6 @@ public class VentanaReservaExteriror extends JFrame {
 	private JLabel lblNombre;
 	private Reserva res;
 	private JFrame ventanaActual;
-	private JPanel panel_hora;
-	JComboBox<String> hora_comboBox = new JComboBox<String>();
-	private JPanel panel_Mesas ;
-	boolean posiciones;
-	JLabel modif = new JLabel("Reserva:");
 
 	/**
 	 * Launch the application.
@@ -101,27 +95,32 @@ public class VentanaReservaExteriror extends JFrame {
 		
 		JPanel panel_Cent = new JPanel();
 		contentPane.add(panel_Cent, BorderLayout.CENTER);
+		panel_Cent.setLayout(new BorderLayout(0, 0));
 		
-		panel_hora = new JPanel();
-		panel_hora.setBounds(0, 96, 72, 76);
+		JPanel panel_ComboCent = new JPanel();
+		panel_ComboCent.setBackground(new Color(231, 237, 236));
+		panel_Cent.add(panel_ComboCent, BorderLayout.NORTH);
 		
-		 
-		panel_Mesas = new JPanel();
-		panel_Mesas.setBounds(72, 96, 334, 76);
-		panel_Cent.setLayout(null);
-		panel_Sur.add(modif);
+		JLabel jLNumeroPersonas = new JLabel("Pulse en el boton para ver la mesas libres:");
+		panel_ComboCent.add(jLNumeroPersonas);
 		
-		//Calendario-------------------------------------------------------
+		JButton btnMesas = new JButton("Mesas");
+		btnMesas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaMesasExterior window = new VentanaMesasExterior(res, ventanaActual);
+				window.setVisible(true);
+				ventanaActual.setVisible(false);
+				
+			}
+		});
+		btnMesas.setBackground(new Color(255, 128, 64));
+		panel_ComboCent.add(btnMesas);
 		
 		
+		JPanel panel_JCalendar = new JPanel();
+		panel_JCalendar.setBackground(new Color(128, 255, 128));
+		panel_Cent.add(panel_JCalendar, BorderLayout.CENTER);
 		
-		
-		JPanel panel_Calendar = new JPanel();
-		panel_Calendar.setBounds(0, 0, 406, 97);
-		panel_Calendar.setBackground(new Color(231, 237, 236));
-		panel_Cent.add(panel_Calendar);
-		
-	
 		Date fechaActual = new Date(System.currentTimeMillis());
 		SimpleDateFormat sdfAnio = new SimpleDateFormat("yyyy");
 		String anio = sdfAnio.format(fechaActual);
@@ -133,155 +132,29 @@ public class VentanaReservaExteriror extends JFrame {
 		} catch (ParseException e1) {
 			ultimaFecha = fechaActual;
 		}
-		panel_Calendar.setLayout(null);
-		
-		JLabel lblCalen = new JLabel("Seleccione el dia de reserva:");
-		lblCalen.setBounds(24, 15, 209, 14);
-		panel_Calendar.add(lblCalen);
+		panel_JCalendar.setLayout(null);
+
 		calen = new JDateChooser();
-		calen.setBounds(243, 15, 100, 25);
-		panel_Calendar.add(calen);
+		calen.setBounds(141, 35, 100, 25);
 		calen.setMinSelectableDate(fechaActual);
 		calen.setMaxSelectableDate(ultimaFecha);
+		panel_JCalendar.add(calen);
 		calen.setPreferredSize(new Dimension(100,25));
-		calen.setDateFormatString("dd-MMMM-yyyy");
-		JButton btnConfirmCalen = new JButton("Seleccionar dia");
-		btnConfirmCalen.setBounds(179, 50, 147, 23);
-		panel_Calendar.add(btnConfirmCalen);
-		if(calen.getDate() == null) {
-			panel_hora.setVisible(false);
-			panel_Mesas.setVisible(false);
-		}
+		calen.setDateFormatString("dd-MMMM");
+		
+		JLabel lblCalen = new JLabel("Seleccione el dia de reserva:");
+		lblCalen.setBounds(117, 10, 215, 14);
+		panel_JCalendar.add(lblCalen);
 		
 	
-		btnConfirmCalen.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(calen.getDate() != null) {
-					int resp = JOptionPane.showConfirmDialog(null, "Tras seleccionar la fecha no se podra volver atras para cambiarla\n"+"¿Esta seguro?",//<- EL MENSAJE
-				            "Alerta!"/*<- El título de la ventana*/, JOptionPane.YES_NO_OPTION);
-					if(resp==0) {
-					panel_hora.setVisible(true);
-					panel_Mesas.setVisible(false);
-					btnConfirmCalen.setVisible(false);
-					calen.setEnabled(false);
-					String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
-					String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
-					modif.setText("Reserva: Dia: "+ dia +"-" + mes+".");
-					
-					}else{
-						calen.setEnabled(true);
-						
-					}
-				}else {
-					JOptionPane aviso = new JOptionPane();
-					aviso.showMessageDialog(null, "Debe seleccionar un dia");
-				}
-			}
-		});
-	
-	
-	
-		
-		//HORA-----------------------------------
-		
-	
-		panel_hora.setBackground(new Color(255, 255, 128));
-		panel_Cent.add(panel_hora);
-		
-		JLabel lblNewLabel = new JLabel("Hora:");
-		panel_hora.add(lblNewLabel);
-		
-
-		
-		
-		
-		panel_hora.add(hora_comboBox);
-		
-		
-		 String hora;
-		 ArrayList<String> horas = new ArrayList<>();
-		 horas.add("");
-		 horas.add("14:00");
-		 horas.add("15:00");
-		 horas.add("16:00");
-		 horas.add("20:00");
-		 horas.add("21:00");
-		 horas.add("22:00");
-		 
-		 try {
-			 for(int i = 0; i<horas.size(); i++){
-                 hora = horas.get(i);
-                 hora_comboBox.addItem(hora);
-			 }
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		 hora_comboBox.setSelectedIndex(0);
-		
-		 
-		 hora_comboBox.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if(hora_comboBox.getSelectedItem()!="") {
-					int resp = JOptionPane.showConfirmDialog(null, "Tras seleccionar la hora no se podra volver atras para cambiarla\n"+"¿Esta seguro?",//<- EL MENSAJE
-				            "Alerta!"/*<- El título de la ventana*/, JOptionPane.YES_NO_OPTION);
-					if(resp == 0) {
-						panel_Mesas.setVisible(true);
-						hora_comboBox.setEnabled(false);
-						String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
-						String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
-						modif.setText("Reserva: Dia: "+ dia +"-" + mes+", hora:" + hora_comboBox.getSelectedItem() +".");
-					}
-					
-				}
-				
-			}
-		});
-		
-		 
-		//Mesas----------------------------------------------------------------------
-	
-		
-		panel_Mesas.setBackground(new Color(128, 255, 128));
-		panel_Cent.add(panel_Mesas);
-		
-		panel_Mesas.setLayout(null);
-		
-		JLabel jLNumeroPersonas = new JLabel("Pulse en el boton para ver la mesas libres:");
-		jLNumeroPersonas.setBounds(26, 11, 259, 14);
-		panel_Mesas.add(jLNumeroPersonas);
-		
-		JButton btnMesas = new JButton("Mesas");
-		btnMesas.setBounds(79, 36, 86, 23);
-		panel_Mesas.add(btnMesas);
-		btnMesas.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				VentanaMesasExterior window = new VentanaMesasExterior(res, ventanaActual);
-				window.setVisible(true);
-				ventanaActual.setVisible(false);
-				
-				
-			}
-		});
-		btnMesas.setBackground(new Color(255, 128, 64));
-		
 		
 	
 		
 		JButton btnConfirm = new JButton("Confirmar");
 		btnConfirm.setFont(new Font("MV Boli", Font.PLAIN, 11));
-		
-		
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(calen==null || hora_comboBox.getSelectedItem() == "") {
-					JOptionPane.showMessageDialog(btnConfirm, "Debe rellenar todos los campos");
-					ventanaActual.setVisible(true);
-				}
-				
 					
-			
 					List<Reserva> reservas = new ArrayList <Reserva>();
 					
 					reservas = RistoranteMain.bd.obtenerDatosReservas();
@@ -292,27 +165,23 @@ public class VentanaReservaExteriror extends JFrame {
 					String mes = Integer.toString(calen.getCalendar().get(java.util.Calendar.MONTH) + 1);
 					String dia = Integer.toString(calen.getCalendar().get(java.util.Calendar.DATE));
 					res.setFecha(dia+"-"+mes);
-					String horass = (String) hora_comboBox.getSelectedItem();
-					res.setHora(horass);
 					System.out.println( res.toString());
+					 
 					reservas.add(res);
-					JOptionPane.showMessageDialog(null, "Se ha confirmado se reserva el dia "+ dia +"-" + mes+" a las " + hora_comboBox.getSelectedItem() );
-					dispose();
 					VentanaMenus window = new VentanaMenus(res);
-					window.setVisible(true);
 					
+					window.setVisible(true);
+					ventanaActual.setVisible(false);
 				
-				}
 				
-			
+			}
 		});
-		
-		
-		
 		panel_Sur.add(btnConfirm);
 		
 		
-
-		//hora_comboBox.addI
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(128, 255, 128));
+		panel_Cent.add(panel, BorderLayout.WEST);
 	}
 }
+

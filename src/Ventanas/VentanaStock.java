@@ -74,10 +74,6 @@ public class VentanaStock extends JFrame{
 		lblStock.setFont(new Font("Freestyle Script", Font.BOLD, 28));
 		panelNorte.add(lblStock);
 		
-		JLabel lblNewLabel = new JLabel("(para cambiar el precio seleecion la celda)");
-		lblNewLabel.setFont(new Font("Segoe UI", Font.PLAIN, 11));
-		panelNorte.add(lblNewLabel);
-		
 	
 		
 		JPanel panelSur = new JPanel();
@@ -91,12 +87,14 @@ public class VentanaStock extends JFrame{
 		JLabel txtAreaStock= new JLabel();
 		txtAreaStock.setFont(new Font("Times New Roman" , Font.BOLD, 28));
 		txtAreaStock.setBounds(10, 10, 200, 30);
+		JButton btnCambiarPrecio = new JButton("Cambiar Precio");
 		
 		JButton btnAniadirComida = new JButton("Aniadir");
 		panelSur.add(btnAniadirComida);
 		
 		JButton btnBorrar = new JButton("Borrar");
 		panelSur.add(btnBorrar);
+		panelSur.add(btnCambiarPrecio);
 		
 		JButton btnVolver= new JButton("Volver");
 		panelSur.add(btnVolver);
@@ -151,6 +149,8 @@ public class VentanaStock extends JFrame{
 				String Id= JOptionPane.showInputDialog("Introduce un ID:");
 				String precio= JOptionPane.showInputDialog("Introduce un precio");
 				String Stock=JOptionPane.showInputDialog("Introduce un Stock");
+				
+				//switch para seleccionar el tipo de producto e insertarlo en su correspondiente tabla.
 				int tipo = JOptionPane.showOptionDialog(null, "Seleccione tipo de producto:", "", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, Producto.TipoProducto.values(), TipoProducto.Comida);
 				switch(tipo) {
 					case 0:
@@ -182,7 +182,7 @@ public class VentanaStock extends JFrame{
 				Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 				//Empieza el cambio
 				int stock = Integer.parseInt((String) modeloComida.getValueAt(row, 3));
-				
+				// si el stock es menor o igual a dos se pinta la fila en rojo y sino en verde.
 				if (stock<=2) {
 					c.setBackground(Color.RED);
 				} else {
@@ -202,7 +202,7 @@ public class VentanaStock extends JFrame{
 				Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 				//Empieza el cambio
 				int stock = Integer.parseInt((String) modeloBebida.getValueAt(row, 3));
-				
+				// Si el stock es menor o igual a dos se pinta la fila en rojo
 				if (stock<=2) {
 					c.setBackground(Color.RED);
 				} else {

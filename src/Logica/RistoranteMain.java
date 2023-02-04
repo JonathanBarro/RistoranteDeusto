@@ -12,8 +12,8 @@ public class RistoranteMain {
 	public static void main(String[] args) {
 		
 		bd = new BD();	
-//		bd.borrarDatos();
-//	    bd.borrarBBDD();
+		bd.borrarDatos();
+	    bd.borrarBBDD();
 		VentanaAdminCliente window = new VentanaAdminCliente();
 		window.setVisible(true);
 		
@@ -87,7 +87,8 @@ public class RistoranteMain {
 		List<Menu> menuInfantiles = initMenu();
 		List<Mesa> mesas = initMesa();
 		List<Reserva> reservas = initReservas();
-		bd.insertarDatos(clientes, admins, bebidas, comidas, menuInfantiles, mesas, reservas);
+		List<Merch> merchs = initMerch();
+		bd.insertarDatos(clientes, admins, bebidas, comidas, menuInfantiles, mesas, reservas, merchs);
 	}
 	
 	private static void printClientes(List<Cliente> clientes) {
@@ -106,6 +107,13 @@ public class RistoranteMain {
 		cliente.setApellido("hulk@gmail.com");
 		cliente.setContrasenia("NUcRn8h85RZZTjg6UBwa");
 		cliente.setNumTlfn(1);
+		clientes.add(cliente);
+		
+		cliente = new Cliente();
+		cliente.setNombre("1");
+		cliente.setApellido("1@gmail.com");
+		cliente.setContrasenia("1");
+		cliente.setNumTlfn(2);
 		clientes.add(cliente);
 		
 		return clientes;
@@ -311,6 +319,113 @@ public class RistoranteMain {
 		reservas.add(reserva);
 		
 		return reservas;
+	}
+	
+	private static void printMerch(List<Merch> merchs) {
+		if (!merchs.isEmpty()) {		
+			for(Merch c : merchs) {
+				System.out.println(String.format(" - %s", c.toString()));
+			}
+		}		
+	}
+	
+	public static List<Merch> initMerch() {
+		List<Merch> merchs = new ArrayList<>();
+		
+		Merch merch  = new Merch();
+		merch.setColor("Azul");
+		merch.setIdMerch("C2");
+		merch.setImagen("Imagenes/imgCamisetas/camisetaAzul.png");
+		merch.setPrecio(15.00f);
+		merch.setTalla(35);
+		merch.setTipo(Merch.Tipo.CAMISETA);
+		merchs.add(merch);
+		
+		merch = new Merch();
+		merch.setColor("Amarillo");
+		merch.setIdMerch("C1");
+		merch.setImagen("Imagenes/imgCamisetas/camisetaAmarilla.png");
+		merch.setPrecio(15.00f);
+		merch.setTalla(36);
+		merch.setTipo(Merch.Tipo.CAMISETA);
+		merchs.add(merch);
+		
+		merch  = new Merch();
+		merch.setColor("Naranja");
+		merch.setIdMerch("C3");
+		merch.setImagen("Imagenes/imgCamisetas/camisetaNaranja.png");
+		merch.setPrecio(15.00f);
+		merch.setTalla(36);
+		merch.setTipo(Merch.Tipo.CAMISETA);
+		merchs.add(merch);
+		
+		merch  = new Merch();
+		merch.setColor("Negro");
+		merch.setIdMerch("C4");
+		merch.setImagen("Imagenes/imgCamisetas/camisetaNegra.png");
+		merch.setPrecio(15.00f);
+		merch.setTalla(36);
+		merch.setTipo(Merch.Tipo.CAMISETA);
+		merchs.add(merch);
+		
+		merch  = new Merch();
+		merch.setColor("Rojo");
+		merch.setIdMerch("C5");
+		merch.setImagen("Imagenes/imgCamisetas/camisetaRoja.png");
+		merch.setPrecio(15.00f);
+		merch.setTalla(36);
+		merch.setTipo(Merch.Tipo.CAMISETA);
+		merchs.add(merch);
+		
+		merch  = new Merch();
+		merch.setColor("Verde");
+		merch.setIdMerch("C6");
+		merch.setImagen("Imagenes/imgCamisetas/camisetaVerde.png");
+		merch.setPrecio(15.00f);
+		merch.setTalla(36);
+		merch.setTipo(Merch.Tipo.CAMISETA);
+		merchs.add(merch);
+		
+		merch = new Merch();
+		merch.setColor("Azul");
+		merch.setIdMerch("S1");
+		merch.setImagen("Imagenes/imgSudadera/sudaderaAzul.png");
+		merch.setPrecio(25.00f);
+		merch.setTalla(36);
+		merch.setTipo(Merch.Tipo.SUDADERA);
+		merchs.add(merch);
+		
+		merch = new Merch();
+		merch.setColor("Negro");
+		merch.setIdMerch("S2");
+		merch.setImagen("Imagenes/imgSudadera/sudaderaNegra.png");
+		merch.setPrecio(25.00f);
+		merch.setTalla(36);
+		merch.setTipo(Merch.Tipo.SUDADERA);
+		merchs.add(merch);
+		
+		merch = new Merch();
+		merch.setColor("Rojo");
+		merch.setIdMerch("S3");
+		merch.setImagen("Imagenes/imgSudadera/sudaderaRoja.png");
+		merch.setPrecio(25.00f);
+		merch.setTalla(35);
+		merch.setTipo(Merch.Tipo.SUDADERA);
+		merchs.add(merch);
+		
+		merch = new Merch();
+		merch.setColor("Verde");
+		merch.setIdMerch("S4");
+		merch.setImagen("Imagenes/imgSudadera/sudaderaVerde.png");
+		merch.setPrecio(25.00f);
+		merch.setTalla(36);
+		merch.setTipo(Merch.Tipo.SUDADERA);
+		merchs.add(merch);
+		
+		
+		return merchs;
+		
+		
 	}
 	
 	

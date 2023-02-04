@@ -19,6 +19,7 @@ public class VentanaImprimirPedido extends VentanaImprimir{
 	@Override
 	protected void cargarCarritoEnTextArea() {
 		Date d = new Date(System.currentTimeMillis());
+		//StringBuilser para concatenar strings y objetos.
 		StringBuilder texto = new StringBuilder();
 				texto.append("Factura de la compra del dia: " + sdf.format(d) + "\n------------------------------------\n");
 		double total = 0;

@@ -82,11 +82,6 @@ public class Menu {
 		for (Producto producto : hashMap.get("Bebida")) {
 			sumaTotal += producto.getPrecio();
 		}
-		if(this.getCaracteristicas().equals("menuEstudiante") == true) {
-			return sumaTotal*0.9;
-		}else if(this.getCaracteristicas().equals("menuMayor") == true) {
-			return sumaTotal*0.95;
-		}
 		return sumaTotal;
 	}
 	public int contarProds() {

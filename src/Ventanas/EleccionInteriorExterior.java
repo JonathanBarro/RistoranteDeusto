@@ -51,6 +51,20 @@ public class EleccionInteriorExterior extends JFrame{
 		JPanel panelSur = new JPanel();
 		panelSur.setBackground(new Color(255, 128, 64));
 		getContentPane().add(panelSur, BorderLayout.SOUTH);
+
+		JButton btnMerch = new JButton("Merchandising");
+		btnMerch.setBackground(new Color(255, 255, 128));
+		btnMerch.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				VentanaCamisetas vent = new VentanaCamisetas();
+				vent.setVisible(true);
+				dispose();
+			}
+			
+		});
+		panelSur.add(btnMerch);
 		
 		JPanel panelDer = new JPanel();
 		panelDer.setBackground(new Color(255, 128, 64));
@@ -73,7 +87,7 @@ public class EleccionInteriorExterior extends JFrame{
 		btnInterior.setBounds(99, 75, 89, 23);
 		panelCent.add(btnInterior);
 		
-		JButton btnExteriror = new JButton("Exteriror");
+		JButton btnExteriror = new JButton("Exterior");
 		btnExteriror.setBackground(new Color(255, 128, 64));
 		btnExteriror.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

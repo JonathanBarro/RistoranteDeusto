@@ -204,6 +204,11 @@ public class VentanaMenus extends JFrame {
 				pMedio.add(lblEntre);
 				pMedio.add(lblFinDe);
 				pMedio.add(lblInfant);
+				List<String> caracteristicasMenus = new ArrayList<>();
+				for(Menu mC : res.getaMenu()) {
+					caracteristicasMenus.add(mC.getCaracteristicas());
+				}
+				Recursividad.combinaciones(caracteristicasMenus, res.getNumPersonas());
 				
 				setSize(1000, 410);
 			}
@@ -246,8 +251,7 @@ public class VentanaMenus extends JFrame {
 					hmProds1.putIfAbsent("Comida", aComida1);
 					mn.setpL(hmProds1);
 					mn.setId(menu.getId());
-					mn.setCaracteristicas("menuEstudiante");
-					mn.setPrecioTotal(mn.obtenerPreciototal((HashMap<String, List<? extends Producto>>) mn.getpL()));
+					mn.setPrecioTotal(mn.obtenerPreciototal(mn.getpL()));
 					mn.setNumProductos(2);
 					
 					modeloCarrito.addElement(mn);
@@ -338,14 +342,6 @@ public class VentanaMenus extends JFrame {
 					Menu m = modeloCarrito.getElementAt(i);
 					res.getaMenu().add(m);
 					vM.setVisible(false);
-				}
-				List<String> caracteristicasMenus = new ArrayList<>();
-				for(Menu mC : res.getaMenu()) {
-					caracteristicasMenus.add(mC.getCaracteristicas());
-				}
-				List<List<String>> rcur =  Recursividad.combinaciones(caracteristicasMenus, res.getNumPersonas());
-				for(List<String> m : rcur) {
-					System.out.println(m);
 				}
 				
 				RistoranteMain.bd.insertarDatosReserva(res);
